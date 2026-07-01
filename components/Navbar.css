@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500&display=swap');
+
+/* ─── NAVBAR ─── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  height: 100px;
+  background: #223553;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-sizing: border-box;
+  flex-wrap: nowrap; /* ← changer wrap en nowrap */
+  overflow: hidden;  /* ← ajouter ça */
+}
+/* ─── BRAND ─── */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: auto; /* ← pousse les liens à droite */
+}
+.navbar-logo-image {
+  width: 150px !important;
+  height: 70px !important; /* ← réduire */
+  object-fit: contain;
+  object-position: left center;
+}
+
+.navbar {
+  height: 90px; /* ← réduire aussi */
+  padding: 10px 40px;
+}
+.navbar-logo {
+  width: 200px;
+  height: 90px;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+.navbar-logo span { color: var(--gold); font-size: 18px; font-weight: 700; }
+.navbar-title { display: flex; flex-direction: column; }
+.brand-name { font-size: 13px; font-weight: 700; letter-spacing: 2px; color: #fff; font-family: system-ui, sans-serif; }
+.brand-sub { font-size: 9px; letter-spacing: 1px; color: rgba(255,255,255,0.45); font-family: system-ui, sans-serif; }
+
+/* ─── LIENS DESKTOP ─── */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.navbar-links a {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navbar-links a:hover { color: var(--gold); }
+
+.navbar-links .btn-primary {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  width: auto;
+  height: auto;
+}
+
+/* ─── HAMBURGER ─── */
+.navbar-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+
+/* ─── MENU MOBILE ─── */
+.navbar-mobile {
+  display: none; /* ← MODIFIÉ : était flex */
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  gap: 12px;
+}
+.navbar-hamburger {
+  display: none;
+}
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+
+  /* ─── NAVBAR ─── */
+  .navbar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    height: auto !important;
+    background: #223553 !important;
+    position: relative !important;
+    width: 100% !important;
+    padding: 20px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ─── LOGO : 65x40 ─── */
+  .navbar-brand {
+    position: static !important;        /* ← supprime le absolute */
+    transform: none !important;
+  }
+
+  .navbar-logo-image {
+    width: 65px !important;
+    height: 40px !important;
+    object-fit: contain !important;
+    margin-left: 0 !important;
+  }
+
+  .navbar-logo {
+    width: auto !important;
+    height: auto !important;
+    background: transparent !important;
+  }
+
+  /* ─── HAMBURGER : 40x40 ─── */
+  .navbar-hamburger {
+    position: static !important;        /* ← supprime le absolute */
+    transform: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    padding: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+   background: transparent !important;
+    z-index: 101 !important;
+  }
+
+  /* ─── LIENS DESKTOP CACHÉS ─── */
+  .navbar-links {
+    display: none !important;
+  }
+
+  /* ─── MENU MOBILE ─── */
+  .navbar-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top: 80px !important;               /* ← aligné avec la nouvelle hauteur navbar */
+    left: 0 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    padding: 30px 20px !important;
+    gap: 16px !important;
+    z-index: 100 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .navbar-mobile a {
+    color: #ffffff !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #223553 !important;
+    width: 100% !important;             /* ← pleine largeur au lieu de 280px fixe */
+    height: 55px !important;
+    border-radius: 12px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    transition: background 0.3s ease !important;
+  }
+
+  .navbar-mobile a:hover {
+    background-color: #1a2a44 !important;
+  }
+}
+/* ════════════════════════════════════════
+   TABLETTE 769px - 1199px
+   ════════════════════════════════════════ */
+@media (min-width: 769px) and (max-width: 1199px) {
+  .navbar {
+    height: 90px;
+    padding: 10px 20px;
+  }
+
+  /* ── Afficher les liens, cacher le hamburger ── */
+  .navbar-links { display: flex !important; }
+  .navbar-hamburger { display: none !important; }
+  .navbar-mobile { display: none !important; }
+}

@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&display=swap');
+
+/* ═══════════════════════════════════════
+   HERO BASE
+═══════════════════════════════════════ */
+.hero {
+  background-color: #223553;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-inner {
+  background-image: url("/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: calc(100vh - 90px);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  gap: 10px;
+}
+
+/* ═══════════════════════════════════════
+   HERO SMALL (nos services + contact)
+═══════════════════════════════════════ */
+.hero:has(.hero-small) {
+  height: 400px;
+  padding: 0;
+}
+
+.hero-inner.hero-small {
+  height: 100%;
+  margin-bottom: 100px;
+}
+
+/* ═══════════════════════════════════════
+   TITRES
+═══════════════════════════════════════ */
+.hero-title-container {
+  width: 755px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 96px;
+  line-height: 100px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+}
+
+.hero-subtitle-container {
+  width: 395px;
+  height: 60px;
+  position: absolute;
+  bottom: 48px;
+  right: 48px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.hero-subtitle {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: #FFFFFF;
+  margin: 0;
+  text-align: right;
+}
+
+/* ═══════════════════════════════════════
+   TABLETTE : 769px – 1200px
+═══════════════════════════════════════ */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .hero {
+    height: auto;
+    min-height: unset;
+    padding: 0;
+  }
+
+  .hero-inner {
+    width: 100vw;
+    height: calc(100vh - 90px);
+    padding: 0;
+  }
+
+  .hero:has(.hero-small) {
+    height: 400px;
+  }
+
+  .hero-inner.hero-small {
+    height: 100%;
+    margin-bottom: 100px;
+  }
+
+  .hero-title {
+    font-size: 64px;
+    line-height: 72px;
+  }
+
+  .hero-title-container {
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+}
+
+/* ═══════════════════════════════════════
+   MOBILE : max 768px
+═══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .hero-inner {
+    width: 100%;
+    height: 300px;
+    min-height: unset;
+    padding: 0;
+    border-radius: 15px;
+    opacity: 0.7;
+  }
+
+  .hero-inner.hero-small {
+    margin-bottom: 60px;
+  }
+
+  .hero-title-container {
+    width: 100%;
+    height: auto;
+    padding: 0 20px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+    line-height: 52px;
+    text-align: center;
+  }
+
+  .hero-subtitle-container {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    line-height: 22px;
+    text-align: left;
+  }
+}

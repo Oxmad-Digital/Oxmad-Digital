@@ -1,0 +1,283 @@
+/* ═══════════════════════════════════════
+   SECTION SERVICES
+═══════════════════════════════════════ */
+.ns-section {
+  background-color: #223553;
+  padding: 125px 64px 100px 64px;
+}
+
+.ns-wrapper {
+  max-width: 1072px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+
+
+.ns-card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1072px;
+  height: auto;
+  border-radius: 20px;
+  border: 5px solid #F5F5F5;
+  gap: 20px;
+  overflow: hidden;
+  align-items: stretch;
+}
+
+/* ── Gauche navy ── */
+.ns-left {
+   width: 526px;
+  min-height: unset;
+  background: #223553;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 40px 30px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.ns-title-container {
+  width: 526px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.ns-icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+
+.ns-service-name {
+  font-family: 'EB Garamond', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: center;
+  width: 486px;
+  margin: 0;
+}
+
+.ns-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  width: 90px;
+  height: 40px;
+}
+
+.ns-nav-btn {
+  background: transparent;
+  border: 1.5px solid #D4A344;
+  color: #D4A344;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.ns-nav-btn:hover {
+  background: #D4A344;
+  color: #223553;
+}
+
+/* ── Droite gris clair ── */
+.ns-right {
+  width: 526px;
+  min-height: unset;
+  background: #F5F5F5;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-radius: 0 20px 20px 0;
+  flex-shrink: 0;
+}
+
+.ns-tagline {
+  font-family: 'EB Garamond', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #223553;
+  line-height: 30px;
+  width: 375px;
+  margin: 0;
+}
+
+.ns-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: #223553;
+  line-height: 35px;
+  margin: 0;
+}
+
+.ns-bullets {
+  list-style: disc;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+}
+
+.ns-bullets li {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: #223553;
+  line-height: 35px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .ns-section { padding: 60px 20px; }
+  .ns-card { flex-direction: column; border-radius: 20px; }
+  .ns-left { width: 100%; min-height: auto; padding: 32px 24px; }
+  .ns-right { width: 100%; min-height: auto; border-radius: 0 0 20px 20px; }
+  .ns-service-name { width: 100%; font-size: 32px; }
+  .ns-title-container { width: 100%; }
+  .ns-tagline { width: 100%; }
+  @media (max-width: 768px) {
+
+  .ns-card {
+    flex-direction: column;
+  }
+
+  /* 🔥 ON INVERSE VISUELLEMENT */
+  .ns-right {
+    order: 1;
+  }
+
+  .ns-left {
+    order: 2;
+  }
+
+}
+}
+/* ── RESPONSIVE TABLETTE (810px et moins) ── */
+
+.ns-section {
+    margin-top: 0 !important;   /* Supprime toute marge externe haute */
+    padding-top: 100px !important; /* Force l'espace de 100px interne */
+    background-color: #223553;
+}
+
+.ns-card {
+  display: flex;
+  margin: 0 auto;
+  background: #F5F5F5;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+/* ── VERSION DESKTOP (Au-dessus de 1024px) ── */
+@media (min-width: 1025px) {
+  .ns-section {
+    padding: 125px 64px 100px 64px;
+  }
+  
+  .ns-card {
+    flex-direction: row; /* Côte à côte */
+    max-width: 1072px;
+    border: 5px solid #F5F5F5;
+  }
+
+  .ns-left, .ns-right {
+    flex: 1; /* 50% chacun */
+    width: 50%;
+  }
+
+  .ns-left { order: 1; }
+  .ns-right { order: 2; }
+}
+
+/* ── VERSION TABLETTE FLEXIBLE (De 481px à 1024px) ── */
+/* Ton code adapté pour être plus souple que le 810px fixe */
+@media (max-width: 1024px) {
+  .ns-section {
+    padding: 100px 20px 60px 20px !important; /* était 30px en haut */
+  }
+
+  .ns-card {
+    flex-direction: column; /* On empile */
+    max-width: 682px;       /* Ta largeur Figma */
+    border: 3px solid #F5F5F5;
+  }
+
+  /* 1. Bloc Blanc en haut (selon ta maquette) */
+  .ns-right {
+    width: 100% !important;
+    order: 1; 
+    padding: 40px 30px;
+    background: #F5F5F5;
+  }
+
+  /* 2. Bloc Navy en bas (selon ta maquette) */
+  .ns-left {
+    width: 100% !important;
+    order: 2; 
+    background: #223553;
+    padding: 50px 30px;
+    gap: 30px;
+  }
+
+  .ns-service-name {
+    width: 100% !important;
+    font-size: clamp(28px, 5vw, 36px); /* S'adapte entre 28px et 36px */
+    line-height: 1.2;
+  }
+
+  .ns-tagline {
+    width: 100% !important;
+    font-size: 22px;
+  }
+
+  .ns-desc, .ns-bullets li {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+/* ── VERSION MOBILE (Sous 480px) ── */
+@media (max-width: 480px) {
+  .ns-card {
+    max-width: 100%;
+  }
+  
+  .ns-right, .ns-left {
+    padding: 25px 20px;
+  }
+
+  .ns-service-name {
+    font-size: 24px;
+  }
+}

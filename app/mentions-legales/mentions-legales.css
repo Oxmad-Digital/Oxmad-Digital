@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&display=swap');
+
+.mentions-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #223553;
+}
+
+.mentions-wrapper {
+  width: 1160px;
+  max-width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 60px 80px;
+  box-sizing: border-box;
+}
+
+.mentions-inner {
+  color: var(--mentions-text-color);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.mentions-inner h1 {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: var(--mentions-text-color);
+  margin-bottom: 40px;
+}
+
+.mentions-title-wrapper h2 {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--mentions-text-color);
+  margin: 0 0 30px 0;
+}
+
+.mentions-block {
+  margin-bottom: 80px; /* ← grand espace entre chaque section */
+}
+
+.mentions-content-wrapper p {
+  margin: 8px 0;
+  font-size: 16px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--mentions-text-color);
+  line-height: 1.9;
+}
+
+.mentions-content-wrapper ul {
+  margin: 8px 0 12px 20px;
+}
+
+.mentions-content-wrapper ul li {
+  font-size: 16px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--mentions-text-color);
+  line-height: 1.9;
+}
+
+.mentions-content-wrapper a {
+  color: var(--mentions-text-color);
+  text-decoration: underline;
+}
+
+.mentions-date {
+  margin-top: 40px;
+  font-size: 14px;
+  color: var(--mentions-text-color);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .mentions-wrapper { padding: 32px 24px; }
+  .mentions-inner h1 { font-size: 32px; }
+  .mentions-title-wrapper h2 { font-size: 26px; }
+  .mentions-block { margin-bottom: 48px; }
+}

@@ -1,0 +1,149 @@
+.how {
+  background: var(--navy-mid);
+  padding: 100px var(--margin-lateral);
+}
+
+.how-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.how-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.how-header-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.how-header-left h2 {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--white);
+  margin: 0;
+}
+
+.how-header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.how-header-right p {
+  line-height: 30px;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.how-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.step-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  background: var(--off-white);
+  border-radius: 20px;
+  padding: 20px 30px;
+}
+
+.step-number {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #D9D9D9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-number span {
+  color: #000;
+  font-weight: 700;
+  font-size: 24px;
+  font-family: var(--font-sans);
+}
+
+.step-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 40px;
+}
+
+.step-content h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--navy-mid);
+  margin: 0;
+  width: 325px;
+  flex-shrink: 0;
+}
+
+.step-content p {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--navy-mid);
+  margin: 0;
+}
+
+/* ── Grand écran 1200px – 1440px ── */
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .how { padding: 100px 180px; }
+  .how-inner { max-width: 100%; }
+  .step-card { padding: 20px 40px; }
+  .step-content { gap: 80px; }
+  .step-content h3 { width: 325px; }
+  .step-content p { flex: 1; }
+}
+
+/* ── Tablette ── */
+@media (min-width: 769px) and (max-width: 1199px) {
+  .how { padding: 60px var(--margin-lateral); }
+  .how-inner { max-width: 100%; gap: 60px; }
+  .how-header { gap: 40px; }
+  .how-header-left h2 { font-size: 36px; line-height: 1.2; }
+  .how-header-right p { font-size: 16px; line-height: 1.6; }
+  .how-steps { gap: 20px; }
+  .step-card { min-height: 90px; gap: 20px; padding: 20px 24px; }
+  .step-number { width: 56px; height: 56px; min-width: 56px; }
+  .step-number span { font-size: 30px; }
+  .step-content { gap: 20px; }
+  .step-content h3 { font-size: 16px; width: 40%; }
+  .step-content p { font-size: 13px; width: 55%; opacity: 0.85; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .how { padding: 50px var(--margin-lateral); }
+  .how-inner { align-items: center; gap: 40px; }
+  .how-header { flex-direction: column; align-items: center; text-align: center; gap: 12px; }
+  .how-header-left { width: 100%; }
+  .how-header-left h2 { font-size: 20px; line-height: 1.2; }
+  .how-header-right { width: 100%; }
+  .how-header-right p { font-size: 12px; line-height: 1.6; }
+  .step-card { flex-direction: column; align-items: flex-start; gap: 20px; padding: 15px; }
+  .step-number { width: 40px; height: 40px; }
+  .step-number span { font-size: 20px; }
+  .step-content { flex-direction: column; gap: 8px; }
+  .step-content h3 { font-size: 18px; width: 100%; }
+  .step-content p { font-size: 12px; width: 100%; }
+}

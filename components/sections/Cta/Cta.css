@@ -1,0 +1,55 @@
+.cta {
+  background: var(--navy-mid);
+  padding: 72px var(--margin-lateral);
+  text-align: center;
+}
+
+.cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 560px;
+  gap: 40px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.cta-inner .txt-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+.cta-inner h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.3;
+  text-align: center;
+  margin: 0;
+}
+
+.cta-inner p {
+  color: var(--text-light);
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Tablette ── */
+@media (min-width: 769px) and (max-width: 1199px) {
+  .cta { padding: 60px var(--margin-lateral); }
+  .cta-inner { max-width: 100%; padding: 20px; }
+  .cta-inner h2 { font-size: 32px; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .cta { padding: 52px var(--margin-lateral); }
+  .cta-inner { width: 100%; max-width: 100%; padding: 0; gap: 16px; }
+  .cta-inner .txt-container { gap: 8px; }
+  .cta-inner h2 { font-size: 22px; line-height: 1.3; }
+  .cta-inner p { font-size: 12px; line-height: 1.6; }
+}

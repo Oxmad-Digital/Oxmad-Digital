@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&display=swap');
+
+/* ─── Reset ─── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  background: var(--navy-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ─── Variables ─── */
+:root {
+  --navy: #1a2744;
+  --navy-mid: #223553;
+  --navy-dark: #131d35;
+  --gold: #D4A344;
+  --gold-hover: #c4922e;
+  --gold-light: rgba(212, 163, 68, 0.15);
+  --gold-border: rgba(212, 163, 68, 0.4);
+  --cream: #f5f4f0;
+  --white: #ffffff;
+  --off-white: #F5F5F5;
+  --text-dark: #1a2744;
+  --text-muted: #666;
+  --text-light: rgba(255, 255, 255, 0.65);
+
+  --font-serif: 'EB Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  --margin-lateral: 64px;
+  --max-width: 1072px;
+}
+
+/* ─── Typographie ─── */
+h1 {
+  font-size: 48px;
+  line-height: 1.1;
+  font-family: var(--font-serif);
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 1.2;
+  font-family: var(--font-serif);
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 1.3;
+  font-family: var(--font-serif);
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ─── Utilitaires globaux ─── */
+.section-label {
+  display: block;
+  color: var(--gold);
+  font-size: 16px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 51px;
+  background: var(--gold);
+  border-radius: 20px;
+  padding: 14px 28px;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btn-gold:hover {
+  background: var(--gold-hover);
+}
+
+/* ══════════════════════════════════
+   TABLETTE  769px – 1199px
+══════════════════════════════════ */
+@media (min-width: 769px) and (max-width: 1199px) {
+  :root {
+    --margin-lateral: 64px;
+  }
+
+  h1 { font-size: 36px; }
+  h2 { font-size: 32px; }
+  h3 { font-size: 24px; }
+  p  { font-size: 16px; }
+}
+
+/* ══════════════════════════════════
+   MOBILE  ≤ 768px
+══════════════════════════════════ */
+@media (max-width: 768px) {
+  :root {
+    --margin-lateral: 32px;
+  }
+
+  h1 { font-size: 32px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 20px; }
+  p  { font-size: 12px; }
+}
