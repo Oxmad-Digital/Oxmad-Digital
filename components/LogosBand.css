@@ -1,0 +1,97 @@
+.ox-logos-band {
+  padding: 20px var(--margin-lateral);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--bg2);
+  overflow: hidden;
+}
+
+.ox-logos-band-label {
+  font-size: 11px;
+  color: var(--w);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ox-logos-band-divider {
+  width: 1px;
+  height: 28px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.ox-logos-wrap {
+  overflow: hidden;
+  flex: 1;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.ox-logos-scroll {
+  display: flex;
+  width: max-content;
+  animation: ox-logo-scroll 26s linear infinite;
+  white-space: nowrap;
+}
+
+.ox-logos-band:hover .ox-logos-scroll {
+  animation-play-state: paused;
+}
+
+.ox-logo-chip {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-right: 44px;
+  opacity: 0.5;
+  filter: grayscale(1);
+  transition: opacity 0.3s, filter 0.3s;
+}
+
+.ox-logo-chip:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+.ox-logo-chip-mk {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--w10);
+  color: var(--w50);
+  flex-shrink: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+.ox-logo-chip:hover .ox-logo-chip-mk {
+  background: var(--r);
+  color: var(--ink);
+}
+
+.ox-logo-chip-wm {
+  font-family: var(--ox-font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--w50);
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+
+.ox-logo-chip:hover .ox-logo-chip-wm {
+  color: var(--w);
+}
+
+@keyframes ox-logo-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

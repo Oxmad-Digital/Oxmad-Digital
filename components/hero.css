@@ -1,171 +1,179 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&display=swap');
-
-/* ═══════════════════════════════════════
-   HERO BASE
-═══════════════════════════════════════ */
-.hero {
-  background-color: #223553;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-inner {
-  background-image: url("/hero-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  width: 100vw;
-  height: calc(100vh - 90px);
-  margin: 0;
-  padding: 0;
-  display: flex;
+.ox-hero {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  min-height: 600px;
   align-items: center;
-  justify-content: center;
-  border-radius: 0;
+  padding: 0 var(--margin-lateral);
   position: relative;
   overflow: hidden;
-  gap: 10px;
 }
 
-/* ═══════════════════════════════════════
-   HERO SMALL (nos services + contact)
-═══════════════════════════════════════ */
-.hero:has(.hero-small) {
-  height: 400px;
-  padding: 0;
+.ox-hero-x {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.hero-inner.hero-small {
-  height: 100%;
-  margin-bottom: 100px;
+.ox-hero-x svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 118%;
+  width: auto;
 }
 
-/* ═══════════════════════════════════════
-   TITRES
-═══════════════════════════════════════ */
-.hero-title-container {
-  width: 755px;
-  height: 200px;
+.ox-hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.ox-hero-blob-a {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(155, 169, 20, 0.18) 0%, transparent 70%);
+  top: -150px;
+  left: -100px;
+}
+
+.ox-hero-blob-b {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(217, 204, 1, 0.22) 0%, transparent 70%);
+  top: 80px;
+  left: 38%;
+}
+
+.ox-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(27, 25, 22, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 25, 22, 0.04) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(ellipse 90% 80% at 30% 50%, black, transparent);
+  pointer-events: none;
+}
+
+.ox-hero-left {
+  position: relative;
+  z-index: 2;
+  padding: 80px 0;
+}
+
+.ox-hero-title {
+  font-family: var(--ox-font-display);
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  margin-bottom: 18px;
+}
+
+.ox-hero-title-accent {
+  color: var(--r);
+}
+
+.ox-hero-subtitle {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--w50);
+  max-width: 420px;
+}
+
+.ox-hero-right {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  z-index: 1;
+  height: 100%;
+  min-height: 560px;
 }
 
-.hero-title {
-  font-family: 'EB Garamond', Georgia, serif;
-  font-weight: 600;
-  font-size: 96px;
-  line-height: 100px;
-  letter-spacing: 0px;
-  text-align: center;
-  color: #ffffff;
-  margin: 0;
-}
-
-.hero-subtitle-container {
-  width: 395px;
-  height: 60px;
+.ox-hero-glow {
   position: absolute;
-  bottom: 48px;
-  right: 48px;
-  z-index: 1;
-  display: flex;
-  align-items: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217, 204, 1, 0.26) 0%, rgba(155, 169, 20, 0.12) 50%, transparent 70%);
+  filter: blur(28px);
+  animation: ox-pulse-glow 4s ease-in-out infinite;
 }
 
-.hero-subtitle {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
-  color: #FFFFFF;
-  margin: 0;
-  text-align: right;
+.ox-hero-orbit {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  border: 1px dashed rgba(155, 169, 20, 0.4);
+  animation: ox-spin-slow 22s linear infinite;
 }
 
-/* ═══════════════════════════════════════
-   TABLETTE : 769px – 1200px
-═══════════════════════════════════════ */
-@media (min-width: 769px) and (max-width: 1200px) {
-  .hero {
-    height: auto;
-    min-height: unset;
-    padding: 0;
-  }
-
-  .hero-inner {
-    width: 100vw;
-    height: calc(100vh - 90px);
-    padding: 0;
-  }
-
-  .hero:has(.hero-small) {
-    height: 400px;
-  }
-
-  .hero-inner.hero-small {
-    height: 100%;
-    margin-bottom: 100px;
-  }
-
-  .hero-title {
-    font-size: 64px;
-    line-height: 72px;
-  }
-
-  .hero-title-container {
-    width: 100%;
-    padding: 0 40px;
-  }
-
-  .hero-subtitle {
-    font-size: 16px;
-  }
+.ox-hero-orbit-dot {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--r);
+  box-shadow: 0 0 10px var(--r);
 }
 
-/* ═══════════════════════════════════════
-   MOBILE : max 768px
-═══════════════════════════════════════ */
+.ox-hero-robot {
+  position: relative;
+  z-index: 3;
+  animation: ox-float 5s ease-in-out infinite;
+}
+
+.ox-hero-robot img {
+  width: 260px;
+  height: auto;
+}
+
+.ox-hero-bubble {
+  position: absolute;
+  top: -14px;
+  right: -6px;
+  background: var(--r);
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 12px 12px 12px 4px;
+  white-space: nowrap;
+  z-index: 5;
+  box-shadow: 0 6px 20px rgba(217, 204, 1, 0.45);
+}
+
+@keyframes ox-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes ox-spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ox-pulse-glow {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@media (max-width: 1024px) {
+  .ox-hero {
+    grid-template-columns: 1fr;
+    padding: 40px var(--margin-lateral) 0;
+  }
+  .ox-hero-right { min-height: 380px; }
+}
+
 @media (max-width: 768px) {
-  .hero-inner {
-    width: 100%;
-    height: 300px;
-    min-height: unset;
-    padding: 0;
-    border-radius: 15px;
-    opacity: 0.7;
-  }
-
-  .hero-inner.hero-small {
-    margin-bottom: 60px;
-  }
-
-  .hero-title-container {
-    width: 100%;
-    height: auto;
-    padding: 0 20px;
-  }
-
-  .hero-title {
-    font-size: 48px;
-    line-height: 52px;
-    text-align: center;
-  }
-
-  .hero-subtitle-container {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-  }
-
-  .hero-subtitle {
-    font-size: 14px;
-    line-height: 22px;
-    text-align: left;
-  }
+  .ox-hero-title { font-size: 36px; }
 }

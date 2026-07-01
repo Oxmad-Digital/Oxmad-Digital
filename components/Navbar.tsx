@@ -1,47 +1,60 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import "./Navbar.css";
 
+const NAV_LINKS = [
+  { label: "Accueil", href: "/" },
+  { label: "Services", href: "/#services" },
+  { label: "À propos", href: "/#apropos" },
+  { label: "Réalisations", href: "/realisations" },
+];
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-  <nav className="navbar">
-    <div className="navbar-brand">
-  <Image
-  src="/logotr.png"
-  alt="Thadeus Logo"
-  width={97}
-  height={60}
-  className="navbar-logo-image" // Ajoute cette classe
-  style={{ objectFit: "contain" }}
-/>
-    </div>
+    <nav className="ox-nav">
+      <Link href="/" className="ox-nav-brand" onClick={() => setOpen(false)}>
+        <img src="/oxmad-wordmark.svg" alt="Oxmad Digital" className="ox-nav-logo" />
+      </Link>
 
-      {/* ── Liens desktop ── */}
-      <div className="navbar-links">
-        <Link href="/">Accueil</Link>
-        <Link href="/nos-services">Nos services</Link>
-        <Link href="/contact">Contacts</Link>
+      <div className="ox-nav-links">
+        {NAV_LINKS.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={`ox-nav-link ${pathname === link.href ? "ox-nav-link-active" : ""}`}
+          >
+            {link.label}
+          </Link>
+        ))}
       </div>
 
-      {/* ── Bouton hamburger mobile ── */}
-  <button
-  className="navbar-hamburger"
-  onClick={() => setOpen(!open)}
->
-  {open ? <X size={24} color="#fff" /> : <Menu size={24} color="#fff" />}
-</button>
+      <div className="ox-nav-actions">
+        <Link href="/#contact" className="ox-nav-cta">
+          Réserver un appel
+          <span className="ox-nav-cta-arrow">→</span>
+        </Link>
+        <button
+          className="ox-nav-hamburger"
+          onClick={() => setOpen(!open)}
+          aria-label="Ouvrir le menu"
+        >
+          {open ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </div>
 
-      {/* ── Menu mobile ── */}
       {open && (
-        <div className="navbar-mobile">
-          <Link href="/" onClick={() => setOpen(false)}>Accueil</Link>
-          <Link href="/nos-services" onClick={() => setOpen(false)}>Nos services</Link>
-          <Link href="/contact" onClick={() => setOpen(false)}>Contacts</Link>
+        <div className="ox-nav-mobile">
+          {NAV_LINKS.map((link) => (
+            <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
+              {link.label}
+            </Link>
+          ))}
         </div>
       )}
     </nav>

@@ -1,0 +1,59 @@
+.ox-section-header {
+  text-align: left;
+}
+
+.ox-section-header-center {
+  text-align: center;
+}
+
+.ox-section-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--r-soft);
+  border: 1px solid var(--border-r);
+  border-radius: var(--ox-radius-full);
+  padding: 5px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: var(--ox-font-sans);
+  margin-bottom: 18px;
+}
+
+.ox-section-header-title {
+  font-family: var(--ox-font-display);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  color: var(--w);
+  margin: 0 0 10px;
+}
+
+.ox-section-header-highlight {
+  background: var(--r);
+  color: var(--ink);
+  padding: 0 0.12em;
+  border-radius: 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.ox-section-header-subtitle {
+  font-size: 14px;
+  color: var(--w50);
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 0 40px;
+}
+
+.ox-section-header-center .ox-section-header-subtitle {
+  margin: 0 auto 40px;
+}
+
+@media (max-width: 768px) {
+  .ox-section-header-title { font-size: 26px; }
+}

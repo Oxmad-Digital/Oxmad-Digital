@@ -1,0 +1,170 @@
+.ox-project-card {
+  background: var(--w03);
+  border: 1px solid var(--border);
+  border-radius: var(--ox-radius-3xl);
+  overflow: hidden;
+  transition: border-color var(--ox-transition-base), transform var(--ox-transition-base);
+}
+
+.ox-project-card:hover {
+  border-color: var(--border-r);
+  transform: translateY(-4px);
+}
+
+.ox-project-card-browserbar {
+  background: rgba(27, 25, 22, 0.03);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ox-project-card-dots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.ox-project-card-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+}
+
+.ox-project-card-url {
+  flex: 1;
+  background: rgba(27, 25, 22, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 11px;
+  color: var(--w25);
+  font-family: monospace;
+  letter-spacing: 0.5px;
+  max-width: 280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ox-project-card-url i {
+  font-size: 11px;
+  color: rgba(40, 200, 64, 0.8);
+}
+
+.ox-project-card-shot {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+}
+
+.ox-project-card-shot-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--v) 0%, var(--v2) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  font-family: var(--ox-font-sans);
+}
+
+.ox-project-card-shot-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.96));
+  pointer-events: none;
+}
+
+.ox-project-card-body {
+  padding: 22px 24px 24px;
+}
+
+.ox-project-card-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--r-soft);
+  border: 1px solid var(--border-r);
+  border-radius: var(--ox-radius-full);
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.ox-project-card-name {
+  font-family: var(--ox-font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+  color: var(--w);
+}
+
+.ox-project-card-desc {
+  font-size: 12px;
+  color: var(--w50);
+  line-height: 1.7;
+  margin-bottom: 14px;
+  font-family: var(--ox-font-sans);
+}
+
+.ox-project-card-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.ox-project-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ox-project-card-kpis {
+  display: flex;
+  gap: 16px;
+}
+
+.ox-project-card-kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ox-project-card-kpi-value {
+  font-family: var(--ox-font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.ox-project-card-kpi-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--w25);
+  font-family: var(--ox-font-sans);
+}
+
+.ox-project-card-visit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--r);
+  color: var(--ink);
+  font-size: 16px;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+}

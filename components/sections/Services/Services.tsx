@@ -1,104 +1,35 @@
-"use client";
-
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
+import SectionHeader from "@/components/ui/SectionHeader";
+import ServiceCard from "@/components/cards/ServiceCard";
 import "./Services.css";
 
 const SERVICES = [
-  {
-    icon: "/accounting_5278345.png",
-    title: "Externalisation des traitements comptables",
-    desc: "Sous-traitement de la préparation et du traitement des dossiers comptables, sans effectuer directement les déclarations qui doivent obligatoirement être certifiées par un expert-comptable.",
-  },
-  {
-    icon: "/icone_contrat.png",
-    title: "Création & Formalités",
-    desc: "Prise en charge de A à Z : rédaction des statuts, gestion des annonces légales et immatriculation (INPI/EDBM). Un interlocuteur unique pour un Kbis sans délai.",
-  },
-  {
-    icon: "/call-center_2068857.png",
-    title: "Secrétariat juridique",
-    desc: "Gestion du juridique annuel (approbation des comptes) et exceptionnel (transferts, cessions, modifications). Une haute capacité d'absorption pour vos flux massifs.",
-  },
-  {
-    icon: "/icone_paie.png",
-    title: "Gestion Sociale & Paie",
-    desc: "Établissement des bulletins de paie, DSN, rédaction des contrats de travail et gestion des organismes (URSSAF, mutuelles). Sécurisez votre gestion RH au quotidien.",
-  },
-  {
-    icon: "/icone_ingénierie.png",
-    title: "Ingénierie fiscale",
-    desc: "Accompagnement sur les holdings, restructurations, pactes d'associés et flux intra-groupe. Une expertise technique en coordination avec vos conseils habituels.",
-  },
+  { number: "01", icon: "ti-layout-2", title: "Site vitrine", desc: "Un site professionnel qui reflète votre image et convertit vos visiteurs en clients qualifiés." },
+  { number: "02", icon: "ti-shopping-cart", title: "E-commerce", desc: "Boutique en ligne performante avec paiement sécurisé, gestion des stocks et tunnel de vente optimisé." },
+  { number: "03", icon: "ti-search", title: "SEO & Référencement", desc: "Positionnement durable sur Google Madagascar grâce à une stratégie éditoriale et technique éprouvée." },
+  { number: "04", icon: "ti-refresh", title: "Refonte & Migration", desc: "Modernisation de votre ancien site sans perdre votre référencement ni vos données clients." },
+  { number: "05", icon: "ti-rocket", title: "Performance Web", desc: "Optimisation de la vitesse, du Core Web Vitals et de l'expérience mobile pour maximiser les conversions." },
+  { number: "06", icon: "ti-tool", title: "Maintenance", desc: "Suivi mensuel, mises à jour de sécurité, sauvegardes automatiques et rapports de performance." },
 ];
 
 export default function Services() {
   return (
-    <section className="services" id="services">
-      <div className="services-container">
-        <div className="services-inner">
-          <div className="services-header">
-            <span className="section-label">Nos services</span>
-            <h2>Un accompagnement 360°<br />pour vos formalités</h2>
-            <p>Une structure organisée en 4 pôles métiers pour répondre avec précision à l&apos;ensemble des besoins de vos clients.</p>
-          </div>
-
-          {/* Carousel mobile */}
-          <div className="mobile-only-carousel">
-            <Swiper
-              modules={[Navigation]}
-              spaceBetween={20}
-              slidesPerView={1}
-              navigation={{ nextEl: ".next-service", prevEl: ".prev-service" }}
-            >
-              {SERVICES.map((service, i) => (
-                <SwiperSlide key={i}>
-                  <div className="service-card">
-                    <div className="service-icon">
-                      <Image src={service.icon} alt={service.title} width={40} height={40} />
-                    </div>
-                    <h3>{service.title}</h3>
-                    <div className="service-content-wrapper">
-                      <p>{service.desc}</p>
-                      <div className="carousel-nav-inline">
-                        <button className="nav-btn prev-service" aria-label="Précédent">
-                          <svg width="24" height="24" fill="none" stroke="#C5A059" strokeWidth="2">
-                            <path d="m15 18-6-6 6-6" />
-                          </svg>
-                        </button>
-                        <button className="nav-btn next-service" aria-label="Suivant">
-                          <svg width="24" height="24" fill="none" stroke="#C5A059" strokeWidth="2">
-                            <path d="m9 18 6-6-6-6" />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-
-          {/* Grille desktop */}
-          <div className="services-grid desktop-only-grid">
-            {SERVICES.map((service, i) => (
-              <div className="service-card" key={i}>
-                <div className="service-icon">
-                  <Image src={service.icon} alt={service.title} width={40} height={40} />
-                </div>
-                <h3>{service.title}</h3>
-                <p>{service.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="services-cta">
-            <a href="#nos-services" className="btn-gold">En savoir plus</a>
-          </div>
-        </div>
+    <section className="ox-services" id="services">
+      <SectionHeader
+        badge="Services"
+        title="Ce que nous proposons."
+        subtitle="De la création de sites vitrines au développement e-commerce, nous couvrons tous vos besoins digitaux avec une expertise locale."
+        className="ox-services-header"
+      />
+      <div className="ox-services-grid">
+        {SERVICES.map((s) => (
+          <ServiceCard
+            key={s.number}
+            number={s.number}
+            icon={<i className={`ti ${s.icon}`} />}
+            title={s.title}
+            description={s.desc}
+          />
+        ))}
       </div>
     </section>
   );

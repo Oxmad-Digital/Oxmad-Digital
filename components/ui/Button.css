@@ -1,0 +1,40 @@
+.ox-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ox-font-sans);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity var(--ox-transition-fast), transform var(--ox-transition-fast);
+}
+
+.ox-btn:hover {
+  opacity: 0.9;
+}
+
+/* sizes */
+.ox-btn-sm { font-size: 11px; padding: 6px 14px; border-radius: var(--ox-radius-sm); gap: 6px; }
+.ox-btn-md { font-size: 13px; padding: 9px 20px; border-radius: var(--ox-radius-md); gap: 8px; }
+.ox-btn-lg { font-size: 15px; padding: 12px 28px; border-radius: var(--ox-radius-lg); gap: 10px; }
+
+/* variants */
+.ox-btn-primary { background: var(--r); color: var(--ink); border: none; }
+.ox-btn-outline { background: none; color: var(--w80); border: 1px solid var(--border); }
+.ox-btn-ghost { background: var(--w06); color: var(--w80); border: 1px solid var(--border); }
+.ox-btn-filter { background: none; color: var(--w50); border: 1px solid var(--border); border-radius: var(--ox-radius-full); }
+.ox-btn-filter-active { background: var(--r); color: var(--ink); border: 1px solid var(--r); border-radius: var(--ox-radius-full); }
+
+.ox-btn-arrow {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(27, 25, 22, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}

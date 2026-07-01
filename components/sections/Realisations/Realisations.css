@@ -1,0 +1,354 @@
+.ox-realisations {
+  padding: 76px 56px 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ox-realisations-header {
+  padding-bottom: 44px;
+  position: relative;
+  z-index: 1;
+}
+
+.ox-realisations-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-family: var(--ox-font-display);
+  margin-bottom: 18px;
+}
+
+.ox-realisations-kicker span {
+  width: 28px;
+  height: 3px;
+  background: var(--r);
+  display: block;
+  border-radius: 2px;
+}
+
+.ox-realisations-title {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -2px;
+  margin-bottom: 22px;
+}
+
+.ox-realisations-title-dot {
+  color: var(--r);
+}
+
+.ox-realisations-subtitle {
+  font-family: var(--ox-font-display);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--w80);
+  max-width: 440px;
+}
+
+.ox-realisations-subtitle-accent {
+  color: var(--v);
+}
+
+.ox-realisations-rule {
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: var(--r);
+  border-radius: 2px;
+  margin-top: 22px;
+}
+
+.ox-realisations-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.ox-real-card {
+  position: relative;
+  background: var(--w03);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.ox-real-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-r);
+  box-shadow: 0 22px 48px rgba(27, 25, 22, 0.12);
+}
+
+.ox-real-card-robot {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% - 19px);
+  transform: translateX(-50%);
+  width: 130px;
+  height: auto;
+  pointer-events: none;
+  z-index: 4;
+  filter: drop-shadow(0 10px 14px rgba(27, 25, 22, 0.14));
+}
+
+.ox-real-card-note {
+  position: absolute;
+  left: -92px;
+  top: -150px;
+  width: 132px;
+  text-align: center;
+  z-index: 5;
+}
+
+.ox-real-card-note p {
+  font-family: var(--ox-font-mono);
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--w50);
+  margin: 0;
+}
+
+.ox-real-card-note i {
+  font-size: 22px;
+  color: var(--w25);
+  display: block;
+  margin: 2px 0 0 auto;
+  width: fit-content;
+}
+
+.ox-real-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ox-real-card-num {
+  font-family: var(--ox-font-display);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--r-soft);
+  border: 1px solid var(--border-r);
+  border-radius: 8px;
+  padding: 5px 9px;
+  flex-shrink: 0;
+}
+
+.ox-real-card-name {
+  font-family: var(--ox-font-display);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.1;
+  color: var(--w);
+}
+
+.ox-real-card-category {
+  font-size: 11px;
+  color: var(--w50);
+  margin-top: 3px;
+}
+
+.ox-real-card-highlight {
+  background: var(--r-soft);
+  border: 1px solid var(--border-r);
+  border-radius: 14px 14px 14px 4px;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--w80);
+  font-family: var(--ox-font-display);
+}
+
+.ox-real-card-highlight-accent {
+  color: var(--ink);
+  border-bottom: 2px solid var(--r);
+}
+
+.ox-real-card-features {
+  display: grid;
+  gap: 9px;
+}
+
+.ox-real-card-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  color: var(--w80);
+}
+
+.ox-real-card-feature-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--w06);
+  border: 1px solid var(--border);
+  color: var(--v);
+  font-size: 13px;
+}
+
+.ox-real-card-link {
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--ox-font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  transition: gap 0.25s ease;
+}
+
+.ox-real-card-link:hover {
+  gap: 14px;
+}
+
+.ox-real-card-link:hover .ox-real-card-link-arrow {
+  background: var(--r);
+  color: var(--ink);
+}
+
+.ox-real-card-link-arrow {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  transition: background 0.25s, color 0.25s;
+}
+
+/* mockup */
+.ox-real-mockup {
+  position: relative;
+  margin-top: 4px;
+  padding-right: 18px;
+  padding-bottom: 12px;
+}
+
+.ox-real-mockup-laptop {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  box-shadow: 0 10px 28px rgba(27, 25, 22, 0.1);
+}
+
+.ox-real-mockup-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 10px;
+  background: rgba(27, 25, 22, 0.03);
+  border-bottom: 1px solid var(--border);
+}
+
+.ox-real-mockup-bar span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  opacity: 0.55;
+  display: block;
+}
+
+.ox-real-mockup-screen {
+  height: 108px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg2);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(155, 169, 20, 0.1) 0,
+    rgba(155, 169, 20, 0.1) 1px,
+    transparent 1px,
+    transparent 9px
+  );
+}
+
+.ox-real-mockup-screen span {
+  font-family: var(--ox-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: var(--w25);
+  text-transform: uppercase;
+  background: var(--bg);
+  padding: 4px 10px;
+  border-radius: var(--ox-radius-full);
+  border: 1px solid var(--border);
+}
+
+.ox-real-mockup-phone {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 46px;
+  height: 88px;
+  border-radius: 11px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  box-shadow: 0 10px 22px rgba(27, 25, 22, 0.18);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  transition: transform 0.4s ease;
+}
+
+.ox-real-card:hover .ox-real-mockup-phone {
+  transform: translateY(-4px);
+}
+
+.ox-real-mockup-phone-notch {
+  width: 14px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--w10);
+  margin: 1px auto 0;
+}
+
+.ox-real-mockup-phone-screen {
+  flex: 1;
+  border-radius: 7px;
+  background-color: var(--bg2);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(155, 169, 20, 0.12) 0,
+    rgba(155, 169, 20, 0.12) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+}
+
+@media (max-width: 1100px) {
+  .ox-realisations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ox-realisations-grid {
+    grid-template-columns: 1fr;
+  }
+  .ox-realisations-title {
+    font-size: 36px;
+  }
+}
