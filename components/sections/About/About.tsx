@@ -38,7 +38,7 @@ const STACKS = [
 
 const RADIUS = 40;
 
-function nodePosition(index, total) {
+function nodePosition(index: number, total: number) {
   const angle = -Math.PI / 2 + (index * 2 * Math.PI) / total;
   return {
     x: 50 + RADIUS * Math.cos(angle),
