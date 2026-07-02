@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { BookCallProvider } from "@/components/BookCall/BookCallContext";
 
 export const metadata: Metadata = {
   title: "Oxmad Digital – Agence web Antananarivo",
@@ -21,8 +23,11 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body>
-        <main>{children}</main>
-        <Footer />
+        <BookCallProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </BookCallProvider>
       </body>
     </html>
   );

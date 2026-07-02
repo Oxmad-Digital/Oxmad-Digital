@@ -2,9 +2,12 @@
 
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
+import { useBookCall } from "@/components/BookCall/BookCallContext";
 import "./Cta.css";
 
 export default function Cta() {
+  const { open } = useBookCall();
+
   return (
     <section className="ox-cta" id="contact">
       <div className="ox-cta-glow" />
@@ -18,12 +21,8 @@ export default function Cta() {
           devis en 24h.
         </p>
         <div className="ox-cta-actions">
-          <Button
-            variant="primary"
-            size="lg"
-            onClick={() => alert("Réserver un appel — formulaire à intégrer")}
-          >
-            Réserver un appel
+          <Button variant="primary" size="lg" onClick={open}>
+            Nous contacter
           </Button>
           <Button variant="outline" size="lg" href="/realisations">
             Voir nos réalisations

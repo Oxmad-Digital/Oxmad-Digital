@@ -1,12 +1,9 @@
-import Navbar from "./Navbar";
 import LogosBand from "./LogosBand";
 import "./hero.css";
 
 export default function Hero() {
   return (
     <section className="ox-hero">
-      <Navbar />
-
       <div className="ox-hero-inner">
         <div className="ox-hero-x">
           <svg viewBox="0 0 374 313" preserveAspectRatio="xMidYMid meet">

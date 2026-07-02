@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
 import "./mentions-legales.css";
 
 export const metadata: Metadata = {
@@ -10,7 +9,6 @@ export const metadata: Metadata = {
 export default function MentionsLegalesPage() {
   return (
     <>
-    <Navbar />
     <section className="ox-legal-page">
       <div className="ox-legal-page-header">
         <div className="ox-legal-page-kicker">

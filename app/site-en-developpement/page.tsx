@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
 import Button from "@/components/ui/Button";
 import "./site-en-developpement.css";
 
@@ -11,7 +10,6 @@ export const metadata: Metadata = {
 export default function SiteEnDeveloppementPage() {
   return (
     <div className="ox-wip-viewport">
-    <Navbar />
     <section className="ox-wip-page">
       <div className="ox-wip-page-x">
         <svg viewBox="0 0 374 313" preserveAspectRatio="xMidYMid meet">

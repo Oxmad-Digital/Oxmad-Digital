@@ -39,12 +39,12 @@ export default function Navbar() {
 
       <div className="ox-nav-actions">
         <ThemeToggle />
-        <Link href="/#contact" className="ox-nav-cta">
+        <button type="button" className="ox-nav-cta">
           Réserver un appel
           <span className="ox-nav-cta-arrow">
             <Calendar size={16} />
           </span>
-        </Link>
+        </button>
         <button
           className="ox-nav-hamburger"
           onClick={() => setOpen(!open)}
