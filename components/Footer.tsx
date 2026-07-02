@@ -7,12 +7,10 @@ export default function Footer() {
       <div className="ox-footer-top">
         <img src="/oxmad-wordmark.svg" alt="Oxmad Digital" className="ox-footer-logo" />
 
-        <nav className="ox-footer-links">
-          <Link href="/">Accueil</Link>
-          <Link href="/#services">Services</Link>
-          <Link href="/#apropos">À propos</Link>
-          <Link href="/realisations">Réalisations</Link>
-        </nav>
+        <div className="ox-footer-bottom">
+          <span>© 2026 Oxmad Digital. Tous droits réservés.</span>
+          <Link href="/mentions-legales">Mentions légales</Link>
+        </div>
 
         <div className="ox-footer-socials">
           <a href="#" aria-label="LinkedIn">
@@ -35,11 +33,6 @@ export default function Footer() {
             </svg>
           </a>
         </div>
-      </div>
-
-      <div className="ox-footer-bottom">
-        <span>© 2026 Oxmad Digital. Tous droits réservés.</span>
-        <Link href="/mentions-legales">Mentions légales</Link>
       </div>
     </footer>
   );

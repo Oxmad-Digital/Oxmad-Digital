@@ -35,7 +35,7 @@ export default function Hero() {
           <span className="ox-hero-orbit-dot" />
         </div>
         <div className="ox-hero-robot">
-          <div className="ox-hero-bubble">Bonjour, je suis là !</div>
+          <div className="ox-hero-bubble">Hey, bienvenue sur notre site</div>
           <img src="/robot-oxmad.svg" alt="Mascotte Oxmad Digital" />
         </div>
       </div>

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
 import "./Navbar.css";
 
 const NAV_LINKS = [
@@ -37,7 +37,9 @@ export default function Navbar() {
       <div className="ox-nav-actions">
         <Link href="/#contact" className="ox-nav-cta">
           Réserver un appel
-          <span className="ox-nav-cta-arrow">→</span>
+          <span className="ox-nav-cta-arrow">
+            <Calendar size={16} />
+          </span>
         </Link>
         <button
           className="ox-nav-hamburger"

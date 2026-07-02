@@ -1,9 +1,6 @@
 .ox-footer {
   padding: 22px var(--margin-lateral);
   border-top: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
   background: var(--bg2);
 }
 
@@ -18,17 +15,6 @@
 .ox-footer-logo {
   height: 32px;
   width: auto;
-}
-
-.ox-footer-links {
-  display: flex;
-  gap: 20px;
-  font-size: 13px;
-  color: var(--w50);
-}
-
-.ox-footer-links a:hover {
-  color: var(--w);
 }
 
 .ox-footer-socials {
@@ -50,9 +36,7 @@
 .ox-footer-bottom {
   font-size: 12px;
   color: var(--w25);
-  text-align: center;
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;

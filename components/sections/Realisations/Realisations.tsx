@@ -95,7 +95,7 @@ const RealCard = ({ p, perched }: { p: Realisation; perched?: boolean }) => (
     )}
     {perched && (
       <div className="ox-real-card-note">
-        <p>Voici quelques connexions que nous avons créées !</p>
+        <p>Voici quelques projets que nous avons réalisés</p>
         <i className="ti ti-arrow-down-right" />
       </div>
     )}
