@@ -49,3 +49,16 @@
 .ox-footer-bottom a:hover {
   color: var(--w);
 }
+
+@media (max-width: 600px) {
+  .ox-footer-top {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .ox-footer-bottom {
+    justify-content: center;
+    text-align: center;
+  }
+}

@@ -145,23 +145,51 @@
   border: 2px solid var(--bg2);
 }
 
+.ox-dark .ox-process-bubble {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+}
+
+.ox-dark .ox-process-bubble-title {
+  color: #fff;
+}
+
+.ox-dark .ox-process-bubble-tail {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
 @media (max-width: 1024px) {
   .ox-process-timeline {
     display: flex;
-    flex-direction: column;
-    gap: 60px;
-    padding: 0;
+    max-width: none;
+    gap: 16px;
+    margin: 28px calc(var(--margin-lateral) * -1) 0;
+    padding: 8px var(--margin-lateral) 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--margin-lateral);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .ox-process-timeline::-webkit-scrollbar {
+    display: none;
   }
   .ox-process-line { display: none; }
   .ox-process-node-wrap {
+    flex: 0 0 auto;
+    width: min(80vw, 300px);
     flex-direction: column;
     gap: 16px;
+    scroll-snap-align: start;
   }
   .ox-process-bubble {
     position: static;
     transform: none;
     width: 100%;
-    max-width: 340px;
   }
   .ox-process-bubble-tail { display: none; }
 }

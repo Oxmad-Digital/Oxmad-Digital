@@ -10,6 +10,7 @@ type ProjectCardProps = {
   kpis?: Kpi[];
   image?: string;
   inProgress?: boolean;
+  inRefonte?: boolean;
 };
 
 export default function ProjectCard({
@@ -20,8 +21,14 @@ export default function ProjectCard({
   kpis = [],
   image,
   inProgress = false,
+  inRefonte = false,
 }: ProjectCardProps) {
-  const visitHref = inProgress ? "/site-en-developpement" : `https://${url}`;
+  const visitHref = inProgress
+    ? "/site-en-developpement"
+    : inRefonte
+    ? "/site-en-refonte"
+    : `https://${url}`;
+  const isInternal = inProgress || inRefonte;
   return (
     <div className="ox-project-card">
       <div className="ox-project-card-browserbar">
@@ -67,8 +74,8 @@ export default function ProjectCard({
           </div>
           <a
             href={visitHref}
-            target={inProgress ? undefined : "_blank"}
-            rel={inProgress ? undefined : "noopener noreferrer"}
+            target={isInternal ? undefined : "_blank"}
+            rel={isInternal ? undefined : "noopener noreferrer"}
             aria-label="Voir le site"
             title="Voir le site"
             className="ox-project-card-visit"

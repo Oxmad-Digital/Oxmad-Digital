@@ -21,7 +21,11 @@ export default function Button({
   className = "",
 }: ButtonProps) {
   const classes = `ox-btn ox-btn-${variant} ox-btn-${size} ${className}`.trim();
-  const arrowEl = arrow ? <span className="ox-btn-arrow">→</span> : null;
+  const arrowEl = arrow ? (
+    <span className="ox-btn-arrow">
+      <i className="ti ti-chevron-right" />
+    </span>
+  ) : null;
 
   if (href) {
     return (

@@ -1,5 +1,5 @@
 .ox-realisations {
-  padding: 120px 56px 110px;
+  padding: 120px var(--margin-lateral) 110px;
   position: relative;
   overflow: hidden;
 }
@@ -59,6 +59,14 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+}
+
+.ox-realisations-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 36px;
+  position: relative;
+  z-index: 1;
 }
 
 .ox-real-card {
@@ -196,35 +204,21 @@
 
 .ox-real-card-link {
   margin-top: 4px;
+  align-self: center;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--ox-font-display);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--w);
-  transition: gap 0.25s ease;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--r);
+  color: var(--ink);
+  font-size: 16px;
+  transition: filter 0.25s ease;
 }
 
 .ox-real-card-link:hover {
-  gap: 14px;
-}
-
-.ox-real-card-link:hover .ox-real-card-link-arrow {
-  background: var(--r);
-  color: var(--ink);
-}
-
-.ox-real-card-link-arrow {
-  width: 26px;
-  height: 26px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  transition: background 0.25s, color 0.25s;
+  filter: brightness(0.94);
 }
 
 /* mockup */
@@ -341,5 +335,9 @@
   }
   .ox-realisations-title {
     font-size: 36px;
+  }
+  .ox-real-card-robot,
+  .ox-real-card-note {
+    display: none;
   }
 }

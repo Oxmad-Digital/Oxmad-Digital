@@ -1,3 +1,4 @@
+import Button from "@/components/ui/Button";
 import "./Realisations.css";
 
 const REALISATIONS = [
@@ -127,9 +128,8 @@ const RealCard = ({ p, perched }: { p: Realisation; perched?: boolean }) => (
 
     <ProjectMockup label={p.shot} />
 
-    <a href="/realisations" className="ox-real-card-link">
-      Voir le projet
-      <span className="ox-real-card-link-arrow">→</span>
+    <a href="/realisations" className="ox-real-card-link" aria-label="Voir le projet" title="Voir le projet">
+      <i className="ti ti-world" />
     </a>
   </div>
 );
@@ -158,6 +158,12 @@ export default function Realisations() {
         {REALISATIONS.map((p, i) => (
           <RealCard key={p.num} p={p} perched={i === REALISATIONS.length - 1} />
         ))}
+      </div>
+
+      <div className="ox-realisations-footer">
+        <Button href="/realisations" variant="primary" size="md" arrow>
+          Voir toutes les réalisations
+        </Button>
       </div>
     </section>
   );

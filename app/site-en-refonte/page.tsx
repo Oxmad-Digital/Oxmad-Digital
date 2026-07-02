@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Button from "@/components/ui/Button";
-import "./site-en-developpement.css";
+import "./site-en-refonte.css";
 
 export const metadata: Metadata = {
-  title: "Site en cours de développement – Oxmad Digital",
-  description: "Ce projet est actuellement en cours de développement par Oxmad Digital.",
+  title: "Site en cours de refonte – Oxmad Digital",
+  description: "Ce site est actuellement en cours de refonte par Oxmad Digital.",
 };
 
-export default function SiteEnDeveloppementPage() {
+export default function SiteEnRefontePage() {
   return (
     <div className="ox-wip-viewport">
     <Navbar />
@@ -23,16 +23,16 @@ export default function SiteEnDeveloppementPage() {
       </div>
       <div className="ox-wip-page-kicker">
         <span />
-        Chantier en cours
+        Refonte en cours
       </div>
       <h1>
-        Ce projet est encore
+        Ce site est actuellement
         <br />
-        en <span className="ox-wip-page-accent">développement.</span>
+        en <span className="ox-wip-page-accent">refonte.</span>
       </h1>
       <p>
-        Notre équipe travaille actuellement sur ce site. Il sera bientôt disponible — en attendant,
-        découvrez nos autres réalisations ou parlons de votre propre projet.
+        Notre équipe travaille sur une nouvelle version de ce site. Il sera bientôt disponible — en
+        attendant, découvrez nos autres réalisations ou parlons de votre propre projet.
       </p>
       <div className="ox-wip-page-actions">
         <Button href="/realisations" variant="outline" size="md">
