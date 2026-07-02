@@ -17,7 +17,7 @@ export default function Services() {
       <SectionHeader
         badge="Services"
         title="Ce que nous proposons."
-        subtitle="De la création de sites vitrines au développement e-commerce, nous couvrons tous vos besoins digitaux avec une expertise locale."
+        subtitle="De la création de sites vitrines au développement e-commerce, nous couvrons tous vos besoins en développement web."
         className="ox-services-header"
       />
       <div className="ox-services-grid">

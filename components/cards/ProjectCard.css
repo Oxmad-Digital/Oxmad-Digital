@@ -58,7 +58,14 @@
 .ox-project-card-shot {
   position: relative;
   overflow: hidden;
-  height: 220px;
+  aspect-ratio: 16 / 9;
+}
+
+.ox-project-card-shot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 
 .ox-project-card-shot-placeholder {
@@ -78,8 +85,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 70px;
-  background: linear-gradient(transparent, rgba(255, 255, 255, 0.96));
+  height: 20px;
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.6));
   pointer-events: none;
 }
 
@@ -114,47 +121,59 @@
   font-size: 12px;
   color: var(--w50);
   line-height: 1.7;
-  margin-bottom: 14px;
+  margin-bottom: 26px;
   font-family: var(--ox-font-sans);
-}
-
-.ox-project-card-tags {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
 }
 
 .ox-project-card-footer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  gap: 12px;
 }
 
 .ox-project-card-kpis {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
 }
 
 .ox-project-card-kpi {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
 }
 
 .ox-project-card-kpi-value {
   font-family: var(--ox-font-display);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--ink);
 }
 
-.ox-project-card-kpi-label {
+.ox-project-card-kpi-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--w06);
+  border: 1px solid var(--border);
+  color: var(--v);
   font-size: 10px;
+  flex-shrink: 0;
+}
+
+.ox-project-card-kpi-label {
+  font-size: 9px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: var(--w25);
   font-family: var(--ox-font-sans);
+  white-space: nowrap;
 }
 
 .ox-project-card-visit {

@@ -11,7 +11,7 @@ const PROCESS = [
 
 export default function Process() {
   return (
-    <section className="ox-process">
+    <section className="ox-process" id="processus">
       <div className="ox-process-glow" />
       <div className="ox-process-header">
         <SectionHeader

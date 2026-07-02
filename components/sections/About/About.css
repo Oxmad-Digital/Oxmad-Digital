@@ -1,5 +1,5 @@
 .ox-about {
-  padding: 104px var(--margin-lateral);
+  padding: 140px var(--margin-lateral);
   position: relative;
   overflow: hidden;
 }
@@ -57,6 +57,128 @@
   padding: 7px 14px;
   border-radius: var(--ox-radius-full);
   border: 1px solid var(--border);
+}
+
+.ox-about-stack {
+  position: relative;
+  display: block;
+}
+
+.ox-about-stack-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+}
+
+.ox-about-stack-dots {
+  position: absolute;
+  top: 26px;
+  right: 24px;
+  z-index: 3;
+  display: flex;
+  gap: 6px;
+}
+
+.ox-about-stack-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--w10);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background var(--ox-transition-fast), transform var(--ox-transition-fast);
+}
+
+.ox-about-stack-dot-active {
+  background: var(--r);
+  transform: scale(1.3);
+}
+
+.ox-about-stack-scene {
+  position: absolute;
+  inset: 0;
+  animation: ox-about-stack-fade 0.5s ease;
+}
+
+@keyframes ox-about-stack-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.ox-about-stack-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ox-about-stack-lines line {
+  stroke: var(--border-r);
+  stroke-width: 0.5;
+  stroke-dasharray: 2 2;
+}
+
+.ox-about-stack-hub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--r);
+  color: var(--ink);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 10px 24px rgba(217, 204, 1, 0.35);
+  z-index: 2;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.ox-about-stack-hub i {
+  font-size: 28px;
+}
+
+.ox-about-stack-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+}
+
+.ox-about-stack-node-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 18px rgba(27, 25, 22, 0.08);
+  font-size: 17px;
+  color: var(--v);
+}
+
+.ox-about-stack-node span:last-child {
+  font-family: var(--ox-font-display);
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--w80);
+  text-align: center;
+  max-width: 76px;
+  line-height: 1.25;
 }
 
 .ox-about-copy {

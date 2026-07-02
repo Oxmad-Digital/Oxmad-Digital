@@ -1,0 +1,92 @@
+.ox-wip-page {
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px var(--margin-lateral);
+}
+
+.ox-wip-page-x {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 560px;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.ox-wip-page-x svg {
+  width: 100%;
+  height: auto;
+}
+
+.ox-wip-page-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-family: var(--ox-font-display);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.ox-wip-page-kicker span {
+  width: 28px;
+  height: 3px;
+  background: var(--r);
+  flex-shrink: 0;
+  display: block;
+  border-radius: 2px;
+}
+
+.ox-wip-page h1 {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  max-width: 620px;
+  position: relative;
+  z-index: 1;
+}
+
+.ox-wip-page-accent {
+  color: var(--v);
+}
+
+.ox-wip-page p {
+  font-family: var(--ox-font-sans);
+  font-size: 16px;
+  color: var(--w50);
+  max-width: 480px;
+  margin-top: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.ox-wip-page-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .ox-wip-page h1 {
+    font-size: 32px;
+  }
+  .ox-wip-page-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+}

@@ -1,5 +1,5 @@
 .ox-realisations {
-  padding: 76px 56px 64px;
+  padding: 120px 56px 110px;
   position: relative;
   overflow: hidden;
 }
@@ -53,15 +53,6 @@
 
 .ox-realisations-subtitle-accent {
   color: var(--v);
-}
-
-.ox-realisations-rule {
-  display: block;
-  width: 56px;
-  height: 3px;
-  background: var(--r);
-  border-radius: 2px;
-  margin-top: 22px;
 }
 
 .ox-realisations-grid {

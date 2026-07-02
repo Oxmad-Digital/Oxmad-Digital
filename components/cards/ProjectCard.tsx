@@ -1,15 +1,15 @@
-import Tag from "@/components/ui/Tag";
 import "./ProjectCard.css";
 
-type Kpi = { value: string; label: string };
+type Kpi = { value?: string; icon?: string; label: string };
 
 type ProjectCardProps = {
   url: string;
   category?: string;
   name: string;
   description?: string;
-  tags?: string[];
   kpis?: Kpi[];
+  image?: string;
+  inProgress?: boolean;
 };
 
 export default function ProjectCard({
@@ -17,9 +17,11 @@ export default function ProjectCard({
   category,
   name,
   description,
-  tags = [],
   kpis = [],
+  image,
+  inProgress = false,
 }: ProjectCardProps) {
+  const visitHref = inProgress ? "/site-en-developpement" : `https://${url}`;
   return (
     <div className="ox-project-card">
       <div className="ox-project-card-browserbar">
@@ -35,7 +37,11 @@ export default function ProjectCard({
       </div>
 
       <div className="ox-project-card-shot">
-        <div className="ox-project-card-shot-placeholder">{name}</div>
+        {image ? (
+          <img src={image} alt={name} className="ox-project-card-shot-img" />
+        ) : (
+          <div className="ox-project-card-shot-placeholder">{name}</div>
+        )}
         <div className="ox-project-card-shot-fade" />
       </div>
 
@@ -44,27 +50,25 @@ export default function ProjectCard({
         <div className="ox-project-card-name">{name}</div>
         {description && <div className="ox-project-card-desc">{description}</div>}
 
-        {tags.length > 0 && (
-          <div className="ox-project-card-tags">
-            {tags.map((tag, i) => (
-              <Tag key={i}>{tag}</Tag>
-            ))}
-          </div>
-        )}
-
         <div className="ox-project-card-footer">
           <div className="ox-project-card-kpis">
             {kpis.map((kpi, i) => (
               <div className="ox-project-card-kpi" key={i}>
-                <span className="ox-project-card-kpi-value">{kpi.value}</span>
+                {kpi.icon ? (
+                  <span className="ox-project-card-kpi-icon">
+                    <i className={`ti ${kpi.icon}`} />
+                  </span>
+                ) : (
+                  <span className="ox-project-card-kpi-value">{kpi.value}</span>
+                )}
                 <span className="ox-project-card-kpi-label">{kpi.label}</span>
               </div>
             ))}
           </div>
           <a
-            href={`https://${url}`}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={visitHref}
+            target={inProgress ? undefined : "_blank"}
+            rel={inProgress ? undefined : "noopener noreferrer"}
             aria-label="Voir le site"
             title="Voir le site"
             className="ox-project-card-visit"

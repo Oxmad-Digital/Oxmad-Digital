@@ -152,7 +152,6 @@ export default function Realisations() {
           <br />
           <span className="ox-realisations-subtitle-accent">créer les bonnes connexions.</span>
         </p>
-        <span className="ox-realisations-rule" />
       </div>
 
       <div className="ox-realisations-grid">

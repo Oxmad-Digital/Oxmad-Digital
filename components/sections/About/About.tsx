@@ -1,5 +1,50 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import "./About.css";
+
+const STACKS = [
+  {
+    key: "vitrine",
+    tag: "Stack — Sites vitrines",
+    hub: "Site vitrine",
+    hubIcon: "ti-world",
+    tools: [
+      { key: "nextjs", icon: "ti-brand-nextjs", label: "Next.js" },
+      { key: "vercel", icon: "ti-triangle-filled", label: "Vercel" },
+      { key: "github", icon: "ti-brand-github", label: "GitHub" },
+      { key: "resend", icon: "ti-send", label: "Resend" },
+      { key: "cloudinary", icon: "ti-cloud", label: "Cloudinary" },
+    ],
+  },
+  {
+    key: "ecommerce",
+    tag: "Stack — Sites e-commerce",
+    hub: "E-commerce",
+    hubIcon: "ti-shopping-bag",
+    tools: [
+      { key: "database", icon: "ti-database", label: "MongoDB / Supabase" },
+      { key: "vercel", icon: "ti-triangle-filled", label: "Vercel" },
+      { key: "github", icon: "ti-brand-github", label: "GitHub" },
+      { key: "nextjs", icon: "ti-brand-nextjs", label: "Next.js" },
+      { key: "resend", icon: "ti-send", label: "Resend" },
+      { key: "cloudinary", icon: "ti-cloud", label: "Cloudinary" },
+      { key: "payment", icon: "ti-credit-card", label: "API paiement" },
+      { key: "shipping", icon: "ti-truck-delivery", label: "API transporteur" },
+    ],
+  },
+];
+
+const RADIUS = 40;
+
+function nodePosition(index, total) {
+  const angle = -Math.PI / 2 + (index * 2 * Math.PI) / total;
+  return {
+    x: 50 + RADIUS * Math.cos(angle),
+    y: 50 + RADIUS * Math.sin(angle),
+  };
+}
 
 const FEATURES = [
   {
@@ -9,21 +54,73 @@ const FEATURES = [
   },
   {
     icon: "ti-key",
-    title: "Une totale indépendance",
+    title: "Un actif que vous possédez",
     desc: "Nous vous livrons le site avec sa base de code (codebase) et créons l'ensemble des comptes de services tiers à votre nom. Vous êtes ainsi le véritable propriétaire de votre site.",
   },
 ];
 
 export default function About() {
+  const [activeStack, setActiveStack] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveStack((i) => (i + 1) % STACKS.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const stack = STACKS[activeStack];
+
   return (
     <section className="ox-about" id="apropos">
       <div className="ox-about-glow" />
       <div className="ox-about-grid">
-        <div className="ox-about-image">
-          <span className="ox-about-image-label">
-            <i className="ti ti-photo" />
-            Photo de l&apos;équipe
+        <div className="ox-about-image ox-about-stack">
+          <span className="ox-about-image-label ox-about-stack-tag">
+            <i className="ti ti-stack-2" />
+            {stack.tag}
           </span>
+
+          <div className="ox-about-stack-dots">
+            {STACKS.map((s, i) => (
+              <button
+                key={s.key}
+                type="button"
+                aria-label={s.tag}
+                className={`ox-about-stack-dot ${i === activeStack ? "ox-about-stack-dot-active" : ""}`}
+                onClick={() => setActiveStack(i)}
+              />
+            ))}
+          </div>
+
+          <div className="ox-about-stack-scene" key={stack.key}>
+            <svg className="ox-about-stack-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+              {stack.tools.map((n, i) => {
+                const { x, y } = nodePosition(i, stack.tools.length);
+                return <line key={n.key} x1="50" y1="50" x2={x} y2={y} />;
+              })}
+            </svg>
+
+            <div className="ox-about-stack-hub" aria-label={stack.hub}>
+              <i className={`ti ${stack.hubIcon}`} />
+            </div>
+
+            {stack.tools.map((n, i) => {
+              const { x, y } = nodePosition(i, stack.tools.length);
+              return (
+                <div
+                  key={n.key}
+                  className="ox-about-stack-node"
+                  style={{ left: `${x}%`, top: `${y}%` }}
+                >
+                  <span className="ox-about-stack-node-icon">
+                    <i className={`ti ${n.icon}`} />
+                  </span>
+                  <span>{n.label}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div className="ox-about-copy">
