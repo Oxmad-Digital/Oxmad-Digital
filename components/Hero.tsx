@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import LogosBand from "./LogosBand";
 import "./hero.css";
 
 export default function Hero() {
@@ -44,6 +45,8 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      <LogosBand />
     </section>
   );
 }
