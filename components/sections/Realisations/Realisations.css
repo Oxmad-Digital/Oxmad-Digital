@@ -17,7 +17,7 @@
   font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--w);
   font-family: var(--ox-font-display);
   margin-bottom: 18px;
 }
@@ -202,7 +202,7 @@
   font-family: var(--ox-font-display);
   font-size: 13px;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--w);
   transition: gap 0.25s ease;
 }
 

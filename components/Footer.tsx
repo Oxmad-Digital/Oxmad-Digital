@@ -5,7 +5,8 @@ export default function Footer() {
   return (
     <footer className="ox-footer">
       <div className="ox-footer-top">
-        <img src="/oxmad-wordmark.svg" alt="Oxmad Digital" className="ox-footer-logo" />
+        <img src="/oxmad-wordmark.svg" alt="Oxmad Digital" className="ox-footer-logo ox-logo-light" />
+        <img src="/oxmad-wordmark-dark.svg" alt="Oxmad Digital" className="ox-footer-logo ox-logo-dark" />
 
         <div className="ox-footer-bottom">
           <span>© 2026 Oxmad Digital. Tous droits réservés.</span>

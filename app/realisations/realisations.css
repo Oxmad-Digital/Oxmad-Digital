@@ -54,7 +54,7 @@
   font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--w);
   font-family: var(--ox-font-display);
   margin-bottom: 20px;
 }
@@ -110,7 +110,7 @@
   font-family: var(--ox-font-display);
   font-size: 28px;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--w);
 }
 
 .ox-real-page-hero-stat-label {

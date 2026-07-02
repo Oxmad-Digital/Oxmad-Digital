@@ -15,7 +15,7 @@
   font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--w);
   font-family: var(--ox-font-display);
   margin-bottom: 20px;
 }
@@ -50,7 +50,7 @@
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 14px;
-  color: var(--ink);
+  color: var(--w);
 }
 
 .ox-legal-page-body p {

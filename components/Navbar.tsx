@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X, Calendar } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 import "./Navbar.css";
 
 const NAV_LINKS = [
@@ -20,7 +21,8 @@ export default function Navbar() {
   return (
     <nav className="ox-nav">
       <Link href="/" className="ox-nav-brand" onClick={() => setOpen(false)}>
-        <img src="/oxmad-wordmark.svg" alt="Oxmad Digital" className="ox-nav-logo" />
+        <img src="/oxmad-wordmark.svg" alt="Oxmad Digital" className="ox-nav-logo ox-logo-light" />
+        <img src="/oxmad-wordmark-dark.svg" alt="Oxmad Digital" className="ox-nav-logo ox-logo-dark" />
       </Link>
 
       <div className="ox-nav-links">
@@ -36,6 +38,7 @@ export default function Navbar() {
       </div>
 
       <div className="ox-nav-actions">
+        <ThemeToggle />
         <Link href="/#contact" className="ox-nav-cta">
           Réserver un appel
           <span className="ox-nav-cta-arrow">

@@ -90,6 +90,10 @@
   pointer-events: none;
 }
 
+.ox-dark .ox-project-card-shot-fade {
+  background: linear-gradient(transparent, rgba(13, 12, 10, 0.7));
+}
+
 .ox-project-card-body {
   padding: 22px 24px 24px;
 }
@@ -150,7 +154,7 @@
   font-family: var(--ox-font-display);
   font-size: 14px;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--w);
 }
 
 .ox-project-card-kpi-icon {

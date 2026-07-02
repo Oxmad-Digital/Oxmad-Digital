@@ -15,12 +15,13 @@ html {
 
 body {
   font-family: var(--ox-font-sans);
-  color: var(--ink);
+  color: var(--w);
   background: var(--bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background var(--ox-transition-base), color var(--ox-transition-base);
 }
 
 img, video {
@@ -94,6 +95,20 @@ button {
   --w06: rgba(255, 255, 255, 0.06);
   --w03: rgba(255, 255, 255, 0.04);
   --border: rgba(255, 255, 255, 0.12);
+  --r-soft: rgba(217, 204, 1, 0.85);
+}
+
+/* ─── Logo light/dark swap ─── */
+.ox-logo-dark {
+  display: none;
+}
+
+.ox-dark .ox-logo-light {
+  display: none;
+}
+
+.ox-dark .ox-logo-dark {
+  display: block;
 }
 
 /* ─── Typographie ─── */
