@@ -1,11 +1,18 @@
 .ox-hero {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.ox-hero-inner {
   display: grid;
   grid-template-columns: 1fr 420px;
-  min-height: 600px;
   align-items: center;
   padding: 0 var(--margin-lateral);
   position: relative;
   overflow: hidden;
+  flex: 1;
 }
 
 .ox-hero-x {
@@ -167,7 +174,7 @@
 }
 
 @media (max-width: 1024px) {
-  .ox-hero {
+  .ox-hero-inner {
     grid-template-columns: 1fr;
     padding: 40px var(--margin-lateral) 0;
   }

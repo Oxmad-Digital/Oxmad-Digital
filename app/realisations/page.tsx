@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Navbar from "@/components/Navbar";
 import Button from "@/components/ui/Button";
 import ProjectCard from "@/components/cards/ProjectCard";
 import "./realisations.css";
@@ -27,6 +28,7 @@ export default function RealisationsPage() {
 
   return (
     <div>
+      <Navbar />
       <section className="ox-real-page-hero">
         <div className="ox-real-page-hero-x">
           <svg viewBox="0 0 374 313" preserveAspectRatio="xMidYMid meet">
