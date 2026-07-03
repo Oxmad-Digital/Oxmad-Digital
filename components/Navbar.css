@@ -175,4 +175,10 @@
     color: var(--w80);
     border-bottom: 1px solid var(--border);
   }
+
+  .ox-nav-cta-mobile {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+  }
 }

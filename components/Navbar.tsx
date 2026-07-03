@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Menu, X, Calendar } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import { useLanguage } from "./Language/LanguageContext";
+import { useBookCall } from "./BookCall/BookCallContext";
 import "./Navbar.css";
 
 const NAV_LINKS = {
@@ -33,6 +34,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const { lang, toggleLang } = useLanguage();
+  const { open: openBookCall } = useBookCall();
   const links = NAV_LINKS[lang];
   const c = COPY[lang];
 
@@ -65,7 +67,7 @@ export default function Navbar() {
           {lang === "fr" ? "EN" : "FR"}
         </button>
         <ThemeToggle />
-        <button type="button" className="ox-nav-cta">
+        <button type="button" className="ox-nav-cta" onClick={openBookCall}>
           {c.cta}
           <span className="ox-nav-cta-arrow">
             <Calendar size={16} />
@@ -89,6 +91,19 @@ export default function Navbar() {
           ))}
           <button type="button" className="ox-nav-lang-toggle-mobile" onClick={toggleLang}>
             {lang === "fr" ? "Switch to English" : "Passer en français"}
+          </button>
+          <button
+            type="button"
+            className="ox-nav-cta ox-nav-cta-mobile"
+            onClick={() => {
+              setOpen(false);
+              openBookCall();
+            }}
+          >
+            {c.cta}
+            <span className="ox-nav-cta-arrow">
+              <Calendar size={16} />
+            </span>
           </button>
         </div>
       )}

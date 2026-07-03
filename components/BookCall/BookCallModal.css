@@ -108,6 +108,44 @@
   color: #d64545;
 }
 
+.ox-modal-hint {
+  font-size: 13px;
+  color: var(--w50);
+}
+
+.ox-modal-field input[type="date"] {
+  color-scheme: light dark;
+}
+
+.ox-modal-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 8px;
+}
+
+.ox-modal-slot {
+  font-family: var(--ox-font-sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--w);
+  background: var(--w03);
+  border: 1px solid var(--border);
+  border-radius: var(--ox-radius-md);
+  padding: 8px 6px;
+  cursor: pointer;
+  transition: border-color var(--ox-transition-fast), background var(--ox-transition-fast);
+}
+
+.ox-modal-slot:hover {
+  background: var(--w06);
+}
+
+.ox-modal-slot-active {
+  border-color: var(--border-r);
+  background: var(--v, #d9cc01);
+  color: #1b1916;
+}
+
 .ox-modal-submit {
   margin-top: 8px;
   width: 100%;
