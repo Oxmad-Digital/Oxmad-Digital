@@ -225,6 +225,38 @@
   .ox-real-page-grid { grid-template-columns: 1fr; }
 }
 
+@media (max-width: 768px) {
+  .ox-real-page-hero {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+  .ox-real-page-hero-inner {
+    align-items: flex-start;
+  }
+  .ox-real-page-grid {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    gap: 24px;
+  }
+  .ox-real-page-more-wrap {
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ox-real-page-hero-stats {
+    width: 100%;
+  }
+  .ox-real-page-hero-stat {
+    flex: 1;
+    min-width: 0;
+    padding: 16px 10px;
+  }
+  .ox-real-page-hero-stat-value {
+    font-size: 20px;
+  }
+}
+
 @media (max-width: 600px) {
   .ox-real-page-hero-copy h1 { font-size: 32px; }
 }

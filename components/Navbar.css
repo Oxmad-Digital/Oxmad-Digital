@@ -126,14 +126,6 @@
   background: var(--w10);
 }
 
-.ox-nav-lang-toggle-mobile {
-  padding: 12px 8px;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--w80);
-  text-align: left;
-}
-
 .ox-nav-hamburger {
   display: none;
   align-items: center;
@@ -162,7 +154,7 @@
     top: 71px;
     left: 0;
     right: 0;
-    max-height: calc(100dvh - 71px);
+    height: calc(100dvh - 71px);
     overflow-y: auto;
     background: var(--bg);
     border-bottom: 1px solid var(--border);

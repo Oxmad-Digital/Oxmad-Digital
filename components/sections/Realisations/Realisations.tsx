@@ -8,18 +8,20 @@ const REALISATIONS = {
   fr: [
     {
       num: "01",
-      name: "LINEA",
-      category: "Industrie pharmaceutique",
-      highlight: ["Un site vitrine qui inspire ", "confiance", "."],
+      name: "BITUMAD",
+      category: "Fourniture de bitume industriel",
+      highlight: ["Un site catalogue qui génère des ", "devis qualifiés", "."],
       features: [
-        { i: "ti-pencil", t: "Design sur mesure" },
+        { i: "ti-droplet", t: "Bitume 60/70 & 35/50" },
+        { i: "ti-file-invoice", t: "Demande de devis" },
+        { i: "ti-download", t: "Fiches techniques" },
+        { i: "ti-truck-delivery", t: "Livraison sous 24h" },
         { i: "ti-device-mobile", t: "Responsive" },
         { i: "ti-search", t: "SEO" },
-        { i: "ti-sparkles", t: "Animations" },
-        { i: "ti-forms", t: "Formulaire avancé" },
-        { i: "ti-language", t: "Multilingue" },
       ],
-      shot: "Site vitrine",
+      shot: "Site catalogue",
+      image: "https://res.cloudinary.com/eee2cbey/image/upload/v1782993283/oxmad-digital_preview_site_web_bitumad_kgx2sb.webp",
+      mobileImage: "https://res.cloudinary.com/eee2cbey/image/upload/v1783099390/oxmad-digital_bitumad_preview_mobile_qvuyef.webp",
     },
     {
       num: "02",
@@ -70,18 +72,20 @@ const REALISATIONS = {
   en: [
     {
       num: "01",
-      name: "LINEA",
-      category: "Pharmaceutical industry",
-      highlight: ["A showcase site that inspires ", "trust", "."],
+      name: "BITUMAD",
+      category: "Industrial bitumen supply",
+      highlight: ["A catalog site that generates ", "qualified quotes", "."],
       features: [
-        { i: "ti-pencil", t: "Custom design" },
+        { i: "ti-droplet", t: "60/70 & 35/50 bitumen" },
+        { i: "ti-file-invoice", t: "Quote request" },
+        { i: "ti-download", t: "Data sheets" },
+        { i: "ti-truck-delivery", t: "24h delivery" },
         { i: "ti-device-mobile", t: "Responsive" },
         { i: "ti-search", t: "SEO" },
-        { i: "ti-sparkles", t: "Animations" },
-        { i: "ti-forms", t: "Advanced form" },
-        { i: "ti-language", t: "Multilingual" },
       ],
-      shot: "Showcase site",
+      shot: "Catalog site",
+      image: "https://res.cloudinary.com/eee2cbey/image/upload/v1782993283/oxmad-digital_preview_site_web_bitumad_kgx2sb.webp",
+      mobileImage: "https://res.cloudinary.com/eee2cbey/image/upload/v1783099390/oxmad-digital_bitumad_preview_mobile_qvuyef.webp",
     },
     {
       num: "02",
@@ -156,7 +160,15 @@ const COPY = {
   },
 };
 
-const ProjectMockup = ({ label }: { label: string }) => (
+const ProjectMockup = ({
+  label,
+  image,
+  mobileImage,
+}: {
+  label: string;
+  image?: string;
+  mobileImage?: string;
+}) => (
   <div className="ox-real-mockup">
     <div className="ox-real-mockup-laptop">
       <div className="ox-real-mockup-bar">
@@ -165,12 +177,14 @@ const ProjectMockup = ({ label }: { label: string }) => (
         <span style={{ background: "#28c840" }} />
       </div>
       <div className="ox-real-mockup-screen">
-        <span>{label}</span>
+        {image ? <img src={image} alt={label} /> : <span>{label}</span>}
       </div>
     </div>
     <div className="ox-real-mockup-phone">
       <span className="ox-real-mockup-phone-notch" />
-      <div className="ox-real-mockup-phone-screen" />
+      <div className="ox-real-mockup-phone-screen">
+        {mobileImage && <img src={mobileImage} alt={label} />}
+      </div>
     </div>
   </div>
 );
@@ -228,7 +242,7 @@ const RealCard = ({
       ))}
     </ul>
 
-    <ProjectMockup label={p.shot} />
+    <ProjectMockup label={p.shot} image={p.image} mobileImage={p.mobileImage} />
 
     <a href="/realisations" className="ox-real-card-link" aria-label={c.viewProject} title={c.viewProject}>
       <i className="ti ti-world" />
@@ -267,7 +281,7 @@ export default function Realisations() {
       </div>
 
       <div className="ox-realisations-footer">
-        <Button href="/realisations" variant="primary" size="md" arrow>
+        <Button href="/realisations" variant="primary" size="md">
           {c.seeAll}
         </Button>
       </div>

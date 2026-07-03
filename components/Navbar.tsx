@@ -89,9 +89,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <button type="button" className="ox-nav-lang-toggle-mobile" onClick={toggleLang}>
-            {lang === "fr" ? "Switch to English" : "Passer en français"}
-          </button>
           <button
             type="button"
             className="ox-nav-cta ox-nav-cta-mobile"

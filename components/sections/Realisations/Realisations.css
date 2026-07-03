@@ -269,6 +269,13 @@
   );
 }
 
+.ox-real-mockup-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
 .ox-real-mockup-screen span {
   font-family: var(--ox-font-mono);
   font-size: 10px;
@@ -313,6 +320,7 @@
 .ox-real-mockup-phone-screen {
   flex: 1;
   border-radius: 7px;
+  overflow: hidden;
   background-color: var(--bg2);
   background-image: repeating-linear-gradient(
     135deg,
@@ -321,6 +329,13 @@
     transparent 1px,
     transparent 7px
   );
+}
+
+.ox-real-mockup-phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 
 @media (max-width: 1100px) {
