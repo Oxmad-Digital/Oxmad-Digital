@@ -158,14 +158,17 @@
   .ox-nav-mobile {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 71px;
     left: 0;
-    width: 100%;
+    right: 0;
+    max-height: calc(100dvh - 71px);
+    overflow-y: auto;
     background: var(--bg);
     border-bottom: 1px solid var(--border);
     padding: 12px var(--margin-lateral) 20px;
     gap: 4px;
+    z-index: 100;
   }
 
   .ox-nav-mobile a {

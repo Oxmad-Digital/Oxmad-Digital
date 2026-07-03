@@ -146,6 +146,6 @@ p {
 ══════════════════════════════════ */
 @media (max-width: 768px) {
   :root {
-    --margin-lateral: 20px;
+    --margin-lateral: 32px;
   }
 }

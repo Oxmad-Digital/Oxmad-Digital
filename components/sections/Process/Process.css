@@ -162,12 +162,40 @@
   border-color: rgba(255, 255, 255, 0.18);
 }
 
+.ox-process-swipe-hint {
+  display: none;
+}
+
+.ox-process-dots {
+  display: none;
+}
+
 @media (max-width: 1024px) {
+  .ox-process {
+    padding: 100px var(--margin-lateral) 90px;
+  }
+
+  .ox-process-swipe-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--w50);
+  }
+  .ox-process-swipe-hint i {
+    font-size: 14px;
+    color: var(--v);
+  }
+
   .ox-process-timeline {
     display: flex;
     max-width: none;
     gap: 16px;
-    margin: 28px calc(var(--margin-lateral) * -1) 0;
+    margin: 16px calc(var(--margin-lateral) * -1) 0;
     padding: 8px var(--margin-lateral) 14px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -181,7 +209,7 @@
   .ox-process-line { display: none; }
   .ox-process-node-wrap {
     flex: 0 0 auto;
-    width: min(80vw, 300px);
+    width: calc(100vw - 2 * var(--margin-lateral));
     flex-direction: column;
     gap: 16px;
     scroll-snap-align: start;
@@ -192,4 +220,30 @@
     width: 100%;
   }
   .ox-process-bubble-tail { display: none; }
+
+  .ox-process-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 24px;
+  }
+  .ox-process-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--border-r);
+    transition: width 0.25s ease, background 0.25s ease;
+  }
+  .ox-process-dot.is-active {
+    width: 22px;
+    border-radius: 4px;
+    background: var(--r);
+  }
+}
+
+@media (max-width: 768px) {
+  .ox-process {
+    padding: 50px var(--margin-lateral);
+  }
 }

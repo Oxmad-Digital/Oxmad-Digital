@@ -254,3 +254,9 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .ox-about {
+    padding: 75px var(--margin-lateral) 50px;
+  }
+}

@@ -341,3 +341,9 @@
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .ox-realisations {
+    padding: 50px var(--margin-lateral);
+  }
+}

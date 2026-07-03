@@ -27,3 +27,9 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .ox-services {
+    padding: 50px var(--margin-lateral);
+  }
+}

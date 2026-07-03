@@ -3,6 +3,7 @@
   flex-direction: column;
   min-height: 100vh;
   min-height: 100dvh;
+  background: var(--bg2);
 }
 
 .ox-hero-inner {
@@ -184,4 +185,6 @@
 
 @media (max-width: 768px) {
   .ox-hero-title { font-size: 36px; }
+  .ox-hero-right { display: none; }
+  .ox-hero-subtitle { color: var(--w); }
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { useLanguage } from "@/components/Language/LanguageContext";
 import "./Process.css";
@@ -27,12 +28,14 @@ const COPY = {
     title: "Comment nous",
     highlight: "travaillons.",
     subtitle: "Une méthode claire en cinq étapes, de la première analyse jusqu'au lancement — pour avancer ensemble, sans surprise.",
+    swipe: "Faites glisser pour tout voir",
   },
   en: {
     badge: "Process",
     title: "How we",
     highlight: "work.",
     subtitle: "A clear five-step method, from the first analysis through to launch — so we move forward together, with no surprises.",
+    swipe: "Swipe to see more",
   },
 };
 
@@ -40,6 +43,39 @@ export default function Process() {
   const { lang } = useLanguage();
   const process = PROCESS[lang];
   const c = COPY[lang];
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+
+    const onScroll = () => {
+      const cards = Array.from(
+        el.querySelectorAll<HTMLElement>(".ox-process-node-wrap")
+      );
+      const center = el.scrollLeft + el.clientWidth / 2;
+      let closest = 0;
+      let minDist = Infinity;
+      cards.forEach((card, i) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const dist = Math.abs(cardCenter - center);
+        if (dist < minDist) {
+          minDist = dist;
+          closest = i;
+        }
+      });
+      setActive(closest);
+    };
+
+    onScroll();
+    el.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      el.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [lang]);
 
   return (
     <section className="ox-process" id="processus">
@@ -55,7 +91,13 @@ export default function Process() {
         />
       </div>
 
-      <div className="ox-process-timeline">
+      <div className="ox-process-swipe-hint">
+        <i className="ti ti-arrow-left" />
+        {c.swipe}
+        <i className="ti ti-arrow-right" />
+      </div>
+
+      <div className="ox-process-timeline" ref={trackRef}>
         <div className="ox-process-line" />
         {process.map((s, i) => {
           const dir = i % 2 === 0 ? "up" : "down";
@@ -73,6 +115,15 @@ export default function Process() {
             </div>
           );
         })}
+      </div>
+
+      <div className="ox-process-dots">
+        {process.map((_, i) => (
+          <span
+            key={i}
+            className={`ox-process-dot ${i === active ? "is-active" : ""}`}
+          />
+        ))}
       </div>
     </section>
   );
