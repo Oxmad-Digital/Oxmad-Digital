@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BookCallProvider } from "@/components/BookCall/BookCallContext";
+import { LanguageProvider } from "@/components/Language/LanguageContext";
 
 export const metadata: Metadata = {
   title: "Oxmad Digital – Agence web Antananarivo",
@@ -26,11 +27,13 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body>
-        <BookCallProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </BookCallProvider>
+        <LanguageProvider>
+          <BookCallProvider>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </BookCallProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -1,3 +1,6 @@
+"use client";
+
+import { useLanguage } from "./Language/LanguageContext";
 import "./LogosBand.css";
 
 const LOGOS = [
@@ -9,11 +12,17 @@ const LOGOS = [
   "Mada Services",
 ];
 
+const LABEL = {
+  fr: "Ils nous font confiance",
+  en: "Trusted by",
+};
+
 export default function LogosBand() {
+  const { lang } = useLanguage();
   const items = [...LOGOS, ...LOGOS];
   return (
     <div className="ox-logos-band">
-      <span className="ox-logos-band-label">Ils nous font confiance</span>
+      <span className="ox-logos-band-label">{LABEL[lang]}</span>
       <div className="ox-logos-band-divider" />
       <div className="ox-logos-wrap">
         <div className="ox-logos-scroll">

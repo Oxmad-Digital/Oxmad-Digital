@@ -1,7 +1,34 @@
+"use client";
+
 import LogosBand from "./LogosBand";
+import { useLanguage } from "./Language/LanguageContext";
 import "./hero.css";
 
+const COPY = {
+  fr: {
+    titleLine1: "Votre présence",
+    titleLine2: "digitale,",
+    titleAccent: "enfin au niveau.",
+    subtitle:
+      "Sites vitrines, e-commerce et SEO conçus pour évoluer avec votre business. Modernes, performants et durables.",
+    bubble: "Hey, bienvenue sur notre site",
+    mascotAlt: "Mascotte Oxmad Digital",
+  },
+  en: {
+    titleLine1: "Your digital",
+    titleLine2: "presence,",
+    titleAccent: "finally up to par.",
+    subtitle:
+      "Showcase sites, e-commerce and SEO built to grow with your business. Modern, high-performing and built to last.",
+    bubble: "Hey, welcome to our site",
+    mascotAlt: "Oxmad Digital mascot",
+  },
+};
+
 export default function Hero() {
+  const { lang } = useLanguage();
+  const c = COPY[lang];
+
   return (
     <section className="ox-hero">
       <div className="ox-hero-inner">
@@ -19,16 +46,13 @@ export default function Hero() {
 
         <div className="ox-hero-left">
           <h1 className="ox-hero-title">
-            Votre présence
+            {c.titleLine1}
             <br />
-            digitale,
+            {c.titleLine2}
             <br />
-            <span className="ox-hero-title-accent">enfin au niveau.</span>
+            <span className="ox-hero-title-accent">{c.titleAccent}</span>
           </h1>
-          <p className="ox-hero-subtitle">
-            Sites vitrines, e-commerce et SEO conçus pour évoluer avec votre business. Modernes,
-            performants et durables.
-          </p>
+          <p className="ox-hero-subtitle">{c.subtitle}</p>
         </div>
 
         <div className="ox-hero-right">
@@ -37,8 +61,8 @@ export default function Hero() {
             <span className="ox-hero-orbit-dot" />
           </div>
           <div className="ox-hero-robot">
-            <div className="ox-hero-bubble">Hey, bienvenue sur notre site</div>
-            <img src="/robot-oxmad.svg" alt="Mascotte Oxmad Digital" />
+            <div className="ox-hero-bubble">{c.bubble}</div>
+            <img src="/robot-oxmad.svg" alt={c.mascotAlt} />
           </div>
         </div>
       </div>

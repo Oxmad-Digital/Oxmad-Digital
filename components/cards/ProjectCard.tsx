@@ -1,4 +1,12 @@
+"use client";
+
+import { useLanguage } from "@/components/Language/LanguageContext";
 import "./ProjectCard.css";
+
+const COPY = {
+  fr: { viewSite: "Voir le site" },
+  en: { viewSite: "View site" },
+};
 
 type Kpi = { value?: string; icon?: string; label: string };
 
@@ -23,6 +31,8 @@ export default function ProjectCard({
   inProgress = false,
   inRefonte = false,
 }: ProjectCardProps) {
+  const { lang } = useLanguage();
+  const c = COPY[lang];
   const visitHref = inProgress
     ? "/site-en-developpement"
     : inRefonte
@@ -76,8 +86,8 @@ export default function ProjectCard({
             href={visitHref}
             target={isInternal ? undefined : "_blank"}
             rel={isInternal ? undefined : "noopener noreferrer"}
-            aria-label="Voir le site"
-            title="Voir le site"
+            aria-label={c.viewSite}
+            title={c.viewSite}
             className="ox-project-card-visit"
           >
             <i className="ti ti-world" />

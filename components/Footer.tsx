@@ -1,7 +1,18 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "./Language/LanguageContext";
 import "./Footer.css";
 
+const COPY = {
+  fr: { rights: "© 2026 Oxmad Digital. Tous droits réservés.", legal: "Mentions légales" },
+  en: { rights: "© 2026 Oxmad Digital. All rights reserved.", legal: "Legal notice" },
+};
+
 export default function Footer() {
+  const { lang } = useLanguage();
+  const c = COPY[lang];
+
   return (
     <footer className="ox-footer">
       <div className="ox-footer-top">
@@ -9,8 +20,8 @@ export default function Footer() {
         <img src="/oxmad-wordmark-dark.svg" alt="Oxmad Digital" className="ox-footer-logo ox-logo-dark" />
 
         <div className="ox-footer-bottom">
-          <span>© 2026 Oxmad Digital. Tous droits réservés.</span>
-          <Link href="/mentions-legales">Mentions légales</Link>
+          <span>{c.rights}</span>
+          <Link href="/mentions-legales">{c.legal}</Link>
         </div>
 
         <div className="ox-footer-socials">

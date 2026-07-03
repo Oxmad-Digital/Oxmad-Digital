@@ -3,29 +3,49 @@
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import { useBookCall } from "@/components/BookCall/BookCallContext";
+import { useLanguage } from "@/components/Language/LanguageContext";
 import "./Cta.css";
+
+const COPY = {
+  fr: {
+    badge: "Contact",
+    titleLead: "Prêt à lancer votre ",
+    titleAccent: "projet ?",
+    desc: "Réservez un appel gratuit et sans engagement pour discuter de votre vision et obtenir un devis en 24h.",
+    contact: "Nous contacter",
+    seeWork: "Voir nos réalisations",
+  },
+  en: {
+    badge: "Contact",
+    titleLead: "Ready to launch your ",
+    titleAccent: "project?",
+    desc: "Book a free, no-commitment call to discuss your vision and get a quote within 24 hours.",
+    contact: "Contact us",
+    seeWork: "See our work",
+  },
+};
 
 export default function Cta() {
   const { open } = useBookCall();
+  const { lang } = useLanguage();
+  const c = COPY[lang];
 
   return (
     <section className="ox-cta" id="contact">
       <div className="ox-cta-glow" />
       <div className="ox-cta-inner">
-        <Badge className="ox-cta-badge">Contact</Badge>
+        <Badge className="ox-cta-badge">{c.badge}</Badge>
         <h2 className="ox-cta-title">
-          Prêt à lancer votre <span className="ox-cta-title-accent">projet ?</span>
+          {c.titleLead}
+          <span className="ox-cta-title-accent">{c.titleAccent}</span>
         </h2>
-        <p className="ox-cta-desc">
-          Réservez un appel gratuit et sans engagement pour discuter de votre vision et obtenir un
-          devis en 24h.
-        </p>
+        <p className="ox-cta-desc">{c.desc}</p>
         <div className="ox-cta-actions">
           <Button variant="primary" size="lg" onClick={open}>
-            Nous contacter
+            {c.contact}
           </Button>
           <Button variant="outline" size="lg" href="/realisations">
-            Voir nos réalisations
+            {c.seeWork}
           </Button>
         </div>
       </div>

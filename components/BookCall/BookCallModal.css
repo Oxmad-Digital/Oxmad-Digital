@@ -99,6 +99,10 @@
   background: var(--w06);
 }
 
+.ox-modal-field input[aria-invalid="true"] {
+  border-color: #d64545;
+}
+
 .ox-modal-error {
   font-size: 13px;
   color: #d64545;
