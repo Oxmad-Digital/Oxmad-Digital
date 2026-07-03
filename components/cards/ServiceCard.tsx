@@ -14,7 +14,7 @@ export default function ServiceCard({ number, icon, title, description }: Servic
       <div className="ox-service-card-icon">{icon}</div>
       <h3 className="ox-service-card-title">{title}</h3>
       <p className="ox-service-card-desc">{description}</p>
-      <div className="ox-service-card-arrow">→</div>
+      <div className="ox-service-card-arrow">›</div>
     </div>
   );
 }
