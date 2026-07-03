@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Oxmad Digital – Agence web Antananarivo",
   description: "Oxmad Digital conçoit des sites vitrines, e-commerce et stratégies SEO modernes et performants pour les entreprises de Madagascar.",
   keywords: "agence web Madagascar, création site internet Antananarivo, e-commerce Madagascar, SEO Madagascar",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 const themeInitScript = `(function(){try{if(localStorage.getItem("ox-theme")==="dark")document.documentElement.classList.add("ox-dark");}catch(e){}})();`;

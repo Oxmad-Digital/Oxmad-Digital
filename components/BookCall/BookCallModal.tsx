@@ -150,7 +150,7 @@ export default function BookCallModal({
                     Envoi en cours…
                   </>
                 ) : (
-                  "Envoyer ma demande"
+                  "Envoyer"
                 )}
               </button>
             </form>
