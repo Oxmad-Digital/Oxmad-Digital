@@ -25,21 +25,6 @@ const REALISATIONS = {
     },
     {
       num: "02",
-      name: "NATURALHY",
-      category: "Compléments alimentaires",
-      highlight: ["Une boutique en ligne fluide, des achats ", "simplifiés", "."],
-      features: [
-        { i: "ti-shopping-cart", t: "E-commerce" },
-        { i: "ti-shield-check", t: "Paiement sécurisé" },
-        { i: "ti-box", t: "Gestion des stocks" },
-        { i: "ti-truck-delivery", t: "Livraison" },
-        { i: "ti-user", t: "Espace client" },
-        { i: "ti-adjustments", t: "Produits filtrés" },
-      ],
-      shot: "Boutique e-commerce",
-    },
-    {
-      num: "03",
       name: "HÔTEL DU MOULIN",
       category: "Hôtellerie & séminaires",
       highlight: ["Des réservations en ligne, ", "simples et rapides", "."],
@@ -54,7 +39,7 @@ const REALISATIONS = {
       shot: "Plateforme de réservation",
     },
     {
-      num: "04",
+      num: "03",
       name: "IHLE",
       category: "Distribution de pneus",
       highlight: ["Un espace pro pensé pour aller ", "à l'essentiel", "."],
@@ -89,21 +74,6 @@ const REALISATIONS = {
     },
     {
       num: "02",
-      name: "NATURALHY",
-      category: "Dietary supplements",
-      highlight: ["A smooth online store, ", "simplified", " shopping."],
-      features: [
-        { i: "ti-shopping-cart", t: "E-commerce" },
-        { i: "ti-shield-check", t: "Secure payment" },
-        { i: "ti-box", t: "Stock management" },
-        { i: "ti-truck-delivery", t: "Shipping" },
-        { i: "ti-user", t: "Customer account" },
-        { i: "ti-adjustments", t: "Filtered products" },
-      ],
-      shot: "E-commerce store",
-    },
-    {
-      num: "03",
       name: "HÔTEL DU MOULIN",
       category: "Hospitality & events",
       highlight: ["Online bookings, ", "simple and fast", "."],
@@ -118,7 +88,7 @@ const REALISATIONS = {
       shot: "Booking platform",
     },
     {
-      num: "04",
+      num: "03",
       name: "IHLE",
       category: "Tire distribution",
       highlight: ["A pro space built to go ", "straight to the point", "."],
