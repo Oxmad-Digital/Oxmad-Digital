@@ -227,6 +227,11 @@
 
 @media (max-width: 768px) {
   .ox-real-page-hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding-top: 50px;
     padding-bottom: 40px;
   }

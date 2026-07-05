@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Button from "@/components/ui/Button";
 import { useLanguage, type Lang } from "@/components/Language/LanguageContext";
 import "./Realisations.css";
@@ -116,6 +117,10 @@ const COPY = {
     mascotAlt: "Mascotte Oxmad Digital",
     viewProject: "Voir le projet",
     seeAll: "Voir toutes les réalisations",
+    deviceDesktop: "Vue bureau",
+    deviceTablet: "Vue tablette",
+    deviceMobile: "Vue mobile",
+    closePreview: "Fermer l'aperçu",
   },
   en: {
     kicker: "Portfolio",
@@ -127,18 +132,31 @@ const COPY = {
     mascotAlt: "Oxmad Digital mascot",
     viewProject: "View project",
     seeAll: "See all our work",
+    deviceDesktop: "Desktop view",
+    deviceTablet: "Tablet view",
+    deviceMobile: "Mobile view",
+    closePreview: "Close preview",
   },
 };
 
-const ProjectMockup = ({
-  label,
-  image,
-  mobileImage,
-}: {
+type Device = "desktop" | "tablet" | "mobile";
+
+const DEVICE_ICON: Record<Device, string> = {
+  desktop: "ti-device-laptop",
+  tablet: "ti-device-tablet",
+  mobile: "ti-device-mobile",
+};
+
+type Realisation = (typeof REALISATIONS)["fr"][number];
+
+type Preview = {
+  device: Device;
+  name: string;
   label: string;
   image?: string;
-  mobileImage?: string;
-}) => (
+};
+
+const ProjectMockup = ({ label, image }: { label: string; image?: string }) => (
   <div className="ox-real-mockup">
     <div className="ox-real-mockup-laptop">
       <div className="ox-real-mockup-bar">
@@ -150,27 +168,21 @@ const ProjectMockup = ({
         {image ? <img src={image} alt={label} /> : <span>{label}</span>}
       </div>
     </div>
-    <div className="ox-real-mockup-phone">
-      <span className="ox-real-mockup-phone-notch" />
-      <div className="ox-real-mockup-phone-screen">
-        {mobileImage && <img src={mobileImage} alt={label} />}
-      </div>
-    </div>
   </div>
 );
-
-type Realisation = (typeof REALISATIONS)["fr"][number];
 
 const RealCard = ({
   p,
   perched,
   lang,
   c,
+  onPreview,
 }: {
   p: Realisation;
   perched?: boolean;
   lang: Lang;
   c: (typeof COPY)["fr"];
+  onPreview: (device: Device, p: Realisation) => void;
 }) => (
   <div className="ox-real-card">
     {perched && (
@@ -212,11 +224,43 @@ const RealCard = ({
       ))}
     </ul>
 
-    <ProjectMockup label={p.shot} image={p.image} mobileImage={p.mobileImage} />
+    <ProjectMockup label={p.shot} image={p.image} />
 
-    <a href="/realisations" className="ox-real-card-link" aria-label={c.viewProject} title={c.viewProject}>
-      <i className="ti ti-world" />
-    </a>
+    <div className="ox-real-card-actions">
+      <div className="ox-real-card-devices">
+        <button
+          type="button"
+          className="ox-real-card-device-btn"
+          aria-label={c.deviceDesktop}
+          title={c.deviceDesktop}
+          onClick={() => onPreview("desktop", p)}
+        >
+          <i className={`ti ${DEVICE_ICON.desktop}`} />
+        </button>
+        <button
+          type="button"
+          className="ox-real-card-device-btn"
+          aria-label={c.deviceTablet}
+          title={c.deviceTablet}
+          onClick={() => onPreview("tablet", p)}
+        >
+          <i className={`ti ${DEVICE_ICON.tablet}`} />
+        </button>
+        <button
+          type="button"
+          className="ox-real-card-device-btn"
+          aria-label={c.deviceMobile}
+          title={c.deviceMobile}
+          onClick={() => onPreview("mobile", p)}
+        >
+          <i className={`ti ${DEVICE_ICON.mobile}`} />
+        </button>
+      </div>
+
+      <a href="/realisations" className="ox-real-card-link" aria-label={c.viewProject} title={c.viewProject}>
+        <i className="ti ti-world" />
+      </a>
+    </div>
   </div>
 );
 
@@ -224,6 +268,31 @@ export default function Realisations() {
   const { lang } = useLanguage();
   const realisations = REALISATIONS[lang];
   const c = COPY[lang];
+  const [preview, setPreview] = useState<Preview | null>(null);
+
+  useEffect(() => {
+    if (!preview) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setPreview(null);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [preview]);
+
+  const openPreview = (device: Device, p: Realisation) => {
+    const image = device === "desktop" ? p.image : device === "mobile" ? p.mobileImage : undefined;
+    setPreview({ device, name: p.name, label: p.shot, image });
+  };
+
+  const deviceLabel = {
+    desktop: c.deviceDesktop,
+    tablet: c.deviceTablet,
+    mobile: c.deviceMobile,
+  };
 
   return (
     <section id="realisations" className="ox-realisations">
@@ -246,7 +315,7 @@ export default function Realisations() {
 
       <div className="ox-realisations-grid">
         {realisations.map((p, i) => (
-          <RealCard key={p.num} p={p} perched={i === realisations.length - 1} lang={lang} c={c} />
+          <RealCard key={p.num} p={p} perched={i === realisations.length - 1} lang={lang} c={c} onPreview={openPreview} />
         ))}
       </div>
 
@@ -255,6 +324,36 @@ export default function Realisations() {
           {c.seeAll}
         </Button>
       </div>
+
+      {preview && (
+        <div
+          className="ox-lightbox-overlay"
+          onMouseDown={(e) => {
+            if (e.target === e.currentTarget) setPreview(null);
+          }}
+        >
+          <button
+            type="button"
+            className="ox-lightbox-close"
+            onClick={() => setPreview(null)}
+            aria-label={c.closePreview}
+            title={c.closePreview}
+          >
+            <i className="ti ti-x" />
+          </button>
+          <div className="ox-lightbox-content">
+            <span className="ox-lightbox-tag">
+              <i className={`ti ${DEVICE_ICON[preview.device]}`} />
+              {deviceLabel[preview.device]} — {preview.name}
+            </span>
+            <div className={`ox-lightbox-frame ox-lightbox-frame-${preview.device}`}>
+              <div className="ox-lightbox-frame-screen">
+                {preview.image ? <img src={preview.image} alt={preview.name} /> : <span>{preview.label}</span>}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -2,9 +2,9 @@
   background: var(--w03);
   border: 1px solid var(--border);
   border-radius: var(--ox-radius-2xl);
-  padding: 28px 24px 52px;
-  position: relative;
-  overflow: hidden;
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
   transition: border-color var(--ox-transition-base), background var(--ox-transition-base);
 }
 
@@ -53,9 +53,8 @@
 }
 
 .ox-service-card-arrow {
-  position: absolute;
-  bottom: 22px;
-  right: 22px;
+  align-self: flex-end;
+  margin-top: 24px;
   width: 28px;
   height: 28px;
   border-radius: 8px;

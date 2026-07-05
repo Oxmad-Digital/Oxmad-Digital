@@ -259,4 +259,46 @@
   .ox-about {
     padding: 75px var(--margin-lateral) 50px;
   }
+
+  .ox-about-stack-tag {
+    top: 12px;
+    left: 12px;
+    font-size: 8px;
+    gap: 5px;
+    padding: 5px 9px;
+  }
+
+  .ox-about-stack-tag i {
+    font-size: 10px;
+  }
+
+  .ox-about-stack-dots {
+    top: 16px;
+    right: 14px;
+  }
+
+  .ox-about-stack-hub {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ox-about-stack-hub i {
+    font-size: 20px;
+  }
+
+  .ox-about-stack-node-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+  }
+
+  .ox-about-stack-node span:last-child {
+    font-size: 8px;
+    max-width: 58px;
+  }
+
+  .ox-about-stack-scene {
+    transform: scale(0.82);
+    transform-origin: 50% 50%;
+  }
 }

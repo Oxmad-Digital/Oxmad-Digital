@@ -101,8 +101,9 @@
 
 .ox-real-card-note {
   position: absolute;
-  left: -30px;
-  top: -122px;
+  right: 50%;
+  margin-right: 85px;
+  top: -142px;
   width: 132px;
   text-align: center;
   z-index: 5;
@@ -161,7 +162,7 @@
 .ox-real-card-highlight {
   background: var(--r-soft);
   border: 1px solid var(--border-r);
-  border-radius: 14px 14px 14px 4px;
+  border-radius: 14px;
   padding: 12px 14px;
   font-size: 13.5px;
   font-weight: 600;
@@ -208,9 +209,39 @@
   font-size: 13px;
 }
 
-.ox-real-card-link {
+.ox-real-card-actions {
   margin-top: 4px;
-  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ox-real-card-devices {
+  display: flex;
+  gap: 6px;
+}
+
+.ox-real-card-device-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--w06);
+  border: 1px solid var(--border);
+  color: var(--w50);
+  font-size: 15px;
+  transition: background var(--ox-transition-fast), color var(--ox-transition-fast);
+}
+
+.ox-real-card-device-btn:hover {
+  background: var(--w10);
+  color: var(--w);
+}
+
+.ox-real-card-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -230,9 +261,7 @@
 /* mockup */
 .ox-real-mockup {
   position: relative;
-  margin-top: 4px;
-  padding-right: 42px;
-  padding-bottom: 30px;
+  margin-top: 26px;
 }
 
 .ox-real-mockup-laptop {
@@ -261,7 +290,7 @@
 }
 
 .ox-real-mockup-screen {
-  height: 130px;
+  aspect-ratio: 16 / 9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -294,54 +323,156 @@
   border: 1px solid var(--border);
 }
 
-.ox-real-mockup-phone {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 100px;
-  height: 198px;
-  border-radius: 15px;
-  border: 1px solid var(--border);
-  background: var(--bg);
-  box-shadow: 0 10px 22px rgba(27, 25, 22, 0.18);
-  padding: 3px;
+/* lightbox */
+.ox-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 12, 10, 0.92);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  z-index: 1000;
+  animation: ox-lightbox-fade-in 0.2s ease;
+}
+
+.ox-lightbox-content {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  transition: transform 0.4s ease;
+  align-items: center;
+  gap: 14px;
+  max-width: 100%;
 }
 
-.ox-real-card:hover .ox-real-mockup-phone {
-  transform: translateY(-4px);
+.ox-lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--w);
+  font-size: 18px;
+  z-index: 1001;
 }
 
-.ox-real-mockup-phone-notch {
-  width: 22px;
-  height: 3px;
-  border-radius: 2px;
+.ox-lightbox-close:hover {
   background: var(--w10);
-  margin: 2px auto 0;
 }
 
-.ox-real-mockup-phone-screen {
-  flex: 1;
-  border-radius: 7px;
+.ox-lightbox-frame {
+  position: relative;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
   overflow: hidden;
+  animation: ox-lightbox-scale-in 0.25s ease;
+  max-height: calc(100vh - 64px);
+}
+
+.ox-lightbox-frame-desktop {
+  width: min(90vw, 960px);
+  aspect-ratio: 16 / 9;
+}
+
+.ox-lightbox-frame-tablet {
+  width: min(80vw, 520px);
+  aspect-ratio: 4 / 3;
+}
+
+.ox-lightbox-frame-mobile {
+  width: auto;
+  aspect-ratio: unset;
+}
+
+.ox-lightbox-frame-mobile .ox-lightbox-frame-screen {
+  width: auto;
+  height: auto;
+}
+
+.ox-lightbox-frame-mobile .ox-lightbox-frame-screen img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(70vw, 340px);
+  max-height: calc(100vh - 140px);
+  object-fit: contain;
+}
+
+.ox-lightbox-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--ox-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: var(--w80);
+  text-transform: uppercase;
+  background: var(--bg);
+  padding: 7px 14px;
+  border-radius: var(--ox-radius-full);
+  border: 1px solid var(--border);
+}
+
+.ox-lightbox-frame-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--bg2);
   background-image: repeating-linear-gradient(
     135deg,
-    rgba(155, 169, 20, 0.12) 0,
-    rgba(155, 169, 20, 0.12) 1px,
+    rgba(155, 169, 20, 0.1) 0,
+    rgba(155, 169, 20, 0.1) 1px,
     transparent 1px,
-    transparent 7px
+    transparent 9px
   );
 }
 
-.ox-real-mockup-phone-screen img {
+.ox-lightbox-frame-screen img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top;
+}
+
+.ox-lightbox-frame-screen span {
+  font-family: var(--ox-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: var(--w25);
+  text-transform: uppercase;
+  background: var(--bg);
+  padding: 6px 14px;
+  border-radius: var(--ox-radius-full);
+  border: 1px solid var(--border);
+}
+
+@keyframes ox-lightbox-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes ox-lightbox-scale-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  .ox-lightbox-frame-desktop,
+  .ox-lightbox-frame-tablet,
+  .ox-lightbox-frame-mobile {
+    width: min(88vw, 400px);
+  }
 }
 
 @media (max-width: 1100px) {
@@ -360,6 +491,9 @@
   .ox-real-card-robot,
   .ox-real-card-note {
     display: none;
+  }
+  .ox-realisations-footer {
+    justify-content: center;
   }
 }
 

@@ -187,4 +187,5 @@
   .ox-hero-title { font-size: 36px; }
   .ox-hero-right { display: none; }
   .ox-hero-subtitle { color: var(--w); }
+  .ox-hero-x svg { opacity: 0.5; }
 }
