@@ -231,12 +231,18 @@
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding-top: 50px;
     padding-bottom: 40px;
   }
   .ox-real-page-hero-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
+  }
+  .ox-real-page-hero-copy {
+    margin-top: auto;
+    margin-bottom: auto;
   }
   .ox-real-page-grid {
     padding-top: 50px;

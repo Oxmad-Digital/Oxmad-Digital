@@ -11,23 +11,20 @@
 }
 
 .ox-realisations-kicker {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
+  background: var(--r-soft);
+  border: 1px solid var(--border-r);
+  border-radius: var(--ox-radius-full);
+  padding: 5px 14px;
   font-size: 11px;
-  letter-spacing: 3px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: var(--w);
-  font-family: var(--ox-font-display);
+  font-family: var(--ox-font-sans);
   margin-bottom: 18px;
-}
-
-.ox-realisations-kicker span {
-  width: 28px;
-  height: 3px;
-  background: var(--r);
-  display: block;
-  border-radius: 2px;
 }
 
 .ox-realisations-title {

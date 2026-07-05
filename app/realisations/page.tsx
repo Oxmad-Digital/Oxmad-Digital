@@ -40,7 +40,8 @@ const COPY = {
     titleLine2: "génèrent des ",
     titleAccent: "résultats.",
     desc: "Chaque réalisation est le fruit d'une collaboration étroite avec nos clients et d'une recherche constante de performance mesurable.",
-    stats: [["5+", "Projets livrés"], ["98%", "Clients satisfaits"], ["×3", "Trafic moyen"]] as [string, string][],
+    statsCountLabel: "Projets réalisés",
+    otherStats: [["98%", "Clients satisfaits"], ["×3", "Trafic moyen"]] as [string, string][],
     promoTitleLine1: "Votre projet,",
     promoTitleLine2: "notre prochain défi.",
     promoDesc: "Parlons de votre vision et construisons quelque chose d'exceptionnel ensemble.",
@@ -53,7 +54,8 @@ const COPY = {
     titleLine2: "deliver ",
     titleAccent: "results.",
     desc: "Every project is the result of close collaboration with our clients and a constant focus on measurable performance.",
-    stats: [["5+", "Projects delivered"], ["98%", "Satisfied clients"], ["×3", "Average traffic"]] as [string, string][],
+    statsCountLabel: "Projects completed",
+    otherStats: [["98%", "Satisfied clients"], ["×3", "Average traffic"]] as [string, string][],
     promoTitleLine1: "Your project,",
     promoTitleLine2: "our next challenge.",
     promoDesc: "Let's talk about your vision and build something exceptional together.",
@@ -75,6 +77,10 @@ export default function RealisationsPage() {
   const visible = active === filters[0] ? projects : projects.filter((p) => p.category === active);
   const hasMore = visible.length > COLLAPSED_COUNT;
   const shown = expanded ? visible : visible.slice(0, COLLAPSED_COUNT);
+  const stats: [string, string][] = [
+    [`${projects.length}+`, c.statsCountLabel],
+    ...c.otherStats,
+  ];
 
   return (
     <div>
@@ -102,7 +108,7 @@ export default function RealisationsPage() {
             <p>{c.desc}</p>
           </div>
           <div className="ox-real-page-hero-stats">
-            {c.stats.map(([v, l]) => (
+            {stats.map(([v, l]) => (
               <div key={l} className="ox-real-page-hero-stat">
                 <div className="ox-real-page-hero-stat-value">{v}</div>
                 <div className="ox-real-page-hero-stat-label">{l}</div>
