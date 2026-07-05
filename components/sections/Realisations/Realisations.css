@@ -231,8 +231,8 @@
 .ox-real-mockup {
   position: relative;
   margin-top: 4px;
-  padding-right: 34px;
-  padding-bottom: 22px;
+  padding-right: 42px;
+  padding-bottom: 30px;
 }
 
 .ox-real-mockup-laptop {
@@ -261,7 +261,7 @@
 }
 
 .ox-real-mockup-screen {
-  height: 190px;
+  height: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -298,16 +298,16 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 78px;
-  height: 156px;
-  border-radius: 16px;
+  width: 100px;
+  height: 198px;
+  border-radius: 15px;
   border: 1px solid var(--border);
   background: var(--bg);
   box-shadow: 0 10px 22px rgba(27, 25, 22, 0.18);
-  padding: 6px;
+  padding: 3px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
   transition: transform 0.4s ease;
 }
 
@@ -316,11 +316,11 @@
 }
 
 .ox-real-mockup-phone-notch {
-  width: 20px;
+  width: 22px;
   height: 3px;
   border-radius: 2px;
   background: var(--w10);
-  margin: 1px auto 0;
+  margin: 2px auto 0;
 }
 
 .ox-real-mockup-phone-screen {
