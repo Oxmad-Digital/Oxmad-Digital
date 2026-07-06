@@ -175,17 +175,27 @@
   50% { opacity: 1; }
 }
 
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .ox-hero-subtitle { color: var(--w); }
+  .ox-hero-x svg { opacity: 0.5; }
+  .ox-dark .ox-hero-x svg { opacity: 0.25; }
+}
+
 @media (max-width: 1024px) {
   .ox-hero-inner {
     grid-template-columns: 1fr;
     padding: 40px var(--margin-lateral) 0;
   }
-  .ox-hero-right { min-height: 380px; }
+  .ox-hero-right { display: none; }
+  .ox-hero-subtitle { color: var(--w); }
+  .ox-hero-x svg { opacity: 0.5; }
+  .ox-dark .ox-hero-x svg { opacity: 0.25; }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .ox-hero-title { font-size: 44px; }
 }
 
 @media (max-width: 767px) {
   .ox-hero-title { font-size: 36px; }
-  .ox-hero-right { display: none; }
-  .ox-hero-subtitle { color: var(--w); }
-  .ox-hero-x svg { opacity: 0.5; }
 }
