@@ -85,7 +85,7 @@ export default function ProjectCard({
           <a
             href={visitHref}
             target={isInternal ? undefined : "_blank"}
-            rel={isInternal ? undefined : "noopener noreferrer"}
+            rel={isInternal ? undefined : "noopener noreferrer nofollow"}
             aria-label={c.viewSite}
             title={c.viewSite}
             className="ox-project-card-visit"
