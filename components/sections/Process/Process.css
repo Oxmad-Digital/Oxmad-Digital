@@ -242,7 +242,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .ox-process {
     padding: 50px var(--margin-lateral);
   }

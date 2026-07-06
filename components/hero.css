@@ -183,7 +183,7 @@
   .ox-hero-right { min-height: 380px; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .ox-hero-title { font-size: 36px; }
   .ox-hero-right { display: none; }
   .ox-hero-subtitle { color: var(--w); }

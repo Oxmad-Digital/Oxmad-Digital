@@ -54,6 +54,6 @@
   margin: 0 auto 40px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .ox-section-header-title { font-size: 26px; }
 }

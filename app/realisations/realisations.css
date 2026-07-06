@@ -225,7 +225,7 @@
   .ox-real-page-grid { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .ox-real-page-hero {
     min-height: 100vh;
     min-height: 100dvh;
