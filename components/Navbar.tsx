@@ -11,16 +11,16 @@ import "./Navbar.css";
 const NAV_LINKS = {
   fr: [
     { label: "Accueil", href: "/" },
+    { label: "À propos", href: "/#apropos" },
     { label: "Services", href: "/#services" },
     { label: "Processus", href: "/#processus" },
-    { label: "À propos", href: "/#apropos" },
     { label: "Réalisations", href: "/realisations" },
   ],
   en: [
     { label: "Home", href: "/" },
+    { label: "About", href: "/#apropos" },
     { label: "Services", href: "/#services" },
     { label: "Process", href: "/#processus" },
-    { label: "About", href: "/#apropos" },
     { label: "Work", href: "/realisations" },
   ],
 };

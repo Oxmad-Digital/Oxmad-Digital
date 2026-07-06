@@ -472,9 +472,22 @@
   }
 }
 
-@media (max-width: 1100px) {
+@media (min-width: 641px) and (max-width: 1100px) {
   .ox-realisations-grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    grid-template-columns: unset;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 var(--margin-lateral);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .ox-realisations-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .ox-realisations-grid .ox-real-card {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
   }
 }
 

@@ -249,6 +249,16 @@
   margin: 0;
 }
 
+@media (min-width: 901px) and (max-width: 1100px) {
+  .ox-about-grid {
+    align-items: stretch;
+  }
+
+  .ox-about-image {
+    aspect-ratio: unset;
+  }
+}
+
 @media (max-width: 900px) {
   .ox-about-grid {
     grid-template-columns: 1fr;

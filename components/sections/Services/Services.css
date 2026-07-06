@@ -24,7 +24,20 @@
 
 @media (max-width: 600px) {
   .ox-services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: unset;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 var(--margin-lateral);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .ox-services-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .ox-services-grid .ox-service-card {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
   }
 }
 
