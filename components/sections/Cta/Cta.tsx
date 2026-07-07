@@ -1,8 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
-import { useBookCall } from "@/components/BookCall/BookCallContext";
+import ContactModal from "@/components/Contact/ContactModal";
 import { useLanguage } from "@/components/Language/LanguageContext";
 import "./Cta.css";
 
@@ -26,7 +27,7 @@ const COPY = {
 };
 
 export default function Cta() {
-  const { open } = useBookCall();
+  const [isContactOpen, setIsContactOpen] = useState(false);
   const { lang } = useLanguage();
   const c = COPY[lang];
 
@@ -41,7 +42,7 @@ export default function Cta() {
         </h2>
         <p className="ox-cta-desc">{c.desc}</p>
         <div className="ox-cta-actions">
-          <Button variant="primary" size="lg" onClick={open}>
+          <Button variant="primary" size="lg" onClick={() => setIsContactOpen(true)}>
             {c.contact}
           </Button>
           <Button variant="outline" size="lg" href="/realisations">
@@ -49,6 +50,7 @@ export default function Cta() {
           </Button>
         </div>
       </div>
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
     </section>
   );
 }
