@@ -41,7 +41,7 @@ const COPY = {
     titleAccent: "résultats.",
     desc: "Chaque réalisation est le fruit d'une collaboration étroite avec nos clients et d'une recherche constante de performance mesurable.",
     statsCountLabel: "Projets réalisés",
-    otherStats: [["98%", "Clients satisfaits"], ["×3", "Trafic moyen"]] as [string, string][],
+    otherStats: [["98%", "Clients satisfaits"]] as [string, string][],
     promoTitleLine1: "Votre projet,",
     promoTitleLine2: "notre prochain défi.",
     promoDesc: "Parlons de votre vision et construisons quelque chose d'exceptionnel ensemble.",
