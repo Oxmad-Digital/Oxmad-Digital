@@ -33,6 +33,10 @@ const LOGOS: { name: string; logo: string; darkLogo?: string }[] = [
     logo: "https://res.cloudinary.com/eee2cbey/image/upload/v1783697019/oxmad-digital_logo_wybob_bandeau_udit0y.webp",
     darkLogo: "https://res.cloudinary.com/eee2cbey/image/upload/v1783699217/oxmad-digital_logo_wybob_bandeau_dark-mode_pjqvl8.webp",
   },
+  {
+    name: "Ultramaille",
+    logo: "https://res.cloudinary.com/eee2cbey/image/upload/v1783705637/Ultramaille_logo_banni%C3%A8re_oh31fr.webp",
+  },
 ];
 
 const LABEL = {
