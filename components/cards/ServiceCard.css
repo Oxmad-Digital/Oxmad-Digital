@@ -37,7 +37,7 @@
 }
 
 .ox-service-card-title {
-  font-size: 15px;
+  font-size: 24px;
   font-weight: 600;
   margin-bottom: 8px;
   color: var(--w);
@@ -50,6 +50,22 @@
   line-height: 1.7;
   color: var(--w50);
   font-family: var(--ox-font-sans);
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .ox-service-card-title {
+    font-size: 24px;
+  }
+
+  .ox-service-card-desc {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ox-service-card-title {
+    font-size: 20px;
+  }
 }
 
 .ox-service-card-arrow {

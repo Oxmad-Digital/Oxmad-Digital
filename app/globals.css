@@ -117,6 +117,10 @@ h1, h2, h3, h4 {
   font-weight: 700;
 }
 
+h3 {
+  font-size: 24px;
+}
+
 p {
   font-size: 15px;
   line-height: 1.7;
@@ -135,9 +139,13 @@ p {
 /* ══════════════════════════════════
    TABLETTE  768px – 1199px
 ══════════════════════════════════ */
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 768px) and (max-width: 1200px) {
   :root {
     --margin-lateral: 40px;
+  }
+
+  p {
+    font-size: 16px;
   }
 }
 

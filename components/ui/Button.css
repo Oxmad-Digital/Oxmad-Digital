@@ -27,6 +27,12 @@
 .ox-btn-filter { background: none; color: var(--w50); border: 1px solid var(--border); border-radius: var(--ox-radius-full); }
 .ox-btn-filter-active { background: var(--r); color: var(--ink); border: 1px solid var(--r); border-radius: var(--ox-radius-full); }
 
+@media (min-width: 768px) and (max-width: 1200px) {
+  .ox-btn-md {
+    font-size: 16px;
+  }
+}
+
 .ox-btn-arrow {
   width: 22px;
   height: 22px;

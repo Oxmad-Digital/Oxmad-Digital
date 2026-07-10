@@ -200,7 +200,7 @@
 }
 
 .ox-about-features-title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.4px;
   line-height: 1.25;
@@ -247,6 +247,12 @@
   line-height: 1.65;
   color: var(--w50);
   margin: 0;
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .ox-about-feature p {
+    font-size: 16px;
+  }
 }
 
 @media (min-width: 901px) and (max-width: 1100px) {

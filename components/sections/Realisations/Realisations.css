@@ -28,7 +28,7 @@
 }
 
 .ox-realisations-title {
-  font-size: 56px;
+  font-size: 42px;
   font-weight: 700;
   line-height: 1.02;
   letter-spacing: -2px;
@@ -442,9 +442,20 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (min-width: 768px) and (max-width: 1200px) {
   .ox-realisations-title {
     font-size: 36px;
+  }
+
+  .ox-real-card-highlight,
+  .ox-real-card-features li {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ox-realisations-title {
+    font-size: 32px;
   }
 }
 

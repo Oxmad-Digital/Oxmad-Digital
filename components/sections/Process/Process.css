@@ -81,9 +81,13 @@
 .ox-process-bubble-up { bottom: calc(50% + 42px); }
 .ox-process-bubble-down { top: calc(50% + 42px); }
 
+.ox-process-bubble-wide {
+  width: 290px;
+}
+
 .ox-process-bubble-title {
   font-family: var(--ox-font-display);
-  font-size: 14.5px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--ink);
   margin-bottom: 5px;
@@ -177,6 +181,16 @@
   display: none;
 }
 
+@media (min-width: 768px) and (max-width: 1200px) {
+  .ox-process-bubble-title {
+    font-size: 24px;
+  }
+
+  .ox-process-bubble p {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 1024px) {
   .ox-process {
     padding: 100px var(--margin-lateral) 90px;
@@ -252,5 +266,9 @@
 @media (max-width: 767px) {
   .ox-process {
     padding: 50px var(--margin-lateral);
+  }
+
+  .ox-process-bubble-title {
+    font-size: 20px;
   }
 }

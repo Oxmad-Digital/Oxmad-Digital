@@ -168,7 +168,7 @@
 }
 
 .ox-real-page-promo h3 {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 12px;
@@ -206,6 +206,13 @@
 
 .ox-real-page-more:hover {
   filter: brightness(0.94);
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .ox-real-page-hero-copy p,
+  .ox-real-page-promo p {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 900px) {

@@ -193,6 +193,12 @@
   flex-shrink: 0;
 }
 
+@media (min-width: 768px) and (max-width: 1200px) {
+  .ox-project-card-desc {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 600px) {
   .ox-project-card-footer {
     flex-direction: column;
