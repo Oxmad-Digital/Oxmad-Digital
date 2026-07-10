@@ -3,13 +3,36 @@
 import { useLanguage } from "./Language/LanguageContext";
 import "./LogosBand.css";
 
-const LOGOS = [
-  "Ocibel MG",
-  "Bitumad",
-  "AgriMada",
-  "TechStart",
-  "MG Commerce",
-  "Mada Services",
+const LOGOS: { name: string; logo: string; darkLogo?: string }[] = [
+  {
+    name: "Ocibel MG",
+    logo: "https://res.cloudinary.com/eee2cbey/image/upload/v1783618534/oxmad-digital_ocibel_logo_bandeau_chhsxt.webp",
+  },
+  {
+    name: "Bitumad",
+    logo: "https://res.cloudinary.com/eee2cbey/image/upload/v1783609937/oxmad-digital_logo_bitumad_bandeau_xkzqep.webp",
+  },
+  {
+    name: "M&S Care",
+    logo: "https://res.cloudinary.com/eee2cbey/image/upload/v1783620463/oxmad-digital_m_s-care_logo_bandeau_iwjgrj.webp",
+  },
+  {
+    name: "Tsaralevenana",
+    logo: "https://res.cloudinary.com/eee2cbey/image/upload/v1783620313/logo_tsaralevenana_czjash.webp",
+  },
+  {
+    name: "Thadeus",
+    logo: "https://res.cloudinary.com/eee2cbey/image/upload/v1783696516/Thadeus_logo_fond-blanc_tgayua.webp",
+  },
+  {
+    name: "Lake View Hotel",
+    logo: "https://res.cloudinary.com/eee2cbey/image/upload/v1783696817/oxmad-digital_logo_lake_view_hotel_bandeau_a2z2oy.webp",
+  },
+  {
+    name: "Wybob",
+    logo: "https://res.cloudinary.com/eee2cbey/image/upload/v1783697019/oxmad-digital_logo_wybob_bandeau_udit0y.webp",
+    darkLogo: "https://res.cloudinary.com/eee2cbey/image/upload/v1783699217/oxmad-digital_logo_wybob_bandeau_dark-mode_pjqvl8.webp",
+  },
 ];
 
 const LABEL = {
@@ -27,9 +50,15 @@ export default function LogosBand() {
       <div className="ox-logos-wrap">
         <div className="ox-logos-scroll">
           {items.map((l, i) => (
-            <div key={i} className="ox-logo-chip" title={l}>
-              <span className="ox-logo-chip-mk">{l.charAt(0)}</span>
-              <span className="ox-logo-chip-wm">{l}</span>
+            <div key={i} className="ox-logo-chip" title={l.name}>
+              {l.darkLogo ? (
+                <>
+                  <img className="ox-logo-chip-img ox-logo-light" src={l.logo} alt={l.name} />
+                  <img className="ox-logo-chip-img ox-logo-dark" src={l.darkLogo} alt={l.name} />
+                </>
+              ) : (
+                <img className="ox-logo-chip-img" src={l.logo} alt={l.name} />
+              )}
             </div>
           ))}
         </div>

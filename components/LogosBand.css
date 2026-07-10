@@ -1,5 +1,5 @@
 .ox-logos-band {
-  padding: 20px var(--margin-lateral);
+  padding: 16px var(--margin-lateral);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   display: flex;
@@ -58,37 +58,10 @@
   filter: grayscale(0);
 }
 
-.ox-logo-chip-mk {
-  width: 26px;
-  height: 26px;
-  border-radius: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 700;
-  background: var(--w10);
-  color: var(--w50);
-  flex-shrink: 0;
-  transition: background 0.3s, color 0.3s;
-}
-
-.ox-logo-chip:hover .ox-logo-chip-mk {
-  background: var(--r);
-  color: var(--ink);
-}
-
-.ox-logo-chip-wm {
-  font-family: var(--ox-font-display);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--w50);
-  white-space: nowrap;
-  transition: color 0.3s;
-}
-
-.ox-logo-chip:hover .ox-logo-chip-wm {
-  color: var(--w);
+.ox-logo-chip-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
 }
 
 @keyframes ox-logo-scroll {

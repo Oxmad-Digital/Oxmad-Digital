@@ -23,6 +23,7 @@ const REALISATIONS = {
       shot: "Site catalogue",
       image: "https://res.cloudinary.com/eee2cbey/image/upload/v1782993283/oxmad-digital_preview_site_web_bitumad_kgx2sb.webp",
       mobileImage: "https://res.cloudinary.com/eee2cbey/image/upload/v1783099390/oxmad-digital_bitumad_preview_mobile_qvuyef.webp",
+      tabletImage: "https://res.cloudinary.com/eee2cbey/image/upload/v1783608687/oxmad-digital_bitumad_tablet_preview_ci5ylx.webp",
     },
     {
       num: "02",
@@ -40,6 +41,7 @@ const REALISATIONS = {
       shot: "Site vitrine",
       image: "https://res.cloudinary.com/eee2cbey/image/upload/v1783099390/oxmad-digital_lake-view-hotel_preview_zmnh5o.webp",
       mobileImage: "https://res.cloudinary.com/eee2cbey/image/upload/v1783099391/oxmad-digital_lake-view-hotel_preview_mobile_ovq6cu.webp",
+      tabletImage: undefined as string | undefined,
     },
     {
       num: "03",
@@ -57,6 +59,7 @@ const REALISATIONS = {
       shot: "Boutique e-commerce",
       image: "https://res.cloudinary.com/eee2cbey/image/upload/v1782996784/oxmad-digital_preview_site_web_wybob_rjappl.webp",
       mobileImage: "https://res.cloudinary.com/eee2cbey/image/upload/v1783099390/oxmad-digital_wybob_preview_mobile_kqbxco.webp",
+      tabletImage: undefined as string | undefined,
     },
   ],
   en: [
@@ -76,6 +79,7 @@ const REALISATIONS = {
       shot: "Catalog site",
       image: "https://res.cloudinary.com/eee2cbey/image/upload/v1782993283/oxmad-digital_preview_site_web_bitumad_kgx2sb.webp",
       mobileImage: "https://res.cloudinary.com/eee2cbey/image/upload/v1783099390/oxmad-digital_bitumad_preview_mobile_qvuyef.webp",
+      tabletImage: "https://res.cloudinary.com/eee2cbey/image/upload/v1783608687/oxmad-digital_bitumad_tablet_preview_ci5ylx.webp",
     },
     {
       num: "02",
@@ -93,6 +97,7 @@ const REALISATIONS = {
       shot: "Showcase site",
       image: "https://res.cloudinary.com/eee2cbey/image/upload/v1783099390/oxmad-digital_lake-view-hotel_preview_zmnh5o.webp",
       mobileImage: "https://res.cloudinary.com/eee2cbey/image/upload/v1783099391/oxmad-digital_lake-view-hotel_preview_mobile_ovq6cu.webp",
+      tabletImage: undefined as string | undefined,
     },
     {
       num: "03",
@@ -110,6 +115,7 @@ const REALISATIONS = {
       shot: "E-commerce store",
       image: "https://res.cloudinary.com/eee2cbey/image/upload/v1782996784/oxmad-digital_preview_site_web_wybob_rjappl.webp",
       mobileImage: "https://res.cloudinary.com/eee2cbey/image/upload/v1783099390/oxmad-digital_wybob_preview_mobile_kqbxco.webp",
+      tabletImage: undefined as string | undefined,
     },
   ],
 };
@@ -292,7 +298,8 @@ export default function Realisations() {
   }, [preview]);
 
   const openPreview = (device: Device, p: Realisation) => {
-    const image = device === "desktop" ? p.image : device === "mobile" ? p.mobileImage : undefined;
+    const image =
+      device === "desktop" ? p.image : device === "mobile" ? p.mobileImage : p.tabletImage;
     setPreview({ device, name: p.name, label: p.shot, image });
   };
 

@@ -381,8 +381,8 @@
 }
 
 .ox-lightbox-frame-tablet {
-  width: min(80vw, 520px);
-  aspect-ratio: 4 / 3;
+  width: min(80vw, 420px);
+  aspect-ratio: 1200 / 1669;
 }
 
 .ox-lightbox-frame-mobile {
