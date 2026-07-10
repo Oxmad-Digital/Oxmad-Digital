@@ -125,8 +125,6 @@ const COPY = {
     subtitleLine1: "Des projets différents.",
     subtitleLine2: "Des objectifs communs :",
     subtitleAccent: "créer les bonnes connexions.",
-    note: "Voici quelques projets que nous avons réalisés",
-    mascotAlt: "Mascotte Oxmad Digital",
     viewProject: "Voir le projet",
     seeAll: "Voir toutes les réalisations",
     deviceDesktop: "Vue bureau",
@@ -140,8 +138,6 @@ const COPY = {
     subtitleLine1: "Different projects.",
     subtitleLine2: "A shared goal:",
     subtitleAccent: "creating the right connections.",
-    note: "Here are a few projects we've built",
-    mascotAlt: "Oxmad Digital mascot",
     viewProject: "View project",
     seeAll: "See all our work",
     deviceDesktop: "Desktop view",
@@ -185,32 +181,16 @@ const ProjectMockup = ({ label, image }: { label: string; image?: string }) => (
 
 const RealCard = ({
   p,
-  perched,
   lang,
   c,
   onPreview,
 }: {
   p: Realisation;
-  perched?: boolean;
   lang: Lang;
   c: (typeof COPY)["fr"];
   onPreview: (device: Device, p: Realisation) => void;
 }) => (
   <div className="ox-real-card">
-    {perched && (
-      <img
-        src="/robot-perched.svg"
-        alt={c.mascotAlt}
-        className="ox-real-card-robot"
-      />
-    )}
-    {perched && (
-      <div className="ox-real-card-note">
-        <p>{c.note}</p>
-        <i className="ti ti-arrow-down-right" />
-      </div>
-    )}
-
     <div className="ox-real-card-head">
       <span className="ox-real-card-num">{p.num}</span>
       <div>
@@ -326,8 +306,8 @@ export default function Realisations() {
       </div>
 
       <div className="ox-realisations-grid">
-        {realisations.map((p, i) => (
-          <RealCard key={p.num} p={p} perched={i === realisations.length - 1} lang={lang} c={c} onPreview={openPreview} />
+        {realisations.map((p) => (
+          <RealCard key={p.num} p={p} lang={lang} c={c} onPreview={openPreview} />
         ))}
       </div>
 
