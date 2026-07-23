@@ -131,6 +131,7 @@ const COPY = {
     deviceTablet: "Vue tablette",
     deviceMobile: "Vue mobile",
     closePreview: "Fermer l'aperçu",
+    previewComingSoon: "Aperçu à venir",
   },
   en: {
     kicker: "Portfolio",
@@ -144,6 +145,7 @@ const COPY = {
     deviceTablet: "Tablet view",
     deviceMobile: "Mobile view",
     closePreview: "Close preview",
+    previewComingSoon: "Preview coming soon",
   },
 };
 
@@ -294,7 +296,7 @@ export default function Realisations() {
           {c.kicker}
         </div>
         <h2 className="ox-realisations-title">
-          {c.title}<span className="ox-realisations-title-dot">.</span>
+          {c.title}
         </h2>
         <p className="ox-realisations-subtitle">
           {c.subtitleLine1}
@@ -338,9 +340,20 @@ export default function Realisations() {
               <i className={`ti ${DEVICE_ICON[preview.device]}`} />
               {deviceLabel[preview.device]} — {preview.name}
             </span>
-            <div className={`ox-lightbox-frame ox-lightbox-frame-${preview.device}`}>
+            <div
+              className={`ox-lightbox-frame ox-lightbox-frame-${preview.device}${
+                !preview.image ? " ox-lightbox-frame-empty" : ""
+              }`}
+            >
               <div className="ox-lightbox-frame-screen">
-                {preview.image ? <img src={preview.image} alt={preview.name} /> : <span>{preview.label}</span>}
+                {preview.image ? (
+                  <img src={preview.image} alt={preview.name} />
+                ) : (
+                  <div className="ox-lightbox-placeholder">
+                    <i className={`ti ${DEVICE_ICON[preview.device]}`} />
+                    <span>{c.previewComingSoon}</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>

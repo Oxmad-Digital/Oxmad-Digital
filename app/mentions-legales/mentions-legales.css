@@ -8,27 +8,6 @@
   margin-bottom: 48px;
 }
 
-.ox-legal-page-kicker {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--w);
-  font-family: var(--ox-font-display);
-  margin-bottom: 20px;
-}
-
-.ox-legal-page-kicker span {
-  width: 28px;
-  height: 3px;
-  background: var(--r);
-  flex-shrink: 0;
-  display: block;
-  border-radius: 2px;
-}
-
 .ox-legal-page-header h1 {
   font-size: 44px;
   font-weight: 700;

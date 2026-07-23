@@ -68,3 +68,10 @@
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+
+@media (max-width: 767px) {
+  .ox-logos-band-label,
+  .ox-logos-band-divider {
+    display: none;
+  }
+}

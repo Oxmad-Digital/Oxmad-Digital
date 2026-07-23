@@ -9,10 +9,6 @@ export default function MentionsLegalesContent() {
     return (
       <section className="ox-legal-page">
         <div className="ox-legal-page-header">
-          <div className="ox-legal-page-kicker">
-            <span />
-            Legal information
-          </div>
           <h1>Legal notice</h1>
         </div>
 
@@ -117,7 +113,7 @@ export default function MentionsLegalesContent() {
             </p>
           </article>
 
-          <p className="ox-legal-page-updated">Last updated: January 2026</p>
+          <p className="ox-legal-page-updated">Last updated: July 2026</p>
         </div>
       </section>
     );
@@ -126,10 +122,6 @@ export default function MentionsLegalesContent() {
   return (
     <section className="ox-legal-page">
       <div className="ox-legal-page-header">
-        <div className="ox-legal-page-kicker">
-          <span />
-          Informations légales
-        </div>
         <h1>Mentions légales</h1>
       </div>
 
@@ -238,7 +230,7 @@ export default function MentionsLegalesContent() {
           </p>
         </article>
 
-        <p className="ox-legal-page-updated">Dernière mise à jour : janvier 2026</p>
+        <p className="ox-legal-page-updated">Dernière mise à jour : juillet 2026</p>
       </div>
     </section>
   );

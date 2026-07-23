@@ -87,7 +87,7 @@
 
 .ox-process-bubble-title {
   font-family: var(--ox-font-display);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--ink);
   margin-bottom: 5px;
@@ -184,6 +184,14 @@
 @media (min-width: 768px) and (max-width: 1200px) {
   .ox-process-bubble-title {
     font-size: 24px;
+  }
+
+  .ox-process-bubble-title-break {
+    display: none;
+  }
+
+  .ox-process-bubble-wide {
+    width: 340px;
   }
 
   .ox-process-bubble p {

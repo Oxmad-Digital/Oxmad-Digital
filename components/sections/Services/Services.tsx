@@ -27,12 +27,12 @@ const SERVICES = {
 const COPY = {
   fr: {
     badge: "Services",
-    title: "Ce que nous proposons.",
+    title: "Ce que nous proposons",
     subtitle: "De la création de sites vitrines au développement e-commerce, nous couvrons tous vos besoins en développement web.",
   },
   en: {
     badge: "Services",
-    title: "What we offer.",
+    title: "What we offer",
     subtitle: "From showcase websites to e-commerce development, we cover all your web development needs.",
   },
 };

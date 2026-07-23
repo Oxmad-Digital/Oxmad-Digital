@@ -111,7 +111,7 @@ const COPY = {
   fr: {
     badge: "À propos",
     title: "Des solutions digitales performantes et",
-    highlight: "durables.",
+    highlight: "durables",
     subtitle:
       "Chez Oxmad Digital, nous sommes spécialisés dans la création de solutions digitales sur mesure, adaptées à vos besoins. Nous concevons des sites web à votre image et des outils performants, conçus pour durer.",
     featuresTitle: "Notre approche technique & engagement",
@@ -119,7 +119,7 @@ const COPY = {
   en: {
     badge: "About",
     title: "High-performing digital solutions,",
-    highlight: "built to last.",
+    highlight: "built to last",
     subtitle:
       "At Oxmad Digital, we specialize in building custom digital solutions tailored to your needs. We design websites that reflect your brand and tools built for performance and longevity.",
     featuresTitle: "Our technical approach & commitment",

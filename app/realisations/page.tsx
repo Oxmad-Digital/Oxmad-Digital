@@ -35,10 +35,9 @@ const FILTERS = {
 
 const COPY = {
   fr: {
-    kicker: "Nos réalisations",
     titleLine1: "Des projets qui",
     titleLine2: "génèrent des ",
-    titleAccent: "résultats.",
+    titleAccent: "résultats",
     desc: "Chaque réalisation est le fruit d'une collaboration étroite avec nos clients et d'une recherche constante de performance mesurable.",
     statsCountLabel: "Projets réalisés",
     otherStats: [["98%", "Clients satisfaits"]] as [string, string][],
@@ -49,10 +48,9 @@ const COPY = {
     seeMore: "Voir plus",
   },
   en: {
-    kicker: "Our work",
     titleLine1: "Projects that",
     titleLine2: "deliver ",
-    titleAccent: "results.",
+    titleAccent: "results",
     desc: "Every project is the result of close collaboration with our clients and a constant focus on measurable performance.",
     statsCountLabel: "Projects completed",
     otherStats: [["98%", "Satisfied clients"], ["×3", "Average traffic"]] as [string, string][],
@@ -96,10 +94,6 @@ export default function RealisationsPage() {
         <div className="ox-real-page-hero-grid" />
         <div className="ox-real-page-hero-inner">
           <div className="ox-real-page-hero-copy">
-            <div className="ox-real-page-hero-kicker">
-              <span />
-              {c.kicker}
-            </div>
             <h1>
               {c.titleLine1}
               <br />
