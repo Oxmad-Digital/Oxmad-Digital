@@ -50,6 +50,13 @@
   gap: 6px;
 }
 
+.ox-project-card-url-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
 .ox-project-card-url i {
   font-size: 11px;
   color: rgba(40, 200, 64, 0.8);

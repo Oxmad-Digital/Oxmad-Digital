@@ -21,14 +21,6 @@ const LOGOS: { name: string; logo: string; darkLogo?: string }[] = [
     logo: "https://res.cloudinary.com/eee2cbey/image/upload/v1783620313/logo_tsaralevenana_czjash.webp",
   },
   {
-    name: "Thadeus",
-    logo: "https://res.cloudinary.com/eee2cbey/image/upload/v1783696516/Thadeus_logo_fond-blanc_tgayua.webp",
-  },
-  {
-    name: "Lake View Hotel",
-    logo: "https://res.cloudinary.com/eee2cbey/image/upload/v1783696817/oxmad-digital_logo_lake_view_hotel_bandeau_a2z2oy.webp",
-  },
-  {
     name: "Wybob",
     logo: "https://res.cloudinary.com/eee2cbey/image/upload/v1783697019/oxmad-digital_logo_wybob_bandeau_udit0y.webp",
     darkLogo: "https://res.cloudinary.com/eee2cbey/image/upload/v1783699217/oxmad-digital_logo_wybob_bandeau_dark-mode_pjqvl8.webp",

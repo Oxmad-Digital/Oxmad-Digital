@@ -16,8 +16,8 @@ const STACKS = {
         { key: "nextjs", icon: "ti-brand-nextjs", label: "Next.js" },
         { key: "vercel", icon: "ti-triangle-filled", label: "Vercel" },
         { key: "github", icon: "ti-brand-github", label: "GitHub" },
-        { key: "resend", icon: "ti-send", label: "Resend" },
-        { key: "cloudinary", icon: "ti-cloud", label: "Cloudinary" },
+        { key: "plunk", icon: "ti-mail", label: "Plunk" },
+        { key: "cloudflare", icon: "ti-brand-cloudflare", label: "Cloudflare" },
       ],
     },
     {
@@ -26,12 +26,12 @@ const STACKS = {
       hub: "E-commerce",
       hubIcon: "ti-shopping-bag",
       tools: [
-        { key: "database", icon: "ti-database", label: "MongoDB / Supabase" },
+        { key: "neon", icon: "ti-database", label: "Neon" },
         { key: "vercel", icon: "ti-triangle-filled", label: "Vercel" },
         { key: "github", icon: "ti-brand-github", label: "GitHub" },
         { key: "nextjs", icon: "ti-brand-nextjs", label: "Next.js" },
-        { key: "resend", icon: "ti-send", label: "Resend" },
-        { key: "cloudinary", icon: "ti-cloud", label: "Cloudinary" },
+        { key: "plunk", icon: "ti-mail", label: "Plunk" },
+        { key: "cloudflare", icon: "ti-brand-cloudflare", label: "Cloudflare" },
         { key: "payment", icon: "ti-credit-card", label: "API paiement" },
         { key: "shipping", icon: "ti-truck-delivery", label: "API transporteur" },
       ],
@@ -47,8 +47,8 @@ const STACKS = {
         { key: "nextjs", icon: "ti-brand-nextjs", label: "Next.js" },
         { key: "vercel", icon: "ti-triangle-filled", label: "Vercel" },
         { key: "github", icon: "ti-brand-github", label: "GitHub" },
-        { key: "resend", icon: "ti-send", label: "Resend" },
-        { key: "cloudinary", icon: "ti-cloud", label: "Cloudinary" },
+        { key: "plunk", icon: "ti-mail", label: "Plunk" },
+        { key: "cloudflare", icon: "ti-brand-cloudflare", label: "Cloudflare" },
       ],
     },
     {
@@ -57,12 +57,12 @@ const STACKS = {
       hub: "E-commerce",
       hubIcon: "ti-shopping-bag",
       tools: [
-        { key: "database", icon: "ti-database", label: "MongoDB / Supabase" },
+        { key: "neon", icon: "ti-database", label: "Neon" },
         { key: "vercel", icon: "ti-triangle-filled", label: "Vercel" },
         { key: "github", icon: "ti-brand-github", label: "GitHub" },
         { key: "nextjs", icon: "ti-brand-nextjs", label: "Next.js" },
-        { key: "resend", icon: "ti-send", label: "Resend" },
-        { key: "cloudinary", icon: "ti-cloud", label: "Cloudinary" },
+        { key: "plunk", icon: "ti-mail", label: "Plunk" },
+        { key: "cloudflare", icon: "ti-brand-cloudflare", label: "Cloudflare" },
         { key: "payment", icon: "ti-credit-card", label: "Payment API" },
         { key: "shipping", icon: "ti-truck-delivery", label: "Shipping API" },
       ],
@@ -90,7 +90,7 @@ const FEATURES = {
     {
       icon: "ti-key",
       title: "Un actif que vous possédez",
-      desc: "Nous vous livrons le site avec sa base de code (codebase) et créons l'ensemble des comptes de services tiers à votre nom. Vous êtes ainsi le véritable propriétaire de votre site.",
+      desc: "Nous vous livrons le site avec sa base de code (codebase), qui vous appartient intégralement. Le site est hébergé sur nos comptes Vercel, Cloudflare et Neon, que nous transférons gratuitement sur un compte à votre nom si vous le souhaitez.",
     },
   ],
   en: [
@@ -102,7 +102,7 @@ const FEATURES = {
     {
       icon: "ti-key",
       title: "An asset you truly own",
-      desc: "We deliver the site along with its codebase and create all third-party service accounts in your name. You are the real owner of your site.",
+      desc: "We deliver the site along with its codebase, which fully belongs to you. The site is hosted on our own Vercel, Cloudflare and Neon accounts, which we transfer free of charge to an account in your name whenever you'd like.",
     },
   ],
 };

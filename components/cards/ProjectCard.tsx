@@ -49,7 +49,7 @@ export default function ProjectCard({
         </div>
         <div className="ox-project-card-url">
           <i className="ti ti-lock" />
-          {url}
+          <span className="ox-project-card-url-text">{url}</span>
         </div>
       </div>
 
