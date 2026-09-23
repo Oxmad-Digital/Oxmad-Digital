@@ -28,7 +28,7 @@
 .ox-hero-x svg {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 65%;
   transform: translate(-50%, -50%);
   height: 118%;
   width: auto;
@@ -75,11 +75,11 @@
 
 .ox-hero-title {
   font-family: var(--ox-font-display);
-  font-size: 56px;
+  font-size: 72px;
   font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -1.5px;
-  margin-bottom: 18px;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
 }
 
 .ox-hero-title-accent {
@@ -87,10 +87,10 @@
 }
 
 .ox-hero-subtitle {
-  font-size: 15px;
-  line-height: 1.75;
+  font-size: 18px;
+  line-height: 1.7;
   color: var(--w50);
-  max-width: 420px;
+  max-width: 480px;
 }
 
 .ox-hero-right {
@@ -101,37 +101,6 @@
   justify-content: center;
   height: 100%;
   min-height: 560px;
-}
-
-.ox-hero-glow {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(217, 204, 1, 0.26) 0%, rgba(155, 169, 20, 0.12) 50%, transparent 70%);
-  filter: blur(28px);
-  animation: ox-pulse-glow 4s ease-in-out infinite;
-}
-
-.ox-hero-orbit {
-  position: absolute;
-  width: 340px;
-  height: 340px;
-  border-radius: 50%;
-  border: 1px dashed rgba(155, 169, 20, 0.4);
-  animation: ox-spin-slow 22s linear infinite;
-}
-
-.ox-hero-orbit-dot {
-  position: absolute;
-  top: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--r);
-  box-shadow: 0 0 10px var(--r);
 }
 
 .ox-hero-robot {
@@ -163,16 +132,6 @@
 @keyframes ox-float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-14px); }
-}
-
-@keyframes ox-spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes ox-pulse-glow {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
 }
 
 @media (min-width: 1200px) and (max-width: 1440px) {

@@ -56,11 +56,7 @@ export default function Hero() {
         </div>
 
         <div className="ox-hero-right">
-          <div className="ox-hero-glow" />
-          <div className="ox-hero-orbit">
-            <span className="ox-hero-orbit-dot" />
-          </div>
-          <div className="ox-hero-robot">
+          <div className="ox-hero-robot" style={{ display: "none" }}>
             <div className="ox-hero-bubble">{c.bubble}</div>
             <img src="/robot-oxmad.svg" alt={c.mascotAlt} />
           </div>
