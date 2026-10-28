@@ -1,0 +1,178 @@
+{
+  "/favicon.svg": {
+    "key": "images/oxmad-digital-favicon-3fe01ef6ec8b.webp",
+    "width": 128,
+    "height": 128,
+    "bytes": 1262,
+    "originalBytes": 1554,
+    "quality": "lossless"
+  },
+  "/oxmad-symbole-transparent.svg": {
+    "key": "images/oxmad-digital-symbole-transparent-76de83c5de0c.webp",
+    "width": 1600,
+    "height": 1600,
+    "bytes": 15504,
+    "originalBytes": 1400,
+    "quality": "lossless"
+  },
+  "/oxmad-wordmark-sur-fond-sombre.svg": {
+    "key": "images/oxmad-digital-logo-fond-sombre-af2982772c86.webp",
+    "width": 1600,
+    "height": 535,
+    "bytes": 22626,
+    "originalBytes": 6967,
+    "quality": "lossless"
+  },
+  "/oxmad_arches_perspective.png": {
+    "key": "images/oxmad-digital-arches-perspective-d7ed0bc50a5d.webp",
+    "width": 960,
+    "height": 490,
+    "bytes": 37184,
+    "originalBytes": 2256283,
+    "quality": 82
+  },
+  "/oxmad_chevrons_jardin_cotier_desktop.webp": {
+    "key": "images/oxmad-digital-hero-accueil-jardin-cotier-desktop-02cfc7897bca.webp",
+    "width": 1672,
+    "height": 941,
+    "bytes": 509456,
+    "originalBytes": 383264,
+    "quality": 92
+  },
+  "/oxmad_chevrons_jardin_cotier_mobile.webp": {
+    "key": "images/oxmad-digital-hero-accueil-jardin-cotier-mobile-845bfcd7dfda.webp",
+    "width": 760,
+    "height": 941,
+    "bytes": 174426,
+    "originalBytes": 174426,
+    "quality": 92
+  },
+  "/oxmad_faille_lumineuse_lisse.png": {
+    "key": "images/oxmad-digital-faille-lumineuse-lisse-4a4d39253a39.webp",
+    "width": 960,
+    "height": 540,
+    "bytes": 33458,
+    "originalBytes": 1727364,
+    "quality": 82
+  },
+  "/oxmad_galerie_cotiere_desktop.webp": {
+    "key": "images/oxmad-digital-hero-realisations-galerie-cotiere-desktop-9a11d7333800.webp",
+    "width": 1672,
+    "height": 941,
+    "bytes": 392770,
+    "originalBytes": 392770,
+    "quality": 92
+  },
+  "/oxmad_horizon_solaire.png": {
+    "key": "images/oxmad-digital-horizon-solaire-86a661009611.webp",
+    "width": 960,
+    "height": 540,
+    "bytes": 126408,
+    "originalBytes": 3700087,
+    "quality": 82
+  },
+  "/oxmad_pixels_suspendus.png": {
+    "key": "images/oxmad-digital-pixels-suspendus-43f6aa9cdc2f.webp",
+    "width": 960,
+    "height": 540,
+    "bytes": 44276,
+    "originalBytes": 1730421,
+    "quality": 82
+  },
+  "/oxmad_service_custom.webp": {
+    "key": "images/oxmad-digital-service-custom-1627cebc9d48.webp",
+    "width": 960,
+    "height": 640,
+    "bytes": 42248,
+    "originalBytes": 45790,
+    "quality": 82
+  },
+  "/oxmad_service_ecommerce.webp": {
+    "key": "images/oxmad-digital-service-ecommerce-677d82636373.webp",
+    "width": 960,
+    "height": 640,
+    "bytes": 32400,
+    "originalBytes": 34612,
+    "quality": 82
+  },
+  "/oxmad_service_seo.webp": {
+    "key": "images/oxmad-digital-service-seo-f0cfe11f588f.webp",
+    "width": 960,
+    "height": 640,
+    "bytes": 28908,
+    "originalBytes": 30476,
+    "quality": 82
+  },
+  "/oxmad_service_websites.webp": {
+    "key": "images/oxmad-digital-service-websites-dcf83e0750fa.webp",
+    "width": 960,
+    "height": 640,
+    "bytes": 21548,
+    "originalBytes": 24080,
+    "quality": 82
+  },
+  "/projects/bitumad.webp": {
+    "key": "images/oxmad-digital-projet-bitumad-ab8f70763d6a.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 97242,
+    "originalBytes": 105736,
+    "quality": 82
+  },
+  "/projects/mahaleo.webp": {
+    "key": "images/oxmad-digital-projet-mahaleo-c7395051c166.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 79220,
+    "originalBytes": 82744,
+    "quality": 82
+  },
+  "/projects/ms-care.webp": {
+    "key": "images/oxmad-digital-projet-ms-care-c7b19fe423e7.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 55320,
+    "originalBytes": 58188,
+    "quality": 82
+  },
+  "/projects/ocibel.webp": {
+    "key": "images/oxmad-digital-projet-ocibel-9cfa6ab54268.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 63194,
+    "originalBytes": 65862,
+    "quality": 82
+  },
+  "/projects/pull-lover.webp": {
+    "key": "images/oxmad-digital-projet-pull-lover-18d13746976a.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 385342,
+    "originalBytes": 530024,
+    "quality": 82
+  },
+  "/projects/tsaralevenana.webp": {
+    "key": "images/oxmad-digital-projet-tsaralevenana-233de49cd34e.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 51852,
+    "originalBytes": 54096,
+    "quality": 82
+  },
+  "/projects/ultramaille.webp": {
+    "key": "images/oxmad-digital-projet-ultramaille-b2a5122b27f7.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 70910,
+    "originalBytes": 74234,
+    "quality": 82
+  },
+  "/projects/wybob.webp": {
+    "key": "images/oxmad-digital-projet-wybob-db4fe2eeef84.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 102546,
+    "originalBytes": 110334,
+    "quality": 82
+  }
+}
