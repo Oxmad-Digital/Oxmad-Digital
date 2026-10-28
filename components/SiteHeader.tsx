@@ -85,7 +85,7 @@ export default function SiteHeader() {
           className="logo-officiel"
           aria-label={isHome ? "Oxmad Digital, retour en haut" : "Oxmad Digital — accueil"}
         >
-          <img src={BRAND_IMAGES.symbol} width={64} height={64} alt="Oxmad Digital" fetchPriority="high" />
+          <img src={BRAND_IMAGES.logoDark} width={1204} height={403} alt="Oxmad Digital" fetchPriority="high" />
         </Link>
         <nav className={`nav-links${open ? " show" : ""}`} id="navLinks" aria-label="Navigation principale">
           {LINKS.map((link, i) => (
