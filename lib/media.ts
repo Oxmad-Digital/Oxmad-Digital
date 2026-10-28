@@ -27,7 +27,6 @@ export const HERO_IMAGES = {
 export const BRAND_IMAGES = {
   symbol: mediaUrl("/oxmad-symbole-transparent.svg"),
   logoDark: mediaUrl("/oxmad-wordmark-sur-fond-sombre.svg"),
-  favicon: mediaUrl("/favicon.svg"),
 } as const;
 
 export const SERVICE_IMAGES = {

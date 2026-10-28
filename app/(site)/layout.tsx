@@ -5,7 +5,6 @@ import SiteHeader from "@/components/SiteHeader";
 import Analytics from "@/components/Analytics";
 import { BookCallProvider } from "@/components/BookCall/BookCallContext";
 import SiteMotion from "@/components/motion/SiteMotion";
-import { BRAND_IMAGES, MEDIA_BASE_URL } from "@/lib/media";
 import { ADDRESS, CONTACT_EMAIL, CONTACT_PHONE, OPEN_GRAPH, SITE_URL, SOCIAL_LINKS } from "@/lib/site";
 
 // Runs before first paint: arms the hidden "pre-reveal" states, and the intro on the first
@@ -32,10 +31,6 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
   },
   twitter: { card: "summary_large_image" },
-  icons: {
-    icon: { url: BRAND_IMAGES.favicon, type: MEDIA_BASE_URL ? "image/webp" : "image/svg+xml" },
-    apple: "/apple-touch-icon.png",
-  },
 };
 
 // Local business card for search engines: must match the footer, the legal notice and the Google Business Profile.
