@@ -1,0 +1,54 @@
+/* ─── Curseur Oxmad : viseur d'architecte + libellé contextuel + traîne de pixels (hero) ─── */
+html.has-custom-cursor:not(:has(dialog[open])),
+html.has-custom-cursor:not(:has(dialog[open])) * { cursor: none !important; }
+html.has-custom-cursor:not(:has(dialog[open])) :is(input, textarea, [contenteditable='true']):not([type='checkbox'], [type='radio'], [type='submit'], [type='button']) { cursor: text !important; }
+
+.ox-cursor { position: fixed; inset: 0; z-index: 2147483000; pointer-events: none; opacity: 0; transition: opacity .25s; }
+html.cursor-visible .ox-cursor { opacity: 1; }
+html.cursor-over-text .ox-cursor__reticle,
+html.cursor-over-text .ox-cursor__frame,
+html.cursor-over-text .ox-cursor__label,
+html:has(dialog[open]) .ox-cursor { opacity: 0; }
+
+.ox-cursor__trail { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* Réticule : inversé sur fond clair comme sur fond sombre. Le mélange est porté par son calque
+   (.ox-cursor--blend) : posé sur le réticule, il resterait enfermé dans le calque fixe et ne verrait pas la page. */
+.ox-cursor--blend { mix-blend-mode: difference; }
+.ox-cursor__reticle { position: absolute; left: 0; top: 0; color: #fff; will-change: transform; }
+.ox-cursor__branch { position: absolute; background: currentColor; transition: transform .25s cubic-bezier(.2,.8,.2,1), opacity .2s; }
+.ox-cursor__branch--t, .ox-cursor__branch--b { left: -.5px; width: 1px; height: 9px; }
+.ox-cursor__branch--l, .ox-cursor__branch--r { top: -.5px; height: 1px; width: 9px; }
+.ox-cursor__branch--t { bottom: 4px; }
+.ox-cursor__branch--b { top: 4px; }
+.ox-cursor__branch--l { right: 4px; }
+.ox-cursor__branch--r { left: 4px; }
+.ox-cursor__dot { position: absolute; left: -1.5px; top: -1.5px; width: 3px; height: 3px; background: currentColor; transition: transform .2s; }
+.ox-cursor__coords { position: absolute; left: 16px; top: 12px; font-size: 9px; font-weight: 600; letter-spacing: .12em; white-space: nowrap; font-variant-numeric: tabular-nums; opacity: .7; transition: opacity .2s; }
+
+html.cursor-hover .ox-cursor__branch { opacity: 0; }
+html.cursor-hover .ox-cursor__branch--t { transform: translateY(-10px); }
+html.cursor-hover .ox-cursor__branch--b { transform: translateY(10px); }
+html.cursor-hover .ox-cursor__branch--l { transform: translateX(-10px); }
+html.cursor-hover .ox-cursor__branch--r { transform: translateX(10px); }
+html.cursor-hover .ox-cursor__coords { opacity: 0; }
+html.cursor-down .ox-cursor__dot { transform: scale(2.2); }
+
+/* Repères de découpe autour de l'élément survolé */
+.ox-cursor__frame { position: absolute; left: 0; top: 0; color: var(--accent); opacity: 0; transition: opacity .2s; will-change: transform, width, height; }
+html.cursor-hover .ox-cursor__frame { opacity: 1; }
+html.cursor-grab .ox-cursor__frame { opacity: 1; }
+html.cursor-grab .ox-cursor__coords { opacity: 0; }
+.ox-cursor__frame i { position: absolute; width: 10px; height: 10px; border: 0 solid currentColor; }
+.ox-cursor__frame i:nth-child(1) { left: 0; top: 0; border-left-width: 1.5px; border-top-width: 1.5px; }
+.ox-cursor__frame i:nth-child(2) { right: 0; top: 0; border-right-width: 1.5px; border-top-width: 1.5px; }
+.ox-cursor__frame i:nth-child(3) { right: 0; bottom: 0; border-right-width: 1.5px; border-bottom-width: 1.5px; }
+.ox-cursor__frame i:nth-child(4) { left: 0; bottom: 0; border-left-width: 1.5px; border-bottom-width: 1.5px; }
+
+/* Libellé contextuel */
+.ox-cursor__label { position: absolute; left: 0; top: 0; padding: 7px 10px 6px; background: var(--accent); color: var(--black); font-size: 10px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; border-radius: 2px; opacity: 0; scale: .6; transform-origin: top left; transition: opacity .18s, scale .25s cubic-bezier(.2,.8,.2,1); will-change: transform; }
+html.cursor-has-label .ox-cursor__label { opacity: 1; scale: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ox-cursor__branch, .ox-cursor__label, .ox-cursor__frame { transition: none; }
+}

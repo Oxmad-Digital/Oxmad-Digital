@@ -1,0 +1,93 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.fragment {
+  position: absolute;
+  width: calc(var(--columns) * 1ch + 1px);
+  max-width: calc(100% - 8px);
+  margin: 0;
+  padding: 0;
+  color: #f3efd4;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: clamp(10px, 0.85vw, 12px);
+  font-weight: 400;
+  font-variant-ligatures: none;
+  line-height: 1.7;
+  letter-spacing: 0;
+  text-shadow: 0 1px 8px #11120e40;
+  opacity: 0;
+  animation: appear 24s linear infinite;
+  animation-delay: var(--delay);
+  /* The typing animates widths: containment keeps that relayout local to the fragment. */
+  contain: layout paint style;
+}
+
+.fragment code { font: inherit; }
+.fragment:nth-child(1) { left: 27%; top: 10%; }
+.fragment:nth-child(2) { right: 3%; top: 22%; }
+.fragment:nth-child(3) { left: 8%; top: 51%; }
+.fragment:nth-child(4) { left: 57%; top: 49%; }
+.fragment:nth-child(5) { right: 8%; top: 5%; }
+.fragment:nth-child(6) { left: 33%; top: 58%; }
+
+.keyword { color: #e8d780; }
+.punctuation { color: #adc1b2; }
+
+.line {
+  display: block;
+  box-sizing: content-box;
+  width: 0;
+  height: 1.7em;
+  overflow: hidden;
+  white-space: pre;
+  border-inline-end: 1px solid transparent;
+  animation: type-short 24s steps(var(--characters), end) infinite;
+  animation-delay: calc(var(--delay) + var(--line-delay));
+}
+
+.line[data-speed="medium"] { animation-name: type-medium; }
+.line[data-speed="long"] { animation-name: type-long; }
+
+@keyframes appear {
+  0%, 32%, 100% { opacity: 0; }
+  5%, 26% { opacity: 0.24; }
+}
+
+/* Width advances by one character; the border is the caret and vanishes after typing. */
+@keyframes type-short {
+  0% { width: 0; border-inline-end-color: #e8d780; }
+  2.708333% { width: calc(var(--characters) * 1ch); border-inline-end-color: #e8d780; }
+  2.71%, 100% { width: calc(var(--characters) * 1ch); border-inline-end-color: transparent; }
+}
+
+@keyframes type-medium {
+  0% { width: 0; border-inline-end-color: #e8d780; }
+  4.166667% { width: calc(var(--characters) * 1ch); border-inline-end-color: #e8d780; }
+  4.17%, 100% { width: calc(var(--characters) * 1ch); border-inline-end-color: transparent; }
+}
+
+@keyframes type-long {
+  0% { width: 0; border-inline-end-color: #e8d780; }
+  5.625% { width: calc(var(--characters) * 1ch); border-inline-end-color: #e8d780; }
+  5.63%, 100% { width: calc(var(--characters) * 1ch); border-inline-end-color: transparent; }
+}
+
+@media (max-width: 790px) {
+  .fragment { font-size: 10px; line-height: 1.6; }
+  .line { height: 1.6em; }
+  /* Alternate slots keep an eight-second gap, so only one can appear at once. */
+  .fragment:nth-child(even) { display: none; }
+  .fragment:nth-child(1) { left: auto; right: 6%; top: 18%; }
+  .fragment:nth-child(3) { left: 7%; top: 48%; }
+  .fragment:nth-child(5) { left: auto; right: 0; top: 27%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay { display: none; }
+  .fragment, .line { animation: none; }
+}
