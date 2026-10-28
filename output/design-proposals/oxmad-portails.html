@@ -1,0 +1,197 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;650;700&display=swap');
+#oxmad-proposal { --ox-bg:#11120e; --ox-panel:#191a15; --ox-line:#35372e; --ox-text:#f5f3e9; --ox-muted:#aaaD9e; --ox-accent:#c6b703; --ox-green:#a6cf94; --ox-warn:#e7bd80; --ox-radius:3px; font-family:'Geist',Arial,sans-serif; color:var(--ox-text); font-size:14px; line-height:1.5; color-scheme:dark; }
+#oxmad-proposal * { box-sizing:border-box; }
+#oxmad-proposal [hidden] { display:none!important; }
+#oxmad-proposal button, #oxmad-proposal input, #oxmad-proposal textarea { font:inherit; }
+#oxmad-proposal button { color:inherit; }
+#oxmad-proposal .ox-demo-bar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; padding:0 0 14px; color:light-dark(#54564d,#bfc2b5); font-size:12px; color-scheme:light dark; }
+#oxmad-proposal .ox-demo-tabs { display:flex; gap:4px; }
+#oxmad-proposal .ox-demo-tabs button { border:1px solid light-dark(#d2d4c8,#494c40); background:transparent; color:inherit; border-radius:3px; padding:8px 12px; }
+#oxmad-proposal .ox-demo-tabs button[aria-pressed=true] { background:#c6b703; color:#11120e; border-color:#c6b703; }
+#oxmad-proposal .ox-window { display:grid; grid-template-columns:206px minmax(0,1fr); background:var(--ox-bg); min-height:690px; border:1px solid var(--ox-line); }
+#oxmad-proposal .ox-sidebar { padding:28px 18px 18px; border-right:1px solid var(--ox-line); display:flex; flex-direction:column; gap:28px; background:#11120e; color:#f5f3e9; }
+#oxmad-proposal .ox-brand { font-size:22px; font-weight:650; letter-spacing:-1.4px; line-height:1; }
+#oxmad-proposal .ox-brand span { color:#c6b703; }
+#oxmad-proposal .ox-brand small { display:block; font-size:10px; letter-spacing:2.7px; font-weight:500; margin-top:9px; }
+#oxmad-proposal .ox-workspace { border-top:1px solid #35372e; border-bottom:1px solid #35372e; padding:15px 0; }
+#oxmad-proposal .ox-kicker { color:var(--ox-muted); font-size:11px; letter-spacing:1.3px; text-transform:uppercase; display:flex; align-items:center; gap:9px; }
+#oxmad-proposal .ox-sidebar .ox-kicker { color:#aaaD9e; }
+#oxmad-proposal .ox-kicker::before { content:''; width:17px; height:1px; background:currentColor; }
+#oxmad-proposal .ox-workspace strong { display:block; margin-top:7px; font-weight:500; }
+#oxmad-proposal .ox-nav { display:grid; gap:5px; }
+#oxmad-proposal .ox-nav button { display:flex; align-items:center; gap:10px; text-align:left; border:0; border-left:2px solid transparent; border-radius:0; background:transparent; padding:10px 9px; color:#aaaD9e; font-size:13px; min-height:42px; }
+#oxmad-proposal .ox-nav button[aria-current=page] { border-left-color:#c6b703; background:#22241b; color:#f5f3e9; }
+#oxmad-proposal .ox-nav button:hover { background:#22241b; color:#f5f3e9; }
+#oxmad-proposal .ox-count { margin-left:auto; min-width:20px; text-align:center; font-size:11px; background:#c6b703; color:#11120e; border-radius:2px; padding:1px 4px; }
+#oxmad-proposal .ox-bottom { margin-top:auto; border-top:1px solid #35372e; padding-top:18px; color:#aaaD9e; font-size:12px; }
+#oxmad-proposal .ox-person { display:flex; align-items:center; gap:9px; color:#f5f3e9; margin-bottom:4px; }
+#oxmad-proposal .ox-avatar { display:grid; place-items:center; width:30px; height:30px; border:1px solid #494c40; border-radius:50%; font-size:11px; }
+#oxmad-proposal .ox-content { min-width:0; }
+#oxmad-proposal .ox-top { padding:18px 30px; border-bottom:1px solid var(--ox-line); display:flex; justify-content:space-between; align-items:center; gap:16px; color:var(--ox-muted); font-size:12px; }
+#oxmad-proposal .ox-top-right { display:flex; gap:7px; align-items:center; }
+#oxmad-proposal .ox-main { padding:32px 30px 28px; }
+#oxmad-proposal .ox-head { display:flex; justify-content:space-between; gap:20px; align-items:center; margin:15px 0 26px; }
+#oxmad-proposal h2 { color:var(--ox-text); font-size:clamp(29px,3.4vw,40px); line-height:1.07; letter-spacing:-1.8px; font-weight:500; margin:0 0 10px; }
+#oxmad-proposal h3 { color:var(--ox-text); font-size:16px; letter-spacing:-.4px; font-weight:500; margin:0; }
+#oxmad-proposal p { margin:0; }
+#oxmad-proposal .ox-sub { color:var(--ox-muted); font-size:13px; }
+#oxmad-proposal .ox-button { display:inline-flex; justify-content:center; align-items:center; gap:18px; padding:11px 15px; border:1px solid var(--ox-line); border-radius:var(--ox-radius); background:var(--ox-panel); color:var(--ox-text); text-decoration:none; font-size:12px; min-height:42px; }
+#oxmad-proposal .ox-primary { background:#c6b703; color:#11120e; border-color:#c6b703; font-weight:600; }
+#oxmad-proposal .ox-button:hover { filter:brightness(1.12); }
+#oxmad-proposal .ox-summary { border-block:1px solid var(--ox-line); display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); margin-bottom:28px; }
+#oxmad-proposal .ox-summary button { border:0; border-right:1px solid var(--ox-line); background:transparent; text-align:left; padding:16px 14px; }
+#oxmad-proposal .ox-summary button:first-child { padding-left:0; }
+#oxmad-proposal .ox-summary button:last-child { border-right:0; }
+#oxmad-proposal .ox-summary b { display:block; font-size:29px; letter-spacing:-1px; line-height:1.2; font-weight:500; font-variant-numeric:tabular-nums; margin-bottom:5px; }
+#oxmad-proposal .ox-summary span { color:var(--ox-muted); font-size:12px; }
+#oxmad-proposal .ox-summary button:hover span { color:var(--ox-text); }
+#oxmad-proposal .ox-section-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:0 0 14px; }
+#oxmad-proposal .ox-text-button { border:0; background:transparent; color:var(--ox-muted); font-size:12px; padding:8px 0; display:inline-flex; align-items:center; gap:7px; }
+#oxmad-proposal .ox-text-button:hover { color:var(--ox-text); }
+#oxmad-proposal .ox-list { border-top:1px solid var(--ox-line); }
+#oxmad-proposal .ox-row { width:100%; display:grid; grid-template-columns:minmax(0,1fr) auto 16px; text-align:left; align-items:center; gap:13px; padding:17px 0; border:0; border-bottom:1px solid var(--ox-line); background:transparent; }
+#oxmad-proposal .ox-row:hover { background:var(--ox-panel); }
+#oxmad-proposal .ox-row strong { display:block; font-weight:500; font-size:13px; margin-bottom:4px; }
+#oxmad-proposal .ox-row small { color:var(--ox-muted); font-size:12px; }
+#oxmad-proposal .ox-tag { font-size:11px; padding:3px 7px; border-radius:2px; white-space:nowrap; border:1px solid var(--ox-line); color:var(--ox-muted); }
+#oxmad-proposal .ox-tag.ox-action { color:var(--ox-warn); border-color:color-mix(in srgb,var(--ox-warn) 35%, transparent); }
+#oxmad-proposal .ox-tag.ox-good { color:var(--ox-green); border-color:color-mix(in srgb,var(--ox-green) 35%,transparent); }
+#oxmad-proposal .ox-two { display:grid; grid-template-columns:1.2fr 1fr; gap:24px; margin-top:29px; }
+#oxmad-proposal .ox-project { border:1px solid var(--ox-line); background:var(--ox-panel); padding:20px; border-radius:var(--ox-radius); }
+#oxmad-proposal .ox-project-top { display:flex; justify-content:space-between; gap:10px; align-items:center; margin-bottom:18px; }
+#oxmad-proposal .ox-project h3 { margin:7px 0 4px; }
+#oxmad-proposal .ox-project .ox-text-button { margin-top:12px; }
+#oxmad-proposal .ox-shortcut { display:flex; align-items:center; gap:9px; width:100%; border:0; border-bottom:1px solid var(--ox-line); background:transparent; color:var(--ox-text); padding:14px 0; font-size:13px; text-align:left; }
+#oxmad-proposal .ox-shortcut span { flex:1; }
+#oxmad-proposal .ox-foot { border-top:1px solid var(--ox-line); margin-top:30px; padding-top:16px; display:flex; justify-content:space-between; gap:15px; color:var(--ox-muted); font-size:11px; }
+#oxmad-proposal .ox-filter { display:flex; flex-wrap:wrap; gap:7px; margin:0 0 18px; }
+#oxmad-proposal .ox-filter button { border:1px solid var(--ox-line); border-radius:var(--ox-radius); background:transparent; color:var(--ox-muted); padding:7px 10px; font-size:12px; }
+#oxmad-proposal .ox-filter button[aria-pressed=true] { background:var(--ox-panel); color:var(--ox-text); border-color:var(--ox-muted); }
+#oxmad-proposal .ox-detail { padding:23px; border:1px solid var(--ox-line); background:var(--ox-panel); border-radius:var(--ox-radius); }
+#oxmad-proposal .ox-detail p { margin:12px 0; color:var(--ox-muted); }
+#oxmad-proposal .ox-detail label { display:block; margin:18px 0 6px; font-size:13px; }
+#oxmad-proposal .ox-detail textarea, #oxmad-proposal .ox-detail input { display:block; width:100%; background:var(--ox-bg); border:1px solid var(--ox-line); border-radius:var(--ox-radius); color:var(--ox-text); padding:12px; font-size:16px; }
+#oxmad-proposal .ox-detail textarea { min-height:95px; resize:vertical; }
+#oxmad-proposal .ox-detail .ox-button { margin-top:16px; }
+#oxmad-proposal .ox-notice { color:var(--ox-green); margin-top:12px; }
+#oxmad-proposal .ox-mobile-menu { display:none; }
+#oxmad-proposal svg { width:16px; height:16px; flex-shrink:0; }
+#oxmad-proposal[data-paper=true] { --ox-bg:#f2f0e9; --ox-panel:#e9e6dc; --ox-line:#d0cec1; --ox-text:#161711; --ox-muted:#64675a; --ox-green:#426536; --ox-warn:#785211; color-scheme:light; }
+#oxmad-proposal[data-compact=true] .ox-row { padding-block:11px; }
+@media(max-width:760px) { #oxmad-proposal .ox-window { grid-template-columns:175px minmax(0,1fr); } #oxmad-proposal .ox-sidebar { padding:24px 12px 16px; } #oxmad-proposal .ox-main { padding:25px 20px; } #oxmad-proposal .ox-top { padding:16px 20px; } #oxmad-proposal .ox-head { flex-wrap:wrap; } #oxmad-proposal .ox-two { grid-template-columns:1fr; gap:24px; } }
+@media(max-width:560px) { #oxmad-proposal .ox-window { display:block; min-height:0; } #oxmad-proposal .ox-sidebar { padding:18px; border-right:0; border-bottom:1px solid var(--ox-line); gap:16px; } #oxmad-proposal .ox-brand { font-size:20px; } #oxmad-proposal .ox-brand small { display:inline; margin-left:12px; font-size:9px; letter-spacing:1.6px; } #oxmad-proposal .ox-workspace, #oxmad-proposal .ox-bottom { display:none; } #oxmad-proposal .ox-mobile-menu { display:inline-flex; margin-left:auto; float:right; color:#f5f3e9; border:1px solid #494c40; background:transparent; padding:9px 11px; font-size:12px; gap:6px; align-items:center; } #oxmad-proposal .ox-nav { display:none; } #oxmad-proposal[data-menu=true] .ox-nav { display:grid; grid-template-columns:1fr 1fr; } #oxmad-proposal .ox-top { padding:12px 18px; } #oxmad-proposal .ox-main { padding:24px 18px; } #oxmad-proposal .ox-head { gap:16px; } #oxmad-proposal h2 { letter-spacing:-1.3px; font-size:32px; } #oxmad-proposal .ox-row { grid-template-columns:minmax(0,1fr) 14px; gap:7px; } #oxmad-proposal .ox-tag { grid-column:1; grid-row:auto; width:fit-content; } #oxmad-proposal .ox-row>svg { grid-column:2; grid-row:1; } #oxmad-proposal .ox-summary button { padding:14px 9px; } #oxmad-proposal .ox-summary span { font-size:11px; } #oxmad-proposal .ox-foot { flex-wrap:wrap; } }
+@media(pointer:coarse) { #oxmad-proposal button, #oxmad-proposal .ox-button { min-height:44px; } }
+</style>
+<div id="oxmad-proposal" aria-label="Proposition de design des espaces Oxmad">
+  <div class="ox-demo-bar">
+    <span>PROPOSITION · DONNÉES D’EXEMPLE</span>
+    <div class="ox-demo-tabs" role="group" aria-label="Espace à prévisualiser">
+      <button type="button" class="cursor-interaction" data-role="client" aria-pressed="true">Espace client</button>
+      <button type="button" class="cursor-interaction" data-role="admin" aria-pressed="false">Administration</button>
+    </div>
+  </div>
+  <div class="ox-window">
+    <aside class="ox-sidebar">
+      <div><button type="button" class="ox-mobile-menu cursor-interaction" aria-expanded="false" aria-controls="ox-navigation"><i data-lucide="menu" aria-hidden="true"></i> Menu</button><div class="ox-brand">oxmad<span>↗</span><small>DIGITAL</small></div></div>
+      <div class="ox-workspace"><div class="ox-kicker" id="ox-role-label">Espace client</div><strong id="ox-company">Atelier Horizon</strong></div>
+      <nav class="ox-nav" id="ox-navigation" aria-label="Navigation de l’espace"></nav>
+      <div class="ox-bottom"><div class="ox-person"><span class="ox-avatar" id="ox-initials">SL</span><span id="ox-name">Sophie Laurent</span></div><span id="ox-profile-label">Votre espace de collaboration</span></div>
+    </aside>
+    <div class="ox-content">
+      <header class="ox-top"><span id="ox-crumb">Espace client / Vue d’ensemble</span><span class="ox-top-right"><i data-lucide="lock-keyhole" aria-hidden="true"></i> Espace privé</span></header>
+      <main class="ox-main" id="ox-screen"></main>
+    </div>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.getElementById('oxmad-proposal');
+  const screen = root.querySelector('#ox-screen');
+  const nav = root.querySelector('#ox-navigation');
+  const options = { paper:false, compact:false, radius:3 };
+  const saved = window.openai?.widgetState?.modelContent;
+  let role = saved?.role === 'admin' ? 'admin' : 'client';
+  let page = 'home';
+  let filter = 'all';
+  const icon = name => '<i data-lucide="'+name+'" aria-hidden="true"></i>';
+  const navs = {
+    client:[['home','Vue d’ensemble','layout-dashboard'],['requests','Mes demandes','messages-square','1'],['documents','Devis & factures','file-text','1'],['files','Fichiers partagés','folder-open']],
+    admin:[['home','Vue d’ensemble','layout-dashboard'],['requests','Demandes clients','messages-square','3'],['bookings','Rendez-vous','calendar-days','2'],['messages','Messages du site','mail','4'],['clients','Clients','users'],['stats','Statistiques','chart-no-axes-combined'],['accounts','Comptes admin','settings']]
+  };
+  const requests = [
+    {title:'Mettre à jour la page contact',meta:'Atelier Horizon · Correction · Aujourd’hui',status:'Votre réponse attendue',tone:'action',needs:true},
+    {title:'Ajouter les nouvelles photos',meta:'Atelier Horizon · Amélioration · Hier',status:'En cours',tone:'',needs:false},
+    {title:'Corriger le menu sur mobile',meta:'Atelier Horizon · Correction · 24 oct.',status:'Livrée',tone:'good',needs:false}
+  ];
+  function persist() { window.openai?.setWidgetState?.({modelContent:{role,palette:options.paper?'papier':'sombre'},privateContent:{page}})?.catch(()=>{}); }
+  function icons() { if (globalThis.lucide) globalThis.lucide.createIcons({attrs:{width:16,height:16}}); }
+  function button(label,to,primary=false) { return '<button type="button" class="ox-button cursor-interaction '+(primary?'ox-primary':'')+'" data-go="'+to+'">'+label+icon(primary?'plus':'arrow-up-right')+'</button>'; }
+  function title(kicker,heading,sub,action='') { return '<div class="ox-kicker">'+kicker+'</div><div class="ox-head"><div><h2>'+heading+'</h2><p class="ox-sub">'+sub+'</p></div>'+action+'</div>'; }
+  function row(label,meta,status,tone,to) { return '<button type="button" class="ox-row cursor-interaction" data-go="'+to+'"><span><strong>'+label+'</strong><small>'+meta+'</small></span>'+(status?'<span class="ox-tag '+(tone?'ox-'+tone:'')+'">'+status+'</span>':'')+icon('arrow-up-right')+'</button>'; }
+  function section(label,to) { return '<div class="ox-section-head"><h3>'+label+'</h3><button type="button" class="ox-text-button cursor-interaction" data-go="'+to+'">Tout voir '+icon('arrow-right')+'</button></div>'; }
+  function summary(items) { return '<div class="ox-summary">'+items.map(x=>'<button type="button" class="cursor-interaction" data-go="'+x[2]+'"><b>'+x[0]+'</b><span>'+x[1]+'</span></button>').join('')+'</div>'; }
+  function home() {
+    if(role==='admin') return title('01 / Pilotage du studio','Les priorités du jour.','Demandes, rendez-vous et messages à traiter.',button('Voir les demandes','requests'))+
+      summary([['3','Demandes à traiter','requests'],['2','Rendez-vous à confirmer','bookings'],['4','Nouveaux messages','messages']])+section('À traiter en priorité','requests')+'<div class="ox-list">'+
+      row('Le formulaire de contact est bloqué','Maison Azur · Correction · Il y a 25 min','Urgent','action','detail')+
+      row('Confirmer l’appel découverte','Nicolas Martin · Demain, 10:00','À confirmer','action','bookings')+
+      row('Mettre à jour la page contact','Atelier Horizon · Nouvelle réponse client','À répondre','action','detail')+'</div><div class="ox-two"><div class="ox-project"><div class="ox-kicker">Relation client</div><h3>Un dossier, tout le contexte.</h3><p class="ox-sub">Projets, demandes, documents et accès.</p>'+button('Consulter les clients','clients')+'</div><div>'+section('Activité du site','stats')+'<p class="ox-sub">Consulter les visiteurs, les pages vues et les sources de trafic.</p>'+button('Ouvrir les statistiques','stats')+'</div></div>';
+    return title('01 / Votre espace','Bonjour Sophie.','Vos demandes et les prochaines étapes, au même endroit.',button('Nouvelle demande','new',true))+
+      summary([['2','Demandes en cours','requests'],['1','Réponse attendue','detail'],['1','Facture à régler','documents']])+section('À votre attention','requests')+'<div class="ox-list">'+
+      row('Mettre à jour la page contact','Le studio attend votre confirmation','À répondre','action','detail')+
+      row('Facture FA-2026-042','Maintenance · Échéance le 30 octobre','À régler','action','documents')+'</div><div class="ox-two"><div class="ox-project"><div class="ox-project-top"><div class="ox-kicker">Votre site</div>'+icon('globe')+'</div><h3>Atelier Horizon</h3><p class="ox-sub">Site vitrine · atelier-horizon.example</p><p style="margin-top:13px"><span class="ox-tag ox-good">Maintenance active</span></p><button type="button" class="ox-text-button cursor-interaction" data-go="scope">Ce que couvre la maintenance '+icon('arrow-right')+'</button></div><div>'+section('Accès rapides','requests')+'<button type="button" class="ox-shortcut cursor-interaction" data-go="documents">'+icon('file-text')+'<span>Devis & factures</span>'+icon('arrow-up-right')+'</button><button type="button" class="ox-shortcut cursor-interaction" data-go="files">'+icon('folder-open')+'<span>Fichiers partagés</span>'+icon('arrow-up-right')+'</button></div></div>';
+  }
+  function render() {
+    root.dataset.paper=String(options.paper); root.dataset.compact=String(options.compact); root.style.setProperty('--ox-radius',options.radius+'px');
+    root.querySelectorAll('[data-role]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.role===role)));
+    root.querySelector('#ox-role-label').textContent=role==='admin'?'Administration':'Espace client';
+    root.querySelector('#ox-company').textContent=role==='admin'?'Oxmad Digital':'Atelier Horizon';
+    root.querySelector('#ox-name').textContent=role==='admin'?'Antoine':'Sophie Laurent';
+    root.querySelector('#ox-initials').textContent=role==='admin'?'AP':'SL';
+    root.querySelector('#ox-profile-label').textContent=role==='admin'?'Gestion du studio':'Votre espace de collaboration';
+    nav.innerHTML=navs[role].map(n=>'<button type="button" class="cursor-interaction" data-go="'+n[0]+'" '+(page===n[0]?'aria-current="page"':'')+'>'+icon(n[2])+n[1]+(n[3]?'<span class="ox-count">'+n[3]+'</span>':'')+'</button>').join('');
+    const current=navs[role].find(n=>n[0]===page);
+    root.querySelector('#ox-crumb').textContent=(role==='admin'?'Administration':'Espace client')+' / '+(current?.[1]||'Demandes');
+    let html='';
+    if(page==='home') html=home();
+    else if(page==='requests') html=title('02 / Suivi',role==='admin'?'Demandes clients.':'Mes demandes.','Un statut clair et la prochaine action pour chaque demande.',role==='client'?button('Nouvelle demande','new',true):'')+'<div class="ox-filter" role="group" aria-label="Filtrer les demandes"><button type="button" class="cursor-interaction" data-filter="all" aria-pressed="'+(filter==='all')+'">Toutes</button><button type="button" class="cursor-interaction" data-filter="reply" aria-pressed="'+(filter==='reply')+'">À répondre</button></div><div class="ox-list">'+requests.filter(r=>filter==='all'||r.needs).map(r=>row(r.title,r.meta,role==='admin'&&r.needs?'Réponse client reçue':r.status,r.tone,'detail')).join('')+'</div>';
+    else if(page==='detail') html=title('Demande / Correction','Mettre à jour<br>la page contact.','Atelier Horizon · Créée le 26 octobre')+'<p style="margin-bottom:20px"><span class="ox-tag">En cours</span></p><div class="ox-detail"><div class="ox-kicker">Dernier échange · Le studio</div><h3 style="margin-top:12px">Pouvez-vous confirmer le nouveau numéro ?</h3><p>La modification est prête. Confirmez-nous le numéro à afficher avant sa mise en ligne.</p><form id="ox-reply"><label for="ox-reply-text">Votre réponse</label><textarea id="ox-reply-text" required placeholder="Écrivez votre message…"></textarea><button type="button" class="ox-button ox-primary cursor-interaction">Envoyer la réponse '+icon('arrow-right')+'</button><div class="ox-notice" role="status" id="ox-reply-status"></div></form></div>';
+    else if(page==='documents') html=title('03 / Documents','Devis & factures.','Retrouvez les montants, échéances et documents du studio.')+'<div class="ox-list">'+row('Facture FA-2026-042 · 120,00 €','Maintenance · Échéance le 30 octobre','À régler','action','document')+row('Devis DE-2026-018 · 850,00 €','Évolution du site · 20 octobre','Accepté','good','document')+'</div>';
+    else if(page==='document') html=title('Documents / Facture','Facture FA-2026-042.','Maintenance du site Atelier Horizon')+'<div class="ox-detail"><h3>120,00 € · À régler</h3><p>Échéance : 30 octobre 2026</p><p>Le document regroupe le détail de la prestation et les modalités de règlement.</p><p class="ox-sub">Aperçu de présentation · aucun PDF joint à cette proposition.</p>'+button('Retour aux documents','documents')+'</div>';
+    else if(page==='files') html=title('04 / Collaboration','Fichiers partagés.','Les fichiers échangés avec le studio, organisés par dossier.')+'<div class="ox-list">'+row('Identité de marque','Dossier · Logos et charte graphique','','','folder')+row('Photos du site','Dossier · Visuels fournis au studio','','','folder')+'</div>';
+    else if(page==='folder') html=title('Fichiers partagés / Identité','Identité de marque.','Les ressources partagées pour votre site.')+'<div class="ox-list">'+row('Charte graphique.pdf','PDF · 2,4 Mo','Exemple','','file')+row('Logo-principal.svg','SVG · 24 Ko','Exemple','','file')+'</div>';
+    else if(page==='file') html=title('Fichiers / Aperçu','Charte graphique.','Exemple de consultation d’un document.')+'<div class="ox-detail"><p>Aucun fichier réel n’est associé à cette proposition.</p>'+button('Retour au dossier','folder')+'</div>';
+    else if(page==='scope') html=title('Votre site / Maintenance','Votre maintenance.','Un périmètre lisible avant de créer une demande.')+'<div class="ox-detail"><h3>Inclus dans la maintenance</h3><p>Corrections, modifications de contenus et améliorations de l’existant.</p><h3>Sur devis complémentaire</h3><p>Nouvelle page, fonctionnalité majeure ou refonte graphique.</p>'+button('Créer une demande','new',true)+'</div>';
+    else if(page==='new') html=title('Demandes / Création','Que souhaitez-vous<br>faire évoluer ?','Décrivez votre besoin. Le studio vous répondra dans cet espace.')+'<div class="ox-detail"><form id="ox-new"><label for="ox-title">Titre de votre demande</label><input id="ox-title" required placeholder="Ex. : Mettre à jour le numéro de téléphone"><label for="ox-body">Votre besoin</label><textarea id="ox-body" required placeholder="Précisez la page et le résultat souhaité…"></textarea><p class="ox-sub">Correction ou petite amélioration : la prise en charge sera confirmée par le studio.</p><button type="button" class="ox-button ox-primary cursor-interaction">Envoyer la demande '+icon('arrow-right')+'</button><div class="ox-notice" role="status" id="ox-new-status"></div></form></div>';
+    else if(page==='bookings') html=title('03 / Agenda','Rendez-vous.','Les prochains échanges avec vos prospects.')+'<div class="ox-list">'+row('Nicolas Martin · Appel découverte','Demain · 10:00 · Antananarivo','À confirmer','action','booking')+row('Claire Bernard · Projet e-commerce','29 octobre · 14:30 · Antananarivo','À confirmer','action','booking')+'</div>';
+    else if(page==='booking') html=title('Rendez-vous / Détail','Appel découverte.','Nicolas Martin · Demain, 10:00 · Antananarivo')+'<div class="ox-detail"><h3>Projet de site vitrine</h3><p>Échanger sur les objectifs et le périmètre du futur site.</p><button type="button" class="ox-button ox-primary cursor-interaction" data-demo="Rendez-vous confirmé dans cet aperçu uniquement.">Confirmer le rendez-vous</button><div class="ox-notice" role="status" id="ox-action-status"></div></div>';
+    else if(page==='clients') html=title('05 / Relation client','Clients.','Un accès direct aux projets et aux échanges.')+'<div class="ox-list">'+row('Atelier Horizon','1 projet · Maintenance active','1 réponse reçue','action','client')+row('Maison Azur','1 projet · Maintenance active','1 demande urgente','action','client')+'</div>';
+    else if(page==='client') html=title('Clients / Atelier Horizon','Atelier Horizon.','Site vitrine · Maintenance active')+'<div class="ox-list">'+row('Demandes','2 en cours · Dernier échange aujourd’hui','','','requests')+row('Devis & factures','1 facture à régler','','','documents')+row('Fichiers partagés','Identité et photos du site','','','files')+'</div>';
+    else if(page==='messages') html=title('04 / Prospection','Messages du site.','Les prises de contact depuis le site public.')+'<div class="ox-list">'+row('Demande de création de site','Élodie Dupont · Aujourd’hui','Nouveau','action','message')+row('Projet de boutique en ligne','Marc Robert · Hier','Nouveau','action','message')+'</div>';
+    else if(page==='message') html=title('Messages / Contact','Un nouveau projet.','Élodie Dupont · Aujourd’hui')+'<div class="ox-detail"><h3>Demande de création de site</h3><p>Bonjour, je souhaite présenter mon activité et faciliter les prises de contact. Pourrions-nous en discuter ?</p>'+button('Retour aux messages','messages')+'</div>';
+    else if(page==='stats') html=title('06 / Audience','Statistiques du site.','Une vue dédiée à l’audience, distincte des actions quotidiennes.')+summary([['1 248','Visiteurs · 30 jours','stats'],['3 860','Pages vues · 30 jours','stats'],['8','Prises de rendez-vous','bookings']])+'<p class="ox-sub">Chiffres fictifs pour illustrer la hiérarchie. Les graphiques et la carte actuels trouveraient leur place dans cette rubrique.</p>';
+    else if(page==='accounts') html=title('07 / Administration','Comptes admin.','Les accès de l’équipe du studio.')+'<div class="ox-list">'+row('Antoine','Compte administrateur','Actif','good','account')+'</div>';
+    else html=title('Administration / Compte','Antoine.','Compte administrateur du studio.')+'<div class="ox-detail"><p>Gestion des accès de l’équipe et des informations du compte.</p>'+button('Retour aux comptes','accounts')+'</div>';
+    screen.innerHTML=html+'<footer class="ox-foot"><span>Oxmad Digital — Le web, autrement.</span><span>'+(role==='admin'?'Pilotage du studio':'Un lien direct avec le studio')+'</span></footer>';
+    icons();
+    const reply=root.querySelector('#ox-reply'); if(reply) reply.querySelector('button').addEventListener('click',()=>{if(!reply.reportValidity())return;root.querySelector('#ox-reply-status').textContent='Réponse simulée · aucun message envoyé.';});
+    const form=root.querySelector('#ox-new'); if(form) form.querySelector('button').addEventListener('click',()=>{if(!form.reportValidity())return;root.querySelector('#ox-new-status').textContent='Demande simulée · aucune donnée enregistrée.';});
+  }
+  root.addEventListener('click',e=>{
+    const target=e.target.closest('button'); if(!target) return;
+    if(target.dataset.role) {role=target.dataset.role;page='home';filter='all';render();persist();}
+    else if(target.dataset.go) {page=target.dataset.go;root.dataset.menu='false';root.querySelector('.ox-mobile-menu').setAttribute('aria-expanded','false');render();persist();}
+    else if(target.dataset.filter) {filter=target.dataset.filter;render();}
+    else if(target.classList.contains('ox-mobile-menu')) { const expanded=root.dataset.menu!=='true';root.dataset.menu=String(expanded);target.setAttribute('aria-expanded',String(expanded)); }
+    else if(target.dataset.demo) root.querySelector('#ox-action-status').textContent=target.dataset.demo;
+  });
+  render();
+  if(globalThis.Tweak) {
+    const tweak=new Tweak({container:root,onChange:()=>{render();persist();}});
+    tweak.addToggle(options,'paper',{label:'Variante fond papier'});
+    tweak.addToggle(options,'compact',{label:'Listes plus compactes'});
+    tweak.addSlider(options,'radius',{label:'Arrondi des surfaces',min:0,max:10,unit:'px',reference:'--ox-radius'});
+  }
+})();
+</script>

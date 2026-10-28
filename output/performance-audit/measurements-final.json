@@ -1,0 +1,4033 @@
+{
+  "date": "2026-10-27",
+  "browser": "155.0.8059.85",
+  "origin": "http://127.0.0.1:3187",
+  "note": "Local production; cold browser cache, warmed server image cache; no POST allowed; 150 ms latency, 1.6 Mbps down, 750 Kbps up, CPU x4 for mobile.",
+  "runs": [
+    {
+      "route": "/",
+      "name": "home-mobile-first",
+      "mobile": true,
+      "repeat": 1,
+      "lcp": [
+        {
+          "time": 1112,
+          "size": 26316,
+          "tag": "P",
+          "id": "",
+          "url": ""
+        }
+      ],
+      "cls": [],
+      "tasks": [
+        {
+          "time": 574.5999999999767,
+          "duration": 342
+        },
+        {
+          "time": 2595.5,
+          "duration": 224
+        },
+        {
+          "time": 2945.5999999999767,
+          "duration": 114
+        },
+        {
+          "time": 3243.0999999999767,
+          "duration": 209
+        },
+        {
+          "time": 4067.4000000000233,
+          "duration": 75
+        },
+        {
+          "time": 5279.900000000023,
+          "duration": 55
+        },
+        {
+          "time": 5760.599999999977,
+          "duration": 58
+        },
+        {
+          "time": 5885.5,
+          "duration": 60
+        }
+      ],
+      "states": [
+        {
+          "time": 576.0999999999767,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion intro"
+        },
+        {
+          "time": 4142.300000000047,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion intro lenis lenis-stopped"
+        },
+        {
+          "time": 4905.599999999977,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion intro lenis intro-leaving"
+        },
+        {
+          "time": 5763.599999999977,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion lenis"
+        },
+        {
+          "time": 7546.099999999977,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion lenis"
+        }
+      ],
+      "fcp": 1112,
+      "ttfb": 42.90000000002328,
+      "domContentLoaded": 576.5999999999767,
+      "clsValue": 0,
+      "blockingTime10s": 737,
+      "nodes": 604,
+      "canvases": 7,
+      "hero": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-hero-accueil-jardin-cotier-mobile-845bfcd7dfda.webp",
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3187/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2",
+          "type": "link",
+          "bytes": 29588,
+          "decoded": 29288,
+          "duration": 695.0999999999767,
+          "start": 230.90000000002328
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-symbole-transparent-76de83c5de0c.webp",
+          "type": "link",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 731.6999999999534,
+          "start": 231.90000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0p6-ea26h3xt_.css",
+          "type": "link",
+          "bytes": 986,
+          "decoded": 1706,
+          "duration": 183.90000000002328,
+          "start": 232.80000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/43dcem3f7hsyd.css",
+          "type": "link",
+          "bytes": 4075,
+          "decoded": 14750,
+          "duration": 250.80000000004657,
+          "start": 233.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1lic_tnxbmhgs.css",
+          "type": "link",
+          "bytes": 7429,
+          "decoded": 30590,
+          "duration": 303.29999999993015,
+          "start": 233.70000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "type": "link",
+          "bytes": 2329,
+          "decoded": 5598,
+          "duration": 550,
+          "start": 234.20000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2mmpezlrfmbu5.js",
+          "type": "script",
+          "bytes": 9016,
+          "decoded": 34718,
+          "duration": 789.7999999999302,
+          "start": 234.20000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2ku6ycm6ifxai.js",
+          "type": "script",
+          "bytes": 35072,
+          "decoded": 129338,
+          "duration": 1523.9000000000233,
+          "start": 234.80000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3kmozkq6tgqnz.js",
+          "type": "script",
+          "bytes": 71876,
+          "decoded": 228922,
+          "duration": 2356.5,
+          "start": 235.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "type": "script",
+          "bytes": 4165,
+          "decoded": 9754,
+          "duration": 976,
+          "start": 235.30000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/11be91k_gj8bl.js",
+          "type": "script",
+          "bytes": 9703,
+          "decoded": 30708,
+          "duration": 1013.5999999999767,
+          "start": 235.30000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "bytes": 3961,
+          "decoded": 14377,
+          "duration": 1072.9000000000233,
+          "start": 236
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2t-gj4100_xt2.js",
+          "type": "script",
+          "bytes": 1151,
+          "decoded": 851,
+          "duration": 1164.8000000000466,
+          "start": 236.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1ley11u_md-vm.js",
+          "type": "script",
+          "bytes": 14589,
+          "decoded": 40423,
+          "duration": 1605.2000000000698,
+          "start": 236.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3iu7gna7wfixm.js",
+          "type": "script",
+          "bytes": 6210,
+          "decoded": 15868,
+          "duration": 1462.4000000000233,
+          "start": 236.80000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/04q5awaun6wch.js",
+          "type": "script",
+          "bytes": 51406,
+          "decoded": 133277,
+          "duration": 2504.6999999999534,
+          "start": 236.80000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2fll625zudhzu.js",
+          "type": "script",
+          "bytes": 14431,
+          "decoded": 38201,
+          "duration": 1986.8999999999069,
+          "start": 237.70000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/image?url=https%3A%2F%2Fpub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev%2Fimages%2Foxmad-digital-hero-accueil-jardin-cotier-desktop-02cfc7897bca.webp&w=3840&q=92",
+          "type": "img",
+          "bytes": 478178,
+          "decoded": 477878,
+          "duration": 5038.699999999953,
+          "start": 237.90000000002328
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-hero-accueil-jardin-cotier-mobile-845bfcd7dfda.webp",
+          "type": "img",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 3211.0999999999767,
+          "start": 557.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/12z-9prhg01m3.js",
+          "type": "script",
+          "bytes": 2358,
+          "decoded": 5229,
+          "duration": 249.29999999993015,
+          "start": 3414.20000000007
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/24q2_aa287o_5.css",
+          "type": "link",
+          "bytes": 1257,
+          "decoded": 3203,
+          "duration": 210.70000000006985,
+          "start": 3416.5999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/26urfb3g5geht.js",
+          "type": "script",
+          "bytes": 1586,
+          "decoded": 2651,
+          "duration": 412.0999999999767,
+          "start": 3424.4000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/19rhlcx2srev9.css",
+          "type": "link",
+          "bytes": 757,
+          "decoded": 457,
+          "duration": 221.5,
+          "start": 3428.0999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2831yrmxmfpq5.js",
+          "type": "script",
+          "bytes": 6284,
+          "decoded": 20145,
+          "duration": 465.9000000000233,
+          "start": 3430.4000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0lo_yczikyb7a.js",
+          "type": "script",
+          "bytes": 1551,
+          "decoded": 2788,
+          "duration": 522.3000000000466,
+          "start": 3433.9000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 601,
+          "decoded": 544,
+          "duration": 411,
+          "start": 3524.0999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=gzSU19M5behYtFJ2",
+          "type": "fetch",
+          "bytes": 7679,
+          "decoded": 39098,
+          "duration": 238.70000000006985,
+          "start": 3980.0999999999767
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-favicon-3fe01ef6ec8b.webp",
+          "type": "other",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 365.0999999999767,
+          "start": 5376.900000000023
+        }
+      ],
+      "finalClasses": "geist_e799d87a-module__u8MhCG__variable motion lenis",
+      "idleTaskMs": 574.7189999999999,
+      "heapBytes": 7078168,
+      "errors": [],
+      "responses": [],
+      "failed": []
+    },
+    {
+      "route": "/",
+      "name": "home-mobile-first",
+      "mobile": true,
+      "repeat": 2,
+      "lcp": [
+        {
+          "time": 1148,
+          "size": 26316,
+          "tag": "P",
+          "id": "",
+          "url": ""
+        }
+      ],
+      "cls": [],
+      "tasks": [
+        {
+          "time": 649.0999999999767,
+          "duration": 360
+        },
+        {
+          "time": 2639.1999999999534,
+          "duration": 348
+        },
+        {
+          "time": 4052.29999999993,
+          "duration": 147
+        },
+        {
+          "time": 4373.099999999977,
+          "duration": 247
+        },
+        {
+          "time": 4634.099999999977,
+          "duration": 97
+        },
+        {
+          "time": 5247.29999999993,
+          "duration": 59
+        },
+        {
+          "time": 5426.599999999977,
+          "duration": 89
+        },
+        {
+          "time": 5573.699999999953,
+          "duration": 72
+        },
+        {
+          "time": 7169.099999999977,
+          "duration": 50
+        }
+      ],
+      "states": [
+        {
+          "time": 651.7999999999302,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion intro"
+        },
+        {
+          "time": 4780.699999999953,
+          "classes": "geist_e799d87a-module__u8MhCG__variable"
+        },
+        {
+          "time": 5515.899999999907,
+          "classes": "geist_e799d87a-module__u8MhCG__variable lenis"
+        },
+        {
+          "time": 6087.099999999977,
+          "classes": "geist_e799d87a-module__u8MhCG__variable lenis intro-leaving"
+        },
+        {
+          "time": 6916.599999999977,
+          "classes": "geist_e799d87a-module__u8MhCG__variable lenis"
+        },
+        {
+          "time": 7574.399999999907,
+          "classes": "geist_e799d87a-module__u8MhCG__variable lenis"
+        }
+      ],
+      "fcp": 1148,
+      "ttfb": 33,
+      "domContentLoaded": 652.0999999999767,
+      "clsValue": 0,
+      "blockingTime10s": 1019,
+      "nodes": 604,
+      "canvases": 7,
+      "hero": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-hero-accueil-jardin-cotier-mobile-845bfcd7dfda.webp",
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3187/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2",
+          "type": "link",
+          "bytes": 29588,
+          "decoded": 29288,
+          "duration": 576,
+          "start": 236
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-symbole-transparent-76de83c5de0c.webp",
+          "type": "link",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 641.4000000000233,
+          "start": 238.29999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0p6-ea26h3xt_.css",
+          "type": "link",
+          "bytes": 986,
+          "decoded": 1706,
+          "duration": 182.5,
+          "start": 240.59999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/43dcem3f7hsyd.css",
+          "type": "link",
+          "bytes": 4075,
+          "decoded": 14750,
+          "duration": 255,
+          "start": 242.19999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1lic_tnxbmhgs.css",
+          "type": "link",
+          "bytes": 7429,
+          "decoded": 30590,
+          "duration": 306.79999999993015,
+          "start": 242.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "type": "link",
+          "bytes": 2329,
+          "decoded": 5598,
+          "duration": 823.2000000000698,
+          "start": 243.29999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2mmpezlrfmbu5.js",
+          "type": "script",
+          "bytes": 9016,
+          "decoded": 34718,
+          "duration": 943.9000000000233,
+          "start": 243.29999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2ku6ycm6ifxai.js",
+          "type": "script",
+          "bytes": 35072,
+          "decoded": 129338,
+          "duration": 1647.9000000000233,
+          "start": 244.19999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3kmozkq6tgqnz.js",
+          "type": "script",
+          "bytes": 71876,
+          "decoded": 228922,
+          "duration": 2390.399999999907,
+          "start": 244.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/11be91k_gj8bl.js",
+          "type": "script",
+          "bytes": 9703,
+          "decoded": 30708,
+          "duration": 2007.5999999999767,
+          "start": 244.59999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "type": "script",
+          "bytes": 4165,
+          "decoded": 9754,
+          "duration": 2247.0999999999767,
+          "start": 244.59999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "bytes": 3961,
+          "decoded": 14377,
+          "duration": 2464.3000000000466,
+          "start": 245.39999999990687
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2t-gj4100_xt2.js",
+          "type": "script",
+          "bytes": 1151,
+          "decoded": 851,
+          "duration": 2563,
+          "start": 245.79999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3iu7gna7wfixm.js",
+          "type": "script",
+          "bytes": 6210,
+          "decoded": 15868,
+          "duration": 2860.70000000007,
+          "start": 245.89999999990687
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1ley11u_md-vm.js",
+          "type": "script",
+          "bytes": 14589,
+          "decoded": 40423,
+          "duration": 2876.4000000000233,
+          "start": 245.89999999990687
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/04q5awaun6wch.js",
+          "type": "script",
+          "bytes": 51406,
+          "decoded": 133277,
+          "duration": 3797.1999999999534,
+          "start": 246.59999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2fll625zudhzu.js",
+          "type": "script",
+          "bytes": 14431,
+          "decoded": 38201,
+          "duration": 3325.0999999999767,
+          "start": 246.69999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/image?url=https%3A%2F%2Fpub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev%2Fimages%2Foxmad-digital-hero-accueil-jardin-cotier-desktop-02cfc7897bca.webp&w=3840&q=92",
+          "type": "img",
+          "bytes": 478178,
+          "decoded": 477878,
+          "duration": 5019.5,
+          "start": 247.39999999990687
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-hero-accueil-jardin-cotier-mobile-845bfcd7dfda.webp",
+          "type": "img",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 3278.70000000007,
+          "start": 600.7999999999302
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/12z-9prhg01m3.js",
+          "type": "script",
+          "bytes": 2358,
+          "decoded": 5229,
+          "duration": 281.19999999995343,
+          "start": 4542.599999999977
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/24q2_aa287o_5.css",
+          "type": "link",
+          "bytes": 1257,
+          "decoded": 3203,
+          "duration": 242.30000000004657,
+          "start": 4544.899999999907
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/26urfb3g5geht.js",
+          "type": "script",
+          "bytes": 1586,
+          "decoded": 2651,
+          "duration": 284.5999999999767,
+          "start": 4554.29999999993
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/19rhlcx2srev9.css",
+          "type": "link",
+          "bytes": 757,
+          "decoded": 457,
+          "duration": 247.80000000004657,
+          "start": 4562.199999999953
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2831yrmxmfpq5.js",
+          "type": "script",
+          "bytes": 6284,
+          "decoded": 20145,
+          "duration": 489.5999999999767,
+          "start": 4567
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0lo_yczikyb7a.js",
+          "type": "script",
+          "bytes": 1551,
+          "decoded": 2788,
+          "duration": 425.5999999999767,
+          "start": 4578.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 601,
+          "decoded": 544,
+          "duration": 226.69999999995343,
+          "start": 4763.599999999977
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=gzSU19M5behYtFJ2",
+          "type": "fetch",
+          "bytes": 7679,
+          "decoded": 39098,
+          "duration": 227.40000000002328,
+          "start": 5061.79999999993
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-favicon-3fe01ef6ec8b.webp",
+          "type": "other",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 324.80000000004657,
+          "start": 5571.399999999907
+        }
+      ],
+      "finalClasses": "geist_e799d87a-module__u8MhCG__variable lenis",
+      "idleTaskMs": 743.1479999999997,
+      "heapBytes": 9581888,
+      "errors": [],
+      "responses": [],
+      "failed": []
+    },
+    {
+      "route": "/",
+      "name": "home-mobile-first",
+      "mobile": true,
+      "repeat": 3,
+      "lcp": [
+        {
+          "time": 1340,
+          "size": 26316,
+          "tag": "P",
+          "id": "",
+          "url": ""
+        }
+      ],
+      "cls": [],
+      "tasks": [
+        {
+          "time": 638.5,
+          "duration": 461
+        },
+        {
+          "time": 2682.79999999993,
+          "duration": 212
+        },
+        {
+          "time": 4046.79999999993,
+          "duration": 103
+        },
+        {
+          "time": 4285.79999999993,
+          "duration": 205
+        },
+        {
+          "time": 5120.79999999993,
+          "duration": 56
+        },
+        {
+          "time": 5366.599999999977,
+          "duration": 54
+        }
+      ],
+      "states": [
+        {
+          "time": 640.1999999999534,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion intro"
+        },
+        {
+          "time": 4645.099999999977,
+          "classes": "geist_e799d87a-module__u8MhCG__variable"
+        },
+        {
+          "time": 5176,
+          "classes": "geist_e799d87a-module__u8MhCG__variable lenis"
+        },
+        {
+          "time": 5933.5,
+          "classes": "geist_e799d87a-module__u8MhCG__variable lenis intro-leaving"
+        },
+        {
+          "time": 6780.79999999993,
+          "classes": "geist_e799d87a-module__u8MhCG__variable lenis"
+        },
+        {
+          "time": 7595.5,
+          "classes": "geist_e799d87a-module__u8MhCG__variable lenis"
+        }
+      ],
+      "fcp": 1340,
+      "ttfb": 28.099999999976717,
+      "domContentLoaded": 640.5999999999767,
+      "clsValue": 0,
+      "blockingTime10s": 791,
+      "nodes": 604,
+      "canvases": 7,
+      "hero": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-hero-accueil-jardin-cotier-mobile-845bfcd7dfda.webp",
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3187/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2",
+          "type": "link",
+          "bytes": 29588,
+          "decoded": 29288,
+          "duration": 591.8000000000466,
+          "start": 263.69999999995343
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-symbole-transparent-76de83c5de0c.webp",
+          "type": "link",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 642.0999999999767,
+          "start": 266.0999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0p6-ea26h3xt_.css",
+          "type": "link",
+          "bytes": 986,
+          "decoded": 1706,
+          "duration": 190.89999999990687,
+          "start": 267.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/43dcem3f7hsyd.css",
+          "type": "link",
+          "bytes": 4075,
+          "decoded": 14750,
+          "duration": 255.40000000002328,
+          "start": 269.29999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1lic_tnxbmhgs.css",
+          "type": "link",
+          "bytes": 7429,
+          "decoded": 30590,
+          "duration": 305.5,
+          "start": 272.79999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "type": "link",
+          "bytes": 2329,
+          "decoded": 5598,
+          "duration": 836.4000000000233,
+          "start": 273.79999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2mmpezlrfmbu5.js",
+          "type": "script",
+          "bytes": 9016,
+          "decoded": 34718,
+          "duration": 955.2999999999302,
+          "start": 274.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2ku6ycm6ifxai.js",
+          "type": "script",
+          "bytes": 35072,
+          "decoded": 129338,
+          "duration": 1660.1999999999534,
+          "start": 274.5999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3kmozkq6tgqnz.js",
+          "type": "script",
+          "bytes": 71876,
+          "decoded": 228922,
+          "duration": 2401.70000000007,
+          "start": 275.39999999990687
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/11be91k_gj8bl.js",
+          "type": "script",
+          "bytes": 9703,
+          "decoded": 30708,
+          "duration": 2019.8999999999069,
+          "start": 275.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "type": "script",
+          "bytes": 4165,
+          "decoded": 9754,
+          "duration": 2259.29999999993,
+          "start": 275.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "bytes": 3961,
+          "decoded": 14377,
+          "duration": 2476.4000000000233,
+          "start": 275.5999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2t-gj4100_xt2.js",
+          "type": "script",
+          "bytes": 1151,
+          "decoded": 851,
+          "duration": 2574,
+          "start": 276.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3iu7gna7wfixm.js",
+          "type": "script",
+          "bytes": 6210,
+          "decoded": 15868,
+          "duration": 2872.9000000000233,
+          "start": 276.69999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1ley11u_md-vm.js",
+          "type": "script",
+          "bytes": 14589,
+          "decoded": 40423,
+          "duration": 2888.5999999999767,
+          "start": 276.69999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/04q5awaun6wch.js",
+          "type": "script",
+          "bytes": 51406,
+          "decoded": 133277,
+          "duration": 3764.6999999999534,
+          "start": 277.5999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2fll625zudhzu.js",
+          "type": "script",
+          "bytes": 14431,
+          "decoded": 38201,
+          "duration": 3336.9000000000233,
+          "start": 277.79999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/image?url=https%3A%2F%2Fpub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev%2Fimages%2Foxmad-digital-hero-accueil-jardin-cotier-desktop-02cfc7897bca.webp&w=3840&q=92",
+          "type": "img",
+          "bytes": 478178,
+          "decoded": 477878,
+          "duration": 5047,
+          "start": 277.89999999990687
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-hero-accueil-jardin-cotier-mobile-845bfcd7dfda.webp",
+          "type": "img",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 3181.4000000000233,
+          "start": 605.7999999999302
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/12z-9prhg01m3.js",
+          "type": "script",
+          "bytes": 2358,
+          "decoded": 5229,
+          "duration": 240.40000000002328,
+          "start": 4454.099999999977
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/24q2_aa287o_5.css",
+          "type": "link",
+          "bytes": 1257,
+          "decoded": 3203,
+          "duration": 209.10000000009313,
+          "start": 4457.399999999907
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/26urfb3g5geht.js",
+          "type": "script",
+          "bytes": 1586,
+          "decoded": 2651,
+          "duration": 240.5,
+          "start": 4461.79999999993
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/19rhlcx2srev9.css",
+          "type": "link",
+          "bytes": 757,
+          "decoded": 457,
+          "duration": 207,
+          "start": 4466.29999999993
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2831yrmxmfpq5.js",
+          "type": "script",
+          "bytes": 6284,
+          "decoded": 20145,
+          "duration": 450.5,
+          "start": 4469.099999999977
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0lo_yczikyb7a.js",
+          "type": "script",
+          "bytes": 1551,
+          "decoded": 2788,
+          "duration": 395.0999999999767,
+          "start": 4472.699999999953
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 601,
+          "decoded": 544,
+          "duration": 272.79999999993015,
+          "start": 4565
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=gzSU19M5behYtFJ2",
+          "type": "fetch",
+          "bytes": 7679,
+          "decoded": 39098,
+          "duration": 238.5,
+          "start": 4914
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-favicon-3fe01ef6ec8b.webp",
+          "type": "other",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 371.19999999995343,
+          "start": 5464.5
+        }
+      ],
+      "finalClasses": "geist_e799d87a-module__u8MhCG__variable lenis",
+      "idleTaskMs": 816.7239999999998,
+      "heapBytes": 22831140,
+      "errors": [],
+      "responses": [],
+      "failed": []
+    },
+    {
+      "route": "/",
+      "name": "home-desktop-first",
+      "mobile": false,
+      "repeat": 1,
+      "lcp": [
+        {
+          "time": 408,
+          "size": 36888,
+          "tag": "P",
+          "id": "",
+          "url": ""
+        }
+      ],
+      "cls": [],
+      "tasks": [
+        {
+          "time": 450.20000000006985,
+          "duration": 100
+        },
+        {
+          "time": 665.9000000000233,
+          "duration": 56
+        },
+        {
+          "time": 800.0999999999767,
+          "duration": 59
+        },
+        {
+          "time": 883.8000000000466,
+          "duration": 97
+        },
+        {
+          "time": 981.3000000000466,
+          "duration": 125
+        },
+        {
+          "time": 1123,
+          "duration": 74
+        },
+        {
+          "time": 2509.4000000000233,
+          "duration": 53
+        },
+        {
+          "time": 2563,
+          "duration": 56
+        },
+        {
+          "time": 3203.8000000000466,
+          "duration": 52
+        },
+        {
+          "time": 3326.3000000000466,
+          "duration": 50
+        },
+        {
+          "time": 3902.5,
+          "duration": 50
+        }
+      ],
+      "states": [
+        {
+          "time": 424.5999999999767,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion intro"
+        },
+        {
+          "time": 1448.5999999999767,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion intro has-custom-cursor lenis lenis-stopped"
+        },
+        {
+          "time": 2316,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion intro has-custom-cursor lenis intro-leaving"
+        },
+        {
+          "time": 3145.20000000007,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion has-custom-cursor lenis"
+        },
+        {
+          "time": 7141.800000000047,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion has-custom-cursor lenis"
+        }
+      ],
+      "fcp": 408,
+      "ttfb": 27,
+      "domContentLoaded": 424.9000000000233,
+      "clsValue": 0,
+      "blockingTime10s": 222,
+      "nodes": 621,
+      "canvases": 8,
+      "hero": "http://127.0.0.1:3187/_next/image?url=https%3A%2F%2Fpub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev%2Fimages%2Foxmad-digital-hero-accueil-jardin-cotier-desktop-02cfc7897bca.webp&w=1920&q=92",
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3187/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2",
+          "type": "link",
+          "bytes": 29588,
+          "decoded": 29288,
+          "duration": 61.199999999953434,
+          "start": 45.800000000046566
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-symbole-transparent-76de83c5de0c.webp",
+          "type": "link",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 499.5,
+          "start": 46.300000000046566
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0p6-ea26h3xt_.css",
+          "type": "link",
+          "bytes": 986,
+          "decoded": 1706,
+          "duration": 69.60000000009313,
+          "start": 46.59999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/43dcem3f7hsyd.css",
+          "type": "link",
+          "bytes": 4075,
+          "decoded": 14750,
+          "duration": 72,
+          "start": 46.800000000046566
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1lic_tnxbmhgs.css",
+          "type": "link",
+          "bytes": 7429,
+          "decoded": 30590,
+          "duration": 74.39999999990687,
+          "start": 47.20000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "type": "link",
+          "bytes": 2329,
+          "decoded": 5598,
+          "duration": 107.5,
+          "start": 47.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2mmpezlrfmbu5.js",
+          "type": "script",
+          "bytes": 9016,
+          "decoded": 34718,
+          "duration": 137.29999999993015,
+          "start": 47.70000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2ku6ycm6ifxai.js",
+          "type": "script",
+          "bytes": 35072,
+          "decoded": 129338,
+          "duration": 155.40000000002328,
+          "start": 47.800000000046566
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3kmozkq6tgqnz.js",
+          "type": "script",
+          "bytes": 71876,
+          "decoded": 228922,
+          "duration": 176,
+          "start": 48.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/11be91k_gj8bl.js",
+          "type": "script",
+          "bytes": 9703,
+          "decoded": 30708,
+          "duration": 150,
+          "start": 48.20000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "type": "script",
+          "bytes": 4165,
+          "decoded": 9754,
+          "duration": 142.09999999997672,
+          "start": 48.40000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "bytes": 3961,
+          "decoded": 14377,
+          "duration": 166.80000000004657,
+          "start": 48.59999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2t-gj4100_xt2.js",
+          "type": "script",
+          "bytes": 1151,
+          "decoded": 851,
+          "duration": 162.69999999995343,
+          "start": 48.800000000046566
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3iu7gna7wfixm.js",
+          "type": "script",
+          "bytes": 6210,
+          "decoded": 15868,
+          "duration": 174.30000000004657,
+          "start": 49
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1ley11u_md-vm.js",
+          "type": "script",
+          "bytes": 14589,
+          "decoded": 40423,
+          "duration": 171.70000000006985,
+          "start": 49
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/04q5awaun6wch.js",
+          "type": "script",
+          "bytes": 51406,
+          "decoded": 133277,
+          "duration": 190.5,
+          "start": 49.20000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2fll625zudhzu.js",
+          "type": "script",
+          "bytes": 14431,
+          "decoded": 38201,
+          "duration": 179.90000000002328,
+          "start": 49.40000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/image?url=https%3A%2F%2Fpub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev%2Fimages%2Foxmad-digital-hero-accueil-jardin-cotier-desktop-02cfc7897bca.webp&w=1920&q=92",
+          "type": "img",
+          "bytes": 478178,
+          "decoded": 477878,
+          "duration": 78.70000000006985,
+          "start": 49.59999999997672
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-favicon-3fe01ef6ec8b.webp",
+          "type": "other",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 393,
+          "start": 571.9000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/34m3ac8qhbg72.js",
+          "type": "script",
+          "bytes": 14051,
+          "decoded": 49019,
+          "duration": 35.800000000046566,
+          "start": 706.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/12z-9prhg01m3.js",
+          "type": "script",
+          "bytes": 2358,
+          "decoded": 5229,
+          "duration": 32.800000000046566,
+          "start": 714.4000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/24q2_aa287o_5.css",
+          "type": "link",
+          "bytes": 1257,
+          "decoded": 3203,
+          "duration": 33.199999999953434,
+          "start": 714.9000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/26urfb3g5geht.js",
+          "type": "script",
+          "bytes": 1586,
+          "decoded": 2651,
+          "duration": 42.40000000002328,
+          "start": 716.4000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/19rhlcx2srev9.css",
+          "type": "link",
+          "bytes": 757,
+          "decoded": 457,
+          "duration": 27.800000000046566,
+          "start": 717
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2831yrmxmfpq5.js",
+          "type": "script",
+          "bytes": 6284,
+          "decoded": 20145,
+          "duration": 46.300000000046566,
+          "start": 717.4000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0lo_yczikyb7a.js",
+          "type": "script",
+          "bytes": 1551,
+          "decoded": 2788,
+          "duration": 46,
+          "start": 718
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 601,
+          "decoded": 544,
+          "duration": 39.29999999993015,
+          "start": 750.3000000000466
+        },
+        {
+          "url": "http://127.0.0.1:3187/realisations?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 616,
+          "decoded": 623,
+          "duration": 42.59999999997672,
+          "start": 750.8000000000466
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=gzSU19M5behYtFJ2",
+          "type": "fetch",
+          "bytes": 7679,
+          "decoded": 39098,
+          "duration": 20.400000000023283,
+          "start": 1111.3000000000466
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0js_o2o6p2wqi.css",
+          "type": "link",
+          "bytes": 7622,
+          "decoded": 33243,
+          "duration": 23.600000000093132,
+          "start": 1116.0999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/realisations?_rsc=SqDvH3pTBdfKqb5D",
+          "type": "fetch",
+          "bytes": 2420,
+          "decoded": 7102,
+          "duration": 36.5,
+          "start": 1119.2000000000698
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/18bm9splag6vb.js",
+          "type": "script",
+          "bytes": 12693,
+          "decoded": 39218,
+          "duration": 14.100000000093132,
+          "start": 1260.5999999999767
+        }
+      ],
+      "finalClasses": "geist_e799d87a-module__u8MhCG__variable motion has-custom-cursor lenis",
+      "idleTaskMs": 257.60600000000045,
+      "heapBytes": 5796352,
+      "errors": [],
+      "responses": [],
+      "failed": []
+    },
+    {
+      "route": "/",
+      "name": "home-desktop-first",
+      "mobile": false,
+      "repeat": 2,
+      "lcp": [
+        {
+          "time": 348,
+          "size": 36888,
+          "tag": "P",
+          "id": "",
+          "url": ""
+        }
+      ],
+      "cls": [],
+      "tasks": [
+        {
+          "time": 348.0999999999767,
+          "duration": 70
+        },
+        {
+          "time": 651.5,
+          "duration": 58
+        },
+        {
+          "time": 725.9000000000233,
+          "duration": 75
+        },
+        {
+          "time": 811.5,
+          "duration": 174
+        },
+        {
+          "time": 2317.1999999999534,
+          "duration": 58
+        },
+        {
+          "time": 2383.5999999999767,
+          "duration": 63
+        },
+        {
+          "time": 2813,
+          "duration": 54
+        },
+        {
+          "time": 2867.29999999993,
+          "duration": 63
+        },
+        {
+          "time": 2939.5,
+          "duration": 69
+        },
+        {
+          "time": 3010.0999999999767,
+          "duration": 55
+        },
+        {
+          "time": 3067.6999999999534,
+          "duration": 73
+        },
+        {
+          "time": 3232.0999999999767,
+          "duration": 55
+        },
+        {
+          "time": 3486.9000000000233,
+          "duration": 51
+        }
+      ],
+      "states": [
+        {
+          "time": 324.9000000000233,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion intro"
+        },
+        {
+          "time": 1034,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion intro lenis lenis-stopped"
+        },
+        {
+          "time": 1300.4000000000233,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion intro lenis lenis-stopped has-custom-cursor"
+        },
+        {
+          "time": 2154.1999999999534,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion intro has-custom-cursor lenis intro-leaving"
+        },
+        {
+          "time": 3011.5,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion has-custom-cursor lenis"
+        },
+        {
+          "time": 7144.79999999993,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion has-custom-cursor lenis"
+        }
+      ],
+      "fcp": 348,
+      "ttfb": 29,
+      "domContentLoaded": 325.0999999999767,
+      "clsValue": 0,
+      "blockingTime10s": 268,
+      "nodes": 621,
+      "canvases": 8,
+      "hero": "http://127.0.0.1:3187/_next/image?url=https%3A%2F%2Fpub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev%2Fimages%2Foxmad-digital-hero-accueil-jardin-cotier-desktop-02cfc7897bca.webp&w=1920&q=92",
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3187/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2",
+          "type": "link",
+          "bytes": 29588,
+          "decoded": 29288,
+          "duration": 69,
+          "start": 50.79999999993015
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-symbole-transparent-76de83c5de0c.webp",
+          "type": "link",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 480.39999999990687,
+          "start": 51.90000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0p6-ea26h3xt_.css",
+          "type": "link",
+          "bytes": 986,
+          "decoded": 1706,
+          "duration": 73.29999999993015,
+          "start": 52.90000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/43dcem3f7hsyd.css",
+          "type": "link",
+          "bytes": 4075,
+          "decoded": 14750,
+          "duration": 76.59999999997672,
+          "start": 53.59999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1lic_tnxbmhgs.css",
+          "type": "link",
+          "bytes": 7429,
+          "decoded": 30590,
+          "duration": 78.40000000002328,
+          "start": 54.29999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "type": "link",
+          "bytes": 2329,
+          "decoded": 5598,
+          "duration": 127,
+          "start": 54.90000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2mmpezlrfmbu5.js",
+          "type": "script",
+          "bytes": 9016,
+          "decoded": 34718,
+          "duration": 128.30000000004657,
+          "start": 55.199999999953434
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2ku6ycm6ifxai.js",
+          "type": "script",
+          "bytes": 35072,
+          "decoded": 129338,
+          "duration": 154.70000000006985,
+          "start": 55.699999999953434
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3kmozkq6tgqnz.js",
+          "type": "script",
+          "bytes": 71876,
+          "decoded": 228922,
+          "duration": 177.20000000006985,
+          "start": 56.199999999953434
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/11be91k_gj8bl.js",
+          "type": "script",
+          "bytes": 9703,
+          "decoded": 30708,
+          "duration": 145.09999999997672,
+          "start": 56.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "type": "script",
+          "bytes": 4165,
+          "decoded": 9754,
+          "duration": 143.5,
+          "start": 56.79999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "bytes": 3961,
+          "decoded": 14377,
+          "duration": 146,
+          "start": 57.199999999953434
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2t-gj4100_xt2.js",
+          "type": "script",
+          "bytes": 1151,
+          "decoded": 851,
+          "duration": 165.19999999995343,
+          "start": 57.40000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1ley11u_md-vm.js",
+          "type": "script",
+          "bytes": 14589,
+          "decoded": 40423,
+          "duration": 172.30000000004657,
+          "start": 57.59999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3iu7gna7wfixm.js",
+          "type": "script",
+          "bytes": 6210,
+          "decoded": 15868,
+          "duration": 170.09999999997672,
+          "start": 57.90000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/04q5awaun6wch.js",
+          "type": "script",
+          "bytes": 51406,
+          "decoded": 133277,
+          "duration": 186.5,
+          "start": 58.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2fll625zudhzu.js",
+          "type": "script",
+          "bytes": 14431,
+          "decoded": 38201,
+          "duration": 183.89999999990687,
+          "start": 58.40000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/image?url=https%3A%2F%2Fpub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev%2Fimages%2Foxmad-digital-hero-accueil-jardin-cotier-desktop-02cfc7897bca.webp&w=1920&q=92",
+          "type": "img",
+          "bytes": 478178,
+          "decoded": 477878,
+          "duration": 80.20000000006985,
+          "start": 58.79999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/34m3ac8qhbg72.js",
+          "type": "script",
+          "bytes": 14051,
+          "decoded": 49019,
+          "duration": 45.699999999953434,
+          "start": 527.5999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/12z-9prhg01m3.js",
+          "type": "script",
+          "bytes": 2358,
+          "decoded": 5229,
+          "duration": 46.39999999990687,
+          "start": 540.4000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/24q2_aa287o_5.css",
+          "type": "link",
+          "bytes": 1257,
+          "decoded": 3203,
+          "duration": 43.90000000002328,
+          "start": 541.0999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/26urfb3g5geht.js",
+          "type": "script",
+          "bytes": 1586,
+          "decoded": 2651,
+          "duration": 44.40000000002328,
+          "start": 543.1999999999534
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/19rhlcx2srev9.css",
+          "type": "link",
+          "bytes": 757,
+          "decoded": 457,
+          "duration": 38,
+          "start": 544.7999999999302
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2831yrmxmfpq5.js",
+          "type": "script",
+          "bytes": 6284,
+          "decoded": 20145,
+          "duration": 50.5,
+          "start": 545.6999999999534
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0lo_yczikyb7a.js",
+          "type": "script",
+          "bytes": 1551,
+          "decoded": 2788,
+          "duration": 47.09999999997672,
+          "start": 547.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 601,
+          "decoded": 544,
+          "duration": 22.20000000006985,
+          "start": 621.2999999999302
+        },
+        {
+          "url": "http://127.0.0.1:3187/realisations?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 616,
+          "decoded": 623,
+          "duration": 22.599999999976717,
+          "start": 621.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=gzSU19M5behYtFJ2",
+          "type": "fetch",
+          "bytes": 7679,
+          "decoded": 39098,
+          "duration": 31.599999999976717,
+          "start": 807.1999999999534
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0js_o2o6p2wqi.css",
+          "type": "link",
+          "bytes": 7622,
+          "decoded": 33243,
+          "duration": 34.199999999953434,
+          "start": 809.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/realisations?_rsc=SqDvH3pTBdfKqb5D",
+          "type": "fetch",
+          "bytes": 2420,
+          "decoded": 7102,
+          "duration": 29.399999999906868,
+          "start": 810.9000000000233
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-favicon-3fe01ef6ec8b.webp",
+          "type": "other",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 411,
+          "start": 1034.6999999999534
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/18bm9splag6vb.js",
+          "type": "script",
+          "bytes": 12693,
+          "decoded": 39218,
+          "duration": 17.70000000006985,
+          "start": 1066.1999999999534
+        }
+      ],
+      "finalClasses": "geist_e799d87a-module__u8MhCG__variable motion has-custom-cursor lenis",
+      "idleTaskMs": 277.9720000000001,
+      "heapBytes": 7568788,
+      "errors": [],
+      "responses": [],
+      "failed": []
+    },
+    {
+      "route": "/",
+      "name": "home-desktop-first",
+      "mobile": false,
+      "repeat": 3,
+      "lcp": [
+        {
+          "time": 292,
+          "size": 36888,
+          "tag": "P",
+          "id": "",
+          "url": ""
+        }
+      ],
+      "cls": [],
+      "tasks": [
+        {
+          "time": 302.4000000000233,
+          "duration": 61
+        },
+        {
+          "time": 540.2999999999302,
+          "duration": 56
+        },
+        {
+          "time": 656.5,
+          "duration": 61
+        },
+        {
+          "time": 728.0999999999767,
+          "duration": 97
+        },
+        {
+          "time": 901.2999999999302,
+          "duration": 64
+        },
+        {
+          "time": 2211.5,
+          "duration": 51
+        },
+        {
+          "time": 2264.0999999999767,
+          "duration": 53
+        },
+        {
+          "time": 2739.4000000000233,
+          "duration": 57
+        },
+        {
+          "time": 2895.6999999999534,
+          "duration": 53
+        },
+        {
+          "time": 2951.79999999993,
+          "duration": 56
+        },
+        {
+          "time": 3085.29999999993,
+          "duration": 50
+        },
+        {
+          "time": 3675.29999999993,
+          "duration": 50
+        }
+      ],
+      "states": [
+        {
+          "time": 265.29999999993015,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion intro"
+        },
+        {
+          "time": 725.1999999999534,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion intro has-custom-cursor"
+        },
+        {
+          "time": 965.9000000000233,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion intro has-custom-cursor lenis lenis-stopped"
+        },
+        {
+          "time": 2063.9000000000233,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion intro has-custom-cursor lenis intro-leaving"
+        },
+        {
+          "time": 2897,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion has-custom-cursor lenis"
+        },
+        {
+          "time": 7107,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion has-custom-cursor lenis"
+        }
+      ],
+      "fcp": 292,
+      "ttfb": 23.699999999953434,
+      "domContentLoaded": 265.5,
+      "clsValue": 0,
+      "blockingTime10s": 109,
+      "nodes": 621,
+      "canvases": 8,
+      "hero": "http://127.0.0.1:3187/_next/image?url=https%3A%2F%2Fpub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev%2Fimages%2Foxmad-digital-hero-accueil-jardin-cotier-desktop-02cfc7897bca.webp&w=1920&q=92",
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3187/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2",
+          "type": "link",
+          "bytes": 29588,
+          "decoded": 29288,
+          "duration": 39.59999999997672,
+          "start": 44.699999999953434
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-symbole-transparent-76de83c5de0c.webp",
+          "type": "link",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 505.19999999995343,
+          "start": 45.40000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0p6-ea26h3xt_.css",
+          "type": "link",
+          "bytes": 986,
+          "decoded": 1706,
+          "duration": 39.699999999953434,
+          "start": 45.90000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/43dcem3f7hsyd.css",
+          "type": "link",
+          "bytes": 4075,
+          "decoded": 14750,
+          "duration": 45.70000000006985,
+          "start": 46.29999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1lic_tnxbmhgs.css",
+          "type": "link",
+          "bytes": 7429,
+          "decoded": 30590,
+          "duration": 49.5,
+          "start": 46.59999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "type": "link",
+          "bytes": 2329,
+          "decoded": 5598,
+          "duration": 72.29999999993015,
+          "start": 46.90000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2mmpezlrfmbu5.js",
+          "type": "script",
+          "bytes": 9016,
+          "decoded": 34718,
+          "duration": 95.40000000002328,
+          "start": 47.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2ku6ycm6ifxai.js",
+          "type": "script",
+          "bytes": 35072,
+          "decoded": 129338,
+          "duration": 120.29999999993015,
+          "start": 47.40000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3kmozkq6tgqnz.js",
+          "type": "script",
+          "bytes": 71876,
+          "decoded": 228922,
+          "duration": 135.09999999997672,
+          "start": 47.59999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/11be91k_gj8bl.js",
+          "type": "script",
+          "bytes": 9703,
+          "decoded": 30708,
+          "duration": 116.5,
+          "start": 47.79999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "type": "script",
+          "bytes": 4165,
+          "decoded": 9754,
+          "duration": 113.80000000004657,
+          "start": 48.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "bytes": 3961,
+          "decoded": 14377,
+          "duration": 116.40000000002328,
+          "start": 48.29999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2t-gj4100_xt2.js",
+          "type": "script",
+          "bytes": 1151,
+          "decoded": 851,
+          "duration": 124.90000000002328,
+          "start": 48.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1ley11u_md-vm.js",
+          "type": "script",
+          "bytes": 14589,
+          "decoded": 40423,
+          "duration": 135.40000000002328,
+          "start": 48.699999999953434
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3iu7gna7wfixm.js",
+          "type": "script",
+          "bytes": 6210,
+          "decoded": 15868,
+          "duration": 131.09999999997672,
+          "start": 48.90000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/04q5awaun6wch.js",
+          "type": "script",
+          "bytes": 51406,
+          "decoded": 133277,
+          "duration": 144.69999999995343,
+          "start": 49.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2fll625zudhzu.js",
+          "type": "script",
+          "bytes": 14431,
+          "decoded": 38201,
+          "duration": 136.79999999993015,
+          "start": 49.40000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/image?url=https%3A%2F%2Fpub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev%2Fimages%2Foxmad-digital-hero-accueil-jardin-cotier-desktop-02cfc7897bca.webp&w=1920&q=92",
+          "type": "img",
+          "bytes": 478178,
+          "decoded": 477878,
+          "duration": 49.40000000002328,
+          "start": 49.59999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/34m3ac8qhbg72.js",
+          "type": "script",
+          "bytes": 14051,
+          "decoded": 49019,
+          "duration": 33.40000000002328,
+          "start": 458.0999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/12z-9prhg01m3.js",
+          "type": "script",
+          "bytes": 2358,
+          "decoded": 5229,
+          "duration": 30.800000000046566,
+          "start": 466.0999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/24q2_aa287o_5.css",
+          "type": "link",
+          "bytes": 1257,
+          "decoded": 3203,
+          "duration": 27.800000000046566,
+          "start": 466.69999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/26urfb3g5geht.js",
+          "type": "script",
+          "bytes": 1586,
+          "decoded": 2651,
+          "duration": 48.699999999953434,
+          "start": 468.4000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/19rhlcx2srev9.css",
+          "type": "link",
+          "bytes": 757,
+          "decoded": 457,
+          "duration": 24.300000000046566,
+          "start": 469.19999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2831yrmxmfpq5.js",
+          "type": "script",
+          "bytes": 6284,
+          "decoded": 20145,
+          "duration": 51.800000000046566,
+          "start": 469.5999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0lo_yczikyb7a.js",
+          "type": "script",
+          "bytes": 1551,
+          "decoded": 2788,
+          "duration": 53,
+          "start": 470.29999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 601,
+          "decoded": 544,
+          "duration": 38.09999999997672,
+          "start": 480.5999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/realisations?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 616,
+          "decoded": 623,
+          "duration": 38.09999999997672,
+          "start": 480.9000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=gzSU19M5behYtFJ2",
+          "type": "fetch",
+          "bytes": 7679,
+          "decoded": 39098,
+          "duration": 26.29999999993015,
+          "start": 604.9000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0js_o2o6p2wqi.css",
+          "type": "link",
+          "bytes": 7622,
+          "decoded": 33243,
+          "duration": 28.800000000046566,
+          "start": 607.6999999999534
+        },
+        {
+          "url": "http://127.0.0.1:3187/realisations?_rsc=SqDvH3pTBdfKqb5D",
+          "type": "fetch",
+          "bytes": 2420,
+          "decoded": 7102,
+          "duration": 22.79999999993015,
+          "start": 609.9000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/18bm9splag6vb.js",
+          "type": "script",
+          "bytes": 12693,
+          "decoded": 39218,
+          "duration": 18.20000000006985,
+          "start": 871.1999999999534
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-favicon-3fe01ef6ec8b.webp",
+          "type": "other",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 688,
+          "start": 874.6999999999534
+        }
+      ],
+      "finalClasses": "geist_e799d87a-module__u8MhCG__variable motion has-custom-cursor lenis",
+      "idleTaskMs": 246.50399999999985,
+      "heapBytes": 6355620,
+      "errors": [],
+      "responses": [],
+      "failed": []
+    },
+    {
+      "route": "/",
+      "name": "home-mobile-return",
+      "mobile": true,
+      "returning": true,
+      "lcp": [
+        {
+          "time": 1048,
+          "size": 26316,
+          "tag": "P",
+          "id": "",
+          "url": ""
+        }
+      ],
+      "cls": [],
+      "tasks": [
+        {
+          "time": 604.8000000000466,
+          "duration": 274
+        },
+        {
+          "time": 902.4000000000233,
+          "duration": 69
+        },
+        {
+          "time": 2663,
+          "duration": 203
+        },
+        {
+          "time": 4025.5,
+          "duration": 101
+        },
+        {
+          "time": 4276.400000000023,
+          "duration": 86
+        },
+        {
+          "time": 4701.699999999953,
+          "duration": 55
+        },
+        {
+          "time": 4916.300000000047,
+          "duration": 56
+        },
+        {
+          "time": 5085.5,
+          "duration": 54
+        }
+      ],
+      "states": [
+        {
+          "time": 606.4000000000233,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion"
+        },
+        {
+          "time": 4571,
+          "classes": "geist_e799d87a-module__u8MhCG__variable"
+        },
+        {
+          "time": 4971.800000000047,
+          "classes": "geist_e799d87a-module__u8MhCG__variable lenis"
+        },
+        {
+          "time": 7560.5,
+          "classes": "geist_e799d87a-module__u8MhCG__variable lenis"
+        }
+      ],
+      "fcp": 1048,
+      "ttfb": 20.599999999976717,
+      "domContentLoaded": 606.4000000000233,
+      "clsValue": 0,
+      "blockingTime10s": 498,
+      "nodes": 610,
+      "canvases": 8,
+      "hero": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-hero-accueil-jardin-cotier-mobile-845bfcd7dfda.webp",
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3187/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2",
+          "type": "link",
+          "bytes": 29588,
+          "decoded": 29288,
+          "duration": 572.7000000000698,
+          "start": 237.59999999997672
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-symbole-transparent-76de83c5de0c.webp",
+          "type": "link",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 646,
+          "start": 239.30000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0p6-ea26h3xt_.css",
+          "type": "link",
+          "bytes": 986,
+          "decoded": 1706,
+          "duration": 183,
+          "start": 239.69999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/43dcem3f7hsyd.css",
+          "type": "link",
+          "bytes": 4075,
+          "decoded": 14750,
+          "duration": 247.5,
+          "start": 240.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1lic_tnxbmhgs.css",
+          "type": "link",
+          "bytes": 7429,
+          "decoded": 30590,
+          "duration": 306.89999999990687,
+          "start": 241.30000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "type": "link",
+          "bytes": 2329,
+          "decoded": 5598,
+          "duration": 846.5,
+          "start": 241.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2mmpezlrfmbu5.js",
+          "type": "script",
+          "bytes": 9016,
+          "decoded": 34718,
+          "duration": 966.8000000000466,
+          "start": 241.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2ku6ycm6ifxai.js",
+          "type": "script",
+          "bytes": 35072,
+          "decoded": 129338,
+          "duration": 1670.5999999999767,
+          "start": 242.40000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3kmozkq6tgqnz.js",
+          "type": "script",
+          "bytes": 71876,
+          "decoded": 228922,
+          "duration": 2412,
+          "start": 243
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/11be91k_gj8bl.js",
+          "type": "script",
+          "bytes": 9703,
+          "decoded": 30708,
+          "duration": 2029.7000000000698,
+          "start": 243.59999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "type": "script",
+          "bytes": 4165,
+          "decoded": 9754,
+          "duration": 2269.20000000007,
+          "start": 243.69999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "bytes": 3961,
+          "decoded": 14377,
+          "duration": 2486.3000000000466,
+          "start": 244.69999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2t-gj4100_xt2.js",
+          "type": "script",
+          "bytes": 1151,
+          "decoded": 851,
+          "duration": 2583.70000000007,
+          "start": 245.19999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1ley11u_md-vm.js",
+          "type": "script",
+          "bytes": 14589,
+          "decoded": 40423,
+          "duration": 2897.1999999999534,
+          "start": 245.90000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3iu7gna7wfixm.js",
+          "type": "script",
+          "bytes": 6210,
+          "decoded": 15868,
+          "duration": 2881.3000000000466,
+          "start": 246.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/04q5awaun6wch.js",
+          "type": "script",
+          "bytes": 51406,
+          "decoded": 133277,
+          "duration": 3773.3000000000466,
+          "start": 247.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2fll625zudhzu.js",
+          "type": "script",
+          "bytes": 14431,
+          "decoded": 38201,
+          "duration": 3346,
+          "start": 247.19999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/image?url=https%3A%2F%2Fpub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev%2Fimages%2Foxmad-digital-hero-accueil-jardin-cotier-desktop-02cfc7897bca.webp&w=3840&q=92",
+          "type": "img",
+          "bytes": 478178,
+          "decoded": 477878,
+          "duration": 5040,
+          "start": 248.30000000004657
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-hero-accueil-jardin-cotier-mobile-845bfcd7dfda.webp",
+          "type": "img",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 3201.5999999999767,
+          "start": 571.0999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/12z-9prhg01m3.js",
+          "type": "script",
+          "bytes": 2358,
+          "decoded": 5229,
+          "duration": 235.5,
+          "start": 4332
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/24q2_aa287o_5.css",
+          "type": "link",
+          "bytes": 1257,
+          "decoded": 3203,
+          "duration": 211.5,
+          "start": 4334.300000000047
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/26urfb3g5geht.js",
+          "type": "script",
+          "bytes": 1586,
+          "decoded": 2651,
+          "duration": 244.40000000002328,
+          "start": 4338.400000000023
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/19rhlcx2srev9.css",
+          "type": "link",
+          "bytes": 757,
+          "decoded": 457,
+          "duration": 211.59999999997672,
+          "start": 4341.800000000047
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2831yrmxmfpq5.js",
+          "type": "script",
+          "bytes": 6284,
+          "decoded": 20145,
+          "duration": 457.5,
+          "start": 4343.099999999977
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0lo_yczikyb7a.js",
+          "type": "script",
+          "bytes": 1551,
+          "decoded": 2788,
+          "duration": 402.60000000009313,
+          "start": 4345.699999999953
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 601,
+          "decoded": 544,
+          "duration": 337.5999999999767,
+          "start": 4381.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=gzSU19M5behYtFJ2",
+          "type": "fetch",
+          "bytes": 7679,
+          "decoded": 39098,
+          "duration": 246.69999999995343,
+          "start": 4801.5
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-favicon-3fe01ef6ec8b.webp",
+          "type": "other",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 431.4000000000233,
+          "start": 5366.900000000023
+        }
+      ],
+      "finalClasses": "geist_e799d87a-module__u8MhCG__variable lenis",
+      "idleTaskMs": 686.8429999999996,
+      "heapBytes": 16257948,
+      "errors": [],
+      "responses": [],
+      "failed": []
+    },
+    {
+      "route": "/",
+      "name": "home-mobile-reduced",
+      "mobile": true,
+      "reduced": true,
+      "lcp": [
+        {
+          "time": 1212,
+          "size": 26316,
+          "tag": "P",
+          "id": "",
+          "url": ""
+        }
+      ],
+      "cls": [],
+      "tasks": [
+        {
+          "time": 618.9000000000233,
+          "duration": 292
+        },
+        {
+          "time": 2636.79999999993,
+          "duration": 283
+        },
+        {
+          "time": 4000.4000000000233,
+          "duration": 103
+        },
+        {
+          "time": 4223.199999999953,
+          "duration": 84
+        }
+      ],
+      "states": [
+        {
+          "time": 620.7999999999302,
+          "classes": "geist_e799d87a-module__u8MhCG__variable"
+        },
+        {
+          "time": 4846.900000000023,
+          "classes": "geist_e799d87a-module__u8MhCG__variable"
+        }
+      ],
+      "fcp": 1212,
+      "ttfb": 35.59999999997672,
+      "domContentLoaded": 621.5,
+      "clsValue": 0,
+      "blockingTime10s": 562,
+      "nodes": 554,
+      "canvases": 5,
+      "hero": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-hero-accueil-jardin-cotier-mobile-845bfcd7dfda.webp",
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3187/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2",
+          "type": "link",
+          "bytes": 29588,
+          "decoded": 29288,
+          "duration": 580.6999999999534,
+          "start": 228.40000000002328
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-symbole-transparent-76de83c5de0c.webp",
+          "type": "link",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 632.4000000000233,
+          "start": 229.29999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0p6-ea26h3xt_.css",
+          "type": "link",
+          "bytes": 986,
+          "decoded": 1706,
+          "duration": 182.30000000004657,
+          "start": 230.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/43dcem3f7hsyd.css",
+          "type": "link",
+          "bytes": 4075,
+          "decoded": 14750,
+          "duration": 248.40000000002328,
+          "start": 231
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1lic_tnxbmhgs.css",
+          "type": "link",
+          "bytes": 7429,
+          "decoded": 30590,
+          "duration": 301.0999999999767,
+          "start": 231.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "type": "link",
+          "bytes": 2329,
+          "decoded": 5598,
+          "duration": 831.4000000000233,
+          "start": 233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2mmpezlrfmbu5.js",
+          "type": "script",
+          "bytes": 9016,
+          "decoded": 34718,
+          "duration": 950.6999999999534,
+          "start": 233.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2ku6ycm6ifxai.js",
+          "type": "script",
+          "bytes": 35072,
+          "decoded": 129338,
+          "duration": 1654.9000000000233,
+          "start": 234
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/11be91k_gj8bl.js",
+          "type": "script",
+          "bytes": 9703,
+          "decoded": 30708,
+          "duration": 2014.1999999999534,
+          "start": 235.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3kmozkq6tgqnz.js",
+          "type": "script",
+          "bytes": 71876,
+          "decoded": 228922,
+          "duration": 2396.8000000000466,
+          "start": 235.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "type": "script",
+          "bytes": 4165,
+          "decoded": 9754,
+          "duration": 2255,
+          "start": 235.19999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "bytes": 3961,
+          "decoded": 14377,
+          "duration": 2472,
+          "start": 235.29999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2t-gj4100_xt2.js",
+          "type": "script",
+          "bytes": 1151,
+          "decoded": 851,
+          "duration": 2568.0999999999767,
+          "start": 236.19999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1ley11u_md-vm.js",
+          "type": "script",
+          "bytes": 14589,
+          "decoded": 40423,
+          "duration": 2882.5,
+          "start": 236.19999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3iu7gna7wfixm.js",
+          "type": "script",
+          "bytes": 6210,
+          "decoded": 15868,
+          "duration": 2867.0999999999767,
+          "start": 236.40000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/04q5awaun6wch.js",
+          "type": "script",
+          "bytes": 51406,
+          "decoded": 133277,
+          "duration": 3759.5999999999767,
+          "start": 237.19999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2fll625zudhzu.js",
+          "type": "script",
+          "bytes": 14431,
+          "decoded": 38201,
+          "duration": 3331.600000000093,
+          "start": 237.29999999993015
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/image?url=https%3A%2F%2Fpub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev%2Fimages%2Foxmad-digital-hero-accueil-jardin-cotier-desktop-02cfc7897bca.webp&w=3840&q=92",
+          "type": "img",
+          "bytes": 478178,
+          "decoded": 477878,
+          "duration": 5041.099999999977,
+          "start": 238
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-hero-accueil-jardin-cotier-mobile-845bfcd7dfda.webp",
+          "type": "img",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 3162,
+          "start": 578.9000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/12z-9prhg01m3.js",
+          "type": "script",
+          "bytes": 2358,
+          "decoded": 5229,
+          "duration": 239.90000000002328,
+          "start": 4274.099999999977
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/24q2_aa287o_5.css",
+          "type": "link",
+          "bytes": 1257,
+          "decoded": 3203,
+          "duration": 214.40000000002328,
+          "start": 4277.79999999993
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/26urfb3g5geht.js",
+          "type": "script",
+          "bytes": 1586,
+          "decoded": 2651,
+          "duration": 239.80000000004657,
+          "start": 4282.099999999977
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/19rhlcx2srev9.css",
+          "type": "link",
+          "bytes": 757,
+          "decoded": 457,
+          "duration": 199.19999999995343,
+          "start": 4285.099999999977
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2831yrmxmfpq5.js",
+          "type": "script",
+          "bytes": 6284,
+          "decoded": 20145,
+          "duration": 452,
+          "start": 4286.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0lo_yczikyb7a.js",
+          "type": "script",
+          "bytes": 1551,
+          "decoded": 2788,
+          "duration": 396.69999999995343,
+          "start": 4289.400000000023
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 601,
+          "decoded": 544,
+          "duration": 331.5,
+          "start": 4326.099999999977
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=gzSU19M5behYtFJ2",
+          "type": "fetch",
+          "bytes": 7679,
+          "decoded": 39098,
+          "duration": 244.39999999990687,
+          "start": 4674.900000000023
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-favicon-3fe01ef6ec8b.webp",
+          "type": "other",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 377.29999999993015,
+          "start": 5299
+        }
+      ],
+      "finalClasses": "geist_e799d87a-module__u8MhCG__variable",
+      "idleTaskMs": 84.34099999999978,
+      "heapBytes": 27334740,
+      "errors": [],
+      "responses": [],
+      "failed": []
+    },
+    {
+      "route": "/realisations",
+      "name": "works-mobile",
+      "mobile": true,
+      "lcp": [
+        {
+          "time": 1172,
+          "size": 2158,
+          "tag": "SPAN",
+          "id": "",
+          "url": ""
+        },
+        {
+          "time": 4640,
+          "size": 22508,
+          "tag": "P",
+          "id": "",
+          "url": ""
+        },
+        {
+          "time": 4812,
+          "size": 114075,
+          "tag": "IMG",
+          "id": "",
+          "url": "http://127.0.0.1:3187/_next/image?url=https%3A%2F%2Fpub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev%2Fimages%2Foxmad-digital-hero-realisations-galerie-cotiere-desktop-9a11d7333800.webp&w=1200&q=92"
+        }
+      ],
+      "cls": [],
+      "tasks": [
+        {
+          "time": 662.2000000000698,
+          "duration": 358
+        },
+        {
+          "time": 3329,
+          "duration": 268
+        },
+        {
+          "time": 3990.3000000000466,
+          "duration": 105
+        },
+        {
+          "time": 5230.099999999977,
+          "duration": 110
+        },
+        {
+          "time": 5374,
+          "duration": 60
+        }
+      ],
+      "states": [
+        {
+          "time": 664.8000000000466,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion"
+        },
+        {
+          "time": 4615.099999999977,
+          "classes": "geist_e799d87a-module__u8MhCG__variable"
+        },
+        {
+          "time": 5433.599999999977,
+          "classes": "geist_e799d87a-module__u8MhCG__variable lenis"
+        },
+        {
+          "time": 7613.400000000023,
+          "classes": "geist_e799d87a-module__u8MhCG__variable lenis"
+        }
+      ],
+      "fcp": 1172,
+      "ttfb": 20,
+      "domContentLoaded": 664.8000000000466,
+      "clsValue": 0,
+      "blockingTime10s": 651,
+      "nodes": 494,
+      "canvases": 2,
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3187/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2",
+          "type": "link",
+          "bytes": 29588,
+          "decoded": 29288,
+          "duration": 712.8000000000466,
+          "start": 225.40000000002328
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-symbole-transparent-76de83c5de0c.webp",
+          "type": "link",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 794.3000000000466,
+          "start": 226.90000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/image?url=https%3A%2F%2Fpub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev%2Fimages%2Foxmad-digital-hero-realisations-galerie-cotiere-desktop-9a11d7333800.webp&w=3840&q=92",
+          "type": "link",
+          "bytes": 441164,
+          "decoded": 440864,
+          "duration": 5803,
+          "start": 227.59999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/image?url=https%3A%2F%2Fpub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev%2Fimages%2Foxmad-digital-projet-tsaralevenana-233de49cd34e.webp&w=1920&q=75",
+          "type": "link",
+          "bytes": 41412,
+          "decoded": 41112,
+          "duration": 1677.5999999999767,
+          "start": 227.80000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0p6-ea26h3xt_.css",
+          "type": "link",
+          "bytes": 986,
+          "decoded": 1706,
+          "duration": 194,
+          "start": 228.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/43dcem3f7hsyd.css",
+          "type": "link",
+          "bytes": 4075,
+          "decoded": 14750,
+          "duration": 275.30000000004657,
+          "start": 229
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0js_o2o6p2wqi.css",
+          "type": "link",
+          "bytes": 7622,
+          "decoded": 33243,
+          "duration": 371.39999999990687,
+          "start": 229.70000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "type": "link",
+          "bytes": 2329,
+          "decoded": 5598,
+          "duration": 1000.9000000000233,
+          "start": 229.80000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2mmpezlrfmbu5.js",
+          "type": "script",
+          "bytes": 9016,
+          "decoded": 34718,
+          "duration": 1360.7999999999302,
+          "start": 229.80000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2ku6ycm6ifxai.js",
+          "type": "script",
+          "bytes": 35072,
+          "decoded": 129338,
+          "duration": 2178.5999999999767,
+          "start": 230.80000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3kmozkq6tgqnz.js",
+          "type": "script",
+          "bytes": 71876,
+          "decoded": 228922,
+          "duration": 3093.1999999999534,
+          "start": 230.90000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/11be91k_gj8bl.js",
+          "type": "script",
+          "bytes": 9703,
+          "decoded": 30708,
+          "duration": 2537.5999999999767,
+          "start": 231.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "type": "script",
+          "bytes": 4165,
+          "decoded": 9754,
+          "duration": 2777.5,
+          "start": 231.59999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "bytes": 3961,
+          "decoded": 14377,
+          "duration": 3016.5999999999767,
+          "start": 232.30000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2t-gj4100_xt2.js",
+          "type": "script",
+          "bytes": 1151,
+          "decoded": 851,
+          "duration": 3188.79999999993,
+          "start": 232.80000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1ley11u_md-vm.js",
+          "type": "script",
+          "bytes": 14589,
+          "decoded": 40423,
+          "duration": 3503.5999999999767,
+          "start": 232.90000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/18bm9splag6vb.js",
+          "type": "script",
+          "bytes": 12693,
+          "decoded": 39218,
+          "duration": 3584.3000000000466,
+          "start": 234.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/image?url=https%3A%2F%2Fpub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev%2Fimages%2Foxmad-digital-hero-realisations-galerie-cotiere-desktop-9a11d7333800.webp&w=1200&q=92",
+          "type": "link",
+          "bytes": 269582,
+          "decoded": 269282,
+          "duration": 4488.699999999953,
+          "start": 260.20000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/image?url=https%3A%2F%2Fpub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev%2Fimages%2Foxmad-digital-projet-tsaralevenana-233de49cd34e.webp&w=1200&q=75",
+          "type": "link",
+          "bytes": 27030,
+          "decoded": 26730,
+          "duration": 4081.79999999993,
+          "start": 261.20000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/12z-9prhg01m3.js",
+          "type": "script",
+          "bytes": 2358,
+          "decoded": 5229,
+          "duration": 300.30000000004657,
+          "start": 4021.0999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/24q2_aa287o_5.css",
+          "type": "link",
+          "bytes": 1257,
+          "decoded": 3203,
+          "duration": 260.19999999995343,
+          "start": 4024.4000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/26urfb3g5geht.js",
+          "type": "script",
+          "bytes": 1586,
+          "decoded": 2651,
+          "duration": 481.29999999993015,
+          "start": 4034.8000000000466
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/04q5awaun6wch.js",
+          "type": "script",
+          "bytes": 51406,
+          "decoded": 133277,
+          "duration": 1190.8000000000466,
+          "start": 4037.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/19rhlcx2srev9.css",
+          "type": "link",
+          "bytes": 757,
+          "decoded": 457,
+          "duration": 255.79999999993015,
+          "start": 4043.20000000007
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2831yrmxmfpq5.js",
+          "type": "script",
+          "bytes": 6284,
+          "decoded": 20145,
+          "duration": 751.7999999999302,
+          "start": 4048.8000000000466
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0lo_yczikyb7a.js",
+          "type": "script",
+          "bytes": 1551,
+          "decoded": 2788,
+          "duration": 894,
+          "start": 4057
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=3J_jU735PImdiW0m",
+          "type": "fetch",
+          "bytes": 601,
+          "decoded": 544,
+          "duration": 784.5999999999767,
+          "start": 4137.70000000007
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1lic_tnxbmhgs.css",
+          "type": "link",
+          "bytes": 7429,
+          "decoded": 30590,
+          "duration": 308.5999999999767,
+          "start": 4935.400000000023
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=ixldU_G5Alm5mK9y",
+          "type": "fetch",
+          "bytes": 7679,
+          "decoded": 39098,
+          "duration": 320.30000000004657,
+          "start": 4946
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3iu7gna7wfixm.js",
+          "type": "script",
+          "bytes": 6210,
+          "decoded": 15868,
+          "duration": 266.4000000000233,
+          "start": 5351.800000000047
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2fll625zudhzu.js",
+          "type": "script",
+          "bytes": 14431,
+          "decoded": 38201,
+          "duration": 346.79999999993015,
+          "start": 5353.800000000047
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-favicon-3fe01ef6ec8b.webp",
+          "type": "other",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 391.9000000000233,
+          "start": 6066.400000000023
+        }
+      ],
+      "finalClasses": "geist_e799d87a-module__u8MhCG__variable lenis",
+      "idleTaskMs": 98.59300000000016,
+      "heapBytes": 5829036,
+      "errors": [],
+      "responses": [],
+      "failed": []
+    },
+    {
+      "route": "/mentions-legales",
+      "name": "legal-mobile",
+      "mobile": true,
+      "lcp": [
+        {
+          "time": 732,
+          "size": 98487,
+          "tag": "P",
+          "id": "",
+          "url": ""
+        }
+      ],
+      "cls": [],
+      "tasks": [
+        {
+          "time": 1509.7000000000698,
+          "duration": 241
+        },
+        {
+          "time": 1968.6000000000931,
+          "duration": 116
+        },
+        {
+          "time": 2837.8000000000466,
+          "duration": 145
+        }
+      ],
+      "states": [
+        {
+          "time": 531.9000000000233,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion"
+        },
+        {
+          "time": 3024.3000000000466,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion lenis"
+        },
+        {
+          "time": 7507.100000000093,
+          "classes": "geist_e799d87a-module__u8MhCG__variable motion lenis"
+        }
+      ],
+      "fcp": 732,
+      "ttfb": 21.20000000006985,
+      "domContentLoaded": 532.4000000000233,
+      "clsValue": 0,
+      "blockingTime10s": 352,
+      "nodes": 207,
+      "canvases": 2,
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3187/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2",
+          "type": "link",
+          "bytes": 29588,
+          "decoded": 29288,
+          "duration": 357.4000000000233,
+          "start": 264.4000000000233
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-symbole-transparent-76de83c5de0c.webp",
+          "type": "link",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 512.9000000000233,
+          "start": 266.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0p6-ea26h3xt_.css",
+          "type": "link",
+          "bytes": 986,
+          "decoded": 1706,
+          "duration": 182.90000000002328,
+          "start": 267.80000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/43dcem3f7hsyd.css",
+          "type": "link",
+          "bytes": 4075,
+          "decoded": 14750,
+          "duration": 225.5,
+          "start": 269.10000000009313
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/07jok31_r9ema.css",
+          "type": "link",
+          "bytes": 816,
+          "decoded": 1256,
+          "duration": 188.20000000006985,
+          "start": 269.9000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "type": "link",
+          "bytes": 2329,
+          "decoded": 5598,
+          "duration": 433.30000000004657,
+          "start": 270.9000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2mmpezlrfmbu5.js",
+          "type": "script",
+          "bytes": 9016,
+          "decoded": 34718,
+          "duration": 514.7000000000698,
+          "start": 271.4000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2ku6ycm6ifxai.js",
+          "type": "script",
+          "bytes": 35072,
+          "decoded": 129338,
+          "duration": 1039.2000000000698,
+          "start": 272
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3kmozkq6tgqnz.js",
+          "type": "script",
+          "bytes": 71876,
+          "decoded": 228922,
+          "duration": 1233.6000000000931,
+          "start": 273
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/11be91k_gj8bl.js",
+          "type": "script",
+          "bytes": 9703,
+          "decoded": 30708,
+          "duration": 678.5,
+          "start": 273.60000000009313
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "type": "script",
+          "bytes": 4165,
+          "decoded": 9754,
+          "duration": 670.6999999999534,
+          "start": 273.70000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "bytes": 3961,
+          "decoded": 14377,
+          "duration": 745,
+          "start": 274.20000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2t-gj4100_xt2.js",
+          "type": "script",
+          "bytes": 1151,
+          "decoded": 851,
+          "duration": 707.4000000000233,
+          "start": 274.70000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1ley11u_md-vm.js",
+          "type": "script",
+          "bytes": 14589,
+          "decoded": 40423,
+          "duration": 1044.5,
+          "start": 275.20000000006985
+        },
+        {
+          "url": "https://pub-1bdff9c4a25543dcb778d1e9424d69a9.r2.dev/images/oxmad-digital-favicon-3fe01ef6ec8b.webp",
+          "type": "other",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 738.5999999999767,
+          "start": 1781.2000000000698
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/12z-9prhg01m3.js",
+          "type": "script",
+          "bytes": 2358,
+          "decoded": 5229,
+          "duration": 237.70000000006985,
+          "start": 2019
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/24q2_aa287o_5.css",
+          "type": "link",
+          "bytes": 1257,
+          "decoded": 3203,
+          "duration": 241.40000000002328,
+          "start": 2024.4000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/26urfb3g5geht.js",
+          "type": "script",
+          "bytes": 1586,
+          "decoded": 2651,
+          "duration": 253.70000000006985,
+          "start": 2032.4000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/04q5awaun6wch.js",
+          "type": "script",
+          "bytes": 51406,
+          "decoded": 133277,
+          "duration": 799.0999999999767,
+          "start": 2035.1000000000931
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/19rhlcx2srev9.css",
+          "type": "link",
+          "bytes": 757,
+          "decoded": 457,
+          "duration": 234.19999999995343,
+          "start": 2038.6000000000931
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2831yrmxmfpq5.js",
+          "type": "script",
+          "bytes": 6284,
+          "decoded": 20145,
+          "duration": 494.0999999999767,
+          "start": 2040.4000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0lo_yczikyb7a.js",
+          "type": "script",
+          "bytes": 1551,
+          "decoded": 2788,
+          "duration": 421.19999999995343,
+          "start": 2045.6000000000931
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=9hUEnS-P6ezEbLUt",
+          "type": "fetch",
+          "bytes": 601,
+          "decoded": 544,
+          "duration": 303.30000000004657,
+          "start": 2135
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1lic_tnxbmhgs.css",
+          "type": "link",
+          "bytes": 7429,
+          "decoded": 30590,
+          "duration": 265.5,
+          "start": 2463.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=DoEZ-2cIkW2vikrf",
+          "type": "fetch",
+          "bytes": 7679,
+          "decoded": 39098,
+          "duration": 297.39999999990687,
+          "start": 2484.600000000093
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3iu7gna7wfixm.js",
+          "type": "script",
+          "bytes": 6210,
+          "decoded": 15868,
+          "duration": 235.5,
+          "start": 2793.4000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2fll625zudhzu.js",
+          "type": "script",
+          "bytes": 14431,
+          "decoded": 38201,
+          "duration": 277.9000000000233,
+          "start": 2796.5
+        }
+      ],
+      "finalClasses": "geist_e799d87a-module__u8MhCG__variable motion lenis",
+      "idleTaskMs": 106.44099999999979,
+      "heapBytes": 4806012,
+      "errors": [],
+      "responses": [],
+      "failed": []
+    },
+    {
+      "route": "/admin/login",
+      "name": "admin-login-mobile",
+      "mobile": true,
+      "lcp": [
+        {
+          "time": 636,
+          "size": 3575,
+          "tag": "H1",
+          "id": "",
+          "url": ""
+        }
+      ],
+      "cls": [],
+      "tasks": [
+        {
+          "time": 501.10000000009313,
+          "duration": 69
+        },
+        {
+          "time": 1330.7000000000698,
+          "duration": 245
+        }
+      ],
+      "states": [
+        {
+          "time": 505.30000000004657,
+          "classes": "geist_e799d87a-module__u8MhCG__variable"
+        }
+      ],
+      "fcp": 636,
+      "ttfb": 51.90000000002328,
+      "domContentLoaded": 506.10000000009313,
+      "clsValue": 0,
+      "blockingTime10s": 214,
+      "nodes": 46,
+      "canvases": 0,
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3187/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2",
+          "type": "link",
+          "bytes": 29588,
+          "decoded": 29288,
+          "duration": 419.29999999993015,
+          "start": 217.60000000009313
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0p6-ea26h3xt_.css",
+          "type": "link",
+          "bytes": 986,
+          "decoded": 1706,
+          "duration": 179.20000000006985,
+          "start": 256
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1f5x6h35ped0r.css",
+          "type": "link",
+          "bytes": 5758,
+          "decoded": 24520,
+          "duration": 228.59999999997672,
+          "start": 258.10000000009313
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "type": "link",
+          "bytes": 2329,
+          "decoded": 5598,
+          "duration": 362.9000000000233,
+          "start": 259.30000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2mmpezlrfmbu5.js",
+          "type": "script",
+          "bytes": 9016,
+          "decoded": 34718,
+          "duration": 505.30000000004657,
+          "start": 259.80000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2ku6ycm6ifxai.js",
+          "type": "script",
+          "bytes": 35072,
+          "decoded": 129338,
+          "duration": 878.5999999999767,
+          "start": 260.70000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3kmozkq6tgqnz.js",
+          "type": "script",
+          "bytes": 71876,
+          "decoded": 228922,
+          "duration": 1065.9000000000233,
+          "start": 261.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/11be91k_gj8bl.js",
+          "type": "script",
+          "bytes": 9703,
+          "decoded": 30708,
+          "duration": 569.5999999999767,
+          "start": 262.20000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "type": "script",
+          "bytes": 4165,
+          "decoded": 9754,
+          "duration": 607.2000000000698,
+          "start": 262.5
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "bytes": 3961,
+          "decoded": 14377,
+          "duration": 629,
+          "start": 263.20000000006985
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/42os6yliegk4y.js",
+          "type": "script",
+          "bytes": 2283,
+          "decoded": 4323,
+          "duration": 695.7000000000698,
+          "start": 264
+        },
+        {
+          "url": "http://127.0.0.1:3187/favicon.ico",
+          "type": "other",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 3.199999999953434,
+          "start": 1614.3000000000466
+        }
+      ],
+      "finalClasses": "geist_e799d87a-module__u8MhCG__variable",
+      "idleTaskMs": 4.939999999999944,
+      "heapBytes": 3256844,
+      "errors": [],
+      "responses": [],
+      "failed": []
+    },
+    {
+      "route": "/espace-client/connexion",
+      "name": "client-login-mobile",
+      "mobile": true,
+      "lcp": [
+        {
+          "time": 624,
+          "size": 9900,
+          "tag": "P",
+          "id": "",
+          "url": ""
+        }
+      ],
+      "cls": [],
+      "tasks": [
+        {
+          "time": 2492.1999999999534,
+          "duration": 219
+        }
+      ],
+      "states": [
+        {
+          "time": 488.30000000004657,
+          "classes": "geist_e799d87a-module__u8MhCG__variable"
+        }
+      ],
+      "fcp": 624,
+      "ttfb": 32.5,
+      "domContentLoaded": 488.4000000000233,
+      "clsValue": 0,
+      "blockingTime10s": 169,
+      "nodes": 57,
+      "canvases": 0,
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3187/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2",
+          "type": "link",
+          "bytes": 29588,
+          "decoded": 29288,
+          "duration": 516.6000000000931,
+          "start": 202.19999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/image?url=%2Foxmad_connexion_jardin_ocean.webp&w=3840&q=90",
+          "type": "link",
+          "bytes": 350360,
+          "decoded": 350060,
+          "duration": 4459.300000000047,
+          "start": 220
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/0p6-ea26h3xt_.css",
+          "type": "link",
+          "bytes": 986,
+          "decoded": 1706,
+          "duration": 183.29999999993015,
+          "start": 221.40000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1f5x6h35ped0r.css",
+          "type": "link",
+          "bytes": 5758,
+          "decoded": 24520,
+          "duration": 256.70000000006985,
+          "start": 222.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3b40bydu045-n.css",
+          "type": "link",
+          "bytes": 1058,
+          "decoded": 758,
+          "duration": 173.70000000006985,
+          "start": 223.09999999997672
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "type": "link",
+          "bytes": 2329,
+          "decoded": 5598,
+          "duration": 698.3000000000466,
+          "start": 223.19999999995343
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2mmpezlrfmbu5.js",
+          "type": "script",
+          "bytes": 9016,
+          "decoded": 34718,
+          "duration": 817.9000000000233,
+          "start": 223.90000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2ku6ycm6ifxai.js",
+          "type": "script",
+          "bytes": 35072,
+          "decoded": 129338,
+          "duration": 1522.1999999999534,
+          "start": 224
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3kmozkq6tgqnz.js",
+          "type": "script",
+          "bytes": 71876,
+          "decoded": 228922,
+          "duration": 2264.5,
+          "start": 224
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/11be91k_gj8bl.js",
+          "type": "script",
+          "bytes": 9703,
+          "decoded": 30708,
+          "duration": 1881.6999999999534,
+          "start": 224.80000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "type": "script",
+          "bytes": 4165,
+          "decoded": 9754,
+          "duration": 2122.29999999993,
+          "start": 224.90000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "bytes": 3961,
+          "decoded": 14377,
+          "duration": 2339.29999999993,
+          "start": 225.30000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2rnha_cd52_ce.js",
+          "type": "script",
+          "bytes": 9952,
+          "decoded": 26315,
+          "duration": 2571.5,
+          "start": 225.30000000004657
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/image?url=%2Foxmad_connexion_jardin_ocean.webp&w=1200&q=90",
+          "type": "link",
+          "bytes": 200520,
+          "decoded": 200220,
+          "duration": 2982.29999999993,
+          "start": 248.90000000002328
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=F-Dg_DkKIO__EQ5w",
+          "type": "fetch",
+          "bytes": 601,
+          "decoded": 544,
+          "duration": 176.29999999993015,
+          "start": 2897.9000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/admin/login?_rsc=F-Dg_DkKIO__EQ5w",
+          "type": "fetch",
+          "bytes": 476,
+          "decoded": 375,
+          "duration": 182.90000000002328,
+          "start": 2899.4000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/43dcem3f7hsyd.css",
+          "type": "link",
+          "bytes": 4075,
+          "decoded": 14750,
+          "duration": 227.69999999995343,
+          "start": 3086.3000000000466
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1lic_tnxbmhgs.css",
+          "type": "link",
+          "bytes": 7429,
+          "decoded": 30590,
+          "duration": 263.10000000009313,
+          "start": 3088.1999999999534
+        },
+        {
+          "url": "http://127.0.0.1:3187/?_rsc=cBrPA0jJN7pOlpi3",
+          "type": "fetch",
+          "bytes": 7679,
+          "decoded": 39098,
+          "duration": 463.0999999999767,
+          "start": 3098.5999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/admin/login?_rsc=mk74by1T8o8rr3IS",
+          "type": "fetch",
+          "bytes": 912,
+          "decoded": 1105,
+          "duration": 368.70000000006985,
+          "start": 3118.0999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2t-gj4100_xt2.js",
+          "type": "script",
+          "bytes": 1151,
+          "decoded": 851,
+          "duration": 182.19999999995343,
+          "start": 3568.3000000000466
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/1ley11u_md-vm.js",
+          "type": "script",
+          "bytes": 14589,
+          "decoded": 40423,
+          "duration": 494.29999999993015,
+          "start": 3569.4000000000233
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/3iu7gna7wfixm.js",
+          "type": "script",
+          "bytes": 6210,
+          "decoded": 15868,
+          "duration": 335.70000000006985,
+          "start": 3570.5999999999767
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/04q5awaun6wch.js",
+          "type": "script",
+          "bytes": 51406,
+          "decoded": 133277,
+          "duration": 882.3999999999069,
+          "start": 3571.8000000000466
+        },
+        {
+          "url": "http://127.0.0.1:3187/_next/static/chunks/2fll625zudhzu.js",
+          "type": "script",
+          "bytes": 14431,
+          "decoded": 38201,
+          "duration": 499.39999999990687,
+          "start": 3572.3000000000466
+        },
+        {
+          "url": "http://127.0.0.1:3187/favicon.ico",
+          "type": "other",
+          "bytes": 0,
+          "decoded": 0,
+          "duration": 3.5,
+          "start": 4689.400000000023
+        }
+      ],
+      "finalClasses": "geist_e799d87a-module__u8MhCG__variable",
+      "idleTaskMs": 3.6529999999999063,
+      "heapBytes": 3989580,
+      "errors": [],
+      "responses": [],
+      "failed": []
+    }
+  ],
+  "http": [
+    {
+      "route": "/",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "assets": 13
+    },
+    {
+      "route": "/realisations",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "assets": 11
+    },
+    {
+      "route": "/mentions-legales",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "assets": 10
+    },
+    {
+      "route": "/admin/login",
+      "status": 200,
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "assets": 9
+    },
+    {
+      "route": "/espace-client/connexion",
+      "status": 200,
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "assets": 9
+    }
+  ],
+  "bundles": [
+    {
+      "route": "/",
+      "htmlBytes": 88138,
+      "htmlGzipBytes": 16696,
+      "assets": [
+        {
+          "asset": "/_next/static/chunks/2mmpezlrfmbu5.js",
+          "bytes": 34718,
+          "gzipBytes": 8716
+        },
+        {
+          "asset": "/_next/static/chunks/2ku6ycm6ifxai.js",
+          "bytes": 129338,
+          "gzipBytes": 34772
+        },
+        {
+          "asset": "/_next/static/chunks/3kmozkq6tgqnz.js",
+          "bytes": 228922,
+          "gzipBytes": 71576
+        },
+        {
+          "asset": "/_next/static/chunks/11be91k_gj8bl.js",
+          "bytes": 30708,
+          "gzipBytes": 9403
+        },
+        {
+          "asset": "/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "bytes": 9754,
+          "gzipBytes": 3865
+        },
+        {
+          "asset": "/_next/static/chunks/3fntmmi971322.js",
+          "bytes": 14377,
+          "gzipBytes": 3661
+        },
+        {
+          "asset": "/_next/static/chunks/2t-gj4100_xt2.js",
+          "bytes": 851,
+          "gzipBytes": 353
+        },
+        {
+          "asset": "/_next/static/chunks/1ley11u_md-vm.js",
+          "bytes": 40423,
+          "gzipBytes": 14289
+        },
+        {
+          "asset": "/_next/static/chunks/3iu7gna7wfixm.js",
+          "bytes": 15868,
+          "gzipBytes": 5910
+        },
+        {
+          "asset": "/_next/static/chunks/04q5awaun6wch.js",
+          "bytes": 133277,
+          "gzipBytes": 51106
+        },
+        {
+          "asset": "/_next/static/chunks/2fll625zudhzu.js",
+          "bytes": 38201,
+          "gzipBytes": 14131
+        },
+        {
+          "asset": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594,
+          "gzipBytes": 39627
+        },
+        {
+          "asset": "/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "bytes": 5598,
+          "gzipBytes": 2029
+        },
+        {
+          "asset": "/_next/static/chunks/0p6-ea26h3xt_.css",
+          "bytes": 1706,
+          "gzipBytes": 686
+        },
+        {
+          "asset": "/_next/static/chunks/43dcem3f7hsyd.css",
+          "bytes": 14750,
+          "gzipBytes": 3775
+        },
+        {
+          "asset": "/_next/static/chunks/1lic_tnxbmhgs.css",
+          "bytes": 30590,
+          "gzipBytes": 7129
+        }
+      ]
+    },
+    {
+      "route": "/realisations",
+      "htmlBytes": 59368,
+      "htmlGzipBytes": 9993,
+      "assets": [
+        {
+          "asset": "/_next/static/chunks/2mmpezlrfmbu5.js",
+          "bytes": 34718,
+          "gzipBytes": 8716
+        },
+        {
+          "asset": "/_next/static/chunks/2ku6ycm6ifxai.js",
+          "bytes": 129338,
+          "gzipBytes": 34772
+        },
+        {
+          "asset": "/_next/static/chunks/3kmozkq6tgqnz.js",
+          "bytes": 228922,
+          "gzipBytes": 71576
+        },
+        {
+          "asset": "/_next/static/chunks/11be91k_gj8bl.js",
+          "bytes": 30708,
+          "gzipBytes": 9403
+        },
+        {
+          "asset": "/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "bytes": 9754,
+          "gzipBytes": 3865
+        },
+        {
+          "asset": "/_next/static/chunks/3fntmmi971322.js",
+          "bytes": 14377,
+          "gzipBytes": 3661
+        },
+        {
+          "asset": "/_next/static/chunks/2t-gj4100_xt2.js",
+          "bytes": 851,
+          "gzipBytes": 353
+        },
+        {
+          "asset": "/_next/static/chunks/1ley11u_md-vm.js",
+          "bytes": 40423,
+          "gzipBytes": 14289
+        },
+        {
+          "asset": "/_next/static/chunks/18bm9splag6vb.js",
+          "bytes": 39218,
+          "gzipBytes": 12393
+        },
+        {
+          "asset": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594,
+          "gzipBytes": 39627
+        },
+        {
+          "asset": "/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "bytes": 5598,
+          "gzipBytes": 2029
+        },
+        {
+          "asset": "/_next/static/chunks/0p6-ea26h3xt_.css",
+          "bytes": 1706,
+          "gzipBytes": 686
+        },
+        {
+          "asset": "/_next/static/chunks/43dcem3f7hsyd.css",
+          "bytes": 14750,
+          "gzipBytes": 3775
+        },
+        {
+          "asset": "/_next/static/chunks/0js_o2o6p2wqi.css",
+          "bytes": 33243,
+          "gzipBytes": 7322
+        }
+      ]
+    },
+    {
+      "route": "/mentions-legales",
+      "htmlBytes": 28784,
+      "htmlGzipBytes": 7085,
+      "assets": [
+        {
+          "asset": "/_next/static/chunks/2mmpezlrfmbu5.js",
+          "bytes": 34718,
+          "gzipBytes": 8716
+        },
+        {
+          "asset": "/_next/static/chunks/2ku6ycm6ifxai.js",
+          "bytes": 129338,
+          "gzipBytes": 34772
+        },
+        {
+          "asset": "/_next/static/chunks/3kmozkq6tgqnz.js",
+          "bytes": 228922,
+          "gzipBytes": 71576
+        },
+        {
+          "asset": "/_next/static/chunks/11be91k_gj8bl.js",
+          "bytes": 30708,
+          "gzipBytes": 9403
+        },
+        {
+          "asset": "/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "bytes": 9754,
+          "gzipBytes": 3865
+        },
+        {
+          "asset": "/_next/static/chunks/3fntmmi971322.js",
+          "bytes": 14377,
+          "gzipBytes": 3661
+        },
+        {
+          "asset": "/_next/static/chunks/2t-gj4100_xt2.js",
+          "bytes": 851,
+          "gzipBytes": 353
+        },
+        {
+          "asset": "/_next/static/chunks/1ley11u_md-vm.js",
+          "bytes": 40423,
+          "gzipBytes": 14289
+        },
+        {
+          "asset": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594,
+          "gzipBytes": 39627
+        },
+        {
+          "asset": "/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "bytes": 5598,
+          "gzipBytes": 2029
+        },
+        {
+          "asset": "/_next/static/chunks/0p6-ea26h3xt_.css",
+          "bytes": 1706,
+          "gzipBytes": 686
+        },
+        {
+          "asset": "/_next/static/chunks/43dcem3f7hsyd.css",
+          "bytes": 14750,
+          "gzipBytes": 3775
+        },
+        {
+          "asset": "/_next/static/chunks/07jok31_r9ema.css",
+          "bytes": 1256,
+          "gzipBytes": 516
+        }
+      ]
+    },
+    {
+      "route": "/admin/login",
+      "htmlBytes": 10087,
+      "htmlGzipBytes": 2757,
+      "assets": [
+        {
+          "asset": "/_next/static/chunks/2mmpezlrfmbu5.js",
+          "bytes": 34718,
+          "gzipBytes": 8716
+        },
+        {
+          "asset": "/_next/static/chunks/2ku6ycm6ifxai.js",
+          "bytes": 129338,
+          "gzipBytes": 34772
+        },
+        {
+          "asset": "/_next/static/chunks/3kmozkq6tgqnz.js",
+          "bytes": 228922,
+          "gzipBytes": 71576
+        },
+        {
+          "asset": "/_next/static/chunks/11be91k_gj8bl.js",
+          "bytes": 30708,
+          "gzipBytes": 9403
+        },
+        {
+          "asset": "/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "bytes": 9754,
+          "gzipBytes": 3865
+        },
+        {
+          "asset": "/_next/static/chunks/3fntmmi971322.js",
+          "bytes": 14377,
+          "gzipBytes": 3661
+        },
+        {
+          "asset": "/_next/static/chunks/42os6yliegk4y.js",
+          "bytes": 4323,
+          "gzipBytes": 1983
+        },
+        {
+          "asset": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594,
+          "gzipBytes": 39627
+        },
+        {
+          "asset": "/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "bytes": 5598,
+          "gzipBytes": 2029
+        },
+        {
+          "asset": "/_next/static/chunks/0p6-ea26h3xt_.css",
+          "bytes": 1706,
+          "gzipBytes": 686
+        },
+        {
+          "asset": "/_next/static/chunks/1f5x6h35ped0r.css",
+          "bytes": 24520,
+          "gzipBytes": 5458
+        }
+      ]
+    },
+    {
+      "route": "/espace-client/connexion",
+      "htmlBytes": 13119,
+      "htmlGzipBytes": 3281,
+      "assets": [
+        {
+          "asset": "/_next/static/chunks/2mmpezlrfmbu5.js",
+          "bytes": 34718,
+          "gzipBytes": 8716
+        },
+        {
+          "asset": "/_next/static/chunks/2ku6ycm6ifxai.js",
+          "bytes": 129338,
+          "gzipBytes": 34772
+        },
+        {
+          "asset": "/_next/static/chunks/3kmozkq6tgqnz.js",
+          "bytes": 228922,
+          "gzipBytes": 71576
+        },
+        {
+          "asset": "/_next/static/chunks/11be91k_gj8bl.js",
+          "bytes": 30708,
+          "gzipBytes": 9403
+        },
+        {
+          "asset": "/_next/static/chunks/turbopack-3v07u274_aqsy.js",
+          "bytes": 9754,
+          "gzipBytes": 3865
+        },
+        {
+          "asset": "/_next/static/chunks/3fntmmi971322.js",
+          "bytes": 14377,
+          "gzipBytes": 3661
+        },
+        {
+          "asset": "/_next/static/chunks/2rnha_cd52_ce.js",
+          "bytes": 26315,
+          "gzipBytes": 9652
+        },
+        {
+          "asset": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+          "bytes": 112594,
+          "gzipBytes": 39627
+        },
+        {
+          "asset": "/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "bytes": 5598,
+          "gzipBytes": 2029
+        },
+        {
+          "asset": "/_next/static/chunks/0p6-ea26h3xt_.css",
+          "bytes": 1706,
+          "gzipBytes": 686
+        },
+        {
+          "asset": "/_next/static/chunks/1f5x6h35ped0r.css",
+          "bytes": 24520,
+          "gzipBytes": 5458
+        },
+        {
+          "asset": "/_next/static/chunks/3b40bydu045-n.css",
+          "bytes": 758,
+          "gzipBytes": 372
+        }
+      ]
+    }
+  ]
+}

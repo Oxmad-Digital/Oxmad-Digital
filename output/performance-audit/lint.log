@@ -1,0 +1,13 @@
+
+> oxmad-digital@0.1.0 lint
+> eslint
+
+
+/home/antoine-ponthieu/Documents/oxmad-digital/Oxmad-website/Oxmad-Digital/components/SiteFooter.tsx
+  16:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/home/antoine-ponthieu/Documents/oxmad-digital/Oxmad-website/Oxmad-Digital/components/SiteHeader.tsx
+  68:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+✖ 2 problems (0 errors, 2 warnings)
+

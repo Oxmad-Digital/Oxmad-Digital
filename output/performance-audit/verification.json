@@ -1,0 +1,29 @@
+{
+  "browser": "155.0.8059.85",
+  "checks": {
+    "motionReady": true,
+    "cursorDisabledOnTouch": true,
+    "transitionCanvasMounted": true,
+    "mobileHeroUsesPreparedSource": true,
+    "serviceAccordion": true,
+    "soundPlayer": true,
+    "contactDialog": true,
+    "bookingDialog": true,
+    "cursorMountedOnDesktop": true,
+    "smoothAnchorScroll": true,
+    "smoothScrollWakesFromIdle": true,
+    "lenisSleepsAtIdle": true,
+    "pageTransitionAnimates": true,
+    "introCompletes": true,
+    "introKeepsFixedChoreography": true,
+    "/realisationsMotion": true,
+    "realisationsUsesPreparedMobileHero": true,
+    "/mentions-legalesMotion": true
+  },
+  "metrics": {
+    "lenisFramesAtIdle": 0,
+    "introDurationMs": 3085.7999999998137
+  },
+  "errors": [],
+  "ok": true
+}

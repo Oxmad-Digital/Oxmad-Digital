@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-28",
+  "invariants": {
+    "animationsRemoved": false,
+    "animationTimingsChanged": false,
+    "imageQualityLowered": false,
+    "featuresRemoved": false
+  },
+  "initialAssetsGzipBytes": [
+    {
+      "route": "/",
+      "javascriptBefore": 269248,
+      "javascriptAfter": 254073,
+      "javascriptSaved": 15175,
+      "cssBefore": 14004,
+      "cssAfter": 10235,
+      "cssSaved": 3769
+    },
+    {
+      "route": "/realisations",
+      "javascriptBefore": 261705,
+      "javascriptAfter": 195206,
+      "javascriptSaved": 66499,
+      "cssBefore": 14197,
+      "cssAfter": 10419,
+      "cssSaved": 3778
+    },
+    {
+      "route": "/mentions-legales",
+      "javascriptBefore": 249312,
+      "javascriptAfter": 182780,
+      "javascriptSaved": 66532,
+      "cssBefore": 7391,
+      "cssAfter": 3613,
+      "cssSaved": 3778
+    }
+  ],
+  "mobileHomeImages": {
+    "heroPreviousNextReencodeBytes": 200926,
+    "heroPreparedSourceBytes": 174426,
+    "heroSavedBytes": 26500,
+    "introDuplicateRequestSavedBytes": 36652,
+    "totalColdTransferSavedBytes": 63152,
+    "qualitySettingLowered": false,
+    "comparison": {
+      "width": 1170,
+      "height": 2532,
+      "mse": 1.1132,
+      "psnrDb": 47.67,
+      "pixelsOver5Pct": 0.1445,
+      "reference": "prepared source rendered directly",
+      "comparisonTarget": "previous 1200px Next.js re-encode"
+    }
+  },
+  "mobileRealisationsImage": {
+    "previousNextReencodeBytes": 269582,
+    "preparedAvifBytes": 214642,
+    "savedBytes": 54940,
+    "savedPercent": 20.38,
+    "previousEffectiveDisplayedResolution": "900x675",
+    "preparedDisplayedResolution": "1170x878",
+    "qualitySettingLoweredOnExistingImage": false,
+    "visualReviewPassed": true
+  },
+  "runtime": {
+    "introChoreographySeconds": 2.45,
+    "introTechnicalWaitRemoved": true,
+    "verifiedIntroDurationMs": 3086,
+    "lenisFramesDuringOneIdleSecond": 0,
+    "smoothScrollWakeVerified": true,
+    "offscreenGameCssPaused": true,
+    "soundPlayerLoadedPostHydration": true
+  },
+  "verification": {
+    "file": "verification.json",
+    "ok": true,
+    "browserErrors": 0
+  },
+  "database": {
+    "environment": "development",
+    "schemaApplied": true,
+    "statementsApplied": 37,
+    "expectedIndexes": 7,
+    "validIndexes": 7,
+    "missingIndexes": [],
+    "webVitalsTable": true,
+    "webVitalsIndexValid": true
+  },
+  "browserRerun": {
+    "file": "measurements-final.json",
+    "allScenariosCompleted": true,
+    "browserErrors": 0,
+    "failedRequests": 0,
+    "cls": 0,
+    "timingsComparableToBaseline": false,
+    "reason": "The host CPU load differed materially from the baseline, so elapsed and blocking-time values are retained as diagnostics but are not used to claim a gain or regression."
+  }
+}

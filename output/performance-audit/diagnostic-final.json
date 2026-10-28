@@ -1,0 +1,47 @@
+{
+  "cpu": [
+    {
+      "name": "default",
+      "TaskDurationMs": 325.75600000000014,
+      "ScriptDurationMs": 14.807000000000015,
+      "LayoutDurationMs": 0,
+      "RecalcStyleDurationMs": 130.954
+    },
+    {
+      "name": "CSS animations paused",
+      "TaskDurationMs": 167.3669999999996,
+      "ScriptDurationMs": 6.689999999999974,
+      "LayoutDurationMs": 0,
+      "RecalcStyleDurationMs": 0
+    },
+    {
+      "name": "CSS paused and Lenis destroyed (ticker registration retained)",
+      "TaskDurationMs": 115.977,
+      "ScriptDurationMs": 7.558999999999982,
+      "LayoutDurationMs": 0,
+      "RecalcStyleDurationMs": 3.0759999999999676
+    }
+  ],
+  "interactions": [
+    {
+      "name": "pointerdown",
+      "duration": 96,
+      "inputDelay": 58.5,
+      "processing": 2.8999999999068677
+    },
+    {
+      "name": "pointerup",
+      "duration": 96,
+      "inputDelay": 63,
+      "processing": 1
+    },
+    {
+      "name": "click",
+      "duration": 96,
+      "inputDelay": 64.6999999997206,
+      "processing": 5.400000000372529
+    }
+  ],
+  "gsapGlobal": false,
+  "accordionExpanded": "true"
+}

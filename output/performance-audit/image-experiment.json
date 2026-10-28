@@ -1,0 +1,56 @@
+[
+  {
+    "source": "public/oxmad_chevrons_jardin_cotier_desktop.webp",
+    "quality": 75,
+    "originalBytes": 383264,
+    "encodedBytes": 204926
+  },
+  {
+    "source": "public/oxmad_chevrons_jardin_cotier_desktop.webp",
+    "quality": 85,
+    "originalBytes": 383264,
+    "encodedBytes": 327774
+  },
+  {
+    "source": "public/oxmad_chevrons_jardin_cotier_desktop.webp",
+    "quality": 92,
+    "originalBytes": 383264,
+    "encodedBytes": 412264
+  },
+  {
+    "source": "public/oxmad_chevrons_jardin_cotier_mobile.webp",
+    "quality": 75,
+    "originalBytes": 174426,
+    "encodedBytes": 110488
+  },
+  {
+    "source": "public/oxmad_chevrons_jardin_cotier_mobile.webp",
+    "quality": 85,
+    "originalBytes": 174426,
+    "encodedBytes": 160550
+  },
+  {
+    "source": "public/oxmad_chevrons_jardin_cotier_mobile.webp",
+    "quality": 92,
+    "originalBytes": 174426,
+    "encodedBytes": 200626
+  },
+  {
+    "source": "public/oxmad_galerie_cotiere_desktop.webp",
+    "quality": 75,
+    "originalBytes": 392770,
+    "encodedBytes": 237450
+  },
+  {
+    "source": "public/oxmad_galerie_cotiere_desktop.webp",
+    "quality": 85,
+    "originalBytes": 392770,
+    "encodedBytes": 356160
+  },
+  {
+    "source": "public/oxmad_galerie_cotiere_desktop.webp",
+    "quality": 92,
+    "originalBytes": 392770,
+    "encodedBytes": 440864
+  }
+]
