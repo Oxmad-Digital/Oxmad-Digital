@@ -195,7 +195,12 @@ export function step(g: Game, pressed: boolean, held: boolean): GameEvent[] {
   g.y += g.vy;
 
   // Surface under the player: ground (unless a hole) or the top of a block.
-  let floor = overHole(g, left, right) ? Infinity : GROUND_Y;
+  // Once below the ground line the player is inside a hole: no way back up, and
+  // reaching its far side means hitting the wall.
+  const inPit = prevBottom > GROUND_Y;
+  const holeUnder = overHole(g, left, right);
+  if (inPit && !holeUnder) g.over = true;
+  let floor = inPit || holeUnder ? Infinity : GROUND_Y;
   for (const e of g.entities) {
     if (e.kind !== "block" || right <= e.x || left >= e.x + e.w) continue;
     const top = GROUND_Y - e.h;
