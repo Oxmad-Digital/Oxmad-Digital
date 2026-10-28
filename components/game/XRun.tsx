@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useBookCall } from "@/components/BookCall/BookCallContext";
+import { motionWindow } from "@/lib/motion";
 import { createGame, score, step, PLAYER_SIZE, PLAYER_X, TICK_RATE, VIEW_W, type Game } from "./engine";
 import { CUBE_PIXELS, createCubeSprite, draw, type Particle, type View } from "./render";
 import "./XRun.css";
@@ -19,6 +20,9 @@ const STEP_MS = 1000 / TICK_RATE;
 /** Inputs right after a crash are ignored, so a late tap does not restart by accident. */
 const RESTART_DELAY = 450;
 const JUMP_KEYS = new Set(["Space", "ArrowUp", "KeyW", "Enter"]);
+
+/** `lock` is missing from some DOM typings and from iOS, where the orientation cannot be forced. */
+type LockableOrientation = ScreenOrientation & { lock?: (orientation: "landscape") => Promise<void>; unlock?: () => void };
 
 const pad = (n: number) => String(n).padStart(6, "0");
 
@@ -39,6 +43,7 @@ function readName() {
 
 export default function XRun() {
   const { open: openBookCall, preload: preloadBookCall } = useBookCall();
+  const stageRef = useRef<HTMLDivElement>(null);
   const frameRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const scoreRef = useRef<HTMLElement>(null);
@@ -50,6 +55,7 @@ export default function XRun() {
   const [run, setRun] = useState<Run | null>(null);
   const [name, setName] = useState("");
   const [submit, setSubmit] = useState<Submit>({ state: "idle" });
+  const [fullscreen, setFullscreen] = useState(false);
 
   // Mutable game state shared by the loop and the input handlers.
   const sim = useRef({
@@ -129,6 +135,48 @@ export default function XRun() {
   }, [setGamePhase, start]);
 
   const release = useCallback(() => { sim.current.held = false; }, []);
+
+  /**
+   * Android: real fullscreen, then the screen is locked in landscape.
+   * iPhone has no fullscreen for anything but video: the stage then simply covers the viewport.
+   */
+  const enterFullscreen = useCallback(async () => {
+    const stage = stageRef.current!;
+    if (document.fullscreenEnabled && stage.requestFullscreen) {
+      try {
+        await stage.requestFullscreen({ navigationUI: "hide" });
+        // Desktops reject the lock, which is fine: their screen is already landscape.
+        await (screen.orientation as LockableOrientation | undefined)?.lock?.("landscape").catch(() => {});
+      } catch {}
+    }
+    setFullscreen(true);
+    frameRef.current?.focus({ preventScroll: true });
+  }, []);
+
+  const exitFullscreen = useCallback(() => {
+    (screen.orientation as LockableOrientation | undefined)?.unlock?.();
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    if (sim.current.phase === "playing") setGamePhase("paused");
+    setFullscreen(false);
+  }, [setGamePhase]);
+
+  useEffect(() => {
+    if (!fullscreen) return;
+    // Leaving with the system gesture or Escape ends the native fullscreen without our button.
+    const onChange = () => { if (!document.fullscreenElement) exitFullscreen(); };
+    document.addEventListener("fullscreenchange", onChange);
+    // The page must not scroll behind the covering stage (iPhone fallback).
+    const lenis = motionWindow().__oxLenis;
+    lenis?.stop();
+    const root = document.documentElement;
+    const overflow = root.style.overflow;
+    root.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("fullscreenchange", onChange);
+      lenis?.start();
+      root.style.overflow = overflow;
+    };
+  }, [exitFullscreen, fullscreen]);
 
   useEffect(() => {
     const frame = frameRef.current!;
@@ -334,6 +382,10 @@ export default function XRun() {
 
   // Keys are only captured while the game has focus, so Space still scrolls the page otherwise.
   const onKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Escape" && fullscreen) {
+      exitFullscreen();
+      return;
+    }
     if (e.key === "Escape" && sim.current.phase === "playing") {
       setGamePhase("paused");
       return;
@@ -347,7 +399,9 @@ export default function XRun() {
     if (JUMP_KEYS.has(e.code) && !(e.target as Element).closest("input")) release();
   };
 
-  const onBlur = () => {
+  const onBlur = (e: React.FocusEvent) => {
+    // Focus moving to a control inside the game (fullscreen button) is not leaving it.
+    if (frameRef.current?.contains(e.relatedTarget as Node | null)) return;
     if (sim.current.phase === "playing") setGamePhase("paused");
   };
 
@@ -355,6 +409,7 @@ export default function XRun() {
 
   return (
     <div className="xrun-wrap">
+    <div ref={stageRef} className={`xrun-stage${fullscreen ? " is-fullscreen" : ""}`}>
     <div
       ref={frameRef}
       className={`xrun is-${phase}`}
@@ -422,6 +477,25 @@ export default function XRun() {
           </div>
         </div>
       )}
+
+      <button
+        type="button"
+        className="xrun-fs"
+        onClick={fullscreen ? exitFullscreen : enterFullscreen}
+        aria-label={fullscreen ? "Quitter le plein écran" : "Jouer en plein écran"}
+        aria-pressed={fullscreen}
+      >
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+          <path
+            d={fullscreen ? "M6 1v5H1M10 1v5h5M6 15v-5H1M10 15v-5h5" : "M1 6V1h5M15 6V1h-5M1 10v5h5M15 10v5h-5"}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+          />
+        </svg>
+      </button>
+    </div>
+    {fullscreen && <p className="xrun-rotate smallcap" aria-hidden="true">Tournez votre téléphone pour jouer en grand</p>}
     </div>
 
     <aside className="xrun-board" aria-label="Classement 0x-Run">

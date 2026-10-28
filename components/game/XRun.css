@@ -22,6 +22,17 @@
 .xrun-btn--accent { background: var(--accent); border-color: var(--accent); color: #17180e; }
 .xrun-btn--accent:hover, .xrun-btn--accent:focus-visible { background: #e1d222; color: #17180e; }
 
+/* ─── Plein écran (natif sur Android, viewport couvert sur iPhone) ─── */
+.xrun-fs { position: absolute; right: 10px; bottom: 10px; display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 1px solid #63695f; border-radius: 2px; background: #11120ecc; color: var(--white); cursor: pointer; transition: border-color .2s, color .2s; }
+.xrun-fs:hover, .xrun-fs:focus-visible { border-color: var(--accent); color: var(--accent); outline: none; }
+.xrun-stage.is-fullscreen { position: fixed; inset: 0; z-index: 2000; display: grid; place-items: center; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); background: #11120e; container-type: size; }
+/* The game keeps its 16:9 frame, letterboxed on taller or wider screens. */
+.xrun-stage.is-fullscreen .xrun { width: min(100cqw, 100cqh * 16 / 9); border: 0; border-radius: 0; }
+.xrun-rotate { display: none; position: absolute; left: 16px; right: 16px; bottom: calc(24px + env(safe-area-inset-bottom)); margin: 0; text-align: center; color: var(--muted); pointer-events: none; }
+@media (orientation: portrait) and (max-width: 600px) {
+  .xrun-rotate { display: block; }
+}
+
 @media (max-width: 790px) {
   .xrun-hud { top: 10px; left: 12px; right: 12px; }
   .xrun-screen { gap: 8px; }
