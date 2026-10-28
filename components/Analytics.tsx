@@ -49,6 +49,8 @@ export default function Analytics() {
       // Only the landing view carries the external referrer and campaign.
       referrer: first.current ? document.referrer : "",
       utm: first.current ? new URLSearchParams(location.search).get("utm_source") : null,
+      // The country is derived from it server-side (lib/geo.ts).
+      tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
     });
     first.current = false;
 

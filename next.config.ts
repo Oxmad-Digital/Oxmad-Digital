@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
     // app/global-not-found.tsx: the 404 page shared by the site, admin and client root layouts.
     globalNotFound: true,
   },
+  // Read with fs at runtime (lib/geo.ts), so the tracer can't see it.
+  outputFileTracingIncludes: {
+    "/api/track": ["./data/dbip-country-lite.mmdb"],
+  },
   // Pages removed by the redesign, which may still be indexed or linked from client domains.
   async redirects() {
     return [

@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import { db } from "@/lib/db";
+import { visitorCountry } from "@/lib/geo";
 import { clientIp, rateLimit } from "@/lib/rate-limit";
 import { deriveKey } from "@/lib/totp";
 import { SITE_URL, TIMEZONE } from "@/lib/site";
@@ -84,7 +85,7 @@ export async function POST(request: Request) {
     } else {
       await sql`INSERT INTO page_views (path, referrer, utm_source, visitor, country, device, browser, duration)
         VALUES (${path}, ${referrerHost(body?.referrer)}, ${utm || null}, ${visitor},
-          ${request.headers.get("x-vercel-ip-country")}, ${device(ua)}, ${browser(ua)}, 0)`;
+          ${visitorCountry(body?.tz, ip, request.headers.get("x-vercel-ip-country"))}, ${device(ua)}, ${browser(ua)}, 0)`;
     }
   } catch (error) {
     console.error("track failed:", error);

@@ -45,3 +45,6 @@ next-env.d.ts
 
 # audit outputs
 output/performance-audit/build.log
+
+# DB-IP country database, fetched at build time (scripts/fetch-geoip.mjs)
+/data/

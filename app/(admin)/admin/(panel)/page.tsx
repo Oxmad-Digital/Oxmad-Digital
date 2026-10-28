@@ -147,7 +147,9 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
         Une session regroupe les pages vues d&apos;un visiteur sans 30 min d&apos;inactivité ; sa durée ne compte que le temps onglet visible.
         Les robots, l&apos;admin et le développement local ne sont pas comptés.
         L&apos;historique est conservé sans limite sous forme de totaux quotidiens.
+        Le pays vient du fuseau horaire du navigateur, à défaut de l&apos;adresse IP (jamais conservée).
         Carte : <a href="https://github.com/VictorCazanave/svg-maps" target="_blank" rel="noreferrer">svg-maps</a> (CC BY 4.0).
+        <a href="https://db-ip.com" target="_blank" rel="noreferrer">IP Geolocation by DB-IP</a> (CC BY 4.0).
       </p>
     </>
   );
