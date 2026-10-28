@@ -48,6 +48,7 @@ export default function XRun() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const scoreRef = useRef<HTMLElement>(null);
   const bestRef = useRef<HTMLElement>(null);
+  const nameRef = useRef<HTMLInputElement>(null);
   const [phase, setPhase] = useState<Phase>("idle");
   const [result, setResult] = useState({ score: 0, best: 0, record: false });
   const [top, setTop] = useState<ScoreEntry[] | null>(null);
@@ -373,9 +374,17 @@ export default function XRun() {
     }
   };
 
+  /** A score not yet ranked is only dropped through "Rejouer": a stray tap or key leads to the name field instead. */
+  const guardRun = () => {
+    if (sim.current.phase !== "over" || !run) return false;
+    nameRef.current?.focus({ preventScroll: true });
+    return true;
+  };
+
   const onPointerDown = (e: React.PointerEvent) => {
     if (e.button !== 0 || (e.target as Element).closest("button, input")) return;
     e.preventDefault();
+    if (guardRun()) return;
     frameRef.current?.focus({ preventScroll: true });
     press();
   };
@@ -392,6 +401,7 @@ export default function XRun() {
     }
     if (!JUMP_KEYS.has(e.code) || (e.target as Element).closest("button, input")) return;
     e.preventDefault();
+    if (guardRun()) return;
     if (!e.repeat) press();
   };
 
@@ -456,6 +466,7 @@ export default function XRun() {
           {run ? (
             <form className="xrun-form" onSubmit={send}>
               <input
+                ref={nameRef}
                 className="xrun-input"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
