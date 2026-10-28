@@ -1,12 +1,14 @@
 "use client";
 
-import { createContext, useContext, useState, useCallback, useMemo } from "react";
-import BookCallModal from "./BookCallModal";
+import { createContext, lazy, Suspense, useContext, useState, useCallback, useMemo } from "react";
+
+const loadBookCallModal = () => import("./BookCallModal");
+const BookCallModal = lazy(loadBookCallModal);
 
 type BookCallContextValue = {
-  isOpen: boolean;
   open: () => void;
   close: () => void;
+  preload: () => void;
 };
 
 const BookCallContext = createContext<BookCallContextValue | null>(null);
@@ -16,13 +18,18 @@ export function BookCallProvider({ children }: { children: React.ReactNode }) {
 
   const open = useCallback(() => setIsOpen(true), []);
   const close = useCallback(() => setIsOpen(false), []);
+  const preload = useCallback(() => { void loadBookCallModal(); }, []);
 
-  const value = useMemo(() => ({ isOpen, open, close }), [isOpen, open, close]);
+  const value = useMemo(() => ({ open, close, preload }), [open, close, preload]);
 
   return (
     <BookCallContext.Provider value={value}>
       {children}
-      <BookCallModal isOpen={isOpen} onClose={close} />
+      {isOpen && (
+        <Suspense fallback={null}>
+          <BookCallModal isOpen onClose={close} />
+        </Suspense>
+      )}
     </BookCallContext.Provider>
   );
 }

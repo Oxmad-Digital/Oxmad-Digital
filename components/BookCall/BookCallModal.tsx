@@ -1,69 +1,44 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { X, Loader2, CheckCircle2 } from "lucide-react";
-import { useLanguage } from "@/components/Language/LanguageContext";
+import { generateDaySlots, slotLabel } from "@/lib/booking";
+import { motionWindow } from "@/lib/motion";
+import { EMAIL_RE, TIMEZONE } from "@/lib/site";
 import "./BookCallModal.css";
 
 type Status = "idle" | "submitting" | "success" | "error";
-type Slot = { iso: string; label: string };
-type SlotsState = "idle" | "loading" | "loaded" | "error";
+type CallChannel = "phone" | "whatsapp";
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const BOOKING_WINDOW_DAYS = 21;
 
 const COPY = {
-  fr: {
-    close: "Fermer",
-    invalidEmail: "Merci de renseigner une adresse email valide.",
-    invalidEmailFormat: "Format d'email invalide.",
-    invalidSlot: "Merci de choisir un créneau pour l'appel.",
-    genericError: "Une erreur est survenue. Veuillez réessayer.",
-    successTitle: "Rendez-vous confirmé !",
-    successBody: (slot: string) => `C'est noté pour le ${slot}. Vous recevrez une invitation Google Calendar par email.`,
-    formTitle: "Réserver un appel",
-    formSubtitle: "Choisissez un créneau et parlez-nous de votre projet.",
-    name: "Nom",
-    email: "Email",
-    phone: "Téléphone (optionnel)",
-    project: "Votre projet",
-    date: "Date",
-    time: "Heure",
-    pickDateFirst: "Choisissez d'abord une date.",
-    loadingSlots: "Chargement des créneaux…",
-    noSlots: "Aucun créneau disponible ce jour-là, essayez une autre date.",
-    slotsErrorText: "Impossible de charger les créneaux.",
-    sending: "Envoi en cours…",
-    send: "Confirmer le rendez-vous",
-  },
-  en: {
-    close: "Close",
-    invalidEmail: "Please enter a valid email address.",
-    invalidEmailFormat: "Invalid email format.",
-    invalidSlot: "Please choose a time slot for the call.",
-    genericError: "Something went wrong. Please try again.",
-    successTitle: "Appointment confirmed!",
-    successBody: (slot: string) => `You're booked for ${slot}. You'll receive a Google Calendar invite by email.`,
-    formTitle: "Book a call",
-    formSubtitle: "Pick a time slot and tell us about your project.",
-    name: "Name",
-    email: "Email",
-    phone: "Phone (optional)",
-    project: "Your project",
-    date: "Date",
-    time: "Time",
-    pickDateFirst: "Pick a date first.",
-    loadingSlots: "Loading time slots…",
-    noSlots: "No slots available that day, try another date.",
-    slotsErrorText: "Couldn't load time slots.",
-    sending: "Sending…",
-    send: "Confirm appointment",
-  },
+  close: "Fermer",
+  invalidEmail: "Merci de renseigner une adresse email valide.",
+  invalidEmailFormat: "Format d'email invalide.",
+  invalidSlot: "Merci de choisir un créneau pour l'appel.",
+  genericError: "Une erreur est survenue. Veuillez réessayer.",
+  successTitle: "Rendez-vous confirmé !",
+  successBody: (slot: string) => `C'est noté pour le ${slot}. Nous vous recontactons pour confirmer le rendez-vous.`,
+  formTitle: "Réserver un appel",
+  formSubtitle: "Choisissez un créneau et parlez-nous de votre projet.",
+  name: "Nom",
+  email: "Email",
+  phone: "Téléphone",
+  channel: "Comment préférez-vous être appelé ?",
+  channels: { phone: "Appel téléphonique", whatsapp: "WhatsApp" } as Record<CallChannel, string>,
+  project: "Votre projet",
+  date: "Date",
+  time: "Heure",
+  pickDateFirst: "Choisissez d'abord une date.",
+  noSlots: "Aucun créneau ce jour-là : les rendez-vous ont lieu du lundi au vendredi, de 9h à 19h.",
+  sending: "Envoi en cours…",
+  send: "Confirmer le rendez-vous",
 };
 
+/** YYYY-MM-DD in Antananarivo, `offsetDays` from today ("en-CA" formats dates that way). */
 function antananarivoDateString(offsetDays = 0) {
-  const now = new Date(Date.now() + 3 * 60 * 60 * 1000 + offsetDays * 24 * 60 * 60 * 1000);
-  return now.toISOString().slice(0, 10);
+  return new Date(Date.now() + offsetDays * 24 * 60 * 60 * 1000).toLocaleDateString("en-CA", { timeZone: TIMEZONE });
 }
 
 export default function BookCallModal({
@@ -80,13 +55,11 @@ export default function BookCallModal({
   const [confirmedSlotLabel, setConfirmedSlotLabel] = useState("");
 
   const [date, setDate] = useState("");
-  const [slots, setSlots] = useState<Slot[]>([]);
-  const [slotsState, setSlotsState] = useState<SlotsState>("idle");
   const [selectedSlot, setSelectedSlot] = useState("");
+  const [channel, setChannel] = useState<CallChannel>("phone");
 
   const dialogRef = useRef<HTMLDivElement>(null);
-  const { lang } = useLanguage();
-  const c = COPY[lang];
+  const c = COPY;
 
   const minDate = antananarivoDateString();
   const maxDate = antananarivoDateString(BOOKING_WINDOW_DAYS);
@@ -99,10 +72,14 @@ export default function BookCallModal({
     };
     document.addEventListener("keydown", onKeyDown);
     document.body.style.overflow = "hidden";
+    // Lenis drives the page scroll: pause it so the wheel only scrolls the modal.
+    const lenis = motionWindow().__oxLenis;
+    lenis?.stop();
 
     return () => {
       document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = "";
+      lenis?.start();
     };
   }, [isOpen, onClose]);
 
@@ -113,40 +90,12 @@ export default function BookCallModal({
       setEmailError("");
       setSlotError("");
       setDate("");
-      setSlots([]);
-      setSlotsState("idle");
       setSelectedSlot("");
+      setChannel("phone");
     }
   }, [isOpen]);
 
-  useEffect(() => {
-    if (!date) {
-      setSlots([]);
-      setSlotsState("idle");
-      return;
-    }
-
-    let cancelled = false;
-    setSlotsState("loading");
-    setSelectedSlot("");
-    setSlotError("");
-
-    fetch(`/api/book-call/availability?date=${date}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (cancelled) return;
-        if (!Array.isArray(data.slots)) throw new Error(data.error || "invalid response");
-        setSlots(data.slots);
-        setSlotsState("loaded");
-      })
-      .catch(() => {
-        if (!cancelled) setSlotsState("error");
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [date]);
+  const slots = useMemo(() => (date ? generateDaySlots(date) : []), [date]);
 
   if (!isOpen) return null;
 
@@ -160,6 +109,7 @@ export default function BookCallModal({
       phone: String(data.get("phone") || "").trim(),
       message: String(data.get("message") || "").trim(),
       slot: selectedSlot,
+      channel,
     };
 
     if (!EMAIL_RE.test(payload.email)) {
@@ -200,6 +150,7 @@ export default function BookCallModal({
   return (
     <div
       className="ox-modal-overlay"
+      data-lenis-prevent
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
@@ -225,7 +176,7 @@ export default function BookCallModal({
             <CheckCircle2 size={40} className="ox-modal-success-icon" />
             <h3 id="ox-modal-title">{c.successTitle}</h3>
             <p>{c.successBody(confirmedSlotLabel)}</p>
-            <button type="button" className="ox-btn ox-btn-primary ox-btn-md" onClick={onClose}>
+            <button type="button" className="ox-modal-submit" onClick={onClose}>
               {c.close}
             </button>
           </div>
@@ -246,31 +197,31 @@ export default function BookCallModal({
                   min={minDate}
                   max={maxDate}
                   value={date}
-                  onChange={(e) => setDate(e.target.value)}
+                  onChange={(e) => {
+                    setDate(e.target.value);
+                    setSelectedSlot("");
+                    setSlotError("");
+                  }}
                 />
               </div>
 
               <div className="ox-modal-field">
                 <label>{c.time}</label>
                 {!date && <p className="ox-modal-hint">{c.pickDateFirst}</p>}
-                {date && slotsState === "loading" && <p className="ox-modal-hint">{c.loadingSlots}</p>}
-                {date && slotsState === "error" && <p className="ox-modal-error">{c.slotsErrorText}</p>}
-                {date && slotsState === "loaded" && slots.length === 0 && (
-                  <p className="ox-modal-hint">{c.noSlots}</p>
-                )}
-                {date && slotsState === "loaded" && slots.length > 0 && (
+                {date && slots.length === 0 && <p className="ox-modal-hint">{c.noSlots}</p>}
+                {slots.length > 0 && (
                   <div className="ox-modal-slots">
                     {slots.map((slot) => (
                       <button
-                        key={slot.iso}
+                        key={slot}
                         type="button"
-                        className={`ox-modal-slot ${selectedSlot === slot.iso ? "ox-modal-slot-active" : ""}`}
+                        className={`ox-modal-slot ${selectedSlot === slot ? "ox-modal-slot-active" : ""}`}
                         onClick={() => {
-                          setSelectedSlot(slot.iso);
+                          setSelectedSlot(slot);
                           setSlotError("");
                         }}
                       >
-                        {slot.label}
+                        {slotLabel(slot)}
                       </button>
                     ))}
                   </div>
@@ -303,7 +254,25 @@ export default function BookCallModal({
 
               <div className="ox-modal-field">
                 <label htmlFor="ox-modal-phone">{c.phone}</label>
-                <input id="ox-modal-phone" name="phone" type="tel" autoComplete="tel" />
+                <input id="ox-modal-phone" name="phone" type="tel" required autoComplete="tel" />
+              </div>
+
+              <div className="ox-modal-field">
+                <label>{c.channel}</label>
+                <div className="ox-modal-slots ox-modal-channels" role="radiogroup" aria-label={c.channel}>
+                  {(Object.keys(c.channels) as CallChannel[]).map((value) => (
+                    <button
+                      key={value}
+                      type="button"
+                      role="radio"
+                      aria-checked={channel === value}
+                      className={`ox-modal-slot ${channel === value ? "ox-modal-slot-active" : ""}`}
+                      onClick={() => setChannel(value)}
+                    >
+                      {c.channels[value]}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               <div className="ox-modal-field">
@@ -315,7 +284,7 @@ export default function BookCallModal({
 
               <button
                 type="submit"
-                className="ox-btn ox-btn-primary ox-btn-lg ox-modal-submit"
+                className="ox-modal-submit"
                 disabled={status === "submitting"}
               >
                 {status === "submitting" ? (
