@@ -399,6 +399,12 @@ export default function XRun() {
     if (JUMP_KEYS.has(e.code) && !(e.target as Element).closest("input")) release();
   };
 
+  /** Pause and resume from the on-screen button; focus goes back to the game for the keyboard. */
+  const togglePause = () => {
+    setGamePhase(sim.current.phase === "playing" ? "paused" : "playing");
+    frameRef.current?.focus({ preventScroll: true });
+  };
+
   const onBlur = (e: React.FocusEvent) => {
     // Focus moving to a control inside the game (fullscreen button) is not leaving it.
     if (frameRef.current?.contains(e.relatedTarget as Node | null)) return;
@@ -478,22 +484,32 @@ export default function XRun() {
         </div>
       )}
 
-      <button
-        type="button"
-        className="xrun-fs"
-        onClick={fullscreen ? exitFullscreen : enterFullscreen}
-        aria-label={fullscreen ? "Quitter le plein écran" : "Jouer en plein écran"}
-        aria-pressed={fullscreen}
-      >
-        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
-          <path
-            d={fullscreen ? "M6 1v5H1M10 1v5h5M6 15v-5H1M10 15v-5h5" : "M1 6V1h5M15 6V1h-5M1 10v5h5M15 10v5h-5"}
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.6"
-          />
-        </svg>
-      </button>
+      <div className="xrun-controls">
+        {(phase === "playing" || phase === "paused") && (
+          <button type="button" className="xrun-ctrl" onClick={togglePause} aria-label={phase === "playing" ? "Pause" : "Reprendre"}>
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+              {phase === "playing" ? <path d="M4 2h3v12H4zM9 2h3v12H9z" fill="currentColor" /> : <path d="M4 2l10 6-10 6z" fill="currentColor" />}
+            </svg>
+          </button>
+        )}
+        <button
+          type="button"
+          className="xrun-ctrl"
+          onClick={fullscreen ? exitFullscreen : enterFullscreen}
+          aria-label={fullscreen ? "Quitter le plein écran" : "Jouer en plein écran"}
+          aria-pressed={fullscreen}
+        >
+          <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+            <path
+              d={fullscreen ? "M6 1v5H1M10 1v5h5M6 15v-5H1M10 15v-5h5" : "M1 6V1h5M15 6V1h-5M1 10v5h5M15 10v5h-5"}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+            />
+          </svg>
+          {fullscreen && <span className="smallcap">Quitter</span>}
+        </button>
+      </div>
     </div>
     {fullscreen && <p className="xrun-rotate smallcap" aria-hidden="true">Tournez votre téléphone pour jouer en grand</p>}
     </div>

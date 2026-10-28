@@ -23,11 +23,15 @@
 .xrun-btn--accent:hover, .xrun-btn--accent:focus-visible { background: #e1d222; color: #17180e; }
 
 /* ─── Plein écran (natif sur Android, viewport couvert sur iPhone) ─── */
-.xrun-fs { position: absolute; right: 10px; bottom: 10px; display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 1px solid #63695f; border-radius: 2px; background: #11120ecc; color: var(--white); cursor: pointer; transition: border-color .2s, color .2s; }
-.xrun-fs:hover, .xrun-fs:focus-visible { border-color: var(--accent); color: var(--accent); outline: none; }
+.xrun-controls { position: absolute; right: 10px; bottom: 10px; display: flex; gap: 8px; }
+.xrun-ctrl { display: flex; align-items: center; justify-content: center; gap: 8px; min-width: 40px; height: 40px; padding: 0 10px; border: 1px solid #63695f; border-radius: 2px; background: #11120ecc; color: var(--white); cursor: pointer; transition: border-color .2s, color .2s; }
+.xrun-ctrl:hover, .xrun-ctrl:focus-visible { border-color: var(--accent); color: var(--accent); outline: none; }
+/* In fullscreen the controls stick to the screen corner, so they stay reachable whatever the letterboxing. */
+.xrun-stage.is-fullscreen .xrun-controls { position: fixed; top: calc(12px + env(safe-area-inset-top)); right: calc(12px + env(safe-area-inset-right)); bottom: auto; z-index: 1; }
 .xrun-stage.is-fullscreen { position: fixed; inset: 0; z-index: 2000; display: grid; place-items: center; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); background: #11120e; container-type: size; }
 /* The game keeps its 16:9 frame, letterboxed on taller or wider screens. */
-.xrun-stage.is-fullscreen .xrun { width: min(100cqw, 100cqh * 16 / 9); border: 0; border-radius: 0; }
+.xrun-stage.is-fullscreen .xrun { width: min(100vw, 100dvh * 16 / 9); width: min(100cqw, 100cqh * 16 / 9); border: 0; border-radius: 0; }
+.xrun-stage.is-fullscreen .xrun-hud { right: 140px; }
 .xrun-rotate { display: none; position: absolute; left: 16px; right: 16px; bottom: calc(24px + env(safe-area-inset-bottom)); margin: 0; text-align: center; color: var(--muted); pointer-events: none; }
 @media (orientation: portrait) and (max-width: 600px) {
   .xrun-rotate { display: block; }
