@@ -21,6 +21,7 @@
 /build
 
 # misc
+.r2-media/
 .DS_Store
 *.pem
 
@@ -41,3 +42,6 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# audit outputs
+output/performance-audit/build.log
