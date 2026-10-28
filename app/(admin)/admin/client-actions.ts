@@ -4,10 +4,11 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { normalizeEmail, requireAdmin } from "@/lib/admin-auth";
 import { createLoginToken, sendLoginLink } from "@/lib/client-auth";
+import { sendEmail } from "@/lib/email";
 import { getRequest, notifyClient, purgeClient, rejectUploads, sql, verifyUploads } from "@/lib/portal";
 import { CURRENCIES, DOCUMENT_KINDS, DOCUMENT_STATUSES, formatAmount, REQUEST_STATUSES, type DocumentKind, type DocumentStatus, type RequestStatus } from "@/lib/portal-labels";
 import { deleteObjects } from "@/lib/r2";
-import { EMAIL_RE } from "@/lib/site";
+import { appUrl, CONTACT_EMAIL, EMAIL_RE } from "@/lib/site";
 import { createClientWithDrive } from "@/lib/drive-folders";
 
 // Admin side of the client area: clients, their access, projects, documents and request follow-up.
@@ -51,6 +52,56 @@ export async function deleteClient(formData: FormData) {
   redirect("/admin/clients");
 }
 
+/**
+ * Validates a sign-up: attaches it to a new client (named after the declared company) or an existing one,
+ * which opens its access. Goes to the client's page, where the new access is listed.
+ */
+export async function approveSignup(_state: FormState, formData: FormData): Promise<FormState> {
+  await requireAdmin();
+  const userId = id(formData);
+  const target = String(formData.get("clientId") || "");
+  const [user] = await sql()`SELECT name, company FROM client_users WHERE id = ${userId} AND status <> 'approved'`;
+  if (!user) return { error: "Demande introuvable ou déjà validée." };
+  if (target !== "new" && !/^\d+$/.test(target)) return { error: "Choisissez un client." };
+
+  const clientId = target === "new"
+    ? await createClientWithDrive(sql(), (user.company || user.name).slice(0, 120), "Créé à la validation d'une demande d'accès")
+    : target;
+  const [approved] = await sql()`UPDATE client_users SET client_id = ${clientId}, status = 'approved', reviewed_at = now(), review_note = NULL
+    WHERE id = ${userId} AND status <> 'approved' AND EXISTS (SELECT 1 FROM clients WHERE id = ${clientId}) RETURNING email`;
+  if (!approved) return { error: "Client introuvable." };
+
+  if (formData.get("notify") === "on") {
+    const token = await createLoginToken(approved.email);
+    if (token) await sendLoginLink(token, "invite");
+  }
+  refresh();
+  redirect(`/admin/clients/${clientId}`);
+}
+
+/** Refuses a sign-up: the account stays, so its owner sees the refusal (and the note) on the waiting page. */
+export async function rejectSignup(_state: FormState, formData: FormData): Promise<FormState> {
+  await requireAdmin();
+  const note = String(formData.get("note") || "").trim().slice(0, 2_000) || null;
+  const [user] = await sql()`UPDATE client_users SET status = 'rejected', reviewed_at = now(), review_note = ${note}
+    WHERE id = ${id(formData)} AND status = 'pending' RETURNING email, name`;
+  if (!user) return { error: "Demande introuvable ou déjà traitée." };
+  refresh();
+
+  if (formData.get("notify") !== "on") return { ok: "Demande refusée." };
+  const sent = await sendEmail({
+    to: user.email,
+    replyTo: process.env.CONTACT_EMAIL_TO || CONTACT_EMAIL,
+    subject: "Votre demande d'accès — Oxmad Digital",
+    title: "Demande d'accès non retenue",
+    intro: `Bonjour ${user.name}, nous n'avons pas pu associer votre demande à un dossier client de l'agence : l'espace client est réservé aux clients d'Oxmad Digital.`,
+    fields: [{ label: "Motif", value: note ?? "", multiline: true }],
+    cta: { label: "Voir ma demande →", href: appUrl("/espace-client/connexion") },
+    footer: "Une erreur ? Répondez simplement à cet email.",
+  });
+  return sent === "sent" ? { ok: "Demande refusée, email envoyé." } : { error: "Demande refusée, mais l'email n'a pas pu être envoyé." };
+}
+
 export async function addClientUser(_state: FormState, formData: FormData): Promise<FormState> {
   await requireAdmin();
   const clientId = id(formData, "clientId");
@@ -58,14 +109,16 @@ export async function addClientUser(_state: FormState, formData: FormData): Prom
   const email = normalizeEmail(String(formData.get("email") || ""));
   if (!name || !EMAIL_RE.test(email)) return { error: "Nom et email valides requis." };
 
+  // An email waiting for validation (or refused) is attached here, which validates it.
   const created = await sql()`INSERT INTO client_users (client_id, email, name) VALUES (${clientId}, ${email}, ${name})
-    ON CONFLICT (email) DO NOTHING RETURNING id`;
+    ON CONFLICT (email) DO UPDATE SET client_id = EXCLUDED.client_id, name = EXCLUDED.name, status = 'approved', reviewed_at = now(), review_note = NULL
+    WHERE client_users.status <> 'approved' RETURNING id`;
   if (created.length === 0) return { error: "Cet email a déjà accès à un espace client." };
   refresh();
 
   if (formData.get("invite") !== "on") return { ok: `Accès ajouté pour ${email}.` };
   const token = await createLoginToken(email);
-  const sent = token ? await sendLoginLink(token, true) : "failed";
+  const sent = token ? await sendLoginLink(token, "invite") : "failed";
   return sent === "sent" ? { ok: `Invitation envoyée à ${email}.` } : { error: `Accès ajouté, mais l'invitation n'a pas pu être envoyée.` };
 }
 
@@ -75,7 +128,7 @@ export async function sendClientInvite(_state: FormState, formData: FormData): P
   if (!user) return { error: "Compte introuvable." };
   const token = await createLoginToken(user.email);
   if (!token) return { error: "Un lien vient déjà d'être envoyé. Réessayez dans une minute." };
-  return (await sendLoginLink(token, true)) === "sent" ? { ok: "Lien envoyé." } : { error: "Échec de l'envoi." };
+  return (await sendLoginLink(token, "invite")) === "sent" ? { ok: "Lien envoyé." } : { error: "Échec de l'envoi." };
 }
 
 export async function deleteClientUser(formData: FormData) {

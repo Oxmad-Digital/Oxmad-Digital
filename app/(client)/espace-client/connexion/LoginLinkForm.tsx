@@ -11,7 +11,7 @@ export default function LoginLinkForm() {
 
   return (
     <form action={action} onSubmit={keepValuesOnSubmit(action)} className="adm-form">
-      <p className="adm-muted">Saisissez votre email : nous vous envoyons un lien de connexion, sans mot de passe.</p>
+      <p className="adm-muted">Recevez un lien de connexion par email, sans mot de passe.</p>
       <label htmlFor="email">Email</label>
       <input id="email" name="email" type="email" autoComplete="email" required autoFocus />
       {state.error && <p className="adm-error" role="alert">{state.error}</p>}

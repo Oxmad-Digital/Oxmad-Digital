@@ -132,6 +132,20 @@ CREATE TABLE IF NOT EXISTS client_users (
   last_login_at  timestamptz
 );
 CREATE INDEX IF NOT EXISTS client_users_client_idx ON client_users (client_id);
+-- Inscription libre : un compte créé depuis le site est `pending`, sans client, jusqu'à validation dans l'admin
+-- (rattachement à un client) ou refus. `company` / `signup_message` : ce que la personne a déclaré.
+-- `email_verified_at` : premier lien magique utilisé ; l'agence n'est prévenue qu'à ce moment-là.
+ALTER TABLE client_users ALTER COLUMN client_id DROP NOT NULL;
+ALTER TABLE client_users ADD COLUMN IF NOT EXISTS status text NOT NULL DEFAULT 'approved';
+ALTER TABLE client_users ADD COLUMN IF NOT EXISTS company text;
+ALTER TABLE client_users ADD COLUMN IF NOT EXISTS signup_message text;
+ALTER TABLE client_users ADD COLUMN IF NOT EXISTS email_verified_at timestamptz;
+ALTER TABLE client_users ADD COLUMN IF NOT EXISTS reviewed_at timestamptz;
+ALTER TABLE client_users ADD COLUMN IF NOT EXISTS review_note text;
+ALTER TABLE client_users DROP CONSTRAINT IF EXISTS client_users_status_check;
+ALTER TABLE client_users ADD CONSTRAINT client_users_status_check
+  CHECK (status IN ('pending', 'approved', 'rejected') AND (status <> 'approved' OR client_id IS NOT NULL));
+CREATE INDEX IF NOT EXISTS client_users_signups_idx ON client_users (created_at DESC) WHERE status <> 'approved';
 
 -- Liens magiques à usage unique. Seul le hash SHA-256 du jeton est stocké.
 CREATE TABLE IF NOT EXISTS client_login_tokens (

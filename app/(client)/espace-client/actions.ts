@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { consumeLoginToken, createLoginToken, endClientSession, requireClient, sendLoginLink, startClientSession } from "@/lib/client-auth";
+import { consumeLoginToken, createLoginToken, createSignup, endClientSession, requireClient, sendLoginLink, startClientSession } from "@/lib/client-auth";
 import { getProjects, insertFiles, notifyStudio, rejectUploads, sql, verifyUploads } from "@/lib/portal";
 import { REQUEST_KINDS, type RequestKind } from "@/lib/portal-labels";
 import { clientIp, rateLimit, TOO_MANY } from "@/lib/rate-limit";
@@ -24,7 +24,27 @@ export async function requestLoginLink(_state: FormState, formData: FormData): P
   } else {
     await new Promise((resolve) => setTimeout(resolve, 400));
   }
-  return { ok: "Si cette adresse a accès à un espace client, un lien de connexion vient de lui être envoyé." };
+  return { ok: "Si un accès existe pour cette adresse (validé ou en attente), un lien de connexion vient de lui être envoyé." };
+}
+
+/**
+ * Free sign-up: the account is created pending and a confirmation link is emailed. Same answer when the
+ * email already has an account (it then gets a plain sign-in link), so emails can't be probed.
+ */
+export async function requestAccess(_state: FormState, formData: FormData): Promise<FormState> {
+  const name = String(formData.get("name") || "").trim().slice(0, 120);
+  const email = String(formData.get("email") || "").trim();
+  const company = String(formData.get("company") || "").trim().slice(0, 120);
+  const message = String(formData.get("message") || "").trim().slice(0, 2_000) || null;
+  if (!name || !company) return { error: "Nom et entreprise requis." };
+  if (!EMAIL_RE.test(email)) return { error: "Adresse email invalide." };
+
+  if (!(await rateLimit(`signup:${clientIp(await headers())}`, 5, 3600))) return { error: TOO_MANY };
+
+  const created = await createSignup({ email, name, company, message });
+  const token = await createLoginToken(email);
+  if (token) await sendLoginLink(token, created ? "signup" : "login");
+  return { ok: `Un email vient d'être envoyé à ${email}. Cliquez sur le lien qu'il contient pour confirmer votre adresse et transmettre votre demande.` };
 }
 
 /** The emailed link opens a page with a button: mail scanners that follow links don't use up the token. */
@@ -34,7 +54,26 @@ export async function verifyLogin(_state: FormState, formData: FormData): Promis
   const user = await consumeLoginToken(String(formData.get("token") || ""));
   if (!user) return { error: "Ce lien a expiré ou a déjà été utilisé. Demandez-en un nouveau." };
   await startClientSession(user);
-  redirect("/espace-client");
+  if (user.status === "approved") redirect("/espace-client");
+
+  // The studio only hears about a sign-up once its email is confirmed: no notifications for typos or bots.
+  if (user.status === "pending" && user.first_verification) {
+    await notifyStudio({
+      subject: `Demande d'accès à l'espace client — ${user.name} (${user.company ?? "?"})`,
+      title: "Nouvelle demande d'accès",
+      intro: `${user.name} a confirmé son adresse et attend la validation de son accès à l'espace client.`,
+      fields: [
+        { label: "Nom", value: user.name },
+        { label: "Email", value: user.email },
+        { label: "Entreprise", value: user.company ?? "" },
+        { label: "Message", value: user.signup_message ?? "", multiline: true },
+      ],
+      path: "/admin/clients",
+      cta: "Valider ou refuser →",
+    }, user.email);
+    revalidatePath("/admin", "layout");
+  }
+  redirect("/espace-client/en-attente");
 }
 
 export async function logoutClient() {
