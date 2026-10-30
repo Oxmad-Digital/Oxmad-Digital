@@ -55,7 +55,7 @@
 
 @keyframes appear {
   0%, 32%, 100% { opacity: 0; }
-  5%, 26% { opacity: 0.24; }
+  5%, 26% { opacity: 0.38; }
 }
 
 /* Width advances by one character; the border is the caret and vanishes after typing. */

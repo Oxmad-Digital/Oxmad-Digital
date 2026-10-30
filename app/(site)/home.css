@@ -13,7 +13,7 @@
   /* Fallback "develop" when WebGL is not used (touch, small screens). */
   .hero.is-offscreen * { animation-play-state: paused !important; }
   .hero.is-developing .hero-background img { animation: ox-develop 1.6s var(--ease-out) both; }
-  .hero::before { content: ""; position: absolute; z-index: -1; inset: 0; pointer-events: none; background: linear-gradient(rgba(17,18,14,.12), rgba(17,18,14,.12)), linear-gradient(180deg, rgba(17,18,14,.5) 0%, rgba(17,18,14,.12) 25%, rgba(17,18,14,.1) 40%, rgba(17,18,14,.1) 65%, rgba(17,18,14,.42) 72%, rgba(17,18,14,.86) 84%, rgba(17,18,14,1) 100%); }
+  .hero::before { content: ""; position: absolute; z-index: -1; inset: 0; pointer-events: none; background: linear-gradient(rgba(17,18,14,.28), rgba(17,18,14,.28)), linear-gradient(180deg, rgba(17,18,14,.5) 0%, rgba(17,18,14,.12) 25%, rgba(17,18,14,.1) 40%, rgba(17,18,14,.1) 65%, rgba(17,18,14,.42) 72%, rgba(17,18,14,.86) 84%, rgba(17,18,14,1) 100%); }
   .hero > .container { display: flex; flex-direction: column; }
   .stage-top { display: flex; justify-content: flex-start; align-items: center; gap: 20px; margin-bottom: 19px; color: #e4e8d7; text-shadow: 0 1px 10px #11120e; }
   .status-led { display: inline-block; width: 7px; height: 7px; background: var(--accent); border-radius: 50%; margin-right: 9px; box-shadow: 0 0 12px rgba(198,183,3,.33); }
@@ -210,7 +210,7 @@
     .hero { padding-top: calc(var(--home-header-height) + 13px); padding-bottom: 18px; }
     .stage-top { display: none; }
     .hero-background img { object-position: 50% 35%; }
-    .hero::before { background: linear-gradient(rgba(17,18,14,.12), rgba(17,18,14,.12)), linear-gradient(180deg, rgba(17,18,14,.5) 0%, rgba(17,18,14,.08) 23%, rgba(17,18,14,.1) 42%, rgba(17,18,14,.55) 58%, rgba(17,18,14,.88) 76%, rgba(17,18,14,1) 100%); }
+    .hero::before { background: linear-gradient(rgba(17,18,14,.28), rgba(17,18,14,.28)), linear-gradient(180deg, rgba(17,18,14,.5) 0%, rgba(17,18,14,.08) 23%, rgba(17,18,14,.1) 42%, rgba(17,18,14,.55) 58%, rgba(17,18,14,.88) 76%, rgba(17,18,14,1) 100%); }
     .stage { min-height: 26svh; }
     .stage-note, .stage-index { font-size: 9px; }
     .stage-index { margin-bottom: 14px; }
