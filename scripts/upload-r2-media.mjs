@@ -25,10 +25,16 @@ const curl = (args) => {
 for (const { key, bytes } of Object.values(manifest)) {
   const file = path.join(".r2-media", path.basename(key));
   const buffer = await readFile(file);
+  const hash = createHash("sha256").update(buffer).digest("hex");
+  if (buffer.length !== bytes || bytes >= 200_000 ||
+      !/^images\/oxmad-digital-[a-z0-9-]+\.webp$/.test(key) ||
+      !key.endsWith(`-${hash.slice(0, 12)}.webp`)) {
+    throw new Error(`Invalid prepared image: ${key}`);
+  }
   const url = `${endpoint.origin}/${encodeURIComponent(R2_BUCKET)}/${key}`;
   curl(["--upload-file", file, "--header", "Content-Type: image/webp", "--header",
     "Cache-Control: public, max-age=31536000, immutable", "--header",
-    `x-amz-content-sha256: ${createHash("sha256").update(buffer).digest("hex")}`, url]);
+    `x-amz-content-sha256: ${hash}`, url]);
   const headers = curl(["--head", url]);
   const length = Number(headers.match(/^content-length:\s*(\d+)/im)?.[1]);
   if (length !== bytes || !/^content-type:\s*image\/webp/im.test(headers)) {

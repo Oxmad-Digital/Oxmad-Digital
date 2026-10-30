@@ -7,6 +7,14 @@
     "originalBytes": 1554,
     "quality": "lossless"
   },
+  "/og-image.jpg": {
+    "key": "images/oxmad-digital-partage-social-c7a4ce987b56.webp",
+    "width": 1200,
+    "height": 630,
+    "bytes": 66694,
+    "originalBytes": 104485,
+    "quality": 82
+  },
   "/oxmad-symbole-transparent.svg": {
     "key": "images/oxmad-digital-symbole-transparent-76de83c5de0c.webp",
     "width": 1600,
@@ -32,20 +40,28 @@
     "quality": 82
   },
   "/oxmad_chevrons_jardin_cotier_desktop.webp": {
-    "key": "images/oxmad-digital-hero-accueil-jardin-cotier-desktop-02cfc7897bca.webp",
+    "key": "images/oxmad-digital-hero-accueil-jardin-cotier-desktop-1efd2b4b8100.webp",
     "width": 1672,
     "height": 941,
-    "bytes": 509456,
+    "bytes": 195794,
     "originalBytes": 383264,
-    "quality": 92
+    "quality": 63
   },
   "/oxmad_chevrons_jardin_cotier_mobile.webp": {
-    "key": "images/oxmad-digital-hero-accueil-jardin-cotier-mobile-845bfcd7dfda.webp",
+    "key": "images/oxmad-digital-hero-accueil-jardin-cotier-mobile-5eb7cd10cfd5.webp",
     "width": 760,
     "height": 941,
-    "bytes": 174426,
+    "bytes": 153084,
     "originalBytes": 174426,
-    "quality": 92
+    "quality": 82
+  },
+  "/oxmad_connexion_jardin_ocean.webp": {
+    "key": "images/oxmad-digital-connexion-jardin-ocean-9d1bfe517885.webp",
+    "width": 1672,
+    "height": 941,
+    "bytes": 187478,
+    "originalBytes": 358992,
+    "quality": 78
   },
   "/oxmad_faille_lumineuse_lisse.png": {
     "key": "images/oxmad-digital-faille-lumineuse-lisse-4a4d39253a39.webp",
@@ -56,12 +72,20 @@
     "quality": 82
   },
   "/oxmad_galerie_cotiere_desktop.webp": {
-    "key": "images/oxmad-digital-hero-realisations-galerie-cotiere-desktop-9a11d7333800.webp",
+    "key": "images/oxmad-digital-hero-realisations-galerie-cotiere-desktop-f5bfcb33918b.webp",
     "width": 1672,
     "height": 941,
-    "bytes": 392770,
+    "bytes": 197938,
     "originalBytes": 392770,
-    "quality": 92
+    "quality": 63
+  },
+  "/oxmad_galerie_cotiere_mobile-7b8799b09d81.avif": {
+    "key": "images/oxmad-digital-hero-realisations-galerie-cotiere-mobile-120ca6efcd51.webp",
+    "width": 1170,
+    "height": 878,
+    "bytes": 198966,
+    "originalBytes": 214642,
+    "quality": 79
   },
   "/oxmad_horizon_solaire.png": {
     "key": "images/oxmad-digital-horizon-solaire-86a661009611.webp",
@@ -111,6 +135,14 @@
     "originalBytes": 24080,
     "quality": 82
   },
+  "/projects/bitumad-erp.webp": {
+    "key": "images/oxmad-digital-projet-bitumad-erp-6894cfee0094.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 75562,
+    "originalBytes": 82596,
+    "quality": 82
+  },
   "/projects/bitumad.webp": {
     "key": "images/oxmad-digital-projet-bitumad-ab8f70763d6a.webp",
     "width": 1600,
@@ -143,13 +175,21 @@
     "originalBytes": 65862,
     "quality": 82
   },
-  "/projects/pull-lover.webp": {
-    "key": "images/oxmad-digital-projet-pull-lover-18d13746976a.webp",
+  "/projects/puce-id.webp": {
+    "key": "images/oxmad-digital-projet-puce-id-d3f40d88da45.webp",
     "width": 1600,
     "height": 1000,
-    "bytes": 385342,
-    "originalBytes": 530024,
+    "bytes": 74752,
+    "originalBytes": 84544,
     "quality": 82
+  },
+  "/projects/pull-lover.webp": {
+    "key": "images/oxmad-digital-projet-pull-lover-1b7c800af431.webp",
+    "width": 1440,
+    "height": 900,
+    "bytes": 199496,
+    "originalBytes": 530024,
+    "quality": 60
   },
   "/projects/tsaralevenana.webp": {
     "key": "images/oxmad-digital-projet-tsaralevenana-233de49cd34e.webp",

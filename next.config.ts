@@ -44,7 +44,7 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
-    qualities: [75, 90, 92],
+    qualities: [75, 82],
     remotePatterns: mediaOrigin ? [{
       protocol: "https",
       hostname: mediaOrigin.hostname,

@@ -1,13 +1,13 @@
 "use client";
 
 /**
- * Oxmad sound engine: ambient tracks generated live with the Web Audio API, one
- * orchestral recording streamed on demand, and the short interface sounds played on clicks.
+ * Oxmad sound engine: ambient tracks generated live with the Web Audio API and the
+ * short interface sounds played on clicks.
  * Nothing makes a sound until the visitor asks for it: the AudioContext is only
  * created from a click, and music never starts on its own.
  */
 
-export type TrackId = "lagon" | "pirate" | "horizon" | "electro";
+export type TrackId = "lagon" | "altitude" | "horizon" | "electro";
 export type UiSound = "click" | "hover" | "open" | "close" | "select";
 
 export type AudioState = { track: TrackId; playing: boolean; volume: number; uiSounds: boolean };
@@ -17,16 +17,13 @@ type Track = {
   id: TrackId;
   title: string;
   mood: string;
-  /** Shown in the list; recordings have none. */
-  bpm?: number;
-  /** Author of the recording, linked under the player. */
-  credit?: { text: string; href: string };
+  bpm: number;
   /** Delay of every other 16th, as a share of a step (lo-fi groove). */
   swing?: number;
   /** Continuous layers (sea, hiss…); returns their stop function. */
   setup?: (ctx: AudioContext, out: AudioNode) => (when: number) => void;
-  /** Schedules the notes of one 16th-note step (generated tracks only). */
-  step?: (v: Voice, step: number) => void;
+  /** Schedules the notes of one 16th-note step. */
+  step: (v: Voice, step: number) => void;
 };
 
 // ─── Instruments ───
@@ -149,29 +146,14 @@ function noiseBed(ctx: AudioContext, out: AudioNode, o: { gain: number; cutoff: 
   };
 }
 
-/** Streams a looped recording through the track bus (so volume, fades and the visualizer apply). */
-function recording(src: string) {
-  return (ctx: AudioContext, out: AudioNode) => {
-    const el = new Audio(src);
-    el.loop = true;
-    const node = ctx.createMediaElementSource(el);
-    node.connect(out);
-    el.play().catch(() => {});
-    return (when: number) => {
-      setTimeout(() => {
-        el.pause();
-        el.removeAttribute("src");
-        node.disconnect();
-      }, Math.max(0, when - ctx.currentTime) * 1000);
-    };
-  };
-}
-
 // ─── Tracks ───
 // Steps are 16th notes, so a bar is 16 steps.
 
 const LAGON_CHORDS = [[53, 57, 60, 64], [57, 60, 64, 67], [50, 57, 60, 64], [46, 53, 57, 62]];
 const LAGON_BELLS = [72, 74, 76, 79, 81, 84];
+
+const ALTITUDE_CHORDS = [[40, 55, 59, 62, 66], [36, 55, 59, 64, 67], [43, 55, 59, 62, 69], [38, 54, 57, 62, 64]];
+const ALTITUDE_BELLS = [74, 78, 79, 83, 86];
 
 const HORIZON_CHORDS = [[52, 55, 59], [48, 52, 55], [55, 59, 62], [50, 54, 57]];
 const HORIZON_LEAD = [[71, 0, 67, 0], [72, 0, 76, 74], [74, 0, 71, 0], [69, 0, 66, 69]];
@@ -202,11 +184,33 @@ export const TRACKS: readonly Track[] = [
     },
   },
   {
-    id: "pirate",
-    title: "Pirate Tavern",
-    mood: "Ambiance taverne · pirate",
-    credit: { text: "Magiksolo · Pixabay", href: "https://pixabay.com/music/main-title-pirate-tavern-full-version-167990/" },
-    setup: recording("/sounds/pirate-tavern.mp3"),
+    id: "altitude",
+    title: "Altitude",
+    mood: "Nappes & pulsation · cinématique",
+    bpm: 70,
+    setup: (ctx, out) => noiseBed(ctx, out, { gain: 0.016, cutoff: 760, lfo: 0.05 }),
+    step(v, step) {
+      const s = step % 16;
+      const bar = Math.floor(step / 16);
+      const [root, ...notes] = ALTITUDE_CHORDS[Math.floor(bar / 2) % 4];
+      // Rises over 16 bars, then falls back to the bare pads.
+      const lift = (bar % 16) / 15;
+      if (s === 0 && bar % 2 === 0) {
+        const dur = v.stepDur * 32;
+        const cutoff = 650 + lift * 1000;
+        chord(v, notes, { type: "sawtooth", gain: 0.02, dur, attack: 2.4, release: 3, cutoff, detune: -8, send: 0.8 });
+        chord(v, notes, { type: "sawtooth", gain: 0.02, dur, attack: 2.4, release: 3, cutoff, detune: 8, send: 0.8 });
+        tone(v, { type: "sine", midi: root - 12, gain: 0.12, dur, attack: 1.2, release: 2 });
+      }
+      // The low pulse doubles to eighth notes halfway up.
+      if (s % (lift < 0.5 ? 4 : 2) === 0) {
+        tone(v, { type: "sawtooth", midi: root, gain: 0.025 + lift * 0.04, dur: v.stepDur, release: 0.12, cutoff: 240 + lift * 420 });
+      }
+      if (s === 0 || s === 8) kick(v, 0.2 + lift * 0.22, 85);
+      if (s % 4 === 0 && Math.random() < 0.08 + lift * 0.2) {
+        tone(v, { type: "sine", midi: pick(ALTITUDE_BELLS), gain: 0.04, release: 2.6, send: 0.9 });
+      }
+    },
   },
   {
     id: "horizon",
@@ -380,15 +384,15 @@ function startMusic(id: TrackId) {
   const wet = ctx.createGain();
   wet.connect(g.reverb);
 
-  const stepDur = 60 / (track.bpm ?? 120) / 4;
+  const stepDur = 60 / track.bpm / 4;
   let next = ctx.currentTime + 0.08;
   let step = 0;
   // Look further ahead in a background tab, whose timers only fire about once a second.
   const schedule = () => {
     const horizon = ctx.currentTime + (document.hidden ? 1.5 : 0.15);
-    while (track.step && next < horizon) {
+    while (next < horizon) {
       const swing = step % 2 ? (track.swing ?? 0) * stepDur : 0;
-      track.step!({ ctx, out: bus, wet, time: next + swing, stepDur }, step);
+      track.step({ ctx, out: bus, wet, time: next + swing, stepDur }, step);
       next += stepDur;
       step++;
     }

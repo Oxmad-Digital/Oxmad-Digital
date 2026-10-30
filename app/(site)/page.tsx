@@ -19,7 +19,7 @@ import "./home.css";
 const featuredProjects = HOME_FEATURED_IDS.flatMap((id) => PROJECTS.filter((p) => p.id === id));
 
 export default function HomePage() {
-  const imageOptions = { alt: "", fill: true, quality: 92, sizes: "100vw", loading: "eager" as const, fetchPriority: "high" as const };
+  const imageOptions = { alt: "", fill: true, quality: 82, sizes: "100vw", loading: "eager" as const, fetchPriority: "high" as const };
   const { props: desktopImage } = getImageProps({ ...imageOptions, src: HERO_IMAGES.homeDesktop });
 
   return (

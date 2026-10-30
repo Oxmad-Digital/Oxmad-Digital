@@ -200,7 +200,7 @@ export default function SoundPlayer() {
                 >
                   <span className="ox-sound__num">{String(i + 1).padStart(2, "0")}</span>
                   <span className="ox-sound__name">{t.title}</span>
-                  <span className="ox-sound__bpm">{t.bpm ? `${t.bpm} BPM` : "MP3"}</span>
+                  <span className="ox-sound__bpm">{t.bpm} BPM</span>
                   <span className="ox-sound__eq" aria-hidden="true"><i /><i /><i /></span>
                 </button>
               </li>
@@ -226,11 +226,7 @@ export default function SoundPlayer() {
           </label>
         </div>
 
-        {current.credit ? (
-          <p className="ox-sound__note micro">Musique : <a href={current.credit.href} target="_blank" rel="noreferrer">{current.credit.text}</a></p>
-        ) : (
-          <p className="ox-sound__note micro">Généré en temps réel · Web Audio API · 0 fichier</p>
-        )}
+        <p className="ox-sound__note micro">Généré en temps réel · Web Audio API · 0 fichier</p>
       </div>
 
       <button

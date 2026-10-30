@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
-import { BRAND_IMAGES } from "@/lib/media";
+import { BRAND_IMAGES, HERO_IMAGES } from "@/lib/media";
 import "./auth.css";
 
 /** Full-screen frame of the pages outside the client area itself: sign-in, sign-up, waiting for validation. */
@@ -10,11 +10,11 @@ export default function AuthScreen({ title, children }: { title: string; childre
     <div className="adm-login client-login">
       <div className="client-login-background" aria-hidden="true">
         <Image
-          src="/oxmad_connexion_jardin_ocean.webp"
+          src={HERO_IMAGES.clientLogin}
           alt=""
           fill
           sizes="100vw"
-          quality={90}
+          quality={82}
           loading="eager"
           fetchPriority="high"
         />
@@ -24,7 +24,7 @@ export default function AuthScreen({ title, children }: { title: string; childre
         Retour au site
       </Link>
       <Link href="/" className="client-login-symbol" aria-label="Oxmad Digital — accueil">
-        {/* eslint-disable-next-line @next/next/no-img-element -- same SVG and tag as the site header */}
+        {/* eslint-disable-next-line @next/next/no-img-element -- shared brand asset, as in the site header */}
         <img src={BRAND_IMAGES.symbol} width={48} height={48} alt="" />
       </Link>
       <div className="client-login-content">

@@ -62,10 +62,10 @@ export default function RealisationsContent() {
       <section aria-labelledby="intro-title" className="works-hero">
         <div className="works-hero-stage">
           <picture className="works-hero-art">
-            <source media="(max-width: 790px)" type="image/avif" srcSet={HERO_IMAGES.realisationsMobile} />
+            <source media="(max-width: 790px)" srcSet={HERO_IMAGES.realisationsMobile} />
             <Image
               src={HERO_IMAGES.realisations}
-              quality={92}
+              quality={82}
               alt=""
               fill
               sizes="100vw"

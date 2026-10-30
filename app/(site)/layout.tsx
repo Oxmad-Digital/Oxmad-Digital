@@ -6,6 +6,7 @@ import Analytics from "@/components/Analytics";
 import { BookCallProvider } from "@/components/BookCall/BookCallContext";
 import SiteMotion from "@/components/motion/SiteMotion";
 import { ADDRESS, CONTACT_EMAIL, CONTACT_PHONE, OPEN_GRAPH, SITE_URL, SOCIAL_LINKS } from "@/lib/site";
+import { BRAND_IMAGES, SOCIAL_IMAGES } from "@/lib/media";
 
 // Runs before first paint: arms the hidden "pre-reveal" states, and the intro on the first
 // home visit of the session. If the motion code never boots, everything is shown again.
@@ -43,8 +44,8 @@ const JSON_LD = {
       name: "Oxmad Digital",
       legalName: "OXMAD DIGITAL SARLU",
       url: SITE_URL,
-      logo: `${SITE_URL}/apple-touch-icon.png`,
-      image: `${SITE_URL}/og-image.jpg`,
+      logo: new URL(BRAND_IMAGES.symbol, SITE_URL).href,
+      image: new URL(SOCIAL_IMAGES.openGraph, SITE_URL).href,
       description: DESCRIPTION,
       email: CONTACT_EMAIL,
       telephone: CONTACT_PHONE,

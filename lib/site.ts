@@ -1,3 +1,5 @@
+import { SOCIAL_IMAGES } from "./media";
+
 /** Canonical origin, shared by the metadata and the sitemap. */
 export const SITE_URL = "https://www.oxmad-digital.mg";
 
@@ -6,7 +8,7 @@ export const OPEN_GRAPH = {
   type: "website",
   locale: "fr_MG",
   siteName: "Oxmad Digital",
-  images: { url: "/og-image.jpg", width: 1200, height: 630, alt: "Oxmad Digital, agence web à Antananarivo, Madagascar" },
+  images: { url: SOCIAL_IMAGES.openGraph, width: 1200, height: 630, alt: "Oxmad Digital, agence web à Antananarivo, Madagascar" },
 } as const;
 
 export const CONTACT_EMAIL = "contact@oxmad-digital.mg";

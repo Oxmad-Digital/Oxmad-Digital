@@ -21,7 +21,12 @@ export const HERO_IMAGES = {
   homeDesktop: mediaUrl("/oxmad_chevrons_jardin_cotier_desktop.webp"),
   homeMobile: mediaUrl("/oxmad_chevrons_jardin_cotier_mobile.webp"),
   realisations: mediaUrl("/oxmad_galerie_cotiere_desktop.webp"),
-  realisationsMobile: "/oxmad_galerie_cotiere_mobile-7b8799b09d81.avif",
+  realisationsMobile: mediaUrl("/oxmad_galerie_cotiere_mobile-7b8799b09d81.avif"),
+  clientLogin: mediaUrl("/oxmad_connexion_jardin_ocean.webp"),
+} as const;
+
+export const SOCIAL_IMAGES = {
+  openGraph: mediaUrl("/og-image.jpg"),
 } as const;
 
 export const BRAND_IMAGES = {
@@ -37,6 +42,8 @@ export const SERVICE_IMAGES = {
 } as const;
 
 export const PROJECT_IMAGES = {
+  "puce-id": mediaImage("/projects/puce-id.webp"),
+  "bitumad-erp": mediaImage("/projects/bitumad-erp.webp"),
   bitumad: mediaImage("/projects/bitumad.webp"),
   ocibel: mediaImage("/projects/ocibel.webp"),
   wybob: mediaImage("/projects/wybob.webp"),

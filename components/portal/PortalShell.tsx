@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import { ChevronRight, Globe, Menu, X } from "lucide-react";
+import { BRAND_IMAGES } from "@/lib/media";
 
 const sectionLabels: Record<string, string> = {
   demandes: "Demandes",
@@ -64,7 +65,7 @@ export default function PortalShell({ mode, workspace, userName, userEmail, navi
       <div className="adm-sidebar-inner">
         <div className="adm-sidebar-brand-row">
           <Link href={basePath} className="adm-sidebar-brand" onClick={mobile ? closeNavigation : undefined}>
-            <Image src="/oxmad-wordmark-sur-fond-sombre.svg" width={164} height={56} alt="Oxmad Digital" />
+            <Image src={BRAND_IMAGES.logoDark} width={164} height={56} alt="Oxmad Digital" />
           </Link>
           {mobile && <button type="button" className="adm-menu-button" onClick={closeNavigation} aria-label="Fermer le menu"><X size={20} aria-hidden="true" /></button>}
         </div>

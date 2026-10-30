@@ -239,10 +239,10 @@
   .showcase-art .scene[data-theme="tsaralevenana"] .site-content { background: #f6f0db; color: #314a38; }
   .showcase-art .scene[data-theme="ms-care"] { background: #0f8881; color: #d3fff8; }
   .showcase-art .scene[data-theme="ms-care"] .site-content { background: #dbf1e9; color: #146f6c; }
-  .showcase-art .scene[data-theme="puce-id"] { background: #40473b; color: #deee9c; }
-  .showcase-art .scene[data-theme="puce-id"] .site-content { background: #1c3a35; color: #d2e6a8; }
-  .showcase-art .scene[data-theme="bitumad-erp"] { background: #404856; color: #bdd8fb; }
-  .showcase-art .scene[data-theme="bitumad-erp"] .site-content { background: #131f29; color: #d0ecff; }
+  .showcase-art .scene[data-theme="puce-id"] { background: #2f4a44; color: #d6dcae; }
+  .showcase-art .scene[data-theme="puce-id"] .site-content { background: #142522; color: #d6dcae; }
+  .showcase-art .scene[data-theme="bitumad-erp"] { background: #33493f; color: #d9dcab; }
+  .showcase-art .scene[data-theme="bitumad-erp"] .site-content { background: #13241e; color: #d9dcab; }
   .showcase-bottom { position: absolute; bottom: 0; left: 0; right: 0; z-index: 9; background: linear-gradient(0deg, #10130fea, #10130fe4 65%, #10130f00); padding: 62px 25px 23px; display: flex; align-items: end; justify-content: space-between; gap: 24px; color: #f4f3e8; }
   .showcase-bottom .micro { font-size: 10px; color: #b1b9ab; }
   .showcase-bottom h3 { font-size: clamp(32px,4.2vw,65px); letter-spacing: -.075em; font-weight: 600; margin: 7px 0 0; line-height: 1; white-space: nowrap; }

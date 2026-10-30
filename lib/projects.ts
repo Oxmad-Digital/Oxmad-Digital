@@ -126,14 +126,14 @@ export const PROJECTS: Project[] = [
     filter: "Applications",
     domain: "Bientôt en ligne",
     url: null,
-    image: null,
+    image: PROJECT_IMAGES["puce-id"],
     desc: "Une application web dédiée au registre des animaux identifiés par puce électronique.",
     notice: {
       label: "En cours de développement",
       text: "Cet outil est encore en construction : il n’y a donc pas de lien pour le moment. Il sera ajouté ici dès sa mise en ligne.",
     },
     features: ["Application web", "Gestion de données"],
-    palette: ["#40473b", "#deee9c"],
+    palette: ["#2f4a44", "#d6dcae"],
   },
   {
     id: "bitumad-erp",
@@ -142,14 +142,14 @@ export const PROJECTS: Project[] = [
     filter: "Applications",
     domain: "Accès privé",
     url: null,
-    image: null,
+    image: PROJECT_IMAGES["bitumad-erp"],
     desc: "Une application métier développée autour des besoins opérationnels de Bitumad.",
     notice: {
       label: "Accès privé",
       text: "Par mesure de sécurité, nous ne partageons pas le lien de cet outil interne : il est réservé aux équipes de Bitumad.",
     },
     features: ["Application web", "Outil métier"],
-    palette: ["#404856", "#bdd8fb"],
+    palette: ["#33493f", "#d9dcab"],
   },
 ];
 

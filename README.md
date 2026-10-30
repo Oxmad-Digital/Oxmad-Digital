@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Images — Cloudflare R2
 
-All 31 images in `public/` have WebP equivalents in the `oxmad-digital-website`
+All static images in `public/` have WebP equivalents in the `oxmad-digital-website`
 bucket. Object names include `oxmad-digital`, a descriptive name and a content hash
 for safe immutable caching. Original artwork is retained locally.
 
@@ -16,10 +16,15 @@ Until a public domain is set, the site keeps using the original local images.
 `lib/media.ts` centralizes the hero, service, brand and project image URLs.
 `lib/media-manifest.json` records every source, object key, size and dimensions.
 Next.js accepts only the configured host and `/images/oxmad-digital-*.webp` paths.
-Heroes use quality 92, other raster images target quality 82, and logos use
-lossless WebP. Already smaller WebP sources are retained without recompression.
-The desktop home hero is encoded from its original lossless PNG. Service previews
-are limited to 960px wide; hero and project dimensions are preserved.
+Every prepared image must be under 200,000 bytes. Raster images start at quality 82;
+the encoder lowers quality to at least 60 before reducing dimensions when needed.
+Logos use lossless WebP. Already smaller WebP sources are retained without
+recompression. The desktop home hero is encoded from its original lossless PNG.
+Service previews are limited to 960px wide. The mobile Réalisations AVIF source
+keeps its existing crop and is converted to WebP for delivery. Heroes, client login,
+social metadata, logos and projects all use the shared R2 media URLs. Next.js app
+icons (`app/favicon.ico`, `app/icon.svg`, `app/apple-icon.png`) remain local in their
+dedicated formats. Source artwork is not renamed or overwritten.
 
 To regenerate and upload assets (Node.js 20.19+ and curl with `--aws-sigv4`):
 
@@ -32,9 +37,10 @@ node --env-file=.env.r2 scripts/upload-r2-media.mjs
 
 Generated WebPs are stored in the ignored `.r2-media/` directory. Uploads set
 `Content-Type: image/webp` and one-year immutable caching, then verify each object's
-size and content type. No S3 credentials are needed by the deployed site. The intro
-animation samples the logo through Next.js's same-origin image endpoint, so no R2
-CORS configuration is required.
+size and content type. Files are checked against the byte budget and their content
+hash before upload. No S3 credentials are needed by the deployed site. The intro
+animation draws the shared logo without reading pixels, so no R2 CORS configuration
+is required.
 
 ## Client area — `/espace-client`
 
