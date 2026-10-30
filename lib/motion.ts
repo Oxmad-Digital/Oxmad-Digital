@@ -86,4 +86,7 @@ export function linkFromClick(e: MouseEvent) {
   return url.origin === location.origin ? { a, url } : null;
 }
 
+/** Scroll position of the home page when one of its cards opened a project sheet. */
+export const projectOpening = { homeScroll: null as number | null };
+
 export { gsap, ScrollTrigger, SplitText };

@@ -90,8 +90,11 @@ export default function HomePage() {
           </div>
           <div className="play-stage">
             <div className="play-caption smallcap">
-              <span><span className="status-led" />0x-Run, un mini-jeu intégré à cette page. Tentez d&apos;entrer au classement.</span>
-              <span>Espace / tap pour sauter</span>
+              <span><span className="status-led" />Jouez à 0x-Run, notre mini-jeu, et tentez d&apos;entrer au classement.</span>
+              <span>
+                <span className="xrun-on-mouse">Espace ou clic pour sauter</span>
+                <span className="xrun-on-touch">Touchez pour sauter</span>
+              </span>
             </div>
             <XRun />
           </div>
@@ -176,6 +179,10 @@ export default function HomePage() {
           <h2>On crée quoi<br /><span>ensemble ?</span></h2>
           <div className="contact-details" data-reveal="fade" data-reveal-delay="0.3">
             <p>Un site à créer, une application à imaginer ou un outil métier à repenser ? Racontez-nous. Tout commence par une conversation.</p>
+            <div className="contact-spin-hint smallcap" aria-hidden="true">
+              Fais-moi tourner !
+              <svg viewBox="0 0 120 56"><path d="M3 50C35 56 78 38 116 22M103 20l13 2-7 11" /></svg>
+            </div>
             <ContactButton />
           </div>
           <SiteFooter

@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { Globe } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import SiteFooter from "@/components/SiteFooter";
+import { projectOpening } from "@/lib/motion";
 import { PROJECTS } from "@/lib/projects";
 import { HERO_IMAGES, PROJECT_IMAGES } from "@/lib/media";
 import ProjectIndex from "./ProjectIndex";
@@ -117,7 +118,7 @@ export default function RealisationsContent() {
                 <div className="window-top"><span className="dots"><i /><i /><i /></span><span className="address">tsaralevenana.vercel.app</span><span>↗</span></div>
                 <div className="preview-back tsaralevenana-back"><div className="preview-type">Tsaralevenana<br /><em>Présent à vos côtés</em></div></div>
                 <Image {...PROJECT_IMAGES.tsaralevenana} alt="Capture du site Tsaralevenana — maison funéraire à Antananarivo" className="remote-shot" sizes={SHOT_SIZES} loading="eager" onError={hideOnError} />
-                <div aria-hidden="true" className="frame-corner">↗</div>
+                <button aria-label="Découvrir le projet Tsaralevenana" className="frame-corner" type="button" data-cursor="Voir" onClick={() => openProject("tsaralevenana")}>↗</button>
               </div>
               <span className="featured-tag">Vitrine / Services / Accompagnement</span>
             </div>
@@ -142,7 +143,7 @@ export default function RealisationsContent() {
                 <div className="window-top"><span className="dots"><i /><i /><i /></span><span className="address">ocibel.mg</span><span>↗</span></div>
                 <div className="preview-back"><div className="preview-type">Révélez<br />votre beauté<br /><em>naturelle</em></div></div>
                 <Image {...PROJECT_IMAGES.ocibel} alt="Capture du site Ocibel — salon de beauté et spa" className="remote-shot" sizes={SHOT_SIZES} onError={hideOnError} />
-                <div aria-hidden="true" className="frame-corner">↗</div>
+                <button aria-label="Découvrir le projet Ocibel" className="frame-corner" type="button" data-cursor="Voir" onClick={() => openProject("ocibel")}>↗</button>
               </div>
               <span className="ocibel-side">O  /  02   —   GOOD DESIGN IS PERSONAL</span>
             </div>
@@ -174,7 +175,7 @@ export default function RealisationsContent() {
                 <div className="window-top"><span className="dots"><i /><i /><i /></span><span className="address">WYBOB — Boutique en ligne</span><span>↗</span></div>
                 <div className="preview-back"><div className="preview-type">WYBOB.<br /><small style={{ fontSize: ".2em", letterSpacing: ".06em" }}>ESSENTIALS / EDITION</small></div></div>
                 <Image {...PROJECT_IMAGES.wybob} alt="Capture du site Wybob, boutique en ligne de mode et accessoires" className="remote-shot" sizes={SHOT_SIZES} onError={hideOnError} />
-                <div aria-hidden="true" className="frame-corner">↗</div>
+                <button aria-label="Découvrir le projet Wybob" className="frame-corner" type="button" data-cursor="Voir" onClick={() => openProject("wybob")}>↗</button>
               </div>
               <div className="wybob-sticker">Digital<br /> meets<br /> craft ↗</div>
             </div>
@@ -207,9 +208,12 @@ export default function RealisationsContent() {
       <dialog
         ref={dialogRef}
         aria-labelledby="dialogTitle"
-        // Opened from a home page card: closing returns there instead of showing the full page.
+        // Opened from a home page card: closing goes back there, at the same scroll position.
+        // A shared link has no such history, so it lands on the top of the home page instead.
         onClose={() => {
-          if (fromDeepLink.current) router.push("/");
+          if (!fromDeepLink.current) return;
+          if (projectOpening.homeScroll !== null) router.back();
+          else router.push("/");
         }}
         onClick={(e) => {
           if (e.target === e.currentTarget) closeProject();
@@ -224,7 +228,15 @@ export default function RealisationsContent() {
             <div className="eyebrow micro">{project.tag}</div>
             <h2 id="dialogTitle">{project.name}</h2>
             <p>{project.desc}</p>
-            {project.image && <Image key={project.id} {...project.image} alt={`Capture du site ${project.name}`} className="dialog-visual" sizes="(max-width: 876px) 100vw, 840px" loading="eager" onError={hideOnError} />}
+            {project.notice && (
+              <div className="dialog-notice">
+                <strong>{project.notice.label}</strong>
+                <p>{project.notice.text}</p>
+              </div>
+            )}
+            {project.image
+              ? <Image key={project.id} {...project.image} alt={project.notice ? `Illustration du projet ${project.name}` : `Capture du site ${project.name}`} className="dialog-visual" sizes="(max-width: 876px) 100vw, 840px" loading="eager" onError={hideOnError} />
+              : <div aria-hidden="true" className="dialog-visual dialog-placeholder" style={{ background: project.palette[0], color: project.palette[1] }}>{project.name}</div>}
             <div className="dialog-features">{project.features.map((f) => <span key={f}>{f}</span>)}</div>
             {project.url && (
               <div className="dialog-actions">

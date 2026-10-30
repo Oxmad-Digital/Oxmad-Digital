@@ -20,6 +20,8 @@ const STEP_MS = 1000 / TICK_RATE;
 /** Inputs right after a crash are ignored, so a late tap does not restart by accident. */
 const RESTART_DELAY = 450;
 const JUMP_KEYS = new Set(["Space", "ArrowUp", "KeyW", "Enter"]);
+/** Elements where Space already has a job: the game must not take it from them. */
+const KEEP_SPACE = "button, input, textarea, select, summary, [role='button'], [contenteditable]";
 
 /** `lock` is missing from some DOM typings and from iOS, where the orientation cannot be forced. */
 type LockableOrientation = ScreenOrientation & { lock?: (orientation: "landscape") => Promise<void>; unlock?: () => void };
@@ -335,6 +337,21 @@ export default function XRun() {
     const onVisibility = () => (document.hidden ? halt() : run());
     document.addEventListener("visibilitychange", onVisibility);
 
+    // Without focus on the game, Space still starts or resumes it once it is mostly on screen.
+    const onWindowKeyDown = (e: KeyboardEvent) => {
+      if (e.code !== "Space" || e.repeat || e.defaultPrevented) return;
+      if (s.phase !== "idle" && s.phase !== "paused") return;
+      const active = document.activeElement;
+      if (frame.contains(active) || active?.closest(KEEP_SPACE) || document.querySelector("[aria-modal='true'], dialog[open]")) return;
+      const box = frame.getBoundingClientRect();
+      const seen = Math.min(box.bottom, window.innerHeight) - Math.max(box.top, 0);
+      if (seen < Math.min(box.height, window.innerHeight) / 2) return;
+      e.preventDefault();
+      frame.focus({ preventScroll: true });
+      press();
+    };
+    window.addEventListener("keydown", onWindowKeyDown);
+
     window.addEventListener("pointerup", release);
     window.addEventListener("pointercancel", release);
 
@@ -342,12 +359,13 @@ export default function XRun() {
       io.disconnect();
       ro.disconnect();
       document.removeEventListener("visibilitychange", onVisibility);
+      window.removeEventListener("keydown", onWindowKeyDown);
       window.removeEventListener("pointerup", release);
       window.removeEventListener("pointercancel", release);
       cancelAnimationFrame(raf);
       frame.classList.remove("is-offscreen");
     };
-  }, [preloadBookCall, refresh, release, sendRun, setGamePhase]);
+  }, [preloadBookCall, press, refresh, release, sendRun, setGamePhase]);
 
   const send = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -447,15 +465,28 @@ export default function XRun() {
 
       {phase === "idle" && (
         <div className="xrun-screen">
+          <p className="xrun-kicker smallcap">Mini-jeu · Entrez au classement</p>
           <p className="xrun-title">0x-RUN</p>
-          <p className="xrun-hint smallcap"><span className="xrun-blink">Appuyez sur Espace</span> ou touchez l&apos;écran pour jouer</p>
+          <div className="xrun-actions">
+            <button type="button" className="xrun-btn xrun-btn--accent xrun-play" onClick={start}>
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 2l10 6-10 6z" fill="currentColor" /></svg>
+              Lancer la partie
+            </button>
+          </div>
+          <p className="xrun-hint smallcap">
+            <span className="xrun-on-mouse">Ou appuyez sur <span className="xrun-blink">Espace</span></span>
+            <span className="xrun-on-touch">Ou touchez l&apos;écran</span>
+          </p>
         </div>
       )}
 
       {phase === "paused" && (
         <div className="xrun-screen xrun-screen--dim">
           <p className="xrun-title">Pause</p>
-          <p className="xrun-hint smallcap"><span className="xrun-blink">Cliquez ou appuyez sur Espace</span> pour reprendre</p>
+          <p className="xrun-hint smallcap">
+            <span className="xrun-on-mouse"><span className="xrun-blink">Cliquez ou appuyez sur Espace</span> pour reprendre</span>
+            <span className="xrun-on-touch"><span className="xrun-blink">Touchez l&apos;écran</span> pour reprendre</span>
+          </p>
         </div>
       )}
 

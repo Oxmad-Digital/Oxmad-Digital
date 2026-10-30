@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
-import { gsap, ScrollTrigger, linkFromClick, motionWindow, reducedMotion } from "@/lib/motion";
+import { gsap, ScrollTrigger, linkFromClick, motionWindow, projectOpening, reducedMotion } from "@/lib/motion";
 
 /** Lenis inertia scroll, driven by the GSAP ticker so ScrollTrigger stays in sync. */
 export default function SmoothScroll() {
@@ -79,8 +79,24 @@ export default function SmoothScroll() {
     };
   }, []);
 
-  useEffect(() => {
-    motionWindow().__oxLenis?.resize();
+  // Before paint: back from a project sheet lands on the card, without gliding down from the top.
+  useLayoutEffect(() => {
+    const lenis = motionWindow().__oxLenis;
+    lenis?.resize();
+    const top = projectOpening.homeScroll;
+    if (pathname !== "/" || top === null) return;
+    projectOpening.homeScroll = null;
+    if (!lenis) return;
+    const restore = () => lenis.scrollTo(top, { immediate: true, force: true });
+    restore();
+    // The animations grow the page just after mounting, which would leave the card off target.
+    const observer = new ResizeObserver(restore);
+    observer.observe(document.body);
+    const timer = window.setTimeout(() => observer.disconnect(), 1000);
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(timer);
+    };
   }, [pathname]);
 
   return null;

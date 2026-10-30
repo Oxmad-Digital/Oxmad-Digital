@@ -13,8 +13,20 @@
 .xrun-kicker { margin: 0; color: var(--accent); }
 .xrun-hint { margin: 0; color: var(--muted); }
 .xrun-blink { color: var(--accent); animation: xrun-blink 1.1s steps(2, jump-none) infinite; }
-.xrun.is-offscreen .xrun-blink { animation-play-state: paused; }
+.xrun.is-offscreen .xrun-blink, .xrun.is-offscreen.is-idle { animation-play-state: paused; }
 @keyframes xrun-blink { 50% { opacity: .25; } }
+
+/* Idle, the frame pulses to read as something to play, not as a picture. */
+.xrun.is-idle { animation: xrun-call 2.4s ease-in-out infinite; }
+@keyframes xrun-call { 50% { border-color: var(--accent); box-shadow: 0 0 34px -8px var(--accent); } }
+.xrun-play { display: inline-flex; align-items: center; gap: 10px; padding: 16px 26px; font-size: 14px; }
+
+/* The right instruction for the device in hand. */
+.xrun-on-mouse { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  .xrun-on-mouse { display: inline; }
+  .xrun-on-touch { display: none; }
+}
 
 .xrun-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 10px; pointer-events: auto; }
 .xrun-btn { padding: 13px 18px; border: 1px solid #63695f; border-radius: 2px; background: #11120e; color: var(--white); font-size: 12px; font-weight: 650; transition: border-color .2s, color .2s, background .2s; }
@@ -43,6 +55,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .xrun-blink { animation: none; }
+  .xrun.is-idle { animation: none; border-color: var(--accent); }
 }
 
 /* ─── Classement ─── */

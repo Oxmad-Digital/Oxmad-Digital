@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { cellNoise, fillCells, fitCanvas } from "@/lib/canvas";
-import { gsap, linkFromClick, reducedMotion } from "@/lib/motion";
+import { gsap, linkFromClick, projectOpening, reducedMotion } from "@/lib/motion";
 
 const CELL = 40;
 
@@ -75,6 +75,7 @@ export default function PageTransition() {
       const link = linkFromClick(e);
       if (!link || link.url.pathname === location.pathname) return;
       const { a, url } = link;
+      if (a.dataset.transition === "project") projectOpening.homeScroll = window.scrollY;
       if (reduce || state.current.phase !== "idle") return;
       const href = url.pathname + url.search + url.hash;
 

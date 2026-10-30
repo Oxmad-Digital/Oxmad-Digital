@@ -13,6 +13,8 @@ export type Project = {
   url: string | null;
   image: MediaImage | null;
   desc: string;
+  /** Explains in the project modal why there is no link. */
+  notice?: { label: string; text: string };
   features: string[];
   /** Background and text colours of the mobile preview tile. */
   palette: [string, string];
@@ -126,6 +128,10 @@ export const PROJECTS: Project[] = [
     url: null,
     image: null,
     desc: "Une application web dédiée au registre des animaux identifiés par puce électronique.",
+    notice: {
+      label: "En cours de développement",
+      text: "Cet outil est encore en construction : il n’y a donc pas de lien pour le moment. Il sera ajouté ici dès sa mise en ligne.",
+    },
     features: ["Application web", "Gestion de données"],
     palette: ["#40473b", "#deee9c"],
   },
@@ -138,6 +144,10 @@ export const PROJECTS: Project[] = [
     url: null,
     image: null,
     desc: "Une application métier développée autour des besoins opérationnels de Bitumad.",
+    notice: {
+      label: "Accès privé",
+      text: "Par mesure de sécurité, nous ne partageons pas le lien de cet outil interne : il est réservé aux équipes de Bitumad.",
+    },
     features: ["Application web", "Outil métier"],
     palette: ["#404856", "#bdd8fb"],
   },

@@ -9,6 +9,8 @@ import "./CustomCursor.css";
 const INTERACTIVE = "a, button, [role='button'], label, select, summary, [data-cursor]";
 const TEXT_FIELD = "input:not([type='checkbox']):not([type='radio']):not([type='submit']):not([type='button']), textarea, [contenteditable='true']";
 const FRAME_PADDING = 6;
+const LABEL_OFFSET = 18;
+const LABEL_MARGIN = 8;
 const PIXEL = 8;
 
 type Pixel = { x: number; y: number; life: number; vx: number; vy: number };
@@ -118,16 +120,29 @@ export default function CustomCursor() {
     // Only touches the DOM when something changed, and the loop sleeps once everything has
     // settled (it keeps running over a hovered element, which can move while scrolling).
     let lastCoords = "";
+    let lastLabelWidth = 0;
     let trailDrawn = false;
     function tick() {
       const moved = mouse.x !== mouse.px || mouse.y !== mouse.py;
 
       // Read before any write, so the browser never has to lay out mid-frame.
       const rect = target?.isConnected ? target.getBoundingClientRect() : null;
+      const labelWidth = label.offsetWidth;
+      const labelHeight = label.offsetHeight;
+
+      // Near an edge the label swaps to the other side of the pointer; offset* ignore its scale.
+      if (moved || labelWidth !== lastLabelWidth) {
+        const flipX = mouse.x + LABEL_OFFSET + labelWidth + LABEL_MARGIN > root.clientWidth;
+        const flipY = mouse.y + LABEL_OFFSET + labelHeight + LABEL_MARGIN > root.clientHeight;
+        const labelX = flipX ? mouse.x - LABEL_OFFSET - labelWidth : mouse.x + LABEL_OFFSET;
+        const labelY = flipY ? mouse.y - LABEL_OFFSET - labelHeight : mouse.y + LABEL_OFFSET;
+        label.style.transform = `translate3d(${labelX}px, ${labelY}px, 0)`;
+        label.style.transformOrigin = `${flipY ? "bottom" : "top"} ${flipX ? "right" : "left"}`;
+        lastLabelWidth = labelWidth;
+      }
 
       if (moved) {
         reticle.style.transform = `translate3d(${mouse.x}px, ${mouse.y}px, 0)`;
-        label.style.transform = `translate3d(${mouse.x + 18}px, ${mouse.y + 18}px, 0)`;
         const text = `X ${String(Math.round(mouse.x)).padStart(4, "0")} · Y ${String(Math.round(mouse.y)).padStart(4, "0")}`;
         if (text !== lastCoords) {
           coords.textContent = text;

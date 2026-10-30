@@ -89,7 +89,7 @@
   .preview-back { position: absolute; inset: 35px 0 0; z-index: 0; overflow: hidden; }
   .preview-back::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; }
   .preview-type { position: absolute; z-index: 2; color: white; white-space: nowrap; }
-  .project-image .frame-corner { position: absolute; right: 15px; bottom: 17px; z-index: 10; background: #11120ecc; border: 1px solid #ffffff99; color: #fff; width: 42px; height: 42px; display: grid; place-items: center; font-size: 19px; border-radius: 50%; transition: .25s; }
+  .project-image .frame-corner { position: absolute; right: 15px; bottom: 17px; z-index: 10; background: #11120ecc; border: 1px solid #ffffff99; color: #fff; width: 42px; height: 42px; padding: 0; display: grid; place-items: center; font-family: inherit; font-size: 19px; border-radius: 50%; transition: .25s; }
   .project-image:hover .frame-corner { transform: translate(3px,-3px); background: var(--yellow); border-color: var(--yellow); color: var(--ink); }
 
   /* project 01 editorial / industrial */
@@ -288,6 +288,10 @@
   .dialog-content h2 { font-size: clamp(43px,6.2vw,76px); line-height: 1; letter-spacing: -.07em; margin: 15px 0 17px; }
   .dialog-content p { max-width: 650px; color: #b5b9ae; line-height: 1.75; font-size: 15px; }
   .dialog-visual { width: 100%; height: auto; aspect-ratio: 16/10; margin: 23px 0; object-fit: cover; background: #42483e; display: block; view-transition-name: ox-project; }
+  .dialog-placeholder { display: grid; place-items: center; font-size: clamp(38px,7vw,76px); font-weight: 700; letter-spacing: -.075em; white-space: nowrap; }
+  .dialog-notice { margin-top: 23px; padding: 15px 18px; background: #22261c; border-left: 2px solid var(--yellow); }
+  .dialog-notice strong { display: block; margin-bottom: 5px; color: var(--yellow); font-size: 11px; font-weight: 650; letter-spacing: .09em; text-transform: uppercase; }
+  .dialog-notice p { margin: 0; color: #dadfd1; font-size: 14px; line-height: 1.6; }
   .dialog-features { display: flex; gap: 8px; flex-wrap: wrap; margin: 20px 0 0; }
   .dialog-features span { padding: 9px 11px; border: 1px solid #53594d; font-size: 11px; color: #dadfd1; }
   .dialog-actions { display: flex; gap: 25px; flex-wrap: wrap; align-items: center; margin-top: 32px; }
