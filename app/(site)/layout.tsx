@@ -9,7 +9,7 @@ import { ADDRESS, CONTACT_EMAIL, CONTACT_PHONE, OPEN_GRAPH, SITE_URL, SOCIAL_LIN
 
 // Runs before first paint: arms the hidden "pre-reveal" states, and the intro on the first
 // home visit of the session. If the motion code never boots, everything is shown again.
-const MOTION_BOOT = `(function(){var d=document.documentElement;if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;d.classList.add("motion");try{if(location.pathname==="/"&&!sessionStorage.getItem("ox-intro"))d.classList.add("intro")}catch(e){}setTimeout(function(){if(!window.__oxMotion)d.classList.remove("motion","intro")},4000);setTimeout(function(){d.classList.remove("intro")},7000)})();`;
+const MOTION_BOOT = `(function(){var d=document.documentElement;if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;d.classList.add("motion");try{if(location.pathname==="/"&&!location.hash&&!sessionStorage.getItem("ox-intro"))d.classList.add("intro")}catch(e){}setTimeout(function(){if(!window.__oxMotion)d.classList.remove("motion","intro")},4000);setTimeout(function(){d.classList.remove("intro")},7000)})();`;
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
 

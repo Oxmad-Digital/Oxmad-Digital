@@ -69,7 +69,19 @@ export default function SmoothScroll() {
     };
     window.addEventListener("click", onClick, true);
 
+    // A link shared with an anchor ("/#jeu") lands on it, and stays there while the animations grow the page.
+    const anchor = location.hash ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+    let anchorObserver: ResizeObserver | undefined;
+    if (anchor) {
+      const land = () => lenis.scrollTo(anchor, { immediate: true, force: true });
+      land();
+      anchorObserver = new ResizeObserver(land);
+      anchorObserver.observe(document.body);
+      window.setTimeout(() => anchorObserver?.disconnect(), 1000);
+    }
+
     return () => {
+      anchorObserver?.disconnect();
       window.removeEventListener("click", onClick, true);
       document.removeEventListener("visibilitychange", onVisibility);
       stopVirtualWake();

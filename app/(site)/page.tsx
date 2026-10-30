@@ -88,7 +88,7 @@ export default function HomePage() {
             </div>
             <p className="description" data-reveal="fade" data-reveal-delay="0.2">Animations avancées, micro-interactions, gamification : nous transformons la visite en expérience. Un jeu bien pensé retient l&apos;attention, marque les esprits et donne envie d&apos;aller plus loin.</p>
           </div>
-          <div className="play-stage">
+          <div className="play-stage" id="jeu">
             <div className="play-caption smallcap">
               <span><span className="status-led" />Jouez à 0x-Run, notre mini-jeu, et tentez d&apos;entrer au classement.</span>
               <span>

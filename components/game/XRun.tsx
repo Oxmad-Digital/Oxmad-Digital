@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useBookCall } from "@/components/BookCall/BookCallContext";
 import { motionWindow } from "@/lib/motion";
+import { SITE_URL } from "@/lib/site";
 import { createGame, score, step, PLAYER_SIZE, PLAYER_X, TICK_RATE, VIEW_W, type Game } from "./engine";
 import { CUBE_PIXELS, createCubeSprite, draw, type Particle, type View } from "./render";
 import "./XRun.css";
@@ -25,6 +26,10 @@ const KEEP_SPACE = "button, input, textarea, select, summary, [role='button'], [
 
 /** `lock` is missing from some DOM typings and from iOS, where the orientation cannot be forced. */
 type LockableOrientation = ScreenOrientation & { lock?: (orientation: "landscape") => Promise<void>; unlock?: () => void };
+
+/** Anchor of the game on the home page, also the link people share. */
+const SHARE_URL = `${SITE_URL}/#jeu`;
+const SHARE_TEXT = "Jouez à 0x-Run, le mini-jeu d'Oxmad Digital, et tentez d'entrer au classement.";
 
 const pad = (n: number) => String(n).padStart(6, "0");
 
@@ -59,6 +64,8 @@ export default function XRun() {
   const [name, setName] = useState("");
   const [submit, setSubmit] = useState<Submit>({ state: "idle" });
   const [fullscreen, setFullscreen] = useState(false);
+  const [shareNote, setShareNote] = useState<string | null>(null);
+  const shareTimer = useRef(0);
 
   // Mutable game state shared by the loop and the input handlers.
   const sim = useRef({
@@ -433,6 +440,30 @@ export default function XRun() {
     frameRef.current?.focus({ preventScroll: true });
   };
 
+  /** The share sheet on touch devices, the clipboard elsewhere: desktop share dialogs rarely offer anything useful. */
+  const share = async () => {
+    if (sim.current.phase === "playing") setGamePhase("paused");
+    frameRef.current?.focus({ preventScroll: true });
+    if (navigator.share && matchMedia("(pointer: coarse)").matches) {
+      try {
+        await navigator.share({ title: "0x-Run", text: SHARE_TEXT, url: SHARE_URL });
+        return;
+      } catch (error) {
+        // Closing the sheet is a choice, anything else falls back to the clipboard.
+        if ((error as Error).name === "AbortError") return;
+      }
+    }
+    let note = "Lien copié";
+    try {
+      await navigator.clipboard.writeText(SHARE_URL);
+    } catch {
+      note = "Copie impossible";
+    }
+    setShareNote(note);
+    window.clearTimeout(shareTimer.current);
+    shareTimer.current = window.setTimeout(() => setShareNote(null), 2500);
+  };
+
   const onBlur = (e: React.FocusEvent) => {
     // Focus moving to a control inside the game (fullscreen button) is not leaving it.
     if (frameRef.current?.contains(e.relatedTarget as Node | null)) return;
@@ -534,6 +565,15 @@ export default function XRun() {
             </svg>
           </button>
         )}
+        <button type="button" className="xrun-ctrl xrun-share" onClick={share} aria-label="Partager le jeu">
+          <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+            <path d="M5.5 7l5-3M5.5 9l5 3" fill="none" stroke="currentColor" strokeWidth="1.6" />
+            <circle cx="3.5" cy="8" r="2" fill="currentColor" />
+            <circle cx="12.5" cy="3" r="2" fill="currentColor" />
+            <circle cx="12.5" cy="13" r="2" fill="currentColor" />
+          </svg>
+          {shareNote && <span className="smallcap" role="status">{shareNote}</span>}
+        </button>
         <button
           type="button"
           className="xrun-ctrl"

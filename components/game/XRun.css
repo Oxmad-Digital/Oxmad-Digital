@@ -43,10 +43,15 @@
 .xrun-stage.is-fullscreen { position: fixed; inset: 0; z-index: 2000; display: grid; place-items: center; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); background: #11120e; container-type: size; }
 /* The game keeps its 16:9 frame, letterboxed on taller or wider screens. */
 .xrun-stage.is-fullscreen .xrun { width: min(100vw, 100dvh * 16 / 9); width: min(100cqw, 100cqh * 16 / 9); border: 0; border-radius: 0; }
-.xrun-stage.is-fullscreen .xrun-hud { right: 140px; }
+.xrun-stage.is-fullscreen .xrun-hud { right: 200px; }
 .xrun-rotate { display: none; position: absolute; left: 16px; right: 16px; bottom: calc(24px + env(safe-area-inset-bottom)); margin: 0; text-align: center; color: var(--muted); pointer-events: none; }
 @media (orientation: portrait) and (max-width: 600px) {
   .xrun-rotate { display: block; }
+}
+
+/* On small screens the end-of-run buttons reach the corner. In fullscreen the controls sit at the top, out of their way. */
+@media (max-width: 600px) {
+  .xrun-stage:not(.is-fullscreen) .xrun.is-over .xrun-share { display: none; }
 }
 
 @media (max-width: 790px) {
