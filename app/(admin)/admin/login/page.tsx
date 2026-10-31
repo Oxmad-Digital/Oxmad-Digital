@@ -1,17 +1,15 @@
 import { redirect } from "next/navigation";
+import AuthScreen from "@/components/portal/AuthScreen";
 import { getAdmin } from "@/lib/admin-auth";
+import { HERO_IMAGES } from "@/lib/media";
 import LoginForm from "./LoginForm";
 
 export default async function LoginPage() {
   if (await getAdmin()) redirect("/admin");
 
   return (
-    <div className="adm-login">
-      <div className="adm-login-card">
-        <p className="adm-brand">OXMAD<span>·</span>DIGITAL</p>
-        <h1>Espace admin</h1>
-        <LoginForm />
-      </div>
-    </div>
+    <AuthScreen title="Espace admin" image={HERO_IMAGES.adminLogin}>
+      <LoginForm />
+    </AuthScreen>
   );
 }

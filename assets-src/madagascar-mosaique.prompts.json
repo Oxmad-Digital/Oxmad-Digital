@@ -1,0 +1,55 @@
+{
+  "generator": "Built-in image_gen",
+  "date": "2026-10-31",
+  "styleReference": "public/oxmad_chevrons_jardin_cotier_desktop.webp",
+  "assets": [
+    {
+      "id": "home",
+      "stem": "oxmad_chevrons_madagascar_mosaique",
+      "prompt": "Use case: precise-object-edit with environment restyling. Asset type: Oxmad Digital homepage hero, landscape 16:9. Input 1 is the EDIT TARGET and the mandatory composition AND MOSAIC STYLE reference. Input 2 is a GEOGRAPHIC / MOOD reference for Madagascar only, NOT a photorealistic style reference. Preserve from input 1 EXACTLY the two huge opposing stone chevrons, their angular > and < silhouettes, positions, scale, spacing, perspective, thick stone volume and stepped plinths; preserve the winding stone path, reflecting pool on the right, ocean on the left, horizon height, wide framing, sun on the left, and dark teal lower foreground used behind headline text. Change only the surrounding landscape and vegetation toward a clearly Madagascan Indian Ocean coast: turquoise bay, pale sand, red laterite headlands in the distance, a few fan-shaped ravinala and palms among rich deep-olive tropical foliage, and one or two modest baobab silhouettes in the far RIGHT background, smaller than the chevrons. Keep the chevrons as the unmistakable main subject. Crucial brand requirement: preserve and carry throughout the exact distinctive fine PIXEL / MOSAIC painterly aesthetic of input 1, clearly visible tessellated small angular stone chips, tiny geometric color planes on foliage, water, sky and clouds, slightly stepped pixel-like edges, crafted digital mosaic environment illustration. Do not turn it into a photograph or a smooth 3D render. Tangible textured golden-ochre stone, turquoise/teal water and sky, golden-hour light, dark olive vegetation. Same overall brightness and open airy atmosphere as input 1, not a dark login backdrop. No UI, no text, no watermark, no extra chevrons, no buildings, no Mediterranean pine or cypress, no giant baobab competing with the stone sculptures. Output only the revised single hero artwork.",
+      "reference": "public/oxmad_chevrons_jardin_cotier_desktop.webp",
+      "source": "assets-src/oxmad_chevrons_madagascar_mosaique.png",
+      "asset": "public/oxmad_chevrons_madagascar_mosaique.webp"
+    },
+    {
+      "id": "gallery",
+      "stem": "oxmad_realisations_madagascar_mosaique",
+      "prompt": "Use case: style-transfer with environment restyling. Asset: Oxmad Digital REALISATIONS portfolio hero, landscape 16:9. Input 1 is EDIT TARGET: preserve its exact composition, the THREE monumental open rectangular stone portal frames receding from a large one on the RIGHT to a small one toward the middle-left, their sizes, positions, perspective, stepped stone terraces, winding path, ocean on the LEFT and low sun on the LEFT, and the dark teal lower edge. Input 2 is the mandatory BRAND STYLE and MADAGASCAR landscape reference. Match input 2's very visible crafted PIXEL / MOSAIC painterly illustration across the entire image: little angular tessellated stone chips, geometric color facets on foliage and water, fine stepped fragments in the clouds. Do not make a photograph, do not blur a photo or apply a uniform square pixel filter. Update the vegetation and coastal background to match this same Madagascan visual world: bright turquoise Indian Ocean bay, pale sandy shore, ochre-red laterite headlands, deep olive tropical leaves, a few fan-shaped ravinalas and palms. One or two small baobabs on the far right hillside in the distance, secondary to the stone frames. Keep golden sandy-ochre portal frames, turquoise/teal sky and water, warm golden-hour light, clear breathable sky on the left for webpage title. No chevrons here, no extra frames, no Italian architecture or Mediterranean pines, no people, no text, no logos, no watermark. Preserve strong depth and clearly separated three frames. Output only the revised portfolio hero.",
+      "reference": "public/oxmad_galerie_cotiere_desktop.webp",
+      "source": "assets-src/oxmad_realisations_madagascar_mosaique.png",
+      "asset": "public/oxmad_realisations_madagascar_mosaique.webp"
+    },
+    {
+      "id": "admin",
+      "stem": "oxmad_connexion_admin_madagascar_mosaique",
+      "reference": "public/oxmad_connexion_admin_madagascar.webp",
+      "prompt": "Use case: style-transfer. Asset: Oxmad Digital ADMIN login background, landscape 16:9. Input 1 is the EDIT TARGET, preserve its exact Madagascan scene and camera composition: shaded ochre-stone and dark timber veranda on the LEFT, tropical plants framing the foreground, turquoise Indian Ocean bay and red earth headlands, TWO distinctive mature baobabs on the RIGHT with their full crowns and trunks, warm low sunset toward the right and violet/blue upper sky. Do not add arches, portals or chevrons. Input 2 is the mandatory PIXEL / MOSAIC BRAND STYLE reference. Translate the WHOLE input 1 scene into input 2's refined painterly digital mosaic environment illustration, with clearly visible tessellated angular color chips in stone and wood, small geometric facets in foliage, segmented shimmering water and fine broken angular clouds. Preserve recognizable baobabs, stone texture and spatial depth. Not photorealism, not smooth CGI, not generic 8-bit video game art, not a pixel-grid overlay. Keep deep olive shadows, amber/ochre highlights, turquoise sea and cooler twilight sky; slightly subdued central third behind the login form. Rightmost 40 percent must retain an attractive view of baobabs, sea and plants for mobile. Preserve image 1's scene and lighting direction while applying image 2's visible mosaic craft. No people, animals, furniture, screens, text, logos, watermark. Output only the restyled admin background.",
+      "source": "assets-src/oxmad_connexion_admin_madagascar_mosaique.png",
+      "asset": "public/oxmad_connexion_admin_madagascar_mosaique.webp"
+    },
+    {
+      "id": "client",
+      "stem": "oxmad_connexion_client_madagascar_mosaique",
+      "reference": "public/oxmad_connexion_jardin_ocean.webp",
+      "prompt": "Use case: style-transfer. Asset: Oxmad Digital CLIENT login background, landscape 16:9. Input 1 is the EDIT TARGET. Preserve its exact scene and framing: ONE large rounded ochre-stone arch on the RIGHT third opening out from a shaded enclosed tropical garden courtyard to the turquoise Indian Ocean, stone wall across the middle, deep-olive large leaves on the left, shaded paved foreground, warm low sun visible through the arch. Keep this intimate single-arch courtyard distinct from the admin page's open timber veranda and two large baobabs. Input 2 is the mandatory PIXEL / MOSAIC BRAND STYLE reference. Render the WHOLE input 1 scene as the same refined painterly digital mosaic environment illustration: visible small angular tessellated color chips across rough stone, geometric facets in leaves and water, delicately fragmented clouds and highlights. No photorealism, no smooth CGI, no generic 8-bit game art, no square pixel-grid filter. Add subtle Madagascan cues only within existing scene: some recognizable ravinala fan leaves among the foreground palms, a reddish laterite coastline beyond the arch, and one small distant baobab silhouette at the edge of the opening, keeping the sea view open. Dark quiet center behind a login form, warm golden light through the arch, dark green shade and turquoise water. Right-hand arch and ocean must remain readable in the rightmost 40 percent for the mobile crop. Keep exactly one arch in the same position, no rectangular portals or chevrons. No people, text, logos, watermark. Output only the restyled client background.",
+      "source": "assets-src/oxmad_connexion_client_madagascar_mosaique.png",
+      "asset": "public/oxmad_connexion_client_madagascar_mosaique.webp"
+    },
+    {
+      "id": "homeMobile",
+      "stem": "oxmad_chevrons_madagascar_mosaique_mobile",
+      "prompt": "Use case: precise-object-edit, responsive reframing. Asset: MOBILE homepage hero for Oxmad Digital, PORTRAIT 4:5 canvas. Input 1 is the EDIT TARGET and new approved desktop artwork. Input 2 is the old MOBILE COMPOSITION reference only. Reframe input 1 to match input 2's portrait framing: both monumental opposing stone chevrons must be fully visible, large, side by side, with sky above, the stone path below, and reflecting pool on the lower right; preserve exact chevron silhouettes, mosaic material, > and < orientation, relative scale and spacing from input 1. Keep the Madagascar details of input 1: fan-shaped ravinala leaves, palms, turquoise sea and reddish coast, baobabs glimpsed in the distant far right if space permits. Preserve the SAME fine painterly PIXEL / MOSAIC tessellation on every surface, same turquoise sky, ochre-gold lighting and olive vegetation. Dark teal shaded foreground at the bottom for headline readability, like input 2. This is the mobile companion to input 1, not a new scene. Crop/recompose gently only to fit both chevrons on a portrait canvas, do not redesign or duplicate them. No text, no UI, no logos or watermark. Output one PORTRAIT 4:5 image only.",
+      "reference": "public/oxmad_chevrons_jardin_cotier_mobile.webp",
+      "source": "assets-src/oxmad_chevrons_madagascar_mosaique_mobile.png",
+      "asset": "public/oxmad_chevrons_madagascar_mosaique_mobile.webp"
+    },
+    {
+      "id": "galleryMobile",
+      "stem": "oxmad_realisations_madagascar_mosaique_mobile",
+      "prompt": "Use case: precise-object-edit, responsive reframing. Asset: MOBILE portfolio hero for Oxmad Digital, landscape 4:3 canvas. Input 1 is the new desktop EDIT TARGET; input 2 is the old 4:3 MOBILE FRAMING reference. Reframe input 1 to match input 2's tighter 4:3 view. All THREE rectangular golden-ochre stone portal frames must remain complete and clearly separated, receding from a large one on the right to a small one on the left; preserve rectangular geometry, perspective and stone mosaic material. Keep the Madagascar details from input 1: ravinalas, palms, red laterite headlands, turquoise Indian Ocean and distant small baobab. Preserve the same fine painterly PIXEL / MOSAIC tessellation throughout stone, foliage, sky, clouds and water. Winding stepped path, teal shaded lower edge, golden-hour light and turquoise sky. Match frame arrangement of input 2, no portrait composition. No extra frames, chevrons, people, text, watermark. Output one 4:3 image only.",
+      "reference": "public/oxmad_galerie_cotiere_mobile-7b8799b09d81.avif",
+      "source": "assets-src/oxmad_realisations_madagascar_mosaique_mobile.png",
+      "asset": "public/oxmad_realisations_madagascar_mosaique_mobile.webp"
+    }
+  ]
+}

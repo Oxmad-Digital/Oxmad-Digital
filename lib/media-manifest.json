@@ -1,12 +1,4 @@
 {
-  "/favicon.svg": {
-    "key": "images/oxmad-digital-favicon-3fe01ef6ec8b.webp",
-    "width": 128,
-    "height": 128,
-    "bytes": 1262,
-    "originalBytes": 1554,
-    "quality": "lossless"
-  },
   "/og-image.jpg": {
     "key": "images/oxmad-digital-partage-social-c7a4ce987b56.webp",
     "width": 1200,
@@ -31,77 +23,53 @@
     "originalBytes": 6967,
     "quality": "lossless"
   },
-  "/oxmad_arches_perspective.png": {
-    "key": "images/oxmad-digital-arches-perspective-d7ed0bc50a5d.webp",
-    "width": 960,
-    "height": 490,
-    "bytes": 37184,
-    "originalBytes": 2256283,
-    "quality": 82
-  },
-  "/oxmad_chevrons_jardin_cotier_desktop.webp": {
-    "key": "images/oxmad-digital-hero-accueil-jardin-cotier-desktop-1efd2b4b8100.webp",
+  "/oxmad_chevrons_madagascar_clair_obscur.webp": {
+    "key": "images/oxmad-digital-chevrons-madagascar-clair-obscur-22695975a3df.webp",
     "width": 1672,
     "height": 941,
-    "bytes": 195794,
-    "originalBytes": 383264,
-    "quality": 63
+    "bytes": 192696,
+    "originalBytes": 192696,
+    "quality": 81
   },
-  "/oxmad_chevrons_jardin_cotier_mobile.webp": {
-    "key": "images/oxmad-digital-hero-accueil-jardin-cotier-mobile-5eb7cd10cfd5.webp",
+  "/oxmad_chevrons_madagascar_mosaique_mobile.webp": {
+    "key": "images/oxmad-digital-chevrons-madagascar-mosaique-mobile-fd169119593b.webp",
     "width": 760,
-    "height": 941,
-    "bytes": 153084,
-    "originalBytes": 174426,
+    "height": 950,
+    "bytes": 164312,
+    "originalBytes": 166232,
     "quality": 82
   },
-  "/oxmad_connexion_jardin_ocean.webp": {
-    "key": "images/oxmad-digital-connexion-jardin-ocean-9d1bfe517885.webp",
+  "/oxmad_connexion_admin_madagascar_clair_obscur.webp": {
+    "key": "images/oxmad-digital-connexion-admin-madagascar-clair-obscur-7b94d007c6dc.webp",
     "width": 1672,
     "height": 941,
-    "bytes": 187478,
-    "originalBytes": 358992,
-    "quality": 78
+    "bytes": 197808,
+    "originalBytes": 197808,
+    "quality": 69
   },
-  "/oxmad_faille_lumineuse_lisse.png": {
-    "key": "images/oxmad-digital-faille-lumineuse-lisse-4a4d39253a39.webp",
-    "width": 960,
-    "height": 540,
-    "bytes": 33458,
-    "originalBytes": 1727364,
-    "quality": 82
-  },
-  "/oxmad_galerie_cotiere_desktop.webp": {
-    "key": "images/oxmad-digital-hero-realisations-galerie-cotiere-desktop-f5bfcb33918b.webp",
+  "/oxmad_connexion_client_madagascar_clair_obscur.webp": {
+    "key": "images/oxmad-digital-connexion-client-madagascar-clair-obscur-34243bfe4f4e.webp",
     "width": 1672,
     "height": 941,
-    "bytes": 197938,
-    "originalBytes": 392770,
-    "quality": 63
+    "bytes": 198730,
+    "originalBytes": 198730,
+    "quality": 70
   },
-  "/oxmad_galerie_cotiere_mobile-7b8799b09d81.avif": {
-    "key": "images/oxmad-digital-hero-realisations-galerie-cotiere-mobile-120ca6efcd51.webp",
+  "/oxmad_realisations_madagascar_clair_obscur.webp": {
+    "key": "images/oxmad-digital-realisations-madagascar-clair-obscur-be343786015e.webp",
+    "width": 1672,
+    "height": 941,
+    "bytes": 197452,
+    "originalBytes": 197452,
+    "quality": 74
+  },
+  "/oxmad_realisations_madagascar_clair_obscur_mobile.webp": {
+    "key": "images/oxmad-digital-realisations-madagascar-clair-obscur-mobile-578c5a9c5790.webp",
     "width": 1170,
     "height": 878,
-    "bytes": 198966,
-    "originalBytes": 214642,
-    "quality": 79
-  },
-  "/oxmad_horizon_solaire.png": {
-    "key": "images/oxmad-digital-horizon-solaire-86a661009611.webp",
-    "width": 960,
-    "height": 540,
-    "bytes": 126408,
-    "originalBytes": 3700087,
-    "quality": 82
-  },
-  "/oxmad_pixels_suspendus.png": {
-    "key": "images/oxmad-digital-pixels-suspendus-43f6aa9cdc2f.webp",
-    "width": 960,
-    "height": 540,
-    "bytes": 44276,
-    "originalBytes": 1730421,
-    "quality": 82
+    "bytes": 196384,
+    "originalBytes": 196384,
+    "quality": 80
   },
   "/oxmad_service_custom.webp": {
     "key": "images/oxmad-digital-service-custom-1627cebc9d48.webp",

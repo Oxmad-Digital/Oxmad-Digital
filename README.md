@@ -2,8 +2,10 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Images — Cloudflare R2
 
-All static images in `public/` have WebP equivalents in the `oxmad-digital-website`
-bucket. Object names include `oxmad-digital`, a descriptive name and a content hash
+Images referenced with `mediaUrl()` or `mediaImage()` in `lib/media.ts` have WebP
+equivalents in the `oxmad-digital-website` bucket. Preparation only includes these
+active images; discarded variants and source artwork remain local. Object names
+include `oxmad-digital`, a descriptive name and a content hash
 for safe immutable caching. Original artwork is retained locally.
 
 The bucket's public HTTPS domain is configured in `lib/media-config.json`:
@@ -19,9 +21,8 @@ Next.js accepts only the configured host and `/images/oxmad-digital-*.webp` path
 Every prepared image must be under 200,000 bytes. Raster images start at quality 82;
 the encoder lowers quality to at least 60 before reducing dimensions when needed.
 Logos use lossless WebP. Already smaller WebP sources are retained without
-recompression. The desktop home hero is encoded from its original lossless PNG.
-Service previews are limited to 960px wide. The mobile Réalisations AVIF source
-keeps its existing crop and is converted to WebP for delivery. Heroes, client login,
+recompression. The current cinematic heroes and login backgrounds have dedicated
+WebP sources; Réalisations also has a dedicated mobile composition. Heroes, admin and client login,
 social metadata, logos and projects all use the shared R2 media URLs. Next.js app
 icons (`app/favicon.ico`, `app/icon.svg`, `app/apple-icon.png`) remain local in their
 dedicated formats. Source artwork is not renamed or overwritten.

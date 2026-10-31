@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { mkdir, readFile, readdir, stat, writeFile } from "node:fs/promises";
+import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
@@ -58,8 +58,16 @@ const serviceImages = new Set([
   "oxmad_horizon_solaire.png", "oxmad_faille_lumineuse_lisse.png",
 ]);
 const files = {};
-for (const source of (await readdir(path.join(root, "public"), { recursive: true })).sort()) {
-  if (!/\.(png|jpe?g|webp|avif|svg)$/i.test(source)) continue;
+// lib/media.ts is the source of truth for public R2 media. Retain unused artwork
+// locally without re-uploading discarded variants on the next preparation run.
+const mediaSource = await readFile(path.join(root, "lib/media.ts"), "utf8");
+const sources = [...new Set([...mediaSource.matchAll(/\bmedia(?:Url|Image)\(\s*["'](\/[^"']+)["']\s*\)/g)]
+  .map((match) => match[1].slice(1)))].sort();
+if (!sources.length) throw new Error("No literal media sources found in lib/media.ts.");
+for (const source of sources) {
+  if (source.split("/").includes("..") || !/\.(png|jpe?g|webp|avif|svg)$/i.test(source)) {
+    throw new Error(`Invalid public media source: ${source}`);
+  }
   const original = path.join(root, "public", source);
   const hero = names[source]?.startsWith("hero-") ?? false;
   const vector = source.endsWith(".svg");
