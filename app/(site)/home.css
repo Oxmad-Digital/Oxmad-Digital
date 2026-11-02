@@ -209,7 +209,7 @@
   @media (max-width: 790px) {
     .hero { padding-top: calc(var(--home-header-height) + 13px); padding-bottom: 18px; }
     .stage-top { display: none; }
-    .hero-background img { object-position: 50% 35%; }
+    .hero-background img { object-position: 63% 35%; }
     .hero::before { background: linear-gradient(rgba(17,18,14,.28), rgba(17,18,14,.28)), linear-gradient(180deg, rgba(17,18,14,.5) 0%, rgba(17,18,14,.08) 23%, rgba(17,18,14,.1) 42%, rgba(17,18,14,.55) 58%, rgba(17,18,14,.88) 76%, rgba(17,18,14,1) 100%); }
     .stage { min-height: 26svh; }
     .stage-note, .stage-index { font-size: 9px; }
