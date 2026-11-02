@@ -29,8 +29,8 @@ export default function HomePage() {
       <SectionIndicator />
       <section className="hero" data-cursor-trail aria-labelledby="main-heading">
         <picture className="hero-background">
-          {/* The mobile artwork is already a 760px WebP. Serving it verbatim avoids an
-              upscaled 1200px re-encode while preserving every source pixel. */}
+          {/* Serve the current artwork directly on mobile; the shared source keeps
+              both layouts in sync without an additional image re-encode. */}
           <source media="(max-width: 790px)" srcSet={HERO_IMAGES.homeMobile} />
           {/* getImageProps supplies responsive image optimization for the desktop artwork. */}
           <img {...desktopImage} alt="" />

@@ -17,9 +17,11 @@ export function mediaImage(source: keyof typeof manifest) {
 
 export type MediaImage = ReturnType<typeof mediaImage>;
 
+const homeHeroImage = mediaUrl("/oxmad_chevrons_madagascar_clair_obscur.webp");
+
 export const HERO_IMAGES = {
-  homeDesktop: mediaUrl("/oxmad_chevrons_madagascar_clair_obscur.webp"),
-  homeMobile: mediaUrl("/oxmad_chevrons_madagascar_mosaique_mobile.webp"),
+  homeDesktop: homeHeroImage,
+  homeMobile: homeHeroImage,
   realisations: mediaUrl("/oxmad_realisations_madagascar_clair_obscur.webp"),
   realisationsMobile: mediaUrl("/oxmad_realisations_madagascar_clair_obscur_mobile.webp"),
   clientLogin: mediaUrl("/oxmad_connexion_client_madagascar_clair_obscur.webp"),
