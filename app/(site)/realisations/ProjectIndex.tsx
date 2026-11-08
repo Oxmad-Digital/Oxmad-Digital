@@ -96,10 +96,9 @@ export default function ProjectIndex({ onOpen }: { onOpen: (id: string) => void 
   return (
     <section className="archive" id="tous-les-projets" aria-labelledby="archive-title">
       <div className="container">
-        <div className="archive-kicker-row"><span className="eyebrow micro">Les réalisations / Index</span><span className="micro archive-serial">OX — COLLECTION / {new Date().getFullYear()}</span></div>
         <div className="index-head">
           <div>
-            <div className="index-overline">AU-DELÀ DES PROJETS PHARES</div>
+            <div className="index-overline">Les réalisations / Index</div>
             <h2 id="archive-title">L&apos;index<span className="accent">.</span></h2>
           </div>
           <p>Une collection vivante de sites, boutiques et applications. Des besoins très différents, une même attention portée au détail.</p>

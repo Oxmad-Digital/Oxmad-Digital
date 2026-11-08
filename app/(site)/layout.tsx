@@ -4,6 +4,7 @@ import "../globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import Analytics from "@/components/Analytics";
 import { BookCallProvider } from "@/components/BookCall/BookCallContext";
+import { ContactProvider } from "@/components/Contact/ContactContext";
 import SiteMotion from "@/components/motion/SiteMotion";
 import { ADDRESS, CONTACT_EMAIL, CONTACT_PHONE, OPEN_GRAPH, SITE_URL, SOCIAL_LINKS } from "@/lib/site";
 import { BRAND_IMAGES, SOCIAL_IMAGES } from "@/lib/media";
@@ -88,10 +89,12 @@ export default function RootLayout({
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD).replace(/</g, "\\u003c") }} />
         <BookCallProvider>
-          <SiteHeader />
-          <main>{children}</main>
-          <SiteMotion />
-          <Analytics />
+          <ContactProvider>
+            <SiteHeader />
+            <main>{children}</main>
+            <SiteMotion />
+            <Analytics />
+          </ContactProvider>
         </BookCallProvider>
       </body>
     </html>

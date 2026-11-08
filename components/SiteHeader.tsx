@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { ArrowRight, UserRound } from "lucide-react";
+import { useContact } from "@/components/Contact/ContactContext";
 import { BRAND_IMAGES } from "@/lib/media";
 import { CONTACT_EMAIL, CONTACT_PHONE, LOGIN_URL, SOCIAL_LINKS } from "@/lib/site";
 
@@ -30,6 +31,8 @@ export default function SiteHeader() {
   const isHome = pathname === "/";
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
+  const { open: openContact } = useContact();
+  const startProject = () => { close(); openContact(); };
   const headerRef = useRef<HTMLElement>(null);
   const openRef = useRef(open);
   useEffect(() => { openRef.current = open; }, [open]);
@@ -102,10 +105,10 @@ export default function SiteHeader() {
           ))}
           {/* Mobile panel only: the call to action and the direct contacts. */}
           <div className="nav-panel-foot" style={{ "--i": LINKS.length } as CSSProperties}>
-            <Link className="nav-panel-cta" href="/#contact" onClick={close}>
+            <button className="nav-panel-cta" type="button" onClick={startProject}>
               Discutons de votre projet
               <ArrowRight size={18} strokeWidth={1.8} aria-hidden="true" />
-            </Link>
+            </button>
             <div className="nav-panel-meta">
               <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
               <a href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`}>{CONTACT_PHONE}</a>
@@ -120,9 +123,9 @@ export default function SiteHeader() {
             </div>
           </div>
         </nav>
-        <Link className="nav-cta" data-cursor="Parler" data-magnetic="0.25" href="/#contact" onClick={close}>
+        <button className="nav-cta" type="button" data-cursor="Parler" data-magnetic="0.25" onClick={startProject}>
           Discutons de votre projet
-        </Link>
+        </button>
         {/* Plain anchor: the sign-in lives under another root layout, so it's a full page load anyway. */}
         <a className="nav-account" href={LOGIN_URL} aria-label="Connexion" title="Connexion" data-cursor="Connexion">
           <UserRound size={18} strokeWidth={1.6} aria-hidden="true" />

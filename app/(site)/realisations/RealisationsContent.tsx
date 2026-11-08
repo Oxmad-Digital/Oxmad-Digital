@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Globe } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import SiteFooter from "@/components/SiteFooter";
+import { useContact } from "@/components/Contact/ContactContext";
 import { projectOpening } from "@/lib/motion";
 import { PROJECTS } from "@/lib/projects";
 import { HERO_IMAGES, PROJECT_IMAGES } from "@/lib/media";
@@ -21,6 +21,7 @@ const SHOT_SIZES = "(max-width: 790px) 100vw, 60vw";
 export default function RealisationsContent() {
   const rootRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const { open: openContact } = useContact();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const fromDeepLink = useRef(false);
   const [openId, setOpenId] = useState<string | null>(null);
@@ -90,7 +91,7 @@ export default function RealisationsContent() {
         </div>
         <div className="works-hero-footer">
           <div className="container works-hero-index">
-            <span className="works-hero-index-label micro">03 projets à la une <span aria-hidden="true">↘</span></span>
+            <span className="works-hero-index-label micro"><span>3</span> projets à la une</span>
             <nav aria-label="Parcourir les projets" className="works-hero-links">
               {FEATURED.map(({ id, name }, i) => (
                 <a key={id} href={`#${id}`}><span>{String(i + 1).padStart(2, "0")}</span>{name}</a>
@@ -115,7 +116,7 @@ export default function RealisationsContent() {
             </div>
             <div className="featured-image-wrap">
               <div aria-label="Aperçu du site Tsaralevenana" className="project-image">
-                <div className="window-top"><span className="dots"><i /><i /><i /></span><span className="address">tsaralevenana.vercel.app</span><span>↗</span></div>
+                <div className="window-top"><span className="dots"><i /><i /><i /></span><span className="address">tsaralevenana.vercel.app</span></div>
                 <div className="preview-back tsaralevenana-back"><div className="preview-type">Tsaralevenana<br /><em>Présent à vos côtés</em></div></div>
                 <Image {...PROJECT_IMAGES.tsaralevenana} alt="Capture du site Tsaralevenana — maison funéraire à Antananarivo" className="remote-shot" sizes={SHOT_SIZES} loading="eager" onError={hideOnError} />
                 <button aria-label="Découvrir le projet Tsaralevenana" className="frame-corner" type="button" data-cursor="Voir" onClick={() => openProject("tsaralevenana")}>↗</button>
@@ -123,7 +124,6 @@ export default function RealisationsContent() {
               <span className="featured-tag">Vitrine / Services / Accompagnement</span>
             </div>
           </div>
-          <div className="featured-ruler"><span>DE LA DOUCEUR DANS CHAQUE DÉTAIL.</span><span>01 / 03   ↗</span></div>
         </div>
       </section>
 
@@ -140,7 +140,7 @@ export default function RealisationsContent() {
             </div>
             <div className="ocibel-visual">
               <div aria-label="Aperçu du site Ocibel" className="project-image">
-                <div className="window-top"><span className="dots"><i /><i /><i /></span><span className="address">ocibel.mg</span><span>↗</span></div>
+                <div className="window-top"><span className="dots"><i /><i /><i /></span><span className="address">ocibel.mg</span></div>
                 <div className="preview-back"><div className="preview-type">Révélez<br />votre beauté<br /><em>naturelle</em></div></div>
                 <Image {...PROJECT_IMAGES.ocibel} alt="Capture du site Ocibel — salon de beauté et spa" className="remote-shot" sizes={SHOT_SIZES} onError={hideOnError} />
                 <button aria-label="Découvrir le projet Ocibel" className="frame-corner" type="button" data-cursor="Voir" onClick={() => openProject("ocibel")}>↗</button>
@@ -148,7 +148,6 @@ export default function RealisationsContent() {
               <span className="ocibel-side">O  /  02   —   GOOD DESIGN IS PERSONAL</span>
             </div>
           </div>
-          <div className="project-break"><span>DES ÉMOTIONS AVANT DES INTERFACES.</span><span>02 / 03</span></div>
         </div>
       </section>
 
@@ -172,7 +171,7 @@ export default function RealisationsContent() {
             </div>
             <div className="wybob-panel">
               <div aria-label="Aperçu du projet Wybob" className="project-image">
-                <div className="window-top"><span className="dots"><i /><i /><i /></span><span className="address">WYBOB — Boutique en ligne</span><span>↗</span></div>
+                <div className="window-top"><span className="dots"><i /><i /><i /></span><span className="address">WYBOB — Boutique en ligne</span></div>
                 <div className="preview-back"><div className="preview-type">WYBOB.<br /><small style={{ fontSize: ".2em", letterSpacing: ".06em" }}>ESSENTIALS / EDITION</small></div></div>
                 <Image {...PROJECT_IMAGES.wybob} alt="Capture du site Wybob, boutique en ligne de mode et accessoires" className="remote-shot" sizes={SHOT_SIZES} onError={hideOnError} />
                 <button aria-label="Découvrir le projet Wybob" className="frame-corner" type="button" data-cursor="Voir" onClick={() => openProject("wybob")}>↗</button>
@@ -180,7 +179,6 @@ export default function RealisationsContent() {
               <div className="wybob-sticker">Digital<br /> meets<br /> craft ↗</div>
             </div>
           </div>
-          <div className="wybob-bottom"><span>UNE EXPÉRIENCE PRODUIT — PAS JUSTE UN CATALOGUE.</span><span>03 / 03</span></div>
         </div>
       </section>
 
@@ -192,7 +190,7 @@ export default function RealisationsContent() {
           <h2 data-reveal="lines">La prochaine<br /><span>histoire, c&apos;est</span><span>la vôtre<span style={{ color: "#f6f2d8" }}>.</span></span></h2>
           <div className="cta-row">
             <p>Votre marque mérite mieux qu&apos;un site de plus. Parlons-en.</p>
-            <Link className="cta" data-cursor="Parler" data-magnetic href="/#contact">Parler de mon projet</Link>
+            <button className="cta" type="button" data-cursor="Parler" data-magnetic onClick={openContact}>Discutons de votre projet</button>
           </div>
           <SiteFooter
             className="footer"

@@ -29,7 +29,7 @@ type LockableOrientation = ScreenOrientation & { lock?: (orientation: "landscape
 
 /** Anchor of the game on the home page, also the link people share. */
 const SHARE_URL = `${SITE_URL}/#jeu`;
-const SHARE_TEXT = "Jouez à 0x-Run, le mini-jeu d'Oxmad Digital, et tentez d'entrer au classement.";
+const SHARE_TEXT = "Jouez à 0x-Run, notre mini-jeu, et tentez d'entrer au classement.";
 
 const pad = (n: number) => String(n).padStart(6, "0");
 
