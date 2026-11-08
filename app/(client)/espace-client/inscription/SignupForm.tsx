@@ -28,6 +28,11 @@ export default function SignupForm({ minLength }: { minLength: number }) {
       <button type="submit" className="adm-btn adm-btn-primary" disabled={pending}>
         {pending ? "Envoi…" : "Envoyer ma demande"}
       </button>
+      <p className="adm-muted">
+        Ces informations servent uniquement à créer et gérer votre accès. Une demande non confirmée est supprimée
+        après 30 jours, une demande refusée après 6 mois.{" "}
+        <a href="/mentions-legales#confidentialite" target="_blank" rel="noopener">Politique de confidentialité</a>
+      </p>
     </form>
   );
 }

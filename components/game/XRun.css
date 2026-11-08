@@ -108,3 +108,7 @@
   .xrun-actions { margin-top: 4px; }
 }
 .xrun-board-stats { margin: auto 0 0; padding-top: 12px; border-top: 1px solid #2a2b25; color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.xrun-board-privacy { margin: auto 0 0; color: var(--muted); font-size: 11.5px; line-height: 1.5; }
+.xrun-board-stats + .xrun-board-privacy { margin-top: 0; }
+.xrun-board-privacy a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.xrun-board-privacy a:hover { color: var(--white); }

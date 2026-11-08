@@ -34,20 +34,22 @@ function Delta({ now, before }: { now: number; before: number }) {
   );
 }
 
-function BreakdownList({ title, rows, unit, format = (l) => l }: {
+function BreakdownList({ title, rows, unit, format = (l) => l, scroll = false }: {
   title: string;
   rows: Breakdown;
   unit: string;
   format?: (label: string) => string;
+  /** Lets the list scroll inside the card instead of growing it (full country list under the map). */
+  scroll?: boolean;
 }) {
   const max = Math.max(1, ...rows.map((r) => r.count));
   return (
-    <section className="adm-card">
+    <section className={`adm-card${scroll ? " adm-card-scroll" : ""}`}>
       <h2>{title}</h2>
       {rows.length === 0 ? (
         <p className="adm-empty">Pas encore de données.</p>
       ) : (
-        <table className="adm-breakdown">
+        <div className="adm-breakdown-wrap"><table className="adm-breakdown">
           <thead><tr><th>{title}</th><th>{unit}</th></tr></thead>
           <tbody>
             {rows.map((r) => (
@@ -60,7 +62,7 @@ function BreakdownList({ title, rows, unit, format = (l) => l }: {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table></div>
       )}
     </section>
   );
@@ -112,8 +114,7 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
       </div>
 
       <section className="adm-card">
-        <h2>Pages vues par {stats.monthly ? "mois" : "jour"}</h2>
-        <DailyChart data={stats.daily} monthly={stats.monthly} />
+        <DailyChart data={stats.daily} monthly={stats.monthly} title={`Pages vues par ${stats.monthly ? "mois" : "jour"}`} />
       </section>
 
       <section className="adm-card">
@@ -129,24 +130,26 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
         </div>
       </section>
 
-      <section className="adm-card">
-        <h2>Visiteurs par pays</h2>
-        <WorldMap rows={stats.countries} />
-      </section>
-
-      <div className="adm-grid">
+      <div className="adm-grid adm-grid-2">
         <BreakdownList title="Pages" rows={stats.pages} unit="Vues" />
         <BreakdownList title="Provenance" rows={stats.referrers} unit="Vues" />
-        <BreakdownList title="Pays" rows={stats.countries.slice(0, 8)} unit="Visiteurs" format={countryLabel} />
         <BreakdownList title="Appareils" rows={stats.devices} unit="Visiteurs" />
         <BreakdownList title="Navigateurs" rows={stats.browsers} unit="Visiteurs" />
       </div>
 
+      <div className="adm-geo">
+        <section className="adm-card">
+          <h2>Visiteurs par pays</h2>
+          <WorldMap rows={stats.countries} />
+        </section>
+        <BreakdownList title="Pays" rows={stats.countries} unit="Visiteurs" format={countryLabel} scroll />
+      </div>
+
       <p className="adm-footnote">
-        Mesure interne sans cookie : un visiteur est compté une fois par jour (hash anonyme renouvelé chaque jour).
+        Mesure interne sans cookie : un visiteur est compté une fois par jour (empreinte pseudonyme renouvelée chaque jour, ignorée si le navigateur envoie Global Privacy Control ou Do Not Track).
         Une session regroupe les pages vues d&apos;un visiteur sans 30 min d&apos;inactivité ; sa durée ne compte que le temps onglet visible.
         Les robots, l&apos;admin et le développement local ne sont pas comptés.
-        L&apos;historique est conservé sans limite sous forme de totaux quotidiens.
+        L&apos;historique est conservé sans limite sous forme de totaux quotidiens anonymes. Messages et rendez-vous sont supprimés automatiquement après 3 ans.
         Le pays vient du fuseau horaire du navigateur, à défaut de l&apos;adresse IP (jamais conservée).
         Carte : <a href="https://github.com/VictorCazanave/svg-maps" target="_blank" rel="noreferrer">svg-maps</a> (CC BY 4.0).
         <a href="https://db-ip.com" target="_blank" rel="noreferrer">IP Geolocation by DB-IP</a> (CC BY 4.0).

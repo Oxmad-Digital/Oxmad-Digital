@@ -13,8 +13,15 @@ function send(data: object) {
   }
 }
 
+/** Nothing is measured from localhost, nor when the browser sends an opt-out signal (Global Privacy Control or Do Not Track), as the privacy policy promises. */
+function trackingDisabled() {
+  if (location.hostname === "localhost" || location.hostname === "127.0.0.1") return true;
+  const nav = navigator as Navigator & { globalPrivacyControl?: boolean };
+  return nav.globalPrivacyControl === true || navigator.doNotTrack === "1";
+}
+
 /**
- * First-party page-view tracking (see app/api/track): one beacon per route, no cookie, nothing sent from localhost.
+ * First-party page-view tracking (see app/api/track): one beacon per route, no cookie, nothing sent from localhost or on an opt-out signal.
  * Time spent with the tab visible is sent whenever the tab is hidden or the route changes.
  */
 export default function Analytics() {
@@ -23,7 +30,7 @@ export default function Analytics() {
   const [reportVitals, setReportVitals] = useState(false);
 
   useEffect(() => {
-    if (location.hostname === "localhost" || location.hostname === "127.0.0.1") return;
+    if (trackingDisabled()) return;
     let idle = 0;
     let timer = 0;
     const enable = () => {
@@ -43,7 +50,7 @@ export default function Analytics() {
   }, []);
 
   useEffect(() => {
-    if (location.hostname === "localhost" || location.hostname === "127.0.0.1") return;
+    if (trackingDisabled()) return;
     send({
       path: pathname,
       // Only the landing view carries the external referrer and campaign.

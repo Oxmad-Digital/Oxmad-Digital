@@ -47,8 +47,6 @@ body.adm { margin: 0; min-height: 100vh; background: var(--black); color: var(--
 .adm-sidebar-brand img { display: block; width: 164px; height: auto; max-width: 100%; }
 .adm-workspace { display: flex; flex-direction: column; gap: 5px; padding: 14px; border: 1px solid #3b4731; border-radius: 5px; background: #242c1e; }
 .adm-workspace-label, .adm-sidebar-label { color: #a8b59c; font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
-.adm-workspace-label { display: flex; align-items: center; gap: 8px; }
-.adm-workspace-label::before { content: ''; width: 14px; height: 1px; background: currentColor; }
 .adm-workspace strong { font-size: 13px; font-weight: 500; overflow-wrap: anywhere; }
 .adm-sidebar-label { padding: 0 12px; margin-bottom: 12px !important; color: #8f9e83; }
 .adm-nav { display: flex; flex-direction: column; gap: 6px; }
@@ -62,6 +60,8 @@ body.adm { margin: 0; min-height: 100vh; background: var(--black); color: var(--
 .adm-nav a[aria-current="page"] .adm-badge { background: #25290d; color: #f5f3cf; }
 .adm-sidebar-footer { display: grid; gap: 16px; margin-top: auto; padding-top: 24px; }
 .adm-sidebar-signature { padding: 0 12px; font-size: 12px; color: #8f9e83; }
+.adm-sidebar-legal { display: inline-block; margin-top: 6px; color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.adm-sidebar-legal:hover { color: var(--white); }
 .adm-sidebar-account { display: flex; align-items: center; gap: 11px; padding: 18px 6px 0; border-top: 1px solid #35402d; }
 .adm-user-avatar { display: grid; place-items: center; flex: none; width: 36px; height: 36px; border: 1px solid #435236; border-radius: 50%; background: #2c3823; font-size: 12px; color: #e4ebdb; }
 .adm-user-details { display: flex; flex-direction: column; min-width: 0; gap: 3px; }
@@ -124,6 +124,8 @@ a.adm-card:hover { border-color: var(--muted); }
 
 .adm-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; margin-top: 16px; }
 .adm-grid .adm-card { margin-top: 0; }
+/* Dashboard breakdowns: always two cards per row (one on mobile, see the 860px query). */
+.adm-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
 /* Breakdown tables: a single-hue bar behind each label */
 .adm-breakdown { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
@@ -147,6 +149,20 @@ a.adm-card:hover { border-color: var(--muted); }
 .adm-chart-bar { display: block; width: 100%; max-width: 28px; margin: 0 auto; border-radius: 4px 4px 0 0; background: var(--accent); min-height: 0; }
 .adm-chart-bars li:hover .adm-chart-bar, .adm-chart-bars li:focus-visible .adm-chart-bar { filter: brightness(1.2); }
 .adm-chart-bars li:hover, .adm-chart-bars li:focus-visible { background: rgba(245, 243, 233, .04); }
+/* Bars / line toggle */
+.adm-chart-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.adm-chart-head h2 { margin-bottom: 0; }
+.adm-segmented button { padding: 5px 12px; border: 0; border-radius: 6px; background: none; color: var(--muted); font: inherit; font-size: 13px; cursor: pointer; }
+.adm-segmented button:hover { color: var(--white); }
+.adm-segmented button[aria-pressed="true"] { background: var(--surface-2); color: var(--white); }
+.adm-segmented-sm button { padding: 3px 10px; font-size: 12px; }
+/* Line view */
+.adm-chart.is-line .adm-chart-bars { gap: 0; }
+.adm-chart-line { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.adm-chart-line polyline { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.adm-chart-line polygon { fill: var(--accent); opacity: .12; }
+.adm-chart-dot { position: absolute; left: 50%; width: 8px; height: 8px; margin: 0 0 -4px -4px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 2px var(--surface); opacity: 0; transition: opacity .12s; }
+.adm-chart-bars li:hover .adm-chart-dot, .adm-chart-bars li:focus-visible .adm-chart-dot { opacity: 1; }
 .adm-chart-x { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 6px; color: var(--muted); font-size: 11px; white-space: nowrap; }
 .adm-chart-bars li::after { content: attr(data-tip); position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); z-index: 2; padding: 6px 10px; border-radius: 6px; background: var(--white); color: var(--black); font-size: 12px; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .12s; }
 .adm-chart-bars li:first-child::after { left: 0; transform: none; }
@@ -285,6 +301,10 @@ a.adm-card:hover { border-color: var(--muted); }
 .adm-file-actions .adm-btn { padding: 6px 8px; }
 
 /* Request thread */
+/* Map, then the full country list under it: the list scrolls past a fixed height. */
+.adm-geo { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 16px; }
+.adm-geo > .adm-card { margin-top: 0; }
+.adm-card-scroll .adm-breakdown-wrap { max-height: 360px; overflow-y: auto; }
 .adm-split { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 16px; align-items: start; }
 .adm-split > .adm-card { margin-top: 0; }
 .adm-sticky { position: sticky; top: 96px; }

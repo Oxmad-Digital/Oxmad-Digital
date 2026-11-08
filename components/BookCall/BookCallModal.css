@@ -86,6 +86,9 @@
 
 .ox-modal-error { font-size: 13px; color: #b3261e; margin: 0; }
 .ox-modal-hint { font-size: 13px; color: #7d8378; margin: 0; }
+.ox-modal-privacy { font-size: 12px; line-height: 1.5; color: #7d8378; margin: 12px 0 0; }
+.ox-modal-privacy a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.ox-modal-privacy a:hover { color: var(--ink); }
 
 .ox-modal-slots {
   display: grid;

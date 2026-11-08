@@ -32,6 +32,7 @@ export default function AuthScreen({ title, image, children }: { title: string; 
           <Link href="/" className="adm-brand">OXMAD<span>·</span>DIGITAL</Link>
           <h1>{title}</h1>
           {children}
+          <a href="/mentions-legales#confidentialite" className="client-login-legal">Mentions légales et confidentialité</a>
         </div>
       </div>
     </div>

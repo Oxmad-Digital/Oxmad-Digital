@@ -80,7 +80,10 @@ export default function PortalShell({ mode, workspace, userName, userEmail, navi
           {navigation}
         </div>
         <div className="adm-sidebar-footer">
-          <p className="adm-sidebar-signature">Le web, autrement.</p>
+          <p className="adm-sidebar-signature">
+            Le web, autrement.
+            {mode === "client" && <><br /><a href="/mentions-legales#confidentialite" className="adm-sidebar-legal">Confidentialité</a></>}
+          </p>
           <div className="adm-sidebar-account">
             <span className="adm-user-avatar" aria-hidden="true">{initials}</span>
             <span className="adm-user-details"><strong title={userEmail}>{userName}</strong><small>{mode === "admin" ? "Administrateur" : workspace}</small></span>

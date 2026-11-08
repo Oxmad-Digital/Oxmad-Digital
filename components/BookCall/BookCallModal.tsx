@@ -296,6 +296,10 @@ export default function BookCallModal({
                   c.send
                 )}
               </button>
+              <p className="ox-modal-privacy">
+                Vos coordonnées servent uniquement à organiser cet appel et sont conservées 3 ans au plus.{" "}
+                <a href="/mentions-legales#confidentialite" target="_blank" rel="noopener">Politique de confidentialité</a>
+              </p>
             </form>
           </>
         )}

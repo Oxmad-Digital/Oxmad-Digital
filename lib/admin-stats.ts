@@ -1,5 +1,6 @@
 import "server-only";
 import { db, type Booking, type ContactMessage } from "./db";
+import { purgeExpiredData } from "./retention";
 import { TIMEZONE } from "./site";
 
 /** Period lengths in days; 0 means everything since the first recorded day. */
@@ -65,7 +66,7 @@ async function rollupPageViews(sql: ReturnType<typeof database>) {
 /** Audience and form activity over the last `days` days (0 = all time), with the previous period for comparison. */
 export async function getDashboard(days: Period) {
   const sql = database();
-  await rollupPageViews(sql);
+  await Promise.all([rollupPageViews(sql), purgeExpiredData()]);
 
   // Aggregated history plus today's raw rows, in the same shape.
   const pageRows = sql`(SELECT day, path, source, views FROM page_views_daily

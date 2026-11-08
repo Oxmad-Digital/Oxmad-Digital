@@ -617,6 +617,10 @@ export default function XRun() {
         </ol>
       )}
       {stats && stats.plays > 0 && <p className="xrun-board-stats">{formatStats(stats)}</p>}
+      <p className="xrun-board-privacy">
+        Les pseudos sont publics. Suppression sur simple demande ·{" "}
+        <a href="/mentions-legales#confidentialite" target="_blank" rel="noopener">Confidentialité</a>
+      </p>
     </aside>
     </div>
   );

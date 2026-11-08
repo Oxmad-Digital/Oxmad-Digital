@@ -28,6 +28,17 @@
   margin: 0 0 14px;
 }
 
+.ox-legal-page-body h3 {
+  font-size: 16px;
+  font-weight: 620;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  margin: 26px 0 8px;
+}
+
+.ox-legal-page-body article { scroll-margin-top: 90px; }
+.ox-legal-page-body a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+
 .ox-legal-page-body p,
 .ox-legal-page-body ul {
   font-size: 15px;
@@ -39,7 +50,7 @@
 .ox-legal-page-body p:last-child { margin-bottom: 0; }
 .ox-legal-page-body strong { color: var(--ink); }
 .ox-legal-page-body ul { padding-left: 20px; }
-.ox-legal-page-body ul li { margin-bottom: 4px; }
+.ox-legal-page-body ul li { margin-bottom: 10px; }
 
 .ox-legal-page-updated {
   padding-top: 32px;

@@ -111,6 +111,10 @@ const ContactDialog = forwardRef<ContactDialogHandle>(function ContactDialog(_, 
               <button type="submit" className="dialog-submit" disabled={status === "submitting"}>
                 {status === "submitting" ? "Envoi en cours…" : "Envoyer mon message"}
               </button>
+              <p className="dialog-privacy">
+                Vos données servent uniquement à vous répondre et sont conservées 3 ans au plus.{" "}
+                <a href="/mentions-legales#confidentialite" target="_blank" rel="noopener">Politique de confidentialité</a>
+              </p>
             </form>
             <small>
               Vous préférez en parler de vive voix ?{" "}

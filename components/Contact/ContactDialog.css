@@ -16,6 +16,9 @@ dialog.contact-dialog .field select:focus { border-color: var(--accent); }
 dialog.contact-dialog .dialog-submit { border: 0; background: var(--black); color: var(--white); padding: 17px; width: 100%; margin-top: 14px; }
 dialog.contact-dialog .dialog-submit:disabled { opacity: .7; cursor: not-allowed; }
 dialog.contact-dialog .dialog-error { color: #b3261e !important; margin: 0; }
+dialog.contact-dialog .dialog-body .dialog-privacy { margin: 12px 0 0; font-size: 12px; line-height: 1.5; color: #7d8378; }
+dialog.contact-dialog .dialog-privacy a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+dialog.contact-dialog .dialog-privacy a:hover { color: var(--ink); }
 dialog.contact-dialog small { display: block; margin-top: 16px; color: #7d8378; line-height: 1.5; }
 dialog.contact-dialog .dialog-link { border: 0; background: none; padding: 0; color: var(--ink); font-size: inherit; font-weight: 600; border-bottom: 1px solid currentColor; }
 dialog.contact-dialog .dialog-link:hover { color: #81780b; }
