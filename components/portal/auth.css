@@ -65,6 +65,7 @@
 }
 
 .client-login-content:has(.client-login-about),
+.client-login-content:has(.client-login-lead),
 .client-login-content:has(.client-waiting) {
   max-width: 400px;
 }
@@ -164,10 +165,77 @@
   font-size: 15px;
 }
 
-.client-login .client-login-forgot {
+/* Sign-in card: lead line, form, then a separated footer. Prefixed to beat the `.adm p` resets. */
+.client-login .client-login-lead {
+  margin: -4px 0 22px;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.client-login-lead strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+.client-login-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
   margin-top: 4px;
 }
 
-.client-login-forgot[open] .adm-form {
-  margin-top: 10px;
+.client-login-label-row label {
+  margin-top: 0;
+}
+
+.client-login-text-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.client-login-text-btn:hover,
+.client-login-text-btn:focus-visible {
+  color: var(--accent);
+}
+
+.client-login .client-login-back-btn {
+  align-self: center;
+  margin-top: 6px;
+}
+
+.client-login .client-login-foot {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  font-size: 13.5px;
+}
+
+.client-login .client-login-foot p {
+  margin: 0;
+}
+
+.client-login-foot a {
+  color: var(--accent);
+}
+
+.client-login .client-login-foot .client-login-admin a {
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.client-login-foot .client-login-admin a:hover {
+  color: var(--white);
 }

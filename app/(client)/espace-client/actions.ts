@@ -35,7 +35,7 @@ export async function loginClient(_state: FormState, formData: FormData): Promis
     await new Promise((resolve) => setTimeout(resolve, 800));
     return { error: "Email ou mot de passe incorrect." };
   }
-  if (user === "unverified") return { error: "Confirmez d'abord votre adresse avec le lien reçu par email (pensez aux spams), ou demandez-en un nouveau ci-dessous." };
+  if (user === "unverified") return { error: "Confirmez d'abord votre adresse avec le lien reçu par email (pensez aux spams), ou demandez-en un nouveau via « Mot de passe oublié ? »." };
   await startClientSession(user);
   redirect(user.status === "approved" ? "/espace-client" : "/espace-client/en-attente");
 }
