@@ -2,6 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getClientAccount } from "@/lib/client-auth";
 import AuthScreen, { AccessSteps } from "../AuthScreen";
+import { MIN_PASSWORD_LENGTH } from "@/lib/password";
 import SignupForm from "./SignupForm";
 
 export default async function ClientSignupPage() {
@@ -11,7 +12,7 @@ export default async function ClientSignupPage() {
   return (
     <AuthScreen title="Demander un accès">
       <AccessSteps />
-      <SignupForm />
+      <SignupForm minLength={MIN_PASSWORD_LENGTH} />
       <p className="client-login-switch">
         Déjà un accès ? <Link href="/espace-client/connexion">Se connecter</Link>
       </p>

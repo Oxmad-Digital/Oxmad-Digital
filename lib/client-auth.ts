@@ -5,11 +5,13 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { normalizeEmail } from "./admin-auth";
 import { db } from "./db";
+import { DUMMY_HASH, hashPassword, verifyPassword } from "./password";
 import { sendEmail } from "./email";
 import { deriveKey } from "./totp";
 import { appUrl } from "./site";
 
-// Client area sign-in by magic link: no password, a single-use emailed token opens a session.
+// Client area sign-in: email + password, chosen at sign-up. The single-use emailed link (magic link) confirms
+// the address at sign-up, and stays as the fallback for a forgotten password or an account without one.
 // Anyone can sign up, but the account stays `pending` (no client, nothing visible) until the studio
 // validates it from the admin by attaching it to a client, or refuses it.
 const COOKIE = "ox_client";
@@ -21,7 +23,7 @@ export type ClientUser = { id: string; email: string; name: string; clientId: st
 /** Any signed-in account, validated or not. Only for the waiting page: the rest of the area uses ClientUser. */
 export type ClientAccount = {
   id: string; email: string; name: string; status: ClientStatus; clientId: string | null; clientName: string | null;
-  company: string | null; signupMessage: string | null; reviewNote: string | null; createdAt: Date;
+  company: string | null; signupMessage: string | null; reviewNote: string | null; createdAt: Date; hasPassword: boolean;
 };
 type ClientUserRow = { id: string; email: string; name: string; client_id: string | null; client_name: string | null; session_key: string; status: ClientStatus };
 
@@ -32,7 +34,7 @@ function secret() {
   return deriveKey("client-session", value);
 }
 
-function sign(user: ClientUserRow, expires: number) {
+function sign(user: Pick<ClientUserRow, "id" | "session_key">, expires: number) {
   return createHmac("sha256", secret())
     .update(`client-session:${user.id}:${expires}:${user.session_key}`)
     .digest("base64url");
@@ -84,7 +86,7 @@ const LINK_EMAILS: Record<"login" | "invite" | "signup", (name: string, clientNa
   invite: (name, clientName) => ({
     subject: clientName ? `Votre espace client ${clientName} — Oxmad Digital` : "Votre espace client — Oxmad Digital",
     title: "Votre espace client est prêt",
-    intro: `Bonjour ${name}, retrouvez-y vos devis et factures, vos demandes de modification et vos fichiers partagés. Ce lien est valable ${LINK_MINUTES} minutes ; ensuite, demandez-en un nouveau depuis la page de connexion avec votre email.`,
+    intro: `Bonjour ${name}, votre accès est validé : retrouvez-y vos devis et factures, vos demandes de modification et vos fichiers partagés. Connectez-vous avec votre email et votre mot de passe, ou avec ce lien (valable ${LINK_MINUTES} minutes).`,
     cta: "Accéder à mon espace →",
     footer: `Accès suivant : ${appUrl("/espace-client/connexion")}`,
   }),
@@ -107,11 +109,34 @@ export async function sendLoginLink({ user, token }: NonNullable<Awaited<ReturnT
   });
 }
 
-/** Free sign-up. False when the email already has an account (validated, pending or refused). */
-export async function createSignup({ email, name, company, message }: { email: string; name: string; company: string; message: string | null }) {
-  const created = await sql()`INSERT INTO client_users (email, name, company, signup_message, status)
-    VALUES (${normalizeEmail(email)}, ${name}, ${company}, ${message}, 'pending') ON CONFLICT (email) DO NOTHING RETURNING id`;
+/** Free sign-up. False when the email already has an account (validated, pending or refused): its password stays. */
+export async function createSignup({ email, name, company, message, password }: { email: string; name: string; company: string; message: string | null; password: string }) {
+  const created = await sql()`INSERT INTO client_users (email, name, company, signup_message, status, password_hash)
+    VALUES (${normalizeEmail(email)}, ${name}, ${company}, ${message}, 'pending', ${await hashPassword(password)})
+    ON CONFLICT (email) DO NOTHING RETURNING id`;
   return created.length > 0;
+}
+
+/**
+ * Email + password sign-in. `unverified`: right password, but the address was never confirmed by its link
+ * (anyone can sign up with someone else's email). Unknown emails are checked against a dummy hash so the
+ * response time doesn't tell which accounts exist.
+ */
+export async function authenticateClient(email: string, password: string) {
+  const [user] = (await sql()`SELECT id, session_key, password_hash, status, email_verified_at FROM client_users
+    WHERE email = ${normalizeEmail(email)}`) as (Pick<ClientUserRow, "id" | "session_key" | "status"> & { password_hash: string | null; email_verified_at: Date | null })[];
+  const valid = await verifyPassword(password, user?.password_hash ?? DUMMY_HASH);
+  if (!user?.password_hash || !valid) return null;
+  if (!user.email_verified_at) return "unverified" as const;
+  await sql()`UPDATE client_users SET last_login_at = now() WHERE id = ${user.id}`;
+  return user;
+}
+
+/** Sets the password and signs out every other session (new session key); this one is renewed. */
+export async function setClientPassword(userId: string, password: string) {
+  const [user] = (await sql()`UPDATE client_users SET password_hash = ${await hashPassword(password)}, session_key = gen_random_uuid()::text
+    WHERE id = ${userId} RETURNING id, session_key`) as Pick<ClientUserRow, "id" | "session_key">[];
+  if (user) await startClientSession(user);
 }
 
 /**
@@ -125,13 +150,14 @@ export async function consumeLoginToken(token: string) {
   const [user] = (await sql()`UPDATE client_users u SET last_login_at = now(), email_verified_at = coalesce(u.email_verified_at, now())
     WHERE u.id = ${row.user_id}
     RETURNING u.id, u.email, u.name, u.client_id, (SELECT c.name FROM clients c WHERE c.id = u.client_id) AS client_name,
-      u.session_key, u.status, u.company, u.signup_message, u.email_verified_at = now() AS first_verification`) as
-    (ClientUserRow & { company: string | null; signup_message: string | null; first_verification: boolean })[];
+      u.session_key, u.status, u.company, u.signup_message, u.email_verified_at = now() AS first_verification,
+      u.password_hash IS NOT NULL AS has_password`) as
+    (ClientUserRow & { company: string | null; signup_message: string | null; first_verification: boolean; has_password: boolean })[];
   return user ?? null;
 }
 
 /** Session cookie = "<user id>.<expiry ms>.<hmac>". Lax, so links in notification emails open signed in. */
-export async function startClientSession(user: ClientUserRow) {
+export async function startClientSession(user: Pick<ClientUserRow, "id" | "session_key">) {
   const expires = Date.now() + SESSION_DAYS * 86_400_000;
   (await cookies()).set(COOKIE, `${user.id}.${expires}.${sign(user, expires)}`, {
     httpOnly: true,
@@ -159,14 +185,14 @@ export const getClientAccount = cache(async (): Promise<ClientAccount | null> =>
   if (!/^\d+$/.test(id ?? "") || !signature || !(expires > Date.now())) return null;
 
   const [user] = (await client`SELECT u.id, u.email, u.name, u.client_id, c.name AS client_name, u.session_key, u.status,
-      u.company, u.signup_message, u.review_note, u.created_at
+      u.company, u.signup_message, u.review_note, u.created_at, u.password_hash IS NOT NULL AS has_password
     FROM client_users u LEFT JOIN clients c ON c.id = u.client_id WHERE u.id = ${id}`) as
-    (ClientUserRow & { company: string | null; signup_message: string | null; review_note: string | null; created_at: Date })[];
+    (ClientUserRow & { company: string | null; signup_message: string | null; review_note: string | null; created_at: Date; has_password: boolean })[];
   if (!user || !safeEqual(signature, sign(user, expires))) return null;
   return {
     id: String(user.id), email: user.email, name: user.name, status: user.status,
     clientId: user.client_id ? String(user.client_id) : null, clientName: user.client_name,
-    company: user.company, signupMessage: user.signup_message, reviewNote: user.review_note, createdAt: new Date(user.created_at),
+    company: user.company, signupMessage: user.signup_message, reviewNote: user.review_note, createdAt: new Date(user.created_at), hasPassword: user.has_password,
   };
 });
 

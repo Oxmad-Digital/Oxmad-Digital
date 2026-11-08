@@ -163,3 +163,11 @@
   margin: 0 0 10px;
   font-size: 15px;
 }
+
+.client-login .client-login-forgot {
+  margin-top: 4px;
+}
+
+.client-login-forgot[open] .adm-form {
+  margin-top: 10px;
+}

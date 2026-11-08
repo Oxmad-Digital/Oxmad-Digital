@@ -14,10 +14,10 @@ export function AccessSteps() {
       <details className="client-login-how">
         <summary>Comment ça marche ?</summary>
         <ol className="client-login-steps">
-          <li>Demandez un accès</li>
+          <li>Demandez un accès et choisissez votre mot de passe</li>
           <li>Confirmez votre email</li>
           <li>Nous validons votre accès (prévenu par email)</li>
-          <li>Connectez-vous par lien, sans mot de passe</li>
+          <li>Connectez-vous avec votre email et votre mot de passe</li>
         </ol>
         <p className="adm-muted">Pas encore client ? <Link href="/#contact">Parlons de votre projet</Link></p>
       </details>

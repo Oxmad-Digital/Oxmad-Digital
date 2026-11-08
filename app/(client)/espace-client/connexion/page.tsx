@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { getClientAccount } from "@/lib/client-auth";
 import AuthScreen, { AccessSteps } from "../AuthScreen";
 import LoginLinkForm from "./LoginLinkForm";
+import PasswordLoginForm from "./PasswordLoginForm";
 
 export default async function ClientLoginPage() {
   const account = await getClientAccount();
@@ -12,7 +13,11 @@ export default async function ClientLoginPage() {
     <AuthScreen title="Espace client">
       <AccessSteps />
       <h2 className="client-login-heading">Déjà un accès ?</h2>
-      <LoginLinkForm />
+      <PasswordLoginForm />
+      <details className="client-login-how client-login-forgot">
+        <summary>Mot de passe oublié ?</summary>
+        <LoginLinkForm />
+      </details>
       <p className="client-login-switch">
         Première visite ? <Link href="/espace-client/inscription">Demander un accès</Link>
       </p>

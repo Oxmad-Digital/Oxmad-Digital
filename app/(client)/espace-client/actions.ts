@@ -3,13 +3,54 @@
 import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { consumeLoginToken, createLoginToken, createSignup, endClientSession, requireClient, sendLoginLink, startClientSession } from "@/lib/client-auth";
+import { authenticateClient, consumeLoginToken, createLoginToken, createSignup, endClientSession, getClientAccount, requireClient, sendLoginLink, setClientPassword, startClientSession } from "@/lib/client-auth";
+import { normalizeEmail } from "@/lib/admin-auth";
+import { MIN_PASSWORD_LENGTH } from "@/lib/password";
 import { getProjects, insertFiles, notifyStudio, rejectUploads, sql, verifyUploads } from "@/lib/portal";
 import { REQUEST_KINDS, type RequestKind } from "@/lib/portal-labels";
 import { clientIp, rateLimit, TOO_MANY } from "@/lib/rate-limit";
 import { EMAIL_RE } from "@/lib/site";
 
 type FormState = { error?: string; ok?: string };
+
+/** The new password of a form (`password` + `confirm`), or the error to show. */
+function newPassword(formData: FormData) {
+  const password = String(formData.get("password") || "");
+  if (password.length < MIN_PASSWORD_LENGTH) return { error: `Mot de passe : ${MIN_PASSWORD_LENGTH} caractères minimum.` };
+  if (password.length > 200) return { error: "Mot de passe trop long." };
+  if (password !== String(formData.get("confirm") || "")) return { error: "Les deux mots de passe ne correspondent pas." };
+  return { password };
+}
+
+/** Email + password sign-in. Same pacing as the admin: capped per address and per account. */
+export async function loginClient(_state: FormState, formData: FormData): Promise<FormState> {
+  const email = normalizeEmail(String(formData.get("email") || ""));
+  if (!EMAIL_RE.test(email)) return { error: "Adresse email invalide." };
+  const allowed = (await rateLimit(`client-login:ip:${clientIp(await headers())}`, 10, 900))
+    && (await rateLimit(`client-login:email:${email}`, 10, 900));
+  if (!allowed) return { error: TOO_MANY };
+
+  const user = await authenticateClient(email, String(formData.get("password") || ""));
+  if (!user) {
+    await new Promise((resolve) => setTimeout(resolve, 800));
+    return { error: "Email ou mot de passe incorrect." };
+  }
+  if (user === "unverified") return { error: "Confirmez d'abord votre adresse avec le lien reçu par email (pensez aux spams), ou demandez-en un nouveau ci-dessous." };
+  await startClientSession(user);
+  redirect(user.status === "approved" ? "/espace-client" : "/espace-client/en-attente");
+}
+
+/** From "Mon compte": the session is the proof, so a forgotten password is reset after signing in by link. */
+export async function changeClientPassword(_state: FormState, formData: FormData): Promise<FormState> {
+  const account = await getClientAccount();
+  if (!account) redirect("/espace-client/connexion");
+  const next = newPassword(formData);
+  if (next.error) return { error: next.error };
+  if (!(await rateLimit(`client-password:${account.id}`, 5, 600))) return { error: TOO_MANY };
+  await setClientPassword(account.id, next.password!);
+  revalidatePath("/espace-client", "layout");
+  return { ok: "Mot de passe enregistré. Vos autres sessions ont été déconnectées." };
+}
 
 /** Emails a sign-in link. Same answer whether the account exists or not, so emails can't be probed. */
 export async function requestLoginLink(_state: FormState, formData: FormData): Promise<FormState> {
@@ -38,10 +79,12 @@ export async function requestAccess(_state: FormState, formData: FormData): Prom
   const message = String(formData.get("message") || "").trim().slice(0, 2_000) || null;
   if (!name || !company) return { error: "Nom et entreprise requis." };
   if (!EMAIL_RE.test(email)) return { error: "Adresse email invalide." };
+  const chosen = newPassword(formData);
+  if (chosen.error) return { error: chosen.error };
 
   if (!(await rateLimit(`signup:${clientIp(await headers())}`, 5, 3600))) return { error: TOO_MANY };
 
-  const created = await createSignup({ email, name, company, message });
+  const created = await createSignup({ email, name, company, message, password: chosen.password! });
   const token = await createLoginToken(email);
   if (token) await sendLoginLink(token, created ? "signup" : "login");
   return { ok: `Un email vient d'être envoyé à ${email}. Cliquez sur le lien qu'il contient pour confirmer votre adresse et transmettre votre demande.` };
@@ -54,7 +97,8 @@ export async function verifyLogin(_state: FormState, formData: FormData): Promis
   const user = await consumeLoginToken(String(formData.get("token") || ""));
   if (!user) return { error: "Ce lien a expiré ou a déjà été utilisé. Demandez-en un nouveau." };
   await startClientSession(user);
-  if (user.status === "approved") redirect("/espace-client");
+  // Signed in by link without a password yet (account added from the admin, or older): invited to choose one.
+  if (user.status === "approved") redirect(user.has_password ? "/espace-client" : "/espace-client/compte");
 
   // The studio only hears about a sign-up once its email is confirmed: no notifications for typos or bots.
   if (user.status === "pending" && user.first_verification) {

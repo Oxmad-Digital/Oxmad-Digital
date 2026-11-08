@@ -3,7 +3,7 @@
 import { useActionState } from "react";
 import { keepValuesOnSubmit } from "@/components/portal/submit";
 import { login } from "../actions";
-import PasswordInput from "../PasswordInput";
+import PasswordInput from "@/components/portal/PasswordInput";
 
 export default function LoginForm() {
   const [state, action, pending] = useActionState(login, {});

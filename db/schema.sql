@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS admin_backup_codes (
 );
 
 -- ─── Espace client ───────────────────────────────────────────────────────────────────────────────
--- Un client = une entreprise. Ses utilisateurs se connectent par lien magique (pas de mot de passe).
+-- Un client = une entreprise. Ses utilisateurs se connectent par email + mot de passe (lien magique en secours).
 CREATE TABLE IF NOT EXISTS clients (
   id          bigserial PRIMARY KEY,
   created_at  timestamptz NOT NULL DEFAULT now(),
@@ -146,6 +146,9 @@ ALTER TABLE client_users DROP CONSTRAINT IF EXISTS client_users_status_check;
 ALTER TABLE client_users ADD CONSTRAINT client_users_status_check
   CHECK (status IN ('pending', 'approved', 'rejected') AND (status <> 'approved' OR client_id IS NOT NULL));
 CREATE INDEX IF NOT EXISTS client_users_signups_idx ON client_users (created_at DESC) WHERE status <> 'approved';
+-- Mot de passe (scrypt, comme admin_users) défini à l'inscription. NULL : compte ajouté depuis l'admin ou ancien
+-- compte, qui se connecte par lien magique puis définit son mot de passe dans « Mon compte ».
+ALTER TABLE client_users ADD COLUMN IF NOT EXISTS password_hash text;
 
 -- Liens magiques à usage unique. Seul le hash SHA-256 du jeton est stocké.
 CREATE TABLE IF NOT EXISTS client_login_tokens (

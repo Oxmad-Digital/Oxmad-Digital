@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FileText, FolderOpen, LayoutDashboard, MessagesSquare } from "lucide-react";
+import { FileText, FolderOpen, LayoutDashboard, MessagesSquare, UserRound } from "lucide-react";
 
 export default function ClientNav({ replies }: { replies: number }) {
   const pathname = usePathname();
@@ -11,6 +11,7 @@ export default function ClientNav({ replies }: { replies: number }) {
     { href: "/espace-client/demandes", label: "Demandes", count: replies, icon: MessagesSquare },
     { href: "/espace-client/documents", label: "Devis & factures", count: 0, icon: FileText },
     { href: "/espace-client/drive", label: "Drive", count: 0, icon: FolderOpen },
+    { href: "/espace-client/compte", label: "Mon compte", count: 0, icon: UserRound },
   ];
   const current = (href: string) => (href === "/espace-client" ? pathname === href : pathname.startsWith(href));
 
