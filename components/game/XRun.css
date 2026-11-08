@@ -49,6 +49,11 @@
 @media (orientation: landscape) {
   .xrun-stage.is-fullscreen .xrun-controls { position: absolute; top: 12px; right: 12px; }
 }
+/* Phone in landscape, outside fullscreen: a full-width 16:9 frame is taller than the screen and its controls
+   fall below it. The frame is capped to the screen height (the smallest one, toolbars shown). */
+@media (orientation: landscape) and (max-height: 600px) {
+  .xrun-stage:not(.is-fullscreen) .xrun { width: min(100%, (100vh - 24px) * 16 / 9); width: min(100%, (100svh - 24px) * 16 / 9); margin-inline: auto; }
+}
 .xrun-rotate { display: none; position: absolute; left: 16px; right: 16px; bottom: calc(24px + env(safe-area-inset-bottom)); margin: 0; text-align: center; color: var(--muted); pointer-events: none; }
 @media (orientation: portrait) and (max-width: 600px) {
   .xrun-rotate { display: block; }
